@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CaseHistoy_crimelist" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<field name="natureCrime" class="java.lang.String"/>
+	<field name="name" class="java.lang.String"/>
+	<field name="relationship" class="java.lang.String"/>
+	<field name="arrestMade" class="java.lang.String"/>
+	<field name="periodConfinement" class="java.lang.String"/>
+	<field name="punishment" class="java.lang.String"/>
+	<field name="label.s2CH.HisCrFm" class="java.lang.String"/>
+	<field name="label.s2CH.sino" class="java.lang.String"/>
+	<field name="label.s2CH.rel" class="java.lang.String"/>
+	<field name="label.s2CH.NtCr" class="java.lang.String"/>
+	<field name="label.s2CH.arrMade" class="java.lang.String"/>
+	<field name="label.s2CH.punAwar" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="1" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="41" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="20" width="463" height="20"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="254" y="20" width="109" height="20"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Period of confinement]]></text>
+			</staticText>
+			<line>
+				<reportElement x="29" y="20" width="1" height="20"/>
+			</line>
+			<line>
+				<reportElement x="89" y="21" width="1" height="20"/>
+			</line>
+			<line>
+				<reportElement x="166" y="20" width="1" height="20"/>
+			</line>
+			<line>
+				<reportElement x="254" y="21" width="1" height="20"/>
+			</line>
+			<line>
+				<reportElement x="363" y="21" width="1" height="20"/>
+			</line>
+			<textField>
+				<reportElement x="0" y="2" width="316" height="19"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["24.  "+$R{label.s2CH.HisCrFm}+":"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="21" width="29" height="20"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{label.s2CH.sino}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="30" y="21" width="59" height="20"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{label.s2CH.rel}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="90" y="21" width="76" height="20"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{label.s2CH.NtCr}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="167" y="21" width="87" height="20"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{label.s2CH.arrMade}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="364" y="21" width="100" height="20"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{label.s2CH.punAwar}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<rectangle>
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="463" height="20"/>
+			</rectangle>
+			<textField>
+				<reportElement stretchType="RelativeToTallestObject" x="89" y="0" width="77" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{natureCrime}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement stretchType="RelativeToTallestObject" x="4" y="0" width="26" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$V{COLUMN_COUNT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement stretchType="RelativeToTallestObject" x="30" y="0" width="59" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{relationship}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement stretchType="RelativeToTallestObject" x="166" y="0" width="88" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{arrestMade}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement stretchType="RelativeToTallestObject" x="254" y="0" width="109" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{periodConfinement}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement stretchType="RelativeToTallestObject" x="363" y="0" width="100" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{punishment}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="29" y="0" width="1" height="20"/>
+			</line>
+			<line>
+				<reportElement x="89" y="0" width="1" height="20"/>
+			</line>
+			<line>
+				<reportElement x="166" y="-1" width="1" height="20"/>
+			</line>
+			<line>
+				<reportElement x="254" y="0" width="1" height="20"/>
+			</line>
+			<line>
+				<reportElement x="363" y="0" width="1" height="20"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="1" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="1" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

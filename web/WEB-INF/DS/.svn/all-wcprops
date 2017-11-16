@@ -1,0 +1,317 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/ChildHomes/!svn/ver/119/WDCW_MLC/web/WEB-INF/DS
+END
+SelectRecIssReport.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/ChildHomes/!svn/ver/119/WDCW_MLC/web/WEB-INF/DS/SelectRecIssReport.jsp
+END
+RationSuccess.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/DS/RationSuccess.jsp
+END
+subcatItemsReceive.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/ChildHomes/!svn/ver/96/WDCW_MLC/web/WEB-INF/DS/subcatItemsReceive.jsp
+END
+viewDietIssue.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/ChildHomes/!svn/ver/118/WDCW_MLC/web/WEB-INF/DS/viewDietIssue.jsp
+END
+DonationBookRegister.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/DS/DonationBookRegister.jsp
+END
+AddCategoryRegister.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/DS/AddCategoryRegister.jsp
+END
+populateSubCat.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/DS/populateSubCat.jsp
+END
+bomItem.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/DS/bomItem.jsp
+END
+DietIssue.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/ChildHomes/!svn/ver/115/WDCW_MLC/web/WEB-INF/DS/DietIssue.jsp
+END
+ViewItemRegister.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/DS/ViewItemRegister.jsp
+END
+EnterTopCategory.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/DS/EnterTopCategory.jsp
+END
+ViewMenu.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/ChildHomes/!svn/ver/119/WDCW_MLC/web/WEB-INF/DS/ViewMenu.jsp
+END
+RemoveCategoryRegister.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/DS/RemoveCategoryRegister.jsp
+END
+TailorReceiveRegister.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/DS/TailorReceiveRegister.jsp
+END
+popIssueRadioOptions.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/DS/popIssueRadioOptions.jsp
+END
+viewDonation.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/DS/viewDonation.jsp
+END
+TailorIssueRegister.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/DS/TailorIssueRegister.jsp
+END
+LoanBookRegister.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/DS/LoanBookRegister.jsp
+END
+ViewDonationRegister.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/ChildHomes/!svn/ver/119/WDCW_MLC/web/WEB-INF/DS/ViewDonationRegister.jsp
+END
+AddItemRegister.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/ChildHomes/!svn/ver/96/WDCW_MLC/web/WEB-INF/DS/AddItemRegister.jsp
+END
+subcatItemsDonate.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/ChildHomes/!svn/ver/96/WDCW_MLC/web/WEB-INF/DS/subcatItemsDonate.jsp
+END
+PayBackRegister.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/DS/PayBackRegister.jsp
+END
+RemoveItemRegister.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/DS/RemoveItemRegister.jsp
+END
+ViewItemSuccess.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/ChildHomes/!svn/ver/96/WDCW_MLC/web/WEB-INF/DS/ViewItemSuccess.jsp
+END
+viewMenuDetail.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/DS/viewMenuDetail.jsp
+END
+viewIssue.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/ChildHomes/!svn/ver/96/WDCW_MLC/web/WEB-INF/DS/viewIssue.jsp
+END
+viewTailoring.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/DS/viewTailoring.jsp
+END
+viewLoan.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/DS/viewLoan.jsp
+END
+ViewDietRegister.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/ChildHomes/!svn/ver/119/WDCW_MLC/web/WEB-INF/DS/ViewDietRegister.jsp
+END
+viewReceipt.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/ChildHomes/!svn/ver/96/WDCW_MLC/web/WEB-INF/DS/viewReceipt.jsp
+END
+ModifyItemTree.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/DS/ModifyItemTree.jsp
+END
+populateLoans.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/DS/populateLoans.jsp
+END
+ViewTailoringRegister.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/ChildHomes/!svn/ver/119/WDCW_MLC/web/WEB-INF/DS/ViewTailoringRegister.jsp
+END
+DeputySuperIndentPage.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/DS/DeputySuperIndentPage.jsp
+END
+ViewIssueRegister.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/ChildHomes/!svn/ver/119/WDCW_MLC/web/WEB-INF/DS/ViewIssueRegister.jsp
+END
+ViewLoanRegister.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/ChildHomes/!svn/ver/119/WDCW_MLC/web/WEB-INF/DS/ViewLoanRegister.jsp
+END
+ViewReceiptRegister.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/ChildHomes/!svn/ver/119/WDCW_MLC/web/WEB-INF/DS/ViewReceiptRegister.jsp
+END
+EnterBOMChart.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/DS/EnterBOMChart.jsp
+END
+subcatItemsLoan.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/DS/subcatItemsLoan.jsp
+END
+DeleteItemConfirm.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/DS/DeleteItemConfirm.jsp
+END
+popSubcat.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/DS/popSubcat.jsp
+END
+ViewCategorySuccess.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/DS/ViewCategorySuccess.jsp
+END
+EnterMenu.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/DS/EnterMenu.jsp
+END
+temp.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/DS/temp.jsp
+END
+ModifyItem.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/DS/ModifyItem.jsp
+END
+ViewIssueDetail.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/DS/ViewIssueDetail.jsp
+END
+SelectMonthYear.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/ChildHomes/!svn/ver/115/WDCW_MLC/web/WEB-INF/DS/SelectMonthYear.jsp
+END
+IssueBookRegister.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/DS/IssueBookRegister.jsp
+END
+MenuRegister.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/DS/MenuRegister.jsp
+END
+ReceiptBookRegister.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/DS/ReceiptBookRegister.jsp
+END
+ViewCategoryRegister.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/DS/ViewCategoryRegister.jsp
+END
+subcatItems.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/DS/subcatItems.jsp
+END

@@ -1,0 +1,61 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<!-- Author: suresh -->
+ 
+<struts>
+    <!-- Add your configuration elements here -->
+    
+     <package name="com/cdac/cr/Actions" namespace="/" extends="struts-default">
+		<result-types>
+			<result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult"/>
+		</result-types>
+                
+    <interceptors>
+        <interceptor name="requestCheckInterceptor" class="com.cdac.common.interceptors.RequestCheckInterceptor"/> 
+        <interceptor name="roleCheckInterceptor"    class="com.cdac.common.interceptors.RoleCheckInterceptor" />    
+        
+                <interceptor-stack name="loggingStack">                                      
+                    
+                    <interceptor-ref name="requestCheckInterceptor" />
+                    <interceptor-ref name="roleCheckInterceptor"/>                      
+                    <interceptor-ref name="defaultStack" />
+                </interceptor-stack>
+    </interceptors>
+    
+    <action name="CR-Home">
+                    <interceptor-ref name="loggingStack"/>   
+                    <result name="logout" type="tiles">UM-Logout</result>
+                    <result name="success" type="tiles">CR-Welcome</result>
+   </action>
+   
+    <!--Counselor actions-->
+      
+        <action  name="CR-Counsel" class="com.cdac.counselor.Actions.CounselorAction" method="populateAllChilds">
+           <result name="success" type="tiles">CR-Counsel</result>
+           <result name="error" type="tiles">CR-Error</result>
+       </action>
+       
+        <action  name="CR-counselChidDetail" class="com.cdac.counselor.Actions.CounselorAction" method="viewCounselDetail">
+           <result name="success">/WEB-INF/CR/viewCounselDetail.jsp</result>
+           <result name="error" type="tiles">CR-Error</result>
+    </action>
+    
+      <action  name="CR-counselChild" class="com.cdac.counselor.Actions.CounselorAction" method="counselChild">
+           <result name="success" type="tiles">CR-Success</result>
+           <result name="error" type="tiles">CR-Error</result>
+    </action>
+    
+     <action  name="CR-ViewCounselForm" class="com.cdac.counselor.Actions.CounselorAction" method="popCounseledChilds">
+           <result name="success" type="tiles">CR-ViewCounselForm</result>
+           <result name="error" type="tiles">CR-Error</result>
+    </action>
+    
+      <action  name="CR-viewCounselChid" class="com.cdac.counselor.Actions.CounselorAction" method="viewCounselChid">
+           <result name="success">/WEB-INF/CR/viewCounsel.jsp</result>
+           <result name="error" type="tiles">CR-Error</result>
+    </action>
+    
+    </package>
+</struts>

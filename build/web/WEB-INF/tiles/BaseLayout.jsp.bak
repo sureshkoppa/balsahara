@@ -1,0 +1,737 @@
+<%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
+<%@ taglib prefix="s" uri="/struts-tags"%>
+<%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>
+<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
+<%@ page   pageEncoding="ISO-8859-1" %>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+   
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title><tiles:insertAttribute name="title" ignore="true" /></title>
+
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="JQscript/jquery.ui.all.css"/>
+    
+        <!--for time-->
+        <!--script src="JQscript/jquery-ui-timepicker-addon.js"></script>
+          <script src="JQscript/jquery-ui-1.8.6.custom.min.js"></script-->
+          <!--link rel="stylesheet" href="JQscript/jquery-ui-1.8.6.custom.css"/-->
+    
+        <!--for time-->
+       
+
+	
+ 
+	<link rel="stylesheet" href="JQscript/demos.css"/>
+        
+        <script src="JQscript/jquery-1.4.4.js"></script>
+	<script src="JQscript/jquery.ui.core.js"></script>
+	<script src="JQscript/jquery.ui.widget.js"></script>
+        
+	<script src="JQscript/jquery.ui.accordion.js"></script>
+        <script src="JQscript/jquery.ui.datepicker.js"></script>
+        <script src="javascripts/RowAddDelete.js"></script>
+        <script src="JQscript/jquery.ui.mouse.js"></script>
+	<script src="JQscript/jquery.ui.button.js"></script>
+	<script src="JQscript/jquery.ui.draggable.js"></script>
+	<script src="JQscript/jquery.ui.position.js"></script>
+	<script src="JQscript/jquery.ui.resizable.js"></script>
+	<script src="JQscript/jquery.ui.dialog.js"></script>
+	<script src="JQscript/jquery.effects.core.js"></script>
+ 
+        
+        <!--script type="text/javascript" src="JQscript/vk_iframe.js" ></script-->
+  
+
+       <script language="JavaScript">
+             function recv_purc(field_val)
+             {alert("8888");
+               var field = 0;
+               var fieldval=document.getElementById(field_val);
+               alert("8888");
+               alert(fieldval);
+             /*  for( i = 0; i < document.getElementsByName(field_val).length; i++ )
+               {
+                  if(fieldval[i].checked == true )
+                  {
+                     field = fieldval[i].value;
+                  }
+               }*/
+          field=fieldval[fieldval.selectedIndex].value;
+          alert(field);
+               if(field=="r")
+               {
+                  // alert(field);
+                   document.getElementById("recv_purc_text").textContent = 'Received From*';
+                   document.getElementById("in_let_text").textContent = 'Letter no*';
+                   document.getElementById("in_let_datetext").textContent = 'Letter Date*';
+                   
+                //  document.getElementById(recv_div).style.visibility='visible';
+               }
+               if(field=="p")
+               {
+                  // alert(field);
+                   document.getElementById("recv_purc_text").textContent = 'Purchased From*';
+                   document.getElementById("in_let_text").textContent = 'Invoice No\\Purchase No*:';
+                   document.getElementById("in_let_datetext").textContent = 'Invoice Date\\Purchase Date*:';
+                   //document.getElementById(recv_div).style.visibility='hidden';
+                  // document.getElementById(purc_div).style.visibility='visible';
+               }
+             }
+         </script>
+  
+        <!--added by suresh end--> 
+        
+        <script>
+            $(function() {
+                    $( "#accordion" ).accordion({
+                            //event: "mouseover",
+                          //autoHeight: false
+                          
+                          autoHeight: false,
+                          navigation: true
+                          
+                          
+
+                    });
+            });
+	</script>
+
+        <script>
+            /*added by swetha for using accordion in body of the page*/
+	$(function() {
+		$( "#accordion1" ).accordion({
+			event: "click",
+                      autoHeight: false
+
+		});
+	});
+	</script>
+
+        <script>
+            $(function() {
+                    $( "#datepicker,#datepicker1,#datepicker2,#datepicker3,#datepicker4" ).datepicker({
+                            showOn: "button",
+                            buttonImage: "images/calendar.gif",
+                            buttonImageOnly: true
+                            
+                    });
+            });
+	</script>
+        
+        
+
+                
+         <script language="JavaScript">
+        function enableme(val)
+            {
+                alert("hello");
+                if(document.getElementById(val).selected.value=="Other"){
+                    document.getElementById("religion_other").disabled=false;    
+                }
+                              
+            }
+            </script>
+        
+        <script language="JavaScript">
+            /*added by swetha for dynamic appearence of fields in Admission Medical Register*/
+             /*function admr_dynamic(field_val,disp_val)
+             {
+               var field = 0;
+               var fieldval=document.getElementsByName(field_val);
+               for( i = 0; i < document.getElementsByName(field_val).length; i++ )
+               {
+                  if(fieldval[i].checked == true )
+                  {
+                     field = fieldval[i].value;
+                  }
+               }
+               if(field=="Y")
+               {
+                  document.getElementById(disp_val).style.visibility='visible';
+               }
+               if(field=="N")
+               {
+                   document.getElementById(disp_val).style.visibility='hidden';
+               }
+             }*/
+         </script>
+        <script language="JavaScript">
+            /*added by swetha for dyanamic appearence of fields in OP Register form*/
+            /*function opreg_dynamic(value)
+            {
+              //alert("--- "+value);
+              if(value!='1')
+              {
+                  //alert("--- "+value);
+                  $( "#datepicker2,#datepicker3" ).datepicker("destroy");
+                  document.getElementById('in').innerHTML=document.getElementById(value).innerHTML;
+                  $( "#datepicker2,#datepicker3" ).datepicker({
+			showOn: "button",
+			buttonImage: "images/calendar.gif",
+			buttonImageOnly: true
+		});
+              }
+              else
+                  document.getElementById('in').innerHTML="";
+            }*/
+        </script>
+        
+       <script language="JavaScript">
+            //Added by Ramu on 27 may 2011
+            function casework_dynamic(field_val)
+             {
+               //var field = 0;
+               var fieldval=field_val.options[field_val.selectedIndex].value;
+               
+               if(fieldval=="Other")
+                   {
+                     document.getElementById("religion_other").disabled=false;   
+                       
+                   }
+                   else{
+                       document.getElementById("religion_other").value="";
+                       document.getElementById("religion_other").disabled=true;  
+                       
+             
+                   }
+             }
+         </script>
+        
+         <script language="JavaScript">
+            //Added by Ramu on 27 may 2011
+            function CH_other_dynamic(field_val,val1)
+             {
+               //var field = 0;
+                var fieldval=field_val.options[field_val.selectedIndex].value;
+             //  alert(fieldval);
+               if(fieldval=="Others")
+                    {
+                     document.getElementById(val1+"_other").disabled=false;   
+                       
+                   }
+                   else{
+                        document.getElementById(val1+"_other").value="";
+                       document.getElementById(val1+"_other").disabled=true;  
+                       
+             
+                   }
+             }
+         </script>
+        
+               <script language="JavaScript">
+           function CH_Emp_dynamic(field_val)
+             {
+               // alert(val1);
+               var fieldval=field_val.options[field_val.selectedIndex].value;
+              // alert(fieldval);
+               if(fieldval=="Others")
+                    {
+                     document.getElementById("detailsEmployment_other").disabled=false;   
+                       
+                   }
+                   else{
+                       document.getElementById("detailsEmployment_other").value="";
+                       document.getElementById("detailsEmployment_other").disabled=true;  
+                       
+             
+                   }
+              
+              
+                    }
+                    
+         </script>
+        
+        
+        <script language="JavaScript">
+            //Added by Ramu on 27 may 2011
+            function CH_stay_dynamic(field_val,val1)
+             {
+               //var field = 0;
+               var fieldval=field_val.options[field_val.selectedIndex].value;
+               
+               if(fieldval=="Others" || fieldval=="Guardians")
+                    {
+                     document.getElementById(val1+"_other").disabled=false;   
+                       
+                   }
+                   else{
+                       document.getElementById(val1+"_other").value="";
+                       document.getElementById(val1+"_other").disabled=true;  
+                       
+             
+                   }
+             }
+         </script>
+        <script language="JavaScript">
+            //Added by Ramu on 27 may 2011
+            function CH_Adol_drug_dynamic(field_val)
+             {
+               //var field = 0;
+               var fieldval=field_val.options[field_val.selectedIndex].value;
+                //var fieldval1=field_val.split(",");
+              //  for(var i=0;i<fieldval1.length;i++)
+                 //   {
+                       // alert(fieldval1[i]);
+                        
+               //     }
+              // alert(fieldval);
+               if(fieldval=="Drug_abuse")
+                    {
+                     document.getElementById("habits_drug").disabled=false;   
+                       
+                   }
+                   else{
+                       document.getElementById("habits_drug").disabled=true;  
+                       
+             
+                   }
+             }
+         </script>
+        
+               
+        <script language="JavaScript">
+            //Added by Ramu on 27 may 2011
+            function  CH_FamilyVehicle_dynamic(field_val)
+             {
+               //var field = 0;
+               var fieldval=field_val.options[field_val.selectedIndex].value;
+               
+               if(fieldval=="four_wheeler")
+                    {
+                     document.getElementById("propertyFamilyVehicals_other").disabled=false;   
+                       
+                   }
+                   else{
+                       document.getElementById("propertyFamilyVehicals_other").selectedIndex='0';
+                       document.getElementById("propertyFamilyVehicals_other").disabled=true;  
+                       
+             
+                   }
+             }
+         </script>
+        
+        
+        
+       
+        
+        
+        <script language="JavaScript">
+            //Added by Ramu on 27 may 2011
+            function CH_brought_dynamic(field_val)
+             {
+               //var field = 0;
+               var fieldval=field_val.options[field_val.selectedIndex].value;
+               
+               if(fieldval=="Guardians")
+                    {
+                     document.getElementById("parentRelation").disabled=false;   
+                       
+                   }
+                   else{
+                       document.getElementById("parentRelation").value=""; 
+                       document.getElementById("parentRelation").disabled=true;  
+                       
+             
+                   }
+             }
+         </script>
+        
+        
+        
+        <script language="JavaScript">
+            //Added by Ramu on 27 may 2011
+            function casework_diabled(field_val)
+             {
+               //var field = 0;
+               var fieldval=field_val.value;
+               //alert(document.RHAdmission.natureDisability);
+               if(fieldval=='Y')
+                   {
+                     //document.getElementById("natureDisability").disabled=false; 
+                     document.RHAdmission.natureDisability.disabled=false;
+                       
+                   }
+                   else{
+                       //document.getElementById("natureDisability").disabled=true;
+                       document.RHAdmission.natureDisability.value='';
+                       document.RHAdmission.natureDisability.disabled=true;
+                       
+             
+                   }
+             }
+         </script>
+        
+         <script language="JavaScript">
+            //Added by Ramu on 27 may 2011
+            function casework1_diabled(field_val)
+             {
+               //var field = 0;
+               var fieldval=field_val.value;
+               //alert(document.RHAdmission.natureDisability);
+               if(fieldval=='Y')
+                   {
+                     //document.getElementById("natureDisability").disabled=false; 
+                     document.CHSHAdmission.natureDisability.disabled=false;
+                       
+                   }
+                   else{
+                       //document.getElementById("natureDisability").disabled=true;
+                       document.CHSHAdmission.natureDisability.disabled=true;
+                       
+             
+                   }
+             }
+         </script>
+        
+        
+        
+        <script language="JavaScript">
+            //Added by Ramu on 27 may 2011
+            function casework_admthrough(field_val)
+             {
+               //var field = 0;
+               var fieldval=field_val.value;
+               //alert(document.RHAdmission.natureDisability);
+               if(fieldval=='AuthorizedPerson')
+                   {
+                     //document.getElementById("natureDisability").disabled=false; 
+                     document.RHAdmission.nameAuthPer.disabled=false;
+                       
+                   }
+                   else{
+                       //document.getElementById("natureDisability").disabled=true;
+                         document.getElementById('nameAuthPer').value="";
+                       document.RHAdmission.nameAuthPer.disabled=true;
+                       
+             
+                   }
+             }
+         </script>
+        
+        
+        <script language="JavaScript">
+            //Added by Ramu on 27 may 2011
+            function casework_chadmthrough(field_val)
+             {
+               //var field = 0;
+               var fieldval=field_val.value;
+               //alert(document.RHAdmission.natureDisability);
+               if(fieldval=='AuthorizedPerson')
+                   {
+                     //document.getElementById("natureDisability").disabled=false; 
+                     document.CHSHAdmission.nameAuthPer.disabled=false;
+                       
+                   }
+                   else{
+                       //document.getElementById("natureDisability").disabled=true;
+                        document.getElementById('nameAuthPer').value="";
+                       document.CHSHAdmission.nameAuthPer.disabled=true;
+                       
+             
+                   }
+             }
+         </script>
+        
+        <script language="JavaScript">
+            //Added by Ramu on 27 may 2011
+            function casework_childnature(field_val)
+             {
+               //var field = 0;
+               var fieldval=field_val.value;
+               //alert(document.RHAdmission.natureDisability);
+               if(fieldval=='Others')
+                   {
+                     //document.getElementById("natureDisability").disabled=false; 
+                     document.RHAdmission.childNatureOthers.disabled=false;
+                       
+                   }
+                   else{
+                       //document.getElementById("natureDisability").disabled=true;
+                       document.getElementById('childNatureOthers').value="";
+                       document.RHAdmission.childNatureOthers.disabled=true;
+                       //document.getElementById('childNatureOthers').value=="";
+                       
+             
+                   }
+             }
+         </script>
+       
+        
+        
+        
+
+
+ <script>
+    function discharge_showDiv(val)
+    {
+
+    //alert('------>'+val.value);
+
+    if(val.value=='transfer')
+    {
+    //document.getElementById('insertDiv').innerHTML=document.getElementById('transDiv').innerHTML;
+    document.getElementById('transDiv').style.visibility='visible';
+    document.getElementById('handDiv').style.visibility='hidden';
+    }
+    
+    else if(val.value=='handover')
+    {
+        //document.getElementById('insertDiv').innerHTML=document.getElementById('handDiv').innerHTML;
+        document.getElementById('handDiv').style.visibility='visible';
+        document.getElementById('transDiv').style.visibility='hidden';
+
+    }
+        
+
+    }
+
+
+</script>
+<!-- Experimental code added on or after 11-04-2012 START-->
+<script>
+function showProgress(formName){
+
+//alert('clicked');
+var ele = document.getElementById(formName);
+
+ele.innerHTML = "<img src='images/1.gif' height='100' weidth='100'/>"
+
+}
+
+                        function showProgressOnButton()
+                        {
+                        var but = document.getElementsByTagName('input');
+                        var ele;
+
+
+
+                        for(var i=but.length-1;i>=0;i--)
+                        {
+
+                                if(but[i].type == 'submit')
+                                {
+                                        ele = but[i];
+                                        break;
+                                }
+                        }
+                        alert(ele.type);
+                        ele.type='image';
+                        ele.src = '1.gif';
+                        ele.height=50;
+                        ele.weidth=50;
+                        ele.disabled='true';
+                        document.getElementById('progress').appendChild(ele);
+ 
+                        
+
+                        }
+                        
+                          function showProgressCircle(){
+                              
+                            //Create an input type dynamically.
+                            var element = document.createElement("span");
+
+                            //Assign different attributes to the element.
+                            //element.setAttribute("type", "image");
+                            element.setAttribute("src", "images/1.gif");
+                            element.setAttribute("height", "5");
+                            element.setAttribute("weight", "5");
+
+                            var ele = document.getElementById("progress");
+                         alert(ele);
+                            //Append the element in page (in span).
+                            ele.appendChild(element);
+                          }
+                          
+                          function showProgWheel(){
+                              
+                              var ele = document.getElementById("progress");
+                              //ele.style.class='progressCircle';
+                              
+                          }
+                          
+                          function progressCircleShow(){
+                              
+                              //create a new Div
+                              var newdiv = document.createElement('div');
+                              
+                              newdiv.className='progressCircle';
+                              
+                              document.body.appendChild(newdiv); 
+                              
+                              
+                          }
+                          
+                          function progressCircleShow2(){
+                              
+                              //create a new Div
+                              var newdiv = document.createElement('div');
+                              
+                              newdiv.className='progressCircle2';
+                              
+                              document.body.appendChild(newdiv); 
+                              
+                              
+                          }
+</script>
+
+    <style>   
+    .dialogFixed {
+    position: fixed !important;
+     }
+
+    </style>
+      <script language="JavaScript" type="text/javascript">
+            function f1()
+            {
+                 alert("**hi***");
+           alert(<s:text name="label.fieldsMand"/>);
+                
+            }
+         </script>   
+     <link rel="stylesheet" href="jq/jquery-ui.css"/>
+	 <script src="jq/jquery-1.8.2.js"></script>
+	 <script src="jq/jquery-ui.js"></script>
+	 <script type="text/javascript" src="VirtualKB/vk_easy.js" ></script>
+ 
+<!-- Experimental code added on or after 11-04-2012 END-->
+
+</head>
+<body>
+   
+
+<%
+response.setHeader("Cache-Control", "no-cache, no-store");
+response.setDateHeader("Expires", 0);
+response.setHeader("Vary", "*");
+%>  
+<s:if test="%{#session.homeid!=null||Operation=='reg'}">
+    <button id="opener"><s:text name="global.button.openKB"/>
+</button>
+<div id="dialog-kb" title="Key Board">
+    <div id="td">
+    </div>
+</div>
+</s:if>
+   
+
+<!--
+   <input type=text name="text1" id="text1" onfocus='VirtualKeyboard.attachInput(this);currentTB=this.id;'/>
+       <input type=text name="text2" id="text2" onfocus='VirtualKeyboard.attachInput(this);currentTB=this.id;'/>
+-->
+<input type=text style="visibility:hidden;" name="t1" id="t1"/>
+<script>
+
+var currentTB="t1";
+$( "#dialog-kb" ).dialog({ autoOpen: false,
+                           height: 300,
+			   width: 550, 
+                           position:['right',20],
+			   open:
+		                     function() {
+		                          $( "#dialog-kb" ) .html(VirtualKeyboard.toggle(currentTB,'td'));
+		                      },
+
+                        close:
+		                     function() {
+		                          $( "#dialog-kb" ) .html(VirtualKeyboard.toggle(currentTB,'td'));
+		                      }   
+						});
+
+    $( "#opener" ).click(function() {
+   
+                    $( "#dialog-kb" ).dialog( "open" );
+
+	
+                     });
+
+$(function() {
+    $( "#dialog-kb" ).dialog({
+        dialogClass: 'dialogFixed'
+    });
+});
+
+</script>
+
+<div class="wrapper">
+
+		<div id="header">
+                    <img src="images/header.png"/>
+                    <!--
+		<h1></h1>
+		<h2></h2>
+                    -->
+	</div>
+
+	<div id="container-top"></div>
+
+	<div id="container">
+            
+		<div id="left">
+			<div id="left-top"></div>
+
+
+                         <!-- here add the left menu bar -->
+
+
+<tiles:insertAttribute name="menu" />
+
+
+                        <!-- here add the left menu bar END-->
+
+
+
+			<div id="left-bottom"></div>
+		</div>
+		<div id="right">
+			<tiles:insertAttribute name="tabs" />
+			<div id="right-top"></div>
+
+
+                        <!--<div id="right-centre">(commented on 4-7-2012)-->
+                        <div id="right-centre" style="overflow: auto">
+
+
+                <!--Your content goes here START write the contnt in side the below paragraph-->
+		  <p>
+                      
+                      <s:if test="#session.homeid != null">
+                          <s:text name="global.homeID"/>: <strong><s:property value="#session.homeid"/> </strong><br/>                          
+                      </s:if>
+                      
+                       <s:if test="#session.userid != null">                
+                         <s:text name="global.userID"/>: <strong><s:property value="#session.userid"/> </strong><br/>
+                       </s:if>
+                       
+               
+            <tiles:insertAttribute name="body" />
+            
+           
+
+                                 </p>
+                <!--Your content goes here START -->
+               
+
+				
+
+		  </div>
+			<div id="right-bottom"></div>
+		</div>
+		<div class="clear"></div>
+	</div>
+                     <tiles:insertAttribute name="footer" />
+                     <tiles:useAttribute id="list" name="jsfiles" classname="java.util.List" />
+          <c:forEach var="item" items="${list}">
+              <script src='<tiles:insertAttribute value="${item}" flush="true" />'></script>
+            <br/>
+          </c:forEach>
+</div>     
+            
+   </body>
+</html>
+
+
+

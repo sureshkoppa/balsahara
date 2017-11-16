@@ -1,0 +1,366 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<!-- Author: NEELAVA -->
+ 
+<struts>
+    <!-- Add your configuration elements here -->
+<package name="com/cdac/cwc/Actions" namespace="/" extends="jasperreports-default,struts-default,json-default,com/cdac/caseworker/Actions">
+
+  <result-types>
+  <result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult" />
+  <result-type name="json" class="org.apache.struts2.json.JSONResult"/>
+  </result-types>
+  
+  <interceptors>
+                <interceptor name="json" class="org.apache.struts2.json.JSONInterceptor"/>
+                <interceptor name="requestCheckInterceptor" class="com.cdac.common.interceptors.RequestCheckInterceptor"/> 
+                <interceptor name="roleCheckInterceptor"    class="com.cdac.common.interceptors.RoleCheckInterceptor" />    
+        
+                <interceptor-stack name="loggingStack">                                      
+                    
+                    <interceptor-ref name="requestCheckInterceptor" />
+                    <interceptor-ref name="roleCheckInterceptor"/>                      
+                    <interceptor-ref name="defaultStack" />
+                </interceptor-stack>
+                <!--new code-->
+                <interceptor-stack name="fileUploadStack">
+<interceptor-ref name="exception" />
+<interceptor-ref name="alias" />
+<interceptor-ref name="servletConfig" />
+<interceptor-ref name="prepare" />
+<interceptor-ref name="i18n" />
+<interceptor-ref name="chain" />
+<interceptor-ref name="debugging" />
+<interceptor-ref name="profiling" />
+<interceptor-ref name="scopedModelDriven" />
+<interceptor-ref name="modelDriven" />
+<interceptor-ref name="fileUpload">
+<param name="maximumSize">3000000</param>
+<param name="allowedTypes"> image/jpeg,image/gif,image/png</param>
+</interceptor-ref>
+<interceptor-ref name="checkbox" />
+<interceptor-ref name="staticParams" />
+<interceptor-ref name="actionMappingParams" />
+<interceptor-ref name="params">
+<param name="excludeParams"> dojo\..*,^struts\..*</param>
+</interceptor-ref>
+<interceptor-ref name="conversionError" />
+<interceptor-ref name="validation">
+<param name="excludeMethods"> input,back,cancel,browse</param>
+</interceptor-ref>
+<interceptor-ref name="workflow">
+<param name="excludeMethods"> input,back,cancel,browse</param>
+</interceptor-ref>
+
+<interceptor-ref name="requestCheckInterceptor"/>
+</interceptor-stack>
+    </interceptors>
+<!--new code ends-->
+    <!--action name="SU-homedetails">
+	<result name="success" type="tiles">SU-homedetails</result>
+     
+    </action-->
+    
+     <action name="CWC-Reports">
+          <interceptor-ref name="loggingStack"/>   
+            <result name="logout" type="tiles">UM-Logout</result>
+            <result name="success">/WEB-INF/CWC/SelectCWCRep.jsp</result>      
+
+      </action>
+      
+      <action name="CW-CWCChRepBfCWC" class="com.cdac.caseworker.Actions.CaseWorkerAction" method="getChildFcDet">
+          <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+        <result name="success"  type="stream">
+            <param name="contentType">application/pdf</param>
+            <param name="inputName">inputStream</param>
+          
+            <param name="contentDisposition">filename="ProduceBfrCWC.pdf"</param>
+            <param name="bufferSize">1024</param>
+        </result>
+        <result name="error" type="tiles">CW-Error</result>
+      </action>       
+         
+       <action name="CWC-From20-Rep" class="com.cdac.caseworker.Actions.CaseWorkerAction" method="getForm20">
+        <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+        <result name="success"  type="stream">
+            <param name="contentType">application/pdf</param>
+            <param name="inputName">isTwenty</param>
+            <param name="contentDisposition">filename="Form20.pdf"</param>
+            <param name="bufferSize">1024</param>
+        </result>
+        <result name="error" type="tiles">CWC-Error</result>
+  </action>
+  
+     
+     
+     
+  <action name="CW-CWCMeetings19" class="com.cdac.caseworker.Actions.CaseWorkerAction" method="getForm19">
+        <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+        <result name="success"  type="stream">
+            <param name="contentType">application/pdf</param>
+            <param name="inputName">is19</param>
+            <param name="contentDisposition">filename="Form19.pdf"</param>
+            <param name="bufferSize">1024</param>
+        </result>
+        <result name="error" type="tiles">CWC-Error</result>
+  </action>
+  
+  <action name="CWC_Meetings21rep" class="com.cdac.caseworker.Actions.CaseWorkerAction" method="CWC_Meetings21rep">
+          <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+        <result name="success"  type="stream">
+            <param name="contentType">application/pdf</param>
+            <param name="inputName">isTwenty</param>
+            <param name="contentDisposition">filename="Form21.pdf"</param>
+            <param name="bufferSize">1024</param>
+        </result>
+        <result name="error" type="tiles">CWC-Error</result>
+  </action> 
+<action name="CWC_Meetings22rep" class="com.cdac.caseworker.Actions.CaseWorkerAction" method="CWC_Meetings22rep">
+          <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+        <result name="success"  type="stream">
+            <param name="contentType">application/pdf</param>
+            <param name="inputName">isTwenty</param>
+            <param name="contentDisposition">filename="Form22.pdf"</param>
+            <param name="bufferSize">1024</param>
+        </result>
+        <result name="error" type="tiles">CWC-Error</result>
+  </action> 
+<action name="CWC_Meetings23rep" class="com.cdac.caseworker.Actions.CaseWorkerAction" method="CWC_Meetings23rep">
+          <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+        <result name="success"  type="stream">
+            <param name="contentType">application/pdf</param>
+            <param name="inputName">isTwenty</param>
+            <param name="contentDisposition">filename="Form23.pdf"</param>
+            <param name="bufferSize">1024</param>
+        </result>
+        <result name="error" type="tiles">CWC-Error</result>
+  </action> 
+<action name="CWC_Meetings24rep" class="com.cdac.caseworker.Actions.CaseWorkerAction" method="CWC_Meetings24rep">
+          <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+        <result name="success"  type="stream">
+            <param name="contentType">application/pdf</param>
+            <param name="inputName">isTwenty</param>
+            <param name="contentDisposition">filename="Form24.pdf"</param>
+            <param name="bufferSize">1024</param>
+        </result>
+        <result name="error" type="tiles">CWC-Error</result>
+  </action> 
+<action name="CWC_Meetings32rep" class="com.cdac.caseworker.Actions.CaseWorkerAction" method="CWC_Meetings32rep">
+          <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+        <result name="success"  type="stream">
+            <param name="contentType">application/pdf</param>
+            <param name="inputName">isTwenty</param>
+            <param name="contentDisposition">filename="Form32.pdf"</param>
+            <param name="bufferSize">1024</param>
+        </result>
+        <result name="error" type="tiles">CWC-Error</result>
+  </action> 
+<action name="CWC_Meetings33rep" class="com.cdac.caseworker.Actions.CaseWorkerAction" method="CWC_Meetings33rep">
+          <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+        <result name="success"  type="stream">
+            <param name="contentType">application/pdf</param>
+            <param name="inputName">isTwenty</param>
+            <param name="contentDisposition">filename="Form33.pdf"</param>
+            <param name="bufferSize">1024</param>
+        </result>
+        <result name="error" type="tiles">CWC-Error</result>
+  </action> 
+<action name="CWC_Meetings34rep" class="com.cdac.caseworker.Actions.CaseWorkerAction" method="CWC_Meetings34rep">
+          <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+        <result name="success"  type="stream">
+            <param name="contentType">application/pdf</param>
+            <param name="inputName">isTwenty</param>
+            <param name="contentDisposition">filename="Form34.pdf"</param>
+            <param name="bufferSize">1024</param>
+        </result>
+        <result name="error" type="tiles">CWC-Error</result>
+  </action> 
+<action name="CWC_Meetings35rep" class="com.cdac.caseworker.Actions.CaseWorkerAction" method="CWC_Meetings35rep">
+          <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+        <result name="success"  type="stream">
+            <param name="contentType">application/pdf</param>
+            <param name="inputName">isTwenty</param>
+            <param name="contentDisposition">filename="Form35.pdf"</param>
+            <param name="bufferSize">1024</param>
+        </result>
+        <result name="error" type="tiles">CWC-Error</result>
+  </action> 
+<action name="CWC_Meetings36rep" class="com.cdac.caseworker.Actions.CaseWorkerAction" method="CWC_Meetings36rep">
+          <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+        <result name="success"  type="stream">
+            <param name="contentType">application/pdf</param>
+            <param name="inputName">isTwenty</param>
+            <param name="contentDisposition">filename="Form36.pdf"</param>
+            <param name="bufferSize">1024</param>
+        </result>
+        <result name="error" type="tiles">CWC-Error</result>
+  </action> 
+<action name="CWC_Meetings37rep" class="com.cdac.caseworker.Actions.CaseWorkerAction" method="CWC_Meetings37rep">
+          <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+        <result name="success"  type="stream">
+            <param name="contentType">application/pdf</param>
+            <param name="inputName">isTwenty</param>
+            <param name="contentDisposition">filename="Form37.pdf"</param>
+            <param name="bufferSize">1024</param>
+        </result>
+        <result name="error" type="tiles">CWC-Error</result>
+  </action> 
+<action name="CWC_Meetings38rep" class="com.cdac.caseworker.Actions.CaseWorkerAction" method="CWC_Meetings38rep">
+          <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+        <result name="success"  type="stream">
+            <param name="contentType">application/pdf</param>
+            <param name="inputName">isTwenty</param>
+            <param name="contentDisposition">filename="Form38.pdf"</param>
+            <param name="bufferSize">1024</param>
+        </result>
+        <result name="error" type="tiles">CWC-Error</result>
+  </action> 
+<action name="CWC_Meetings39rep" class="com.cdac.caseworker.Actions.CaseWorkerAction" method="CWC_Meetings39rep">
+          <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+        <result name="success"  type="stream">
+            <param name="contentType">application/pdf</param>
+            <param name="inputName">isTwenty</param>
+            <param name="contentDisposition">filename="Form39.pdf"</param>
+            <param name="bufferSize">1024</param>
+        </result>
+        <result name="error" type="tiles">CWC-Error</result>
+  </action>
+  
+  <action name="dataEntry">
+        <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+        <result name="success">/WEB-INF/CWC/DataEntry.jsp</result>
+  </action>
+ 
+  
+  <action name="CW-CWCMeetings21">
+        <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+        <result name="success"  type="stream">
+            <param name="contentType">application/pdf</param>
+            <param name="inputName">inputStream</param>
+            <param name="contentDisposition">filename="Form21.pdf"</param>
+            <param name="bufferSize">1024</param>
+        </result>
+        <result name="error" type="tiles">CWC-Error</result>
+  </action>
+  
+  <action name="CW-CWCMeetings22">
+        <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+        <result name="success"  type="stream">
+            <param name="contentType">application/pdf</param>
+            <param name="inputName">inputStream</param>
+            <param name="contentDisposition">filename="Form22.pdf"</param>
+            <param name="bufferSize">1024</param>
+        </result>
+        <result name="error" type="tiles">CWC-Error</result>
+  </action>
+  
+  <action name="CW-CWCMeetings23">
+        <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+        <result name="success"  type="stream">
+            <param name="contentType">application/pdf</param>
+            <param name="inputName">inputStream</param>
+            <param name="contentDisposition">filename="Form22.pdf"</param>
+            <param name="bufferSize">1024</param>
+        </result>
+        <result name="error" type="tiles">CWC-Error</result>
+  </action>
+     
+  <action name="CW-CWCMeetings24">
+        <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+        <result name="success"  type="stream">
+            <param name="contentType">application/pdf</param>
+            <param name="inputName">inputStream</param>
+            <param name="contentDisposition">filename="Form22.pdf"</param>
+            <param name="bufferSize">1024</param>
+        </result>
+        <result name="error" type="tiles">CWC-Error</result>
+  </action>
+  
+  <action name="CW-CWCMeetings25">
+        <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+        <result name="success"  type="stream">
+            <param name="contentType">application/pdf</param>
+            <param name="inputName">inputStream</param>
+            <param name="contentDisposition">filename="Form22.pdf"</param>
+            <param name="bufferSize">1024</param>
+        </result>
+        <result name="error" type="tiles">CWC-Error</result>
+  </action>
+ 
+  <action name="CW-CWCMeetings26">
+        <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+        <result name="success"  type="stream">
+            <param name="contentType">application/pdf</param>
+            <param name="inputName">inputStream</param>
+            <param name="contentDisposition">filename="Form22.pdf"</param>
+            <param name="bufferSize">1024</param>
+        </result>
+        <result name="error" type="tiles">CWC-Error</result>
+  </action>
+  
+  <action name="CW-CWCMeetings27">
+        <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+        <result name="success"  type="stream">
+            <param name="contentType">application/pdf</param>
+            <param name="inputName">inputStream</param>
+            <param name="contentDisposition">filename="Form22.pdf"</param>
+            <param name="bufferSize">1024</param>
+        </result>
+        <result name="error" type="tiles">CWC-Error</result>
+  </action>
+  
+  <action name="CW-CWCMeetings28">
+        <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+        <result name="success"  type="stream">
+            <param name="contentType">application/pdf</param>
+            <param name="inputName">inputStream</param>
+            <param name="contentDisposition">filename="Form22.pdf"</param>
+            <param name="bufferSize">1024</param>
+        </result>
+        <result name="error" type="tiles">CWC-Error</result>
+  </action>
+  
+                                                                                
+                                                     
+    <!--action name="Multilingual_report" class="com.cdac.su.Actions.SuperAction" method="showMultilingualReport">
+         <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+	<result name="success" type="jasper">
+        <param name="location">WEB-INF/classes/reports/I18nReport.jasper</param>
+        <param name="dataSource">csdto</param>
+        <param name="reportParameters">reportMulParameter</param>
+        <param name="format">HTML</param>
+        </result>
+       <result name="error" type="tiles">SU-Error</result>
+    </action-->
+    
+</package>
+    
+</struts>
+

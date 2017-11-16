@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/ChildHomes/!svn/ver/117/WDCW_MLC/src/java/com/cdac/ds/action
+END
+InventoryAction.properties
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/ChildHomes/!svn/ver/88/WDCW_MLC/src/java/com/cdac/ds/action/InventoryAction.properties
+END
+InventoryAction_hi.properties
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/ChildHomes/!svn/ver/88/WDCW_MLC/src/java/com/cdac/ds/action/InventoryAction_hi.properties
+END
+package.properties
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/ChildHomes/!svn/ver/109/WDCW_MLC/src/java/com/cdac/ds/action/package.properties
+END
+package_hi.properties
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/ChildHomes/!svn/ver/88/WDCW_MLC/src/java/com/cdac/ds/action/package_hi.properties
+END
+InventoryAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/ChildHomes/!svn/ver/117/WDCW_MLC/src/java/com/cdac/ds/action/InventoryAction.java
+END
+InventoryAction_te.properties
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/ChildHomes/!svn/ver/88/WDCW_MLC/src/java/com/cdac/ds/action/InventoryAction_te.properties
+END
+package_te.properties
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/ChildHomes/!svn/ver/88/WDCW_MLC/src/java/com/cdac/ds/action/package_te.properties
+END

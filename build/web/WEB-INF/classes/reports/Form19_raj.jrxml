@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="form190" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0d6f9664-a118-4804-9ae2-f039435c1a6e">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[select * from form19;]]>
+	</queryString>
+	<field name="cpno" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cpday" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cpyear" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cnam" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cpr" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cpdat" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cpfa" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cpfa1" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cpfad" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cpfad1" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cpfad2" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cpcna" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cpcna1" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cpcw" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cppe" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cpper" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cpjuris" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cpsch" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cpschadd" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cpda" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cpmo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cpy" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="46" splitType="Stretch">
+			<staticText>
+				<reportElement x="254" y="0" width="70" height="20" uuid="6a770459-331e-4835-8697-471ffd0296c1"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FORM 19]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="233" y="20" width="100" height="20" uuid="02b38ffe-1611-4459-9505-056aa690f56c"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[    [Rule 18(8)]]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="45" splitType="Stretch">
+			<staticText>
+				<reportElement x="34" y="0" width="521" height="20" uuid="39463cf3-b051-4f6b-a0eb-8cf1c57abb60"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ORDER FOR PLACEMENT OF CHILD UNDER THE CARE OF A PARENT, GUARDIAN OR FIT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="209" y="20" width="169" height="20" uuid="c77d96c0-45b6-408e-b162-90d008acce40"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PERSON PENDING INQUIRY]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="10" y="10" width="89" height="20" uuid="ccfb68a1-fb9d-4a0a-ae6f-9515166082ed"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[Case No. …….]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="56" y="10" width="43" height="20" uuid="ae3cc267-57eb-4114-94ad-cc6fd1051a7d"/>
+				<textFieldExpression><![CDATA[$F{cpno}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="99" y="10" width="89" height="20" uuid="c5691636-9084-4b1f-929d-8466746b9913"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[of ……………….]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="188" y="10" width="79" height="20" uuid="7b95b0e9-41ab-41b4-a99a-97809f556465"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[20………………………]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="224" y="10" width="54" height="20" uuid="5fa8e555-1544-4712-9364-a181912b635d"/>
+				<textFieldExpression><![CDATA[$F{cpyear}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="41" width="121" height="20" uuid="cf2f0331-8b64-42d7-98b4-268fdea9e789"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[In Re…………………]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="45" y="41" width="36" height="20" uuid="2323bbbb-1347-4d0a-8269-2e33aab8e044"/>
+				<textFieldExpression><![CDATA[$F{cpr}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="434" splitType="Stretch">
+			<staticText>
+				<reportElement x="10" y="0" width="545" height="185" uuid="75c1bfe9-8432-42a6-98c3-005a7af26a19"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[       Whereas (name of the child) …………………… has  on …………….(date) been  found  to  be  in  need
+of care and protection, and is placed under the care and supervision of (name)……………………...............
+(address)…………………..on executing a bond by the said ………………….. and the Committee is satisfied
+that it is expedient to deal with the said child by making an order placing him/her under supervision.
+Reason for the child being produced before the CWC……………………………………
+………………………………………………………………………………………………….
+       It     is     hereby     ordered     that      the    said     child   be    placed    under     the     supervision    of
+(name)………………………..     (address)........………………………………..........    for       a      period       of
+……………………………………….. This  shall  be  subject  to  the  following  conditions  that:
+1. the    child    along    with    the    copies   of   the   order   and   the   bond,   if   any,   executed   by     the
+said…………………………. shall  be  produced  before  the   Committee  as  and   when  required  by    the
+person  executing  the  bond
+2. the child shall reside at ……………………….. for a period of ………………….]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="178" y="0" width="46" height="14" uuid="61bf9d09-55c1-4544-ab7f-cc5ffd2861b3"/>
+				<textFieldExpression><![CDATA[$F{cnam}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="301" y="0" width="47" height="14" uuid="7d64f3f2-9113-49e5-91a0-216982aa7288"/>
+				<textFieldExpression><![CDATA[$F{cpdat}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="411" y="14" width="45" height="15" uuid="d6b46440-17a8-4d44-8829-50ca8ca726f4"/>
+				<textFieldExpression><![CDATA[$F{cpfa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="67" y="29" width="64" height="13" uuid="0dd704ed-f09b-4e6f-92d5-00c11aa18f4e"/>
+				<textFieldExpression><![CDATA[$F{cpfad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="301" y="29" width="47" height="13" uuid="3f8e872d-b093-4a98-abda-ac792156672e"/>
+				<textFieldExpression><![CDATA[$F{cpfa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="10" y="66" width="46" height="16" uuid="41ad34f9-f451-49c5-81d3-49c60b092723"/>
+				<textFieldExpression><![CDATA[$F{cpcw}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="56" y="96" width="54" height="15" uuid="760cd66a-fa6b-4336-96b8-f9a43a390be1"/>
+				<textFieldExpression><![CDATA[$F{cpfa1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="214" y="96" width="53" height="15" uuid="bee74218-51bf-4e63-a83e-8d96f84889b7"/>
+				<textFieldExpression><![CDATA[$F{cpfad1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="10" y="111" width="46" height="14" uuid="5de7ed4f-ae0b-41db-8594-44a84534c6d9"/>
+				<textFieldExpression><![CDATA[$F{cppe}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="34" y="136" width="62" height="14" uuid="7b0beccb-aea7-42f1-94c7-026985bd37c0"/>
+				<textFieldExpression><![CDATA[$F{cpcna}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="143" y="165" width="58" height="20" uuid="0a6b6358-82ab-4b1a-9e38-959a5305294a"/>
+				<textFieldExpression><![CDATA[$F{cpfad2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="324" y="165" width="52" height="20" uuid="0beb8230-1014-4ed5-8b00-13a60933c5f9"/>
+				<textFieldExpression><![CDATA[$F{cpper}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="185" width="545" height="249" uuid="f991485e-b2d2-48a9-b85c-e03537249b83"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[3. the child shall not be allowed to quit the district jurisdiction of …………………without  the  permission  of
+the  Committee.
+4. the   child   shall    go    to    school/ vocational    training    centre   regularly.   The   child    shall    attend
+………………..................(name of)    school/ vocational    training     centre     ( if    already   identified )    at
+…………………...............................(address of school/ vocational training centre).
+5. the   person   under   whose   care   the  child is  placed shall arrange for the proper care, education  and
+welfare  of  the  child.
+6. the   child   shall   not  be  allowed to associate with undesirable  characters and shall be prevented  from
+coming  in  conflict  with  law.
+7. the    child   shall   be   prevented   from  taking  narcotic  drugs or psychotropic  substances or any  other
+intoxicants.
+8. the  directions  given  by  the  Committee  from  time  to  time,  for  the  due  observance of the conditions
+mentioned  above, shall  be  carried  out.
+
+Dated this ______________day of _____________20 _____________]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="323" y="185" width="53" height="15" uuid="f19c4b3c-4439-40b7-8cfa-3e3785922d93"/>
+				<textFieldExpression><![CDATA[$F{cpjuris}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="10" y="224" width="46" height="15" uuid="b3ac7d62-e3ec-4452-9de9-8b2cd7199e78"/>
+				<textFieldExpression><![CDATA[$F{cpsch}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="10" y="239" width="71" height="16" uuid="26d0ff71-0c46-4add-94dd-a1b5d64abf38"/>
+				<textFieldExpression><![CDATA[$F{cpschadd}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="67" y="377" width="43" height="14" uuid="9e287227-0499-467d-8e1e-925cc79cb599"/>
+				<textFieldExpression><![CDATA[$F{cpda}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="184" y="377" width="49" height="14" uuid="569a299a-7ad3-4cfb-ad18-4d30a3fc3875"/>
+				<textFieldExpression><![CDATA[$F{cpmo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="278" y="377" width="37" height="14" uuid="6261f6d3-eb20-4aa1-a321-fafc320d9a6c"/>
+				<textFieldExpression><![CDATA[$F{cpy}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="44" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="78" splitType="Stretch">
+			<staticText>
+				<reportElement x="67" y="50" width="380" height="20" uuid="fa154cb1-aa8f-421e-b342-0e37e9e18be1"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[• Additional conditions, if any may be inserted by the Child Welfare Committee]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="301" y="0" width="244" height="50" uuid="b28e5587-fe62-4574-934a-73e8dc1542dc"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[                                                          (Signature)
+                                        Chairperson/ Member
+                                  Child Welfare Committee]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

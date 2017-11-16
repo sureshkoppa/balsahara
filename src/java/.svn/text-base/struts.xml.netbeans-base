@@ -1,0 +1,50 @@
+  <!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<!-- Author: NEELAVA -->
+ 
+<struts>
+    <constant name="struts.devMode" value="false" />
+    
+      <include file="UserManagement.xml"/>
+      <include file="Inventory.xml"/>
+    <include file="DoctorModule.xml"/>
+    <include file="CaseWorker.xml"/>
+    <include file="Super.xml"/>
+    <include file="DPO.xml"/>
+    <include file="HeadMaster.xml"/>
+    <include file="Counselor.xml"/>
+    <include file="Multimedia.xml"/>
+
+
+  
+    <!--include file="Inventory.xml"/-->
+    <!-- Configuration for the default package. -->
+    <package name="default" extends="struts-default">
+  
+  
+    
+                <global-results>
+                <result name="error">error.jsp</result>
+                </global-results>
+                
+               
+
+
+                
+    </package>
+     <package name="com/cdac/index" namespace="/" extends="struts-default">
+               <action name="index" class="com.cdac.index.IndexAction">
+                     <result name="success">index.jsp</result>
+                </action>   
+    
+   </package>
+    
+      <constant name="struts.messages.error.uploading" value="Error while uploading photo"/>
+      <constant name="struts.messages.error.file.too.large" value="File size is too large"/>
+       <constant name="struts.action.excludePattern" value="/servlets/image*"/>
+    <!-- Add your configuration elements here -->
+    
+    
+</struts>

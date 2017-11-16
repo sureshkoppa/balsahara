@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="UndTakingByPar" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="49" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="46"/>
+				<text><![CDATA[FORM 20
+[Rule 18(8) and 19 (7)]
+UNDERTAKING BY THE PARENT OR GUARDIAN OR ‘FIT PERSON’]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="172" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="169"/>
+				<text><![CDATA[I …………………….resident of House no………………Street …………….. Village/Town
+………….District ……………… State ………………..do hereby declare that I am willing to take charge of
+(name of the child) …………….. Aged……. under the orders of the Child Welfare
+Committee…………………. subject to the following terms and conditions:
+1. If his conduct is unsatisfactory I shall at once inform the Committee.
+2. I shall do my best for the welfare and education of the said child as long as he remains in my
+charge and shall make proper provision for his maintenance.
+3. In the event of his/her illness, he shall have proper medical attention in the nearest hospital.
+4. I agree to adhere to the conditions that may be imposed by the Committee from time to time and
+also to keep the Committee informed about the compliance with the conditions.
+5. I undertake to produce him/her before the Committee as and when required.
+6. I shall inform the Committee immediately if the child goes out of my charge or control.
+Date this ………………day of ………………..]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<summary>
+		<band height="42" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="42"/>
+				<text><![CDATA[                                                                                                                                                      Signature
+                                                                                                                      Signed before Child Welfare Committee]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/ChildHomes/!svn/ver/119/WDCW_MLC/web/WEB-INF
+END
+glassfish-web.xml
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/glassfish-web.xml
+END
+applicationContext.xml
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/ChildHomes/!svn/ver/114/WDCW_MLC/web/WEB-INF/applicationContext.xml
+END
+dispatcher-servlet.xml
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/dispatcher-servlet.xml
+END
+sun-web.xml
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/sun-web.xml
+END
+tiles.xml.bak
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/tiles.xml.bak
+END
+web.xml
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/web.xml
+END
+tiles.xml
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/ChildHomes/!svn/ver/115/WDCW_MLC/web/WEB-INF/tiles.xml
+END

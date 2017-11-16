@@ -1,0 +1,38 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<!-- Author: suresh -->
+ 
+<struts>
+    <!-- Add your configuration elements here -->
+    
+     <package name="com/cdac/dcpu/Actions" namespace="/" extends="struts-default">
+		<result-types>
+			<result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult"/>
+		</result-types>
+                
+    <interceptors>
+        <interceptor name="requestCheckInterceptor" class="com.cdac.common.interceptors.RequestCheckInterceptor"/> 
+        <interceptor name="roleCheckInterceptor"    class="com.cdac.common.interceptors.RoleCheckInterceptor" />    
+        
+                <interceptor-stack name="loggingStack">                                      
+                    
+                    <interceptor-ref name="requestCheckInterceptor" />
+                    <interceptor-ref name="roleCheckInterceptor"/>                      
+                    <interceptor-ref name="defaultStack" />
+                </interceptor-stack>
+    </interceptors>
+    
+    <action name="DCPU-Home">
+                    <interceptor-ref name="loggingStack"/>   
+                    <result name="logout" type="tiles">UM-Logout</result>
+                    <result name="success" type="tiles">DCPUWelcome</result>
+   </action>
+   
+    <!--Counselor actions-->
+      
+    
+    
+    </package>
+</struts>

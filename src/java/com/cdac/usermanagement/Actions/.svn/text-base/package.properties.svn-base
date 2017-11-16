@@ -1,0 +1,50 @@
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+
+
+
+# leftmenu top for cat
+LeftMenu.top.Category= Category Management
+
+Form.AddUser.Heading=User Registration Form
+#Form.AddUser.langSelect=Choose Language
+Form.index.UserID=User ID
+Form.index.Password=Password
+Form.index.FirstName=First Name
+Form.index.LastName=Last Name
+Form.index.Gender=Gender
+Form.index.Gender.Male=Male
+Form.index.Gender.FeMale=Female
+Form.index.EmailID=Email ID
+Form.index.City=City
+Form.index.State=State
+Form.index.Country=Country
+Form.index.Phone=Phone
+Form.index.Address=Address
+Form.index.Zip=Zip Code
+
+
+Form.index.Mobile=Mobile No.
+Form.index.RegistrationType=Registration Type
+Form.index.Male=male
+Form.index.FeMale=female
+
+
+
+#Switch Home and Role Page
+Form.SwithHomeRole.Heading=Home And Role Selection
+
+
+Form.msg.plsSelect=Please select a home and then your role in the home.
+Form.msg.oprHomes=can operate on the following homes.
+Form.msg.min5Max20Char=minimum 5 maximum 20 characters
+Form.mag.markFieldsAreManFill=marked fields are mandatory to fill
+Form.msg.onlyAlpNemAndUSAllow=only alpahanumeric and underscore '_' allowed
+Form.msg.available=Available
+Form.index.telOffice=TelePhone Office
+Form.option.homeEmp=Home Employee
+Form.option.cwcjjb=CWC/JJB
+Form.option.dpo=DPO
+Form.option.management=Management
+
+msg.loginFail=Login Failed

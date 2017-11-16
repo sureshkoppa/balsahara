@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report1_subreport1" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<field name="nameRelative" class="java.lang.String"/>
+	<field name="relationship" class="java.lang.String"/>
+	<field name="age" class="java.lang.Integer"/>
+	<field name="gender" class="java.lang.String"/>
+	<field name="education" class="java.lang.String"/>
+	<field name="occupation" class="java.lang.String"/>
+	<field name="income" class="java.lang.String"/>
+	<field name="health" class="java.lang.String"/>
+	<field name="historyMentalIllness" class="java.lang.String"/>
+	<field name="handicap" class="java.lang.String"/>
+	<field name="habit" class="java.lang.String"/>
+	<field name="socialization" class="java.lang.String"/>
+	<field name="label.s1CH.Sino" class="java.lang.String"/>
+	<field name="label.s1CH.name" class="java.lang.String"/>
+	<field name="label.s1CH.rel" class="java.lang.String"/>
+	<field name="label.s1CH.age" class="java.lang.String"/>
+	<field name="label.s1CH.sex" class="java.lang.String"/>
+	<field name="label.s1CH.edu" class="java.lang.String"/>
+	<field name="label.s1CH.occ" class="java.lang.String"/>
+	<field name="label.s1CH.inc" class="java.lang.String"/>
+	<field name="label.s1CH.hea" class="java.lang.String"/>
+	<field name="label.s1CH.hisMI" class="java.lang.String"/>
+	<field name="label.s1CH.hc" class="java.lang.String"/>
+	<field name="label.s1CH.hbt" class="java.lang.String"/>
+	<field name="label.s1CH.soczn" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="2" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="3" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="25" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="1" width="555" height="23"/>
+			</rectangle>
+			<line>
+				<reportElement x="27" y="1" width="1" height="22"/>
+			</line>
+			<line>
+				<reportElement x="63" y="1" width="1" height="22"/>
+			</line>
+			<line>
+				<reportElement x="128" y="3" width="1" height="20"/>
+			</line>
+			<line>
+				<reportElement x="151" y="2" width="1" height="22"/>
+			</line>
+			<line>
+				<reportElement x="172" y="2" width="1" height="22"/>
+			</line>
+			<line>
+				<reportElement x="223" y="2" width="1" height="22"/>
+			</line>
+			<line>
+				<reportElement x="282" y="2" width="1" height="22"/>
+			</line>
+			<line>
+				<reportElement x="322" y="2" width="1" height="22"/>
+			</line>
+			<line>
+				<reportElement x="358" y="2" width="1" height="22"/>
+			</line>
+			<line>
+				<reportElement x="441" y="2" width="1" height="22"/>
+			</line>
+			<line>
+				<reportElement x="470" y="2" width="1" height="22"/>
+			</line>
+			<line>
+				<reportElement x="497" y="2" width="1" height="22"/>
+			</line>
+			<textField>
+				<reportElement x="0" y="4" width="27" height="20"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{label.s1CH.Sino}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="27" y="5" width="36" height="20"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{label.s1CH.name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="65" y="4" width="63" height="21"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{label.s1CH.rel}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="128" y="4" width="24" height="21"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{label.s1CH.age}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="152" y="4" width="21" height="21"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{label.s1CH.sex}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="174" y="4" width="50" height="20"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{label.s1CH.edu}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="224" y="2" width="58" height="21"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{label.s1CH.occ}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="283" y="4" width="39" height="21"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{label.s1CH.inc}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="323" y="2" width="36" height="21"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{label.s1CH.hea}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="359" y="2" width="82" height="21"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{label.s1CH.hisMI}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="442" y="0" width="28" height="22"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{label.s1CH.hc}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="471" y="1" width="26" height="21"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{label.s1CH.hbt}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="498" y="4" width="57" height="20"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{label.s1CH.soczn}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<rectangle>
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="555" height="20"/>
+			</rectangle>
+			<textField>
+				<reportElement x="0" y="0" width="28" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$V{COLUMN_COUNT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="29" y="0" width="34" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{nameRelative}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="63" y="0" width="65" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{relationship}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="129" y="0" width="21" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{age}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="150" y="0" width="24" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{gender}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="174" y="0" width="50" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{education}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="223" y="0" width="59" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{occupation}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="282" y="0" width="40" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{income}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="322" y="0" width="36" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{health}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="358" y="0" width="83" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{historyMentalIllness}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="441" y="0" width="29" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{handicap}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="471" y="0" width="26" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{habit}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="497" y="0" width="58" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{socialization}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="27" y="-2" width="1" height="22"/>
+			</line>
+			<line>
+				<reportElement x="63" y="-2" width="1" height="22"/>
+			</line>
+			<line>
+				<reportElement x="128" y="-2" width="1" height="22"/>
+			</line>
+			<line>
+				<reportElement x="322" y="-2" width="1" height="22"/>
+			</line>
+			<line>
+				<reportElement x="282" y="-2" width="1" height="22"/>
+			</line>
+			<line>
+				<reportElement x="151" y="-3" width="1" height="22"/>
+			</line>
+			<line>
+				<reportElement x="358" y="-2" width="1" height="22"/>
+			</line>
+			<line>
+				<reportElement x="441" y="-2" width="1" height="22"/>
+			</line>
+			<line>
+				<reportElement x="223" y="-2" width="1" height="22"/>
+			</line>
+			<line>
+				<reportElement x="173" y="-2" width="1" height="22"/>
+			</line>
+			<line>
+				<reportElement x="470" y="-2" width="1" height="22"/>
+			</line>
+			<line>
+				<reportElement x="497" y="-2" width="1" height="22"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="1" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="1" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="1" splitType="Stretch"/>
+	</summary>
+</jasperReport>

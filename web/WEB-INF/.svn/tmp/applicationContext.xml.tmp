@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+       http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+       http://www.springframework.org/schema/tx 
+       http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
+
+
+     <bean id="validateLoginAction" class="com.cdac.usermanagement.Actions.ValidateLoginAction">
+        <property name="adminService">
+            <ref bean="adminService"/>
+        </property>
+    </bean>
+     <bean id="counselorAction" class="com.cdac.counselor.Actions.CounselorAction">
+        <property name="counselorService">
+            <ref bean="counselorService"/>
+        </property>
+    </bean>
+    <bean id="counselorService" class="com.cdac.counselor.Service.CounselorServiceImpl">
+        <property name="counselorDAO">
+            <ref bean="counselorDAO"/>
+        </property>
+    </bean>
+ <bean id="counselorDAO" class="com.cdac.counselor.DAO.CounselorDAOImpl">
+    <property name="sessionFactory">
+            <ref bean="mySessionFactory"/>
+        </property>
+    </bean>
+    
+    
+     <bean id="addUserAction" class="com.cdac.usermanagement.Actions.UserManagementAction">
+        <property name="adminService">
+            <ref bean="adminService"/>
+        </property>
+    </bean>
+    <bean id="adminService" class="com.cdac.usermanagement.Service.AdminServiceImpl">
+        <property name="adminDAO">
+            <ref bean="adminDAO"/>
+        </property>
+    </bean>
+ <bean id="adminDAO" class="com.cdac.usermanagement.DAO.AdminDAOImpl">
+    <property name="sessionFactory">
+            <ref bean="mySessionFactory"/>
+        </property>
+    </bean>
+    <!--Swetha Start-->
+    <bean id="Store_Referral_RegisterAction" class="com.cdac.hospitalmodule.Actions.HospitalModuleAction">
+        <property name="doctorService">
+            <ref bean="doctorService"/>
+        </property>
+    </bean>
+    <bean id="doctorService" class="com.cdac.hospitalmodule.Service.DoctorServiceImpl">
+        <property name="doctorDAO">
+            <ref bean="doctorDAO"/>
+        </property>
+    </bean>
+ <bean id="doctorDAO" class="com.cdac.hospitalmodule.DAO.DoctorDAOImpl">
+    <property name="sessionFactory">
+            <ref bean="mySessionFactory"/>
+        </property>
+    </bean>
+    <!--Swetha End-->
+
+      <!--CaseWorker start-->
+
+     <bean id="caseWorkerAction" class="com.cdac.caseworker.Actions.CaseWorkerAction">
+        <property name="caseWorkerService">
+            <ref bean="caseWorkerService"/>
+        </property>
+        <!--Admin service for retriving home details-->
+        <property name="adminService">
+            <ref bean="adminService"/>
+        </property>
+    </bean>
+    
+     <bean id="CaseWorkerCHSHAction" class="com.cdac.caseworker.Actions.CaseWorkerCHSHAction">
+        <property name="caseWorkerService">
+            <ref bean="caseWorkerService"/>
+        </property>          
+    </bean>
+    <!--added by suresh on 11-10-2012 start-->
+     <bean id="CaseWorkerICPAction" class="com.cdac.caseworker.Actions.CaseWorkerICPAction">
+        <property name="caseWorkerService">
+            <ref bean="caseWorkerService"/>
+        </property>          
+    </bean>
+    <!--added by suersh on 11-10-2012 ends-->
+    
+     <bean id="CaseWorkerReportAction" class="com.cdac.caseworker.Actions.CaseWorkerReportAction">
+        <property name="caseWorkerService">
+            <ref bean="caseWorkerService"/>
+        </property>
+    </bean>
+    <!--Anupam added this on 11-10-2012 START-->
+    <bean id="CaseWorkerJsonAction" class="com.cdac.caseworker.Actions.CaseWorkerJsonAction">
+        <property name="caseWorkerService">
+            <ref bean="caseWorkerService"/>
+        </property>
+    </bean>
+    <!--Anupam added this on 11-10-2012 END-->
+    
+    <bean id="caseWorkerService" class="com.cdac.caseworker.Service.CaseWorkerServiceImpl">
+        <property name="caseWorkerDAO">
+            <ref bean="caseWorkerDAO"/>
+        </property>
+    </bean>
+    
+     <!--transaction related configurations added by anupam on 23-04-2012 START-->
+     
+     <!-- enable the configuration of transactional behavior based on annotations -->
+  <tx:annotation-driven transaction-manager="txManager"/>
+
+  <!-- a PlatformTransactionManager is still required -->
+  <bean id="txManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+    <!-- (this dependency is defined somewhere else) -->
+    <property name="dataSource" ref="myDataSource"/>
+    <property name="sessionFactory" ref="mySessionFactory"/>
+  </bean>
+  
+<!--transaction related configurations added by anupam on 23-04-2012 END-->
+    
+ <bean id="caseWorkerDAO" class="com.cdac.caseworker.DAO.CaseWorkerDAOImpl">
+    <property name="sessionFactory">
+            <ref bean="mySessionFactory"/>
+        </property>
+    </bean>
+
+    <!--CaseWorker end-->
+    
+     
+   
+    <!--DPO Start-->   
+    
+    <bean id="dpoAction" class="com.cdac.dpo.Actions.DpoAction">
+        <property name="dpoService">
+            <ref bean="dpoService"/>
+        </property>
+        
+         <property name="adminService">
+            <ref bean="adminService"/>
+        </property>
+        
+        </bean>
+        
+        <bean id="sicdSaveAction" class="com.cdac.dpo.Actions.SICDSaveAction">
+        <property name="dpoService">
+            <ref bean="dpoService"/>
+        </property>
+        
+         <property name="adminService">
+            <ref bean="adminService"/>
+        </property>
+        
+        </bean>
+        
+         <bean id="dpoReportAction" class="com.cdac.dpo.Actions.DpoReportAction">
+        <property name="dpoService">
+            <ref bean="dpoService"/>
+        </property>
+       
+        </bean>
+        
+     <bean id="dpoService" class="com.cdac.dpo.Service.DpoServiceImpl">
+        <property name="dpoDAO">
+            <ref bean="dpoDAO"/>
+        </property>
+        
+        </bean>
+        
+         <bean id="dpoDAO" class="com.cdac.dpo.DAO.DpoDAOImpl">
+        <property name="sessionFactory">
+            <ref bean="mySessionFactory"/>
+        </property>
+        
+        </bean>
+    
+   
+    <!--DPO End -->
+
+   <!--Suresh Start-->
+   
+   <bean id="InventoryAction" class="com.cdac.ds.action.InventoryAction">
+        <property name="inventoryService">
+            <ref bean="inventoryService"/>
+        </property>
+        
+        </bean>
+   
+    <bean id="inventoryService" class="com.cdac.ds.service.InventoryServiceImpl">
+        <property name="inventoryDAO">
+            <ref bean="inventoryDAO"/>
+        </property>
+    </bean>
+
+    <bean id="inventoryDAO" class="com.cdac.ds.dao.InventoryDAOImpl">
+        <property name="sessionFactory">
+            <ref bean="mySessionFactory"/>
+        </property>
+    </bean>
+    <!--Suresh End-->
+    
+    <bean id="SuperAction" class="com.cdac.su.Actions.SuperAction">
+        <property name="superService">
+            <ref bean="superService"/>
+        </property>
+        
+        </bean>
+    <bean id="superService" class="com.cdac.su.Service.SuperServiceImpl">
+        <property name="superDAO">
+             <ref bean="superDAO"/>
+        </property>
+    </bean>
+    <bean id="superDAO" class="com.cdac.su.DAO.SuperDAOImpl">
+        <property name="sessionFactory">
+            <ref bean="mySessionFactory"/>
+        </property>
+    </bean>
+    
+    
+    
+    
+    
+    <!--HeadMaster start-->
+    
+    <bean id="headMasterAction" class="com.cdac.headmaster.Actions.HeadMasterAction">
+        <property name="headMasterService">
+            <ref bean="headMasterService"/>
+        </property>
+        
+    </bean>
+    <bean id="headMasterService" class="com.cdac.headmaster.Service.HeadMasterServiceImpl">
+        <property name="headMasterDAO">
+            <ref bean="headMasterDAO"/>
+        </property>
+    </bean>
+ <bean id="headMasterDAO" class="com.cdac.headmaster.DAO.HeadMasterDAOImpl">
+    <property name="sessionFactory">
+            <ref bean="mySessionFactory"/>
+        </property>
+    </bean>
+    
+    <!--HeadMaster End-->
+    
+   
+
+
+
+ <bean id="mySessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+    <property name="dataSource" ref="myDataSource"/>
+      <property name="hibernateProperties">
+      <props>
+        <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+        <prop key="hibernate.show_sql">true</prop> <!--commented on 25-6-2012-->
+        <prop key="hibernate.c3p0.minPoolSize">5</prop>
+        <prop key="hibernate.c3p0.maxPoolSize">25</prop>
+        <prop key="hibernate.c3p0.timeout">1800</prop>
+        <prop key="hibernate.c3p0.max_statement">50</prop>
+        <!-- <prop key="log4j.logger.org.hibernate">info</prop> -->
+        
+        <!--<prop key="hibernate.use_sql_comments">true</prop>--><!--Use it for hibernate debugging--><!--commented on 25-6-2012-->
+        
+      </props>
+    </property>
+   <property name="annotatedClasses">
+	<list>
+		<value>com.cdac.usermanagement.ORM.UserDetail</value>
+                <value>com.cdac.usermanagement.ORM.UserDetailPK</value>
+                <value>com.cdac.usermanagement.ORM.UserMaster</value>
+                <value>com.cdac.usermanagement.ORM.RoleMaster</value>
+                <value>com.cdac.usermanagement.ORM.HomeMaster</value>
+                <value>com.cdac.usermanagement.ORM.ChildMaster</value>
+                <value>com.cdac.usermanagement.ORM.ChildDetails</value>
+                <value>com.cdac.usermanagement.ORM.ChildDetailsPK</value>
+                <value>com.cdac.usermanagement.ORM.HomeSequence</value>
+                <value>com.cdac.usermanagement.ORM.HomeDetails</value>
+                <value>com.cdac.usermanagement.ORM.DistrictMaster</value>
+                <value>com.cdac.usermanagement.ORM.MedicalGeneralRegister</value>
+                <value>com.cdac.usermanagement.ORM.MedicalGeneralRegisterPK</value>
+                <value>com.cdac.usermanagement.ORM.AdmMedicalRegister</value>
+                <value>com.cdac.usermanagement.ORM.HtWtRegister</value>
+                <value>com.cdac.usermanagement.ORM.HtWtRegisterPK</value>
+                <value>com.cdac.usermanagement.ORM.OpRegister</value>
+                <value>com.cdac.usermanagement.ORM.OpRegisterPK</value>
+                <value>com.cdac.usermanagement.ORM.ReferralRegister</value>
+                <value>com.cdac.usermanagement.ORM.ReferralRegisterPK</value>
+              
+              
+                <value>com.cdac.usermanagement.ORM.ChildEnquery</value>
+                <value>com.cdac.usermanagement.ORM.ChildEnqueryPK</value>
+                <value>com.cdac.usermanagement.ORM.ChildHomeStatus</value>
+                <value>com.cdac.usermanagement.ORM.ChildHomeStatusPK</value>
+                <value>com.cdac.usermanagement.ORM.ChildSequence</value>
+                <value>com.cdac.usermanagement.ORM.ChildHomeStatus</value>
+                <!--value>com.cdac.usermanagement.ORM.CwcMaster</value-->
+                <value>com.cdac.usermanagement.ORM.CwcMeetings</value>
+                <!--value>com.cdac.usermanagement.ORM.CwcMeetingsPK</value-->
+                <!--value>com.cdac.usermanagement.ORM.CwcMembers</value>
+                <value>com.cdac.usermanagement.ORM.CwcMembersPK</value-->
+                <value>com.cdac.usermanagement.ORM.CwcMinutes</value>
+                <!--value>com.cdac.usermanagement.ORM.CwcMinutesObservation</value-->
+                <!--value>com.cdac.usermanagement.ORM.CwcMinutesObservationPK</value-->
+                <value>com.cdac.usermanagement.ORM.CwcMinutesPK</value>
+                <value>com.cdac.usermanagement.ORM.DischargeRegister</value>
+                <value>com.cdac.usermanagement.ORM.InterviewRegister</value>
+                <value>com.cdac.usermanagement.ORM.InterviewRegisterPK</value>
+                <value>com.cdac.usermanagement.ORM.CasehistoryAdolescenceDetails</value>
+                <value>com.cdac.usermanagement.ORM.CasehistoryAdolescenceDetailsPK</value>
+                <value>com.cdac.usermanagement.ORM.CasehistoryAfteradmEducation</value>
+                <!--value>com.cdac.usermanagement.ORM.CasehistoryAfteradmEducationPK</value-->
+                <value>com.cdac.usermanagement.ORM.CasehistoryEmploymentDetails</value>
+                <!--value>com.cdac.usermanagement.ORM.CasehistoryEmploymentDetailsPK</value-->
+                <value>com.cdac.usermanagement.ORM.CasehistoryFamily</value>
+                <!--value>com.cdac.usermanagement.ORM.CasehistoryFamilyPK</value-->
+                <value>com.cdac.usermanagement.ORM.CasehistoryFamilyCrimeDetails</value>
+                <!--value>com.cdac.usermanagement.ORM.CasehistoryFamilyCrimeDetailsPK</value-->
+                <value>com.cdac.usermanagement.ORM.CasehistoryFamilyDetails</value>
+                <value>com.cdac.usermanagement.ORM.CasehistoryFamilyDetailsPK</value>
+                <value>com.cdac.usermanagement.ORM.CasehistoryPersonal</value>
+                <value>com.cdac.usermanagement.ORM.CasehistoryPersonalPK</value>
+                <value>com.cdac.usermanagement.ORM.CasehistoryPrioradmEducation</value>
+                <value>com.cdac.usermanagement.ORM.CasehistoryPrioradmEducationPK</value>
+                <value>com.cdac.usermanagement.ORM.CasehistorySocialhistoryPrioradm</value>
+                <value>com.cdac.usermanagement.ORM.CasehistorySocialhistoryPrioradmPK</value>
+                 <value>com.cdac.usermanagement.ORM.ResultOfEnquery</value>
+                 <value>com.cdac.usermanagement.ORM.ResultOfEnqueryPK</value>
+                 <value>com.cdac.usermanagement.ORM.SiChildDetails</value>
+                 <value>com.cdac.usermanagement.ORM.SiChildDetailsPK</value>
+                 <value>com.cdac.usermanagement.ORM.SiChildhistoryDetails</value>
+                 <value>com.cdac.usermanagement.ORM.SiChildhistoryDetailsPK</value>
+                 <value>com.cdac.usermanagement.ORM.SiFamily</value>
+                 <value>com.cdac.usermanagement.ORM.SiFamilyPK</value>
+                 <value>com.cdac.usermanagement.ORM.SiFamilyDetails</value>
+                 <!--value>com.cdac.usermanagement.ORM.SiFamilyDetailsPK</value-->
+                 <!--value>com.cdac.usermanagement.ORM.</value-->
+                 <!-- Education related beans Start-->
+                 <value>com.cdac.usermanagement.ORM.EducationAdmission</value>
+                 <value>com.cdac.usermanagement.ORM.EducationAttendence</value>
+                 <value>com.cdac.usermanagement.ORM.EducationAttendencePK</value>
+                 <value>com.cdac.usermanagement.ORM.ExamAttendence</value>
+                 <value>com.cdac.usermanagement.ORM.ExamAttendencePK</value>
+                 <value>com.cdac.usermanagement.ORM.ExamMaster</value>
+                 <value>com.cdac.usermanagement.ORM.VocationalMaster</value>
+                 <value>com.cdac.usermanagement.ORM.VocationalDetails</value>
+                 <value>com.cdac.usermanagement.ORM.VocationalDetailsPK</value>
+                 <value>com.cdac.usermanagement.ORM.ChildrenAssesmentRegister</value>
+                 <value>com.cdac.usermanagement.ORM.ChildrenAssesmentRegisterPK</value>
+                 <value>com.cdac.usermanagement.ORM.ExamMarks</value>
+                 <value>com.cdac.usermanagement.ORM.CwcHome</value>
+                 <value>com.cdac.usermanagement.ORM.CwcDetailPK</value>
+                 <value>com.cdac.usermanagement.ORM.CwcDetail</value>
+                 <value>com.cdac.usermanagement.ORM.SchoolMaster</value>
+                 
+                 <!-- Education related beans END-->
+                 
+                  <!-- Superintendent related bean START-->
+                 <value>com.cdac.usermanagement.ORM.ChildStatus</value>
+                 <value>com.cdac.usermanagement.ORM.ChildStatusPK</value>
+                 <!-- Superintendent related bean  END-->
+                 <!--Deputy Super related beans Start -->
+                 <value>com.cdac.usermanagement.ORM.IcpPersonalDetails</value>
+                 <value>com.cdac.usermanagement.ORM.IcpPostRelease</value>
+                 <value>com.cdac.usermanagement.ORM.IcpPreRelease</value>
+                 
+                 <value>com.cdac.usermanagement.ORM.GuardingSecurityDuty</value>
+                 <value>com.cdac.usermanagement.ORM.GuardingSecurityDutyPK</value>
+                 <value>com.cdac.usermanagement.ORM.GuardingSecurityInfo</value>
+                 <value>com.cdac.usermanagement.ORM.DietChart</value>
+                 <value>com.cdac.usermanagement.ORM.DietChartPK</value>
+                 <value>com.cdac.usermanagement.ORM.HomeItemQoh</value>
+                 <value>com.cdac.usermanagement.ORM.HomeItemQohPK</value>
+                 <value>com.cdac.usermanagement.ORM.IssueDetails</value>
+                 <value>com.cdac.usermanagement.ORM.IssueDetailsPK</value>
+                 <value>com.cdac.usermanagement.ORM.ItemMaster</value>
+                 <value>com.cdac.usermanagement.ORM.ProductCatSubcat</value>
+                 <value>com.cdac.usermanagement.ORM.TransactionDetails</value>
+                 <value>com.cdac.usermanagement.ORM.TransactionDetailsPK</value>
+                 <value>com.cdac.usermanagement.ORM.TransactionMaster</value>
+                 
+                 <!--Deputy Super related beans End  -->
+                 <value>com.cdac.usermanagement.ORM.CounselingDetails</value>
+                 <value>com.cdac.usermanagement.ORM.CounselingDetailsPK</value>
+                 <value>com.cdac.usermanagement.ORM.MenuMaster</value>
+                 <value>com.cdac.usermanagement.ORM.MenuDetail</value>
+                 <value>com.cdac.usermanagement.ORM.MenuDetailPK</value>
+                <!-- ACCOUNTS start ORMs  -->
+                 <value>com.cdac.usermanagement.ORM.CashBook</value>  
+                 
+               <!-- ACCOUNTS end ORMs  -->  
+	</list>
+    </property>
+ </bean>
+   <!--<bean id="myDataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
+    <property name="jndiName" value="java:comp/env/jdbc/myds"/>
+    </bean>-->
+
+    <bean id="myDataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost/child_homes?zeroDateTimeBehavior=convertToNull"/>
+        <property name="username" value="root"/>
+        <property name="password" value=""/>
+        <property name="validationQuery" value="select 1 from dual"/>
+   </bean>
+</beans>

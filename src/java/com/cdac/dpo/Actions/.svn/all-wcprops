@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/ChildHomes/!svn/ver/88/WDCW_MLC/src/java/com/cdac/dpo/Actions
+END
+SICDSaveAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/ChildHomes/!svn/ver/88/WDCW_MLC/src/java/com/cdac/dpo/Actions/SICDSaveAction.java
+END
+DpoAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/ChildHomes/!svn/ver/88/WDCW_MLC/src/java/com/cdac/dpo/Actions/DpoAction.java
+END
+package.properties
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/ChildHomes/!svn/ver/88/WDCW_MLC/src/java/com/cdac/dpo/Actions/package.properties
+END
+package_hi.properties
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/ChildHomes/!svn/ver/88/WDCW_MLC/src/java/com/cdac/dpo/Actions/package_hi.properties
+END
+DpoReportAction.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/ChildHomes/!svn/ver/88/WDCW_MLC/src/java/com/cdac/dpo/Actions/DpoReportAction.java
+END
+package_te.properties
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/ChildHomes/!svn/ver/88/WDCW_MLC/src/java/com/cdac/dpo/Actions/package_te.properties
+END

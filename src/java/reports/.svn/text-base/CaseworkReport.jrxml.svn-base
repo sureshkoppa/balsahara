@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CaseworkReport" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="340"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Users\\vinumol\\Downloads\\"]]></defaultValueExpression>
+	</parameter>
+	<field name="hdlist" class="org.apache.struts2.views.jasperreports.ValueStackDataSource"/>
+	<field name="childProfileId" class="java.lang.String"/>
+	<field name="childName" class="java.lang.String"/>
+	<field name="religion" class="java.lang.String"/>
+	<field name="caste" class="java.lang.String"/>
+	<field name="childSurname" class="java.lang.String"/>
+	<field name="age" class="java.lang.Integer"/>
+	<field name="dob" class="java.util.Date"/>
+	<field name="fatherName" class="java.lang.String"/>
+	<field name="fatherOccup" class="java.lang.String"/>
+	<field name="motherName" class="java.lang.String"/>
+	<field name="motherOccup" class="java.lang.String"/>
+	<field name="noBrothers" class="java.lang.Integer"/>
+	<field name="noSister" class="java.lang.Integer"/>
+	<field name="languagesKnown" class="java.lang.String"/>
+	<field name="subcaste" class="java.lang.String"/>
+	<field name="addrParents" class="java.lang.String"/>
+	<field name="intrRelatives" class="java.lang.String"/>
+	<field name="eduStatus" class="java.lang.String"/>
+	<field name="identifiedProblemsChild" class="java.lang.String"/>
+	<field name="homeAddress" class="java.lang.String"/>
+	<field name="heading.repCaseWork.dept" class="java.lang.String"/>
+	<field name="heading.repCW.govtAP" class="java.lang.String"/>
+	<field name="heading.repCW.cwRep" class="java.lang.String"/>
+	<field name="label.repCW.from" class="java.lang.String"/>
+	<field name="label.repCW.to" class="java.lang.String"/>
+	<field name="label.repCW.caseWorker" class="java.lang.String"/>
+	<field name="label.repCW.theChairmen" class="java.lang.String"/>
+	<field name="label.repCW.cwc" class="java.lang.String"/>
+	<field name="label.repCW.sir" class="java.lang.String"/>
+	<field name="label.repCW.subSocInv" class="java.lang.String"/>
+	<field name="label.repCW.refCWCHYD" class="java.lang.String"/>
+	<field name="label.profileId" class="java.lang.String"/>
+	<field name="label.repCW.child" class="java.lang.String"/>
+	<field name="label.repCW.sonOf" class="java.lang.String"/>
+	<field name="label.repCW.mat1" class="java.lang.String"/>
+	<field name="label.repCW.mat2" class="java.lang.String"/>
+	<field name="label.repCW.mat3" class="java.lang.String"/>
+	<field name="label.repCW.nameOfChild" class="java.lang.String"/>
+	<field name="label.repCW.religion" class="java.lang.String"/>
+	<field name="label.repCW.caste" class="java.lang.String"/>
+	<field name="label.repCW.subCaste" class="java.lang.String"/>
+	<field name="label.repCW.age" class="java.lang.String"/>
+	<field name="label.repCW.dob" class="java.lang.String"/>
+	<field name="label.repCW.langKnown" class="java.lang.String"/>
+	<field name="label.repCW.eduQual" class="java.lang.String"/>
+	<field name="label.repCW.fatName" class="java.lang.String"/>
+	<field name="label.repCW.fatOccp" class="java.lang.String"/>
+	<field name="label.repCW.matName" class="java.lang.String"/>
+	<field name="label.repCW.matOccp" class="java.lang.String"/>
+	<field name="label.repCW.bros" class="java.lang.String"/>
+	<field name="label.repCW.sis" class="java.lang.String"/>
+	<field name="label.repCW.addrPar" class="java.lang.String"/>
+	<field name="label.repCW.intrRelIfAny" class="java.lang.String"/>
+	<field name="label.repCW.identProbChi" class="java.lang.String"/>
+	<field name="label.repCW.yoursFaith" class="java.lang.String"/>
+	<field name="label.repCW.hyd" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="70" splitType="Stretch">
+			<rectangle>
+				<reportElement x="12" y="4" width="534" height="64"/>
+			</rectangle>
+			<textField pattern="">
+				<reportElement x="30" y="4" width="493" height="22"/>
+				<textElement textAlignment="Center" markup="styled">
+					<font size="14" isBold="true"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{heading.repCaseWork.dept}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="30" y="27" width="493" height="21"/>
+				<textElement textAlignment="Center" markup="styled">
+					<font size="14" isBold="true"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{heading.repCW.govtAP}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="30" y="50" width="493" height="20"/>
+				<textElement textAlignment="Center" markup="styled">
+					<font size="14" isBold="true"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{heading.repCW.cwRep}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="1" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="1" splitType="Stretch">
+			<line>
+				<reportElement x="12" y="-25" width="534" height="1"/>
+			</line>
+			<line>
+				<reportElement x="12" y="-45" width="534" height="1"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="614" splitType="Stretch">
+			<textField>
+				<reportElement positionType="Float" x="136" y="134" width="100" height="20"/>
+				<textElement>
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{childProfileId}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="59" y="203" width="100" height="1"/>
+			</line>
+			<textField>
+				<reportElement x="60" y="183" width="100" height="20"/>
+				<textElement>
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{childName}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="181" y="202" width="100" height="1"/>
+			</line>
+			<textField>
+				<reportElement x="181" y="182" width="100" height="20"/>
+				<textElement>
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{fatherName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="136" y="256" width="100" height="20"/>
+				<textElement>
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{childName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="136" y="276" width="78" height="20"/>
+				<textElement>
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{religion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="136" y="296" width="78" height="20"/>
+				<textElement>
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{age}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="172" y="338" width="100" height="20"/>
+				<textElement>
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{eduStatus}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="136" y="357" width="100" height="20"/>
+				<textElement>
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{fatherName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="136" y="377" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{fatherOccup}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="136" y="396" width="100" height="20"/>
+				<textElement>
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{motherName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="136" y="415" width="100" height="20"/>
+				<textElement>
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{motherOccup}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="202" y="493" width="100" height="20"/>
+				<textElement>
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{intrRelatives}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="202" y="473" width="100" height="20"/>
+				<textElement>
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{addrParents}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="321" y="296" width="78" height="20"/>
+				<textElement>
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.util.Date"><![CDATA[$F{dob}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="256" y="276" width="65" height="20"/>
+				<textElement>
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{caste}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="386" y="276" width="100" height="20"/>
+				<textElement>
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{subcaste}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="136" y="318" width="100" height="20"/>
+				<textElement>
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{languagesKnown}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="202" y="513" width="172" height="20"/>
+				<textElement>
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{identifiedProblemsChild}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="136" y="433" width="100" height="20"/>
+				<textElement>
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{noBrothers}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="136" y="453" width="100" height="20"/>
+				<textElement>
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{noSister}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="10" y="48" width="100" height="20"/>
+				<textElement>
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{homeAddress}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="386" y="594" width="100" height="20"/>
+				<textElement>
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{homeAddress}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="236" y="157" width="100" height="20"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<text><![CDATA[* * *]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="12" y="10" width="47" height="18"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{label.repCW.from}+","]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="369" y="8" width="61" height="20"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{label.repCW.to}+","]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="12" y="30" width="99" height="18"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{label.repCW.caseWorker}+","]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="369" y="28" width="153" height="18"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{label.repCW.theChairmen}+","]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="349" y="48" width="173" height="20"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{label.repCW.cwc}+","]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="12" y="74" width="30" height="20"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{label.repCW.sir}+","]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="30" y="94" width="99" height="20"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{label.repCW.subSocInv}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="30" y="114" width="246" height="20"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{label.repCW.refCWCHYD}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="29" y="134" width="106" height="20"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{label.profileId}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="30" y="184" width="29" height="19"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{label.repCW.child}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="160" y="184" width="15" height="20"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{label.repCW.sonOf}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="281" y="182" width="263" height="20"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{label.repCW.mat1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="30" y="204" width="514" height="20"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{label.repCW.mat2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="30" y="224" width="514" height="20"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{label.repCW.mat3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="29" y="256" width="99" height="20"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{label.repCW.nameOfChild}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="30" y="276" width="99" height="20"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{label.repCW.religion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="215" y="276" width="40" height="20"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{label.repCW.caste}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="321" y="276" width="65" height="20"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{label.repCW.subCaste}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="29" y="298" width="99" height="20"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{label.repCW.age}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="215" y="296" width="99" height="20"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{label.repCW.dob}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="30" y="318" width="99" height="20"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{label.repCW.langKnown}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="30" y="338" width="141" height="19"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{label.repCW.eduQual}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="29" y="357" width="106" height="20"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{label.repCW.fatName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="30" y="377" width="105" height="19"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{label.repCW.fatOccp}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="30" y="395" width="105" height="20"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{label.repCW.matName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="29" y="416" width="106" height="17"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{label.repCW.matOccp}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="29" y="433" width="106" height="20"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{label.repCW.bros}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="29" y="453" width="106" height="20"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{label.repCW.sis}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="30" y="473" width="172" height="20"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{label.repCW.addrPar}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="29" y="493" width="173" height="20"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{label.repCW.intrRelIfAny}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="30" y="513" width="172" height="20"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{label.repCW.identProbChi}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="386" y="543" width="99" height="20"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{label.repCW.yoursFaith}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="386" y="563" width="99" height="20"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{label.repCW.caseWorker}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="369" y="68" width="88" height="20"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{label.repCW.hyd}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="2"/>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="2" splitType="Stretch"/>
+	</summary>
+</jasperReport>

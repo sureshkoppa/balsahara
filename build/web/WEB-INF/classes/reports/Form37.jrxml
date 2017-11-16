@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="form37" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" >
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[select * from form37]]>
+	</queryString>
+	<field name="cp_C_Name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cp_G_Name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cp_Date" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cp_Purpose" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cp_O_Name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cp_Rupees" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cp_Period" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cp_B_Name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="140" splitType="Stretch">
+			<staticText>
+				<reportElement x="253" y="77" width="79" height="20" />
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ FORM 37]]></text>
+			</staticText>
+			<image>
+				<reportElement x="254" y="6" width="78" height="61" />
+				<imageExpression><![CDATA["C:\\Users\\chaitanya.NLP-1\\Documents\\NetBeansProjects\\Balsahara_Hib\\web\\Images\\Telangana State Official Logo.jpg"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="429" y="6" width="100" height="50" />
+				<imageExpression><![CDATA["C:\\Users\\chaitanya.NLP-1\\Documents\\NetBeansProjects\\Balsahara_Hib\\web\\Images\\barcode.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="243" y="110" width="100" height="20" />
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[   [Rule 25(2)]]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="40" splitType="Stretch">
+			<staticText>
+				<reportElement x="47" y="12" width="521" height="20" />
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[                                      ORDER OF AFTER CARE PLACEMENT]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="11" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="247" splitType="Stretch">
+			<staticText>
+				<reportElement x="11" y="52" width="544" height="113" />
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[The child (name) ………………. d/o or s/o ………………… has/ will be completing 18 years of age on (date)
+……………….............…. She/ he is still in need of care and protection for the purpose of rehabilitation and
+reintegration and specifically for ……....... (specify the purpose). She/he is placed in (name of organization)
+……………...... for providing aftercare. The In-charge of the Organization is directed to admit the child and
+provide all possible opportunities for her/ his rehabilitation and reintegration in its truest sense. The person
+shall  be  provided  all  these  opportunities  maximum  till  the age of 21 years only or till reintegration in the
+society, whichever is earlier. The in-charge will send half yearly report on the status of the child/youth to the
+Child Welfare Committee.
+
+]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="106" y="52" width="78" height="14" forecolor="#0033FF" />
+				<textFieldExpression><![CDATA[$F{cp_C_Name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="233" y="52" width="80" height="14" forecolor="#0033FF" />
+				<textFieldExpression><![CDATA[$F{cp_G_Name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="24" y="66" width="69" height="13" forecolor="#0033FF" />
+				<textFieldExpression><![CDATA[$F{cp_Date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="171" y="79" width="83" height="13" forecolor="#0033FF" />
+				<textFieldExpression><![CDATA[$F{cp_Purpose}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="11" y="92" width="82" height="14" forecolor="#0033FF" />
+				<textFieldExpression><![CDATA[$F{cp_O_Name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="11" y="182" width="544" height="58" />
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[The State/ District Child Protection Unit is hereby directed to release Rs…………per month towards aftercare
+support to the said person for a period of …....………. (days/month) and carryout necessary follow up and
+for the said purpose shall open a bank account in the name of the person………………..]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="358" y="182" width="71" height="14" forecolor="#0033FF" />
+				<textFieldExpression><![CDATA[$F{cp_Rupees}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="219" y="196" width="84" height="14" forecolor="#0033FF" />
+				<textFieldExpression><![CDATA[$F{cp_Period}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="376" y="210" width="82" height="15" forecolor="#0033FF" />
+				<textFieldExpression><![CDATA[$F{cp_B_Name}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="87" splitType="Stretch">
+			<staticText>
+				<reportElement x="197" y="10" width="343" height="34" />
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Children’s Court/ Principal Magistrate, Juvenile Justice Board/
+                          Chairperson/Member, Child Welfare Committee]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="35" y="54" width="467" height="20" />
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[Copy to: State/ District Child Protection Unit or concerned Department of the State Government.]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

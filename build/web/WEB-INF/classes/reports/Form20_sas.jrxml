@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="196"/>
+	<import value="java.lang.Object"/>
+	<import value="java.lang.String"/>
+	<queryString language="xPath">
+		<![CDATA[]]>
+	</queryString>
+	<field name="name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="house" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="street" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="village" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="district" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="state" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cname" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="age" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="commit" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="date" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="day" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="93" splitType="Stretch">
+			<staticText>
+				<reportElement x="247" y="0" width="81" height="24"/>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Form 20]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="205" y="34" width="285" height="21"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[[Rules 18(8), 19(7)]]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="63" y="67" width="522" height="24"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[UNDERTAKING BY THE PARENT OR GUARDIAN OR 'FIT PERSON']]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="1" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="424" splitType="Stretch">
+			<staticText>
+				<reportElement x="12" y="10" width="15" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[I]]></text>
+			</staticText>
+			<line>
+				<reportElement x="27" y="26" width="100" height="1"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="128" y="10" width="100" height="20"/>
+				<textElement>
+					<font size="12" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[resident of House no]]></text>
+			</staticText>
+			<line>
+				<reportElement x="228" y="26" width="100" height="1"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="328" y="10" width="100" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Street]]></text>
+			</staticText>
+			<line>
+				<reportElement x="369" y="24" width="100" height="1"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="478" y="10" width="100" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Village/Town]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="50" width="100" height="1"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="100" y="31" width="41" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[District]]></text>
+			</staticText>
+			<line>
+				<reportElement x="141" y="49" width="50" height="1"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="191" y="32" width="30" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[State]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="271" y="32" width="280" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[do hereby declare that i am willing to take charge of]]></text>
+			</staticText>
+			<line>
+				<reportElement x="221" y="48" width="50" height="1"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="0" y="65" width="127" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[(name  of  the  child)]]></text>
+			</staticText>
+			<line>
+				<reportElement x="128" y="82" width="75" height="1"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="205" y="64" width="29" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Aged]]></text>
+			</staticText>
+			<line>
+				<reportElement x="234" y="81" width="85" height="1"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="332" y="65" width="223" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[under  the  orders  of  the  Child Welfare]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="96" width="63" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Committee]]></text>
+			</staticText>
+			<line>
+				<reportElement x="63" y="115" width="100" height="1"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="179" y="96" width="249" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[subject to the following terms and conditions:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="27" y="131" width="387" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[1. If hs conduct is unsatisfactory I shall at once inform the Committee.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="27" y="151" width="528" height="40"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[2. I shall do my best for the welfare and education of the said child as  long as  he  remains  in my charge and shall make proper provision for his maintenance.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="27" y="191" width="528" height="20" isPrintWhenDetailOverflows="true"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[3. In the event of his/her illness, he shall have proper medical attention in the nearest hospital.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="27" y="211" width="538" height="38"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[4. I agree to adhere to the conditions that may be imposed by the Committee from time to time and                 also to keep the Committee informed about the compliance with the conditions.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="27" y="249" width="427" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[5. I undertake to produce him/her before the committee as and when required.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="27" y="269" width="477" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[6. I shall inform the Committee immediately if the child goes out of my charge or control.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="330" width="51" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Date this ]]></text>
+			</staticText>
+			<line>
+				<reportElement x="51" y="349" width="100" height="1"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="151" y="330" width="40" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[day of]]></text>
+			</staticText>
+			<line>
+				<reportElement x="191" y="348" width="100" height="1"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="376" y="350" width="194" height="27"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[                                   Signature]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="305" y="377" width="260" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[         Signed before Child welfare Committee]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="34" y="12" width="100" height="20"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="228" y="12" width="100" height="20"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{house}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="378" y="12" width="100" height="20"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{street}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="27" y="38" width="100" height="20"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{village}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="141" y="35" width="57" height="20"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{district}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="228" y="35" width="43" height="20"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{state}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="127" y="69" width="64" height="20"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="234" y="67" width="85" height="20"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{age}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="79" y="101" width="100" height="20"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{commit}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="63" y="334" width="100" height="20"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="191" y="333" width="100" height="20"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{day}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

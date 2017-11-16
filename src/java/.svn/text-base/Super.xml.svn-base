@@ -1,0 +1,403 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<!-- Author: NEELAVA -->
+ 
+<struts>
+    <!-- Add your configuration elements here -->
+<package name="com/cdac/su/Actions" namespace="/" extends="jasperreports-default,struts-default,json-default">
+
+  <result-types>
+  <result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult" />
+  <result-type name="json" class="org.apache.struts2.json.JSONResult"/>
+  </result-types>
+  
+  <interceptors>
+                <interceptor name="json" class="org.apache.struts2.json.JSONInterceptor"/>
+                <interceptor name="requestCheckInterceptor" class="com.cdac.common.interceptors.RequestCheckInterceptor"/> 
+                <interceptor name="roleCheckInterceptor"    class="com.cdac.common.interceptors.RoleCheckInterceptor" />    
+        
+                <interceptor-stack name="loggingStack">                                      
+                    
+                    <interceptor-ref name="requestCheckInterceptor" />
+                    <interceptor-ref name="roleCheckInterceptor"/>                      
+                    <interceptor-ref name="defaultStack" />
+                </interceptor-stack>
+                <!--new code-->
+                <interceptor-stack name="fileUploadStack">
+<interceptor-ref name="exception" />
+<interceptor-ref name="alias" />
+<interceptor-ref name="servletConfig" />
+<interceptor-ref name="prepare" />
+<interceptor-ref name="i18n" />
+<interceptor-ref name="chain" />
+<interceptor-ref name="debugging" />
+<interceptor-ref name="profiling" />
+<interceptor-ref name="scopedModelDriven" />
+<interceptor-ref name="modelDriven" />
+<interceptor-ref name="fileUpload">
+<param name="maximumSize">3000000</param>
+<param name="allowedTypes"> image/jpeg,image/gif,image/png</param>
+</interceptor-ref>
+<interceptor-ref name="checkbox" />
+<interceptor-ref name="staticParams" />
+<interceptor-ref name="actionMappingParams" />
+<interceptor-ref name="params">
+<param name="excludeParams"> dojo\..*,^struts\..*</param>
+</interceptor-ref>
+<interceptor-ref name="conversionError" />
+<interceptor-ref name="validation">
+<param name="excludeMethods"> input,back,cancel,browse</param>
+</interceptor-ref>
+<interceptor-ref name="workflow">
+<param name="excludeMethods"> input,back,cancel,browse</param>
+</interceptor-ref>
+
+<interceptor-ref name="requestCheckInterceptor"/>
+</interceptor-stack>
+    </interceptors>
+<!--new code ends-->
+    <!--action name="SU-homedetails">
+	<result name="success" type="tiles">SU-homedetails</result>
+     
+    </action-->
+    
+     <action name="SU-Home">
+          <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+            <result name="success" type="tiles">SUWelcome</result>      
+
+      </action>
+      
+      <!--reports-->
+       <action name="SU-AgewiseReport" class="com.cdac.su.Actions.SuperAction" method="ageWiseReport">
+           <interceptor-ref name="loggingStack"/>
+           <!--result name="success" type="stream">
+             <param name="contentType">application/pdf</param>
+             <param name="inputName">pdfStream</param>
+             <param name="contentDisposition">inline;filename="document.pdf"</param>
+             <param name="bufferSize">1024</param-->
+          <result name="success">
+              /WEB-INF/SU/AgeWiseReport.jsp
+          </result> 
+           <result name="end" type="tiles">SU-Error</result>                
+       </action>
+       
+       <action name="SU-AgewiseReport-JSON" class="com.cdac.su.Actions.SuperAction" method="ageWiseReport">
+           
+           <result name="success" type="json">
+           <param name="root">
+            ageMap
+            </param>             
+           </result>
+           
+       </action>
+       
+       
+       
+    
+     <action name="SU-detailChild" class="com.cdac.su.Actions.SuperAction" method="childsInHome">
+                   <interceptor-ref name="loggingStack"/>
+                   <result name="success" >
+                       <!--param name="contentType">application/pdf</param>
+                       <param name="dataSource">response</param>
+                       <param name="contentDisposition">attachment;filename="document.pdf"</param>
+                       <param name="bufferSize">1024</param-->
+                       /WEB-INF/SU/AgeWiseSubReport.jsp
+                   </result>
+                    <result name="end" type="tiles">SU-Error</result>   
+      </action>
+      <!--Added by vinumol17/02/2012-->
+<action name="SU-Reports" class="com.cdac.su.Actions.SuperAction" method="showReport">
+         <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+	<result name="success" type="tiles">SU-Showreport</result>
+       <result name="error" type="tiles">SU-Error</result>
+    </action>
+     <action name="SU_ChildStatusReport" class="com.cdac.su.Actions.SuperAction" method="showReportDetails">
+         <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+        <result name="success" type="json">
+          <param name="root">csdto</param>
+	<!--<result name="success" type="jasper">
+        <param name="location">WEB-INF/classes/reports/ChildStatusReport.jasper</param>
+        <param name="dataSource">csdto</param>
+        <param name="reportParameters">reportMulParameter</param>
+        <param name="format">HTML</param>
+        <param name="imageServletUrl">/servlets/image?image=</param>-->
+        </result>
+       <result name="error" type="tiles">SU-Error</result>
+    </action>
+    <!--Ended by vinumol17/02/2012-->
+     <action name="SU-ChildStatus" class="com.cdac.su.Actions.SuperAction" method="getChildListbasedonStatus">
+          <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+	<result name="success" type="tiles">SU-ChildStatus</result>
+       <result name="error" type="tiles">SU-Error</result>
+    </action>
+    <action name="SU-ChildStatus-Save" class="com.cdac.su.Actions.SuperAction" method="saveChildStatus">
+         <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+	<result name="success" type="tiles">SU-Success</result>
+       <result name="error" type="tiles">SU-Error</result>
+    </action>
+    
+    <action name="SU-homedetails" class="com.cdac.su.Actions.SuperAction" method="prePopulateHomeDetails">
+         <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+            <result name="success" type="tiles">SU-homedetails</result>      
+
+      </action>
+      
+      <action name="SU-homedetails-Save" class="com.cdac.su.Actions.SuperAction" method="saveHomeDetails">
+           <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+	<result name="success" type="tiles">SU-Success</result>
+       <result name="error" type="tiles">SU-Error</result>
+    </action>
+    
+    
+    
+    <!--Guarding and Security   start-->
+                 <action name="SU-addProfile">
+                      <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+			<result name="success" type="tiles">GAS-addProfile</result>
+                 </action>
+                 
+                 <action name="SU-deleteProfile">
+                      <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+			<result name="success" type="tiles">GAS-deleteProfile</result>
+                 </action>
+                 
+                 <action name="SU-selObservation">
+                      <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+			<result name="success" type="tiles">GAS-selObservation</result>
+                 </action>
+                 
+                  <action name="SU-selViewObservation">
+                      <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+	                    <result name="success" type="tiles">GAS-selViewObservation</result>
+                 </action>
+                 
+                 
+                 <action name="SU-addDuty-*" method="{1}" class="com.cdac.su.Actions.SuperAction">
+                      <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+                          <result name="popProfile-success" type="tiles">GAS-addDuty</result>
+                          <result name="addDuty-success" type="tiles">DS-Success</result>                 
+                          <result name="addDuty-failure" type="tiles">DS-Error</result>                 
+                 </action>
+                 
+                 <action name="SU-observation-*" method="{1}" class="com.cdac.su.Actions.SuperAction">
+                          <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+                          <result name="popAddObj-success" type="tiles">GAS-addObservation</result>
+                          <result name="addObs-success" type="tiles">DS-Success</result>                 
+                          <result name="addObs-failure" type="tiles">DS-Error</result>                 
+                 
+                 </action>
+                 
+                  <action name="SU-viewObservation-*" method="{1}" class="com.cdac.su.Actions.SuperAction">
+                      <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+                          <result name="popAddObj-success" type="tiles">GAS-viewObservation</result>
+                          <result name="addObs-success" type="tiles">DS-Success</result>                 
+                          <result name="addObs-failure" type="tiles">DS-Error</result>                
+                 </action>
+                 
+                 <action name="SU-viewDuty-*" method="{1}" class="com.cdac.su.Actions.SuperAction">
+                     <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+                          <result name="popProfile-success" type="tiles">GAS-viewDuty</result>
+                          <result name="viewDuty-success" type="tiles">GAS-viewDutyDetails</result>
+                 </action> 
+                 
+                 <!--new code-->
+                 <action name="SU-addGuardPhoto-*" method="{1}" class="com.cdac.su.Actions.SuperAction">
+                     <interceptor-ref name="fileUploadStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+                        <result name="popProfile-success" type="tiles">GAS-addGuardPhoto</result>               
+			<result name="addPhoto-success" type="tiles">DS-Success</result>     
+                        <result name="addPhoto-failure" type="tiles">DS-Error</result>     
+                       
+                        <result name="input" type="tiles">DS-Error</result>
+                 </action>
+                
+                <!--new code-->
+                <action name="SU-modifyProfile-*" method="{1}" class="com.cdac.su.Actions.SuperAction">
+                     <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+                        <result name="popSelectProfile-success" type="tiles">GAS-modifyProfile</result>               
+			<result name="popProfile-success" type="tiles">GAS-modifyProfile</result>   
+                        <result name="modifyProfile-success" type="tiles">DS-Success</result>
+                 </action>
+              
+                 <action name="SU-profile-*" method="{1}" class="com.cdac.su.Actions.SuperAction">
+                      <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+                 	<result name="addProfile-success" type="tiles">DS-Success</result>     
+                        <result name="addProfile-failure" type="tiles">DS-Error</result>     
+                 </action>
+                 
+                 <action name="SU-viewProfile-*" method="{1}" class="com.cdac.su.Actions.SuperAction">
+                      <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+                         <result name="popSelectProfile-success" type="tiles">GAS-viewProfile</result>          
+                         <result name="popProfile-success" type="tiles">GAS-viewProfile</result>
+                 </action>
+                 
+                 <action name="SU-removeProfile-*" method="{1}" class="com.cdac.su.Actions.SuperAction">
+                      <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+                         <result name="popSelectProfile-success" type="tiles">GAS-removeProfile</result>          
+                         <result name="popProfile-success" type="tiles">GAS-removeProfile</result>
+                         <result name="removeProfile-success" type="tiles">DS-Success</result>
+                         <result name="removeProfile-failure" type="tiles">DS-Error</result>
+                 </action>
+                 
+                 
+                 
+                 
+                 <action name="SU-ChildrenAnalyticalReports-Age">
+                      <result name="success" >/WEB-INF/SU/SuperGraphicalReports.jsp</result>
+                 </action>
+                
+             
+                
+                <!--Guarding and Security   end-->
+                
+      <!--
+      ====***********************************************************====
+      ====^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^====
+      ====Actions For userDetails Modification and Resetting Password====
+      ====___________________________________________________________====
+      ====********************Added By Anupam************************====
+      ====**********************START********************************====
+      -->
+    
+        <action name="SU-ModifyMyDetails" class="com.cdac.usermanagement.Actions.UserManagementAction" method="modifyMyDetails">
+             <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+            <result name="success" type="chain">SU-ModifyUserMainAction</result>
+            <result name="error" type="tiles">SU-Error</result>
+      </action>
+
+      <action name="SU-ModifyUserMainAction" class="com.cdac.usermanagement.Actions.UserManagementAction" method="modifyUserMain">
+           <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+            <result name="success" type="tiles">SU-ModifyUser-Main</result>
+            <result name="error" type="tiles">SU-Error</result>
+      </action>
+
+
+      <action name="SU-ModifyUserSubAction" class="com.cdac.usermanagement.Actions.UserManagementAction" method="modifyUserSub">
+           <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+            <result name="success" type="tiles">SU-Success</result>
+            <result name="error" type="tiles">SU-Error</result>
+      </action>
+      
+       <action name="SU-ChangePassword">
+            <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+	    <result name="success" type="tiles">SU-ChangePassword</result>
+       </action>
+
+               <action name="SU-ChangePassword-Action" class="com.cdac.usermanagement.Actions.UserManagementAction" method="changePassword">
+                    <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+			<result name="success" type="tiles">SU-Success</result>
+                        <result name="error" type="tiles">SU-Error</result>
+	       </action>
+      <!--accounts start-->
+          
+      <action name="SU-cashBook">
+            <interceptor-ref name="loggingStack"/>   
+            <result name="logout" type="tiles">UM-Logout</result>
+	    <result name="success" type="tiles">SU-cashBook</result>
+       </action>
+      
+             <action name="SU-saveCashTr" class="com.cdac.su.Actions.AccountsAction" method="saveCashTrans">
+                        <interceptor-ref name="loggingStack"/>   
+                        <result name="logout" type="tiles">UM-Logout</result>
+			<result name="success" type="tiles">SU-Success</result>
+                        <result name="error" type="tiles">SU-Error</result>
+	     </action>
+      
+             <action name="SU-popCash" class="com.cdac.su.Actions.AccountsAction" method="showAvailCash">
+                        <interceptor-ref name="loggingStack"/>   
+                        <result name="logout" type="tiles">UM-Logout</result>
+			<result type="json" name="success">
+                            <param name="root">ava_cash</param>
+                        </result>     
+	     </action>
+        
+             <action name="SU-selCashBk">
+                        <interceptor-ref name="loggingStack"/>   
+                        <result name="logout" type="tiles">UM-Logout</result>
+	                <result name="success" type="tiles">SU-selCash</result>
+	     </action>
+             
+              <action name="SU-viewChBk" class="com.cdac.su.Actions.AccountsAction" method="showCashBook">
+                        <interceptor-ref name="loggingStack"/>   
+                        <result name="logout" type="tiles">UM-Logout</result>
+			<result type="json" name="success">
+                            <param name="root">chdto</param>
+                        </result>     
+	     </action> 
+       <action name="SU-selGenLedg">
+            <interceptor-ref name="loggingStack"/>   
+            <result name="logout" type="tiles">UM-Logout</result>
+	    <result name="success" type="tiles">SU-genLedge</result>
+            
+       </action>
+        
+      <action name="SU-genLedge" class="com.cdac.su.Actions.AccountsAction" method="showGenLedger">
+                        <interceptor-ref name="loggingStack"/>   
+                        <result name="logout" type="tiles">UM-Logout</result>
+			<result type="json" name="success">
+                            <param name="root">genLedger</param>
+                        </result>     
+	     </action>  
+      
+      
+      
+      <!--accounts ends-->
+      <!--
+      ====***********************************************************====
+      ====^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^====
+      ====Actions For userDetails Modification and Resetting Password====
+      ====___________________________________________________________====
+      ====********************Added By Anupam************************====
+      ====**********************END**********************************====
+      -->
+    <action name="px">
+          <result>images/px</result>
+    </action>
+    <action name="img_0_0_3">
+           <result>images/img_0_0_3</result>
+    </action>
+    <action name="img_0_0_1_1">
+           <result>images/img_0_0_1_1</result>
+    </action>
+    <!--action name="Multilingual_report" class="com.cdac.su.Actions.SuperAction" method="showMultilingualReport">
+         <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+	<result name="success" type="jasper">
+        <param name="location">WEB-INF/classes/reports/I18nReport.jasper</param>
+        <param name="dataSource">csdto</param>
+        <param name="reportParameters">reportMulParameter</param>
+        <param name="format">HTML</param>
+        </result>
+       <result name="error" type="tiles">SU-Error</result>
+    </action-->
+    
+</package>
+    
+</struts>
+

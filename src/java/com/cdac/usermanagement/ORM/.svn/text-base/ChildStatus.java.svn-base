@@ -1,0 +1,215 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.cdac.usermanagement.ORM;
+
+import java.io.Serializable;
+import java.util.Date;
+import javax.persistence.Column;
+import javax.persistence.EmbeddedId;
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
+import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.validation.constraints.Size;
+import javax.xml.bind.annotation.XmlRootElement;
+
+/**
+ *
+ * @author ANUPAM
+ */
+@Entity
+@Table(name = "child_status", catalog = "child_homes", schema = "")
+@XmlRootElement
+@NamedQueries({
+    @NamedQuery(name = "ChildStatus.findAll", query = "SELECT c FROM ChildStatus c"),
+    @NamedQuery(name = "ChildStatus.findByChildProfileId", query = "SELECT c FROM ChildStatus c WHERE c.childStatusPK.childProfileId = :childProfileId"),
+    @NamedQuery(name = "ChildStatus.findByChildName", query = "SELECT c FROM ChildStatus c WHERE c.childName = :childName"),
+    @NamedQuery(name = "ChildStatus.findByChildSurname", query = "SELECT c FROM ChildStatus c WHERE c.childSurname = :childSurname"),
+    @NamedQuery(name = "ChildStatus.findByHomeId", query = "SELECT c FROM ChildStatus c WHERE c.childStatusPK.homeId = :homeId"),
+    @NamedQuery(name = "ChildStatus.findByLastModifiedDate", query = "SELECT c FROM ChildStatus c WHERE c.childStatusPK.lastModifiedDate = :lastModifiedDate"),
+    @NamedQuery(name = "ChildStatus.findByDateMissing", query = "SELECT c FROM ChildStatus c WHERE c.dateMissing = :dateMissing"),
+    @NamedQuery(name = "ChildStatus.findByFromDate", query = "SELECT c FROM ChildStatus c WHERE c.fromDate = :fromDate"),
+    @NamedQuery(name = "ChildStatus.findByToDate", query = "SELECT c FROM ChildStatus c WHERE c.toDate = :toDate"),
+    @NamedQuery(name = "ChildStatus.findByType", query = "SELECT c FROM ChildStatus c WHERE c.type = :type"),
+    @NamedQuery(name = "ChildStatus.findByLastModifiedBy", query = "SELECT c FROM ChildStatus c WHERE c.lastModifiedBy = :lastModifiedBy")})
+public class ChildStatus implements Serializable {
+    private static final long serialVersionUID = 1L;
+    @EmbeddedId
+    protected ChildStatusPK childStatusPK;
+    @Size(max = 75)
+    @Column(name = "CHILD_NAME", length = 75)
+    private String childName;
+    @Size(max = 50)
+    @Column(name = "CHILD_SURNAME", length = 50)
+    private String childSurname;
+    @Column(name = "DATE_MISSING")
+    @Temporal(TemporalType.DATE)
+    private Date dateMissing;
+    @Column(name = "FROM_DATE")
+    @Temporal(TemporalType.DATE)
+    private Date fromDate;
+    @Column(name = "TO_DATE")
+    @Temporal(TemporalType.DATE)
+    private Date toDate;
+    @Size(max = 100)
+    @Column(name = "TYPE", length = 100)
+    private String type;
+    @Lob
+    @Size(max = 65535)
+    @Column(name = "REASON", length = 65535)
+    private String reason;
+    @Lob
+    @Size(max = 65535)
+    @Column(name = "ADDRESS", length = 65535)
+    private String address;
+    @Lob
+    @Size(max = 65535)
+    @Column(name = "REMARKS", length = 65535)
+    private String remarks;
+    @Size(max = 30)
+    @Column(name = "LAST_MODIFIED_BY", length = 30)
+    private String lastModifiedBy;
+    @JoinColumn(name = "CHILD_PROFILE_ID", referencedColumnName = "CHILD_PROFILE_ID", nullable = false, insertable = false, updatable = false)
+    @ManyToOne(optional = false)
+    private ChildMaster childMaster;
+
+    public ChildStatus() {
+    }
+
+    public ChildStatus(ChildStatusPK childStatusPK) {
+        this.childStatusPK = childStatusPK;
+    }
+
+    public ChildStatus(String childProfileId, String homeId, Date lastModifiedDate) {
+        this.childStatusPK = new ChildStatusPK(childProfileId, homeId, lastModifiedDate);
+    }
+
+    public ChildStatusPK getChildStatusPK() {
+        return childStatusPK;
+    }
+
+    public void setChildStatusPK(ChildStatusPK childStatusPK) {
+        this.childStatusPK = childStatusPK;
+    }
+
+    public String getChildName() {
+        return childName;
+    }
+
+    public void setChildName(String childName) {
+        this.childName = childName;
+    }
+
+    public String getChildSurname() {
+        return childSurname;
+    }
+
+    public void setChildSurname(String childSurname) {
+        this.childSurname = childSurname;
+    }
+
+    public Date getDateMissing() {
+        return dateMissing;
+    }
+
+    public void setDateMissing(Date dateMissing) {
+        this.dateMissing = dateMissing;
+    }
+
+    public Date getFromDate() {
+        return fromDate;
+    }
+
+    public void setFromDate(Date fromDate) {
+        this.fromDate = fromDate;
+    }
+
+    public Date getToDate() {
+        return toDate;
+    }
+
+    public void setToDate(Date toDate) {
+        this.toDate = toDate;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getReason() {
+        return reason;
+    }
+
+    public void setReason(String reason) {
+        this.reason = reason;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getRemarks() {
+        return remarks;
+    }
+
+    public void setRemarks(String remarks) {
+        this.remarks = remarks;
+    }
+
+    public String getLastModifiedBy() {
+        return lastModifiedBy;
+    }
+
+    public void setLastModifiedBy(String lastModifiedBy) {
+        this.lastModifiedBy = lastModifiedBy;
+    }
+
+    public ChildMaster getChildMaster() {
+        return childMaster;
+    }
+
+    public void setChildMaster(ChildMaster childMaster) {
+        this.childMaster = childMaster;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 0;
+        hash += (childStatusPK != null ? childStatusPK.hashCode() : 0);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        // TODO: Warning - this method won't work in the case the id fields are not set
+        if (!(object instanceof ChildStatus)) {
+            return false;
+        }
+        ChildStatus other = (ChildStatus) object;
+        if ((this.childStatusPK == null && other.childStatusPK != null) || (this.childStatusPK != null && !this.childStatusPK.equals(other.childStatusPK))) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "com.cdac.usermanagement.ORM.ChildStatus[ childStatusPK=" + childStatusPK + " ]";
+    }
+    
+}

@@ -1,0 +1,160 @@
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+
+#Superintendent Module--ChildCurrentStatus Labels
+package.label.chStaSelProfId=Select Child Profile Id
+package.label.chStaSelCase=Select Case
+package.label.chStaMRRCFMDate1=Date on which Child
+package.label.chStaMRRCFMDate2=Missing/Runaway/Runaway
+package.label.chStaMRRCFMDate3=came back/Found Missing
+package.label.chStaFIRDate=Date of FIR Filed
+package.label.chStaReason=Reason
+package.label.chStaResiAddr=Residential Address
+package.label.chStaRemarks=Remarks
+package.selectOption.chStaRunaway=Runaway
+package.selectOption.chStaMissing=Missing
+package.selectOption.chStaShortLea=Short Leave
+package.selectOption.chStaResiden=Residential School
+package.selectOption.chStaRunCameBack=Run away cameback
+package.selectOption.chStaMissFound=Found Missing Child
+package.selectOption.chStaShoLeaRet=Short Leave returned
+package.selectOption.chStaResiRet=Residential Returned
+package.label.chStaChProfId=Child Profile Id
+package.label.chStaCaseType=Case Type
+
+#Superintendent Module--RegisterHome Labels
+package.label.suHomeDet=Home Details
+package.label.suYOE=Year Of Establishment
+package.label.suHomeAddr=Address
+package.label.suMandal=Mandal
+package.label.suVillage=Village
+package.label.suLandlineNo=Landline No
+package.label.suInstiHead=Head of the Institution
+package.label.suHomeManagedBy=Home Managed By
+package.label.suInstiFacil=Facilities Provided In The Institution
+package.label.suCompWallAvai=Compound Wall Available
+package.label.suVisitRoomRec=Visitors Room And Reception
+package.label.suSecuStaffAvai=Security Staff Available
+package.label.suMedFaci=Medical Facility
+package.label.suTotPlinthArea=Total Plinth Area (sq ft)
+package.label.suPliAreaPerInmate1=Plinth Area Provided Per Inmate
+package.label.suPliAreaPerInmate2=(sq ft)
+package.label.suPlayGround=Play Ground
+package.label.suGameIndoorEqui=Games Indoor Equipment
+package.label.suGameOutdoorEqui=Games Outdoor Equipment
+package.label.suDietSuffNutri1=Diet(Sufficient Nutrition Food
+package.label.suDietSuffNutri2=Provided/ Menu Prescribed)
+package.label.suSuffiDrinkWater=Sufficient Drinking Water
+package.label.suBathAvaiNo=No. Of Bathrooms Available
+package.label.suToiAvaiNo=No. Of Toilets Available
+package.label.suCleanStat=Status Of Cleanliness
+package.label.suKitchAvai=Kitchen Available
+package.label.suKitchHygiene=Hygiene Of The Kitchen
+package.label.suDiningFacAvai=Dining Facility Available
+package.label.suCounFacil=Counseling Facility
+package.label.suPremisMaint=Maintenance Of Premises
+package.label.suRecreatPati=Recreation Particulars
+package.label.suVocatTraining=Vocational Training
+package.label.suInternetFaci=Internet Facility
+package.label.suAnyOthInfo=Any Other Information
+package.selectOption.suHomeManagGov=Government
+package.selectOption.suHomeManagGovCo=Government-Co-managed
+package.selectOption.suHomeManagNGO=NGO
+package.rad.label.yes=Yes
+package.rad.label.no=No
+
+#Superintendent Module--RegisterHome Error Messages
+package.error.suEntHomeId=Please enter a home id
+package.error.suSelYOE=Please select the year of establishment
+package.error.suEntHomAdd=Please enter the home address
+package.error.suEntMand=Please enter mandal
+package.error.suEntVill=Please enter village
+package.error.suEntPhoNo=Please enter the phone no
+package.error.suEntValPhoNo=Please refer the example and provide a valid phone number
+package.error.suEntInsHeadNam=Please enter the head of the institution's name
+package.error.suSelHomMagaBy=Please select an option home managed by whom
+package.error.suSelComWallAva=Please choose compound wall is available or not
+package.error.suSelVisRoomAva=Please choose visitor's Room is available or not
+package.error.suSelSecStaAva=Please choose security staff is available or not
+package.error.suSelMedFacAva=Please choose medical facility is available or not
+package.error.suEntTotPliAre=Please enter the total plinth area
+package.error.suEntDigiOnly=Please enter digits only in area field
+package.error.suEntPliPerInm=Please enter the total plinth area per inmate
+package.error.suSelPlaGroAva=Please choose play ground is available or not
+package.error.suEntIndGamAva=Please write  about indoor games available
+package.error.suEntOutGamAva=Please write  about outdoor games available
+package.error.suSelPreDieFoll=Please choose prescribed diet is followed or not
+package.error.suSelDriWatSuf=Please choose drinking water is sufficient or not
+package.error.suEntBathsNos=Please enter the number of bathrooms available
+package.error.suEntBathsDig=Please enter digits only as no of bathrooms
+package.error.suEntToiNos=Please enter the number of toilets available
+package.error.suEntToiDig=Please enter digits only as no of toilets
+package.error.suEntCleaStat=Please write something about the cleanliness status
+package.error.suSelKitcAva=Please choose kitchen is available or not
+package.error.suEntKitHyg=Please write something about kitchen hygiene
+package.error.suSelDinFacAva=Please choose dinning facility is available or not
+package.error.suSelCouFacAva=Please choose counseling facility is available or not
+package.error.suSelPremMain=Please write something about premises Maintenance
+package.error.suEntHomeRecre=Please write something about recreation in children home
+package.error.suSelVocTraAva=Please choose vocational training is available or not
+package.error.suSelInteAva=Please choose internet facility is available or not
+
+###
+    #GUARDING LABELS
+###
+heading.modProf=Modify Profile 
+heading.viewProf=View Profile 
+heading.remProf=Remove Profile 
+heading.addPhoto=Add Photo 
+heading.addDuty=Add Duty 
+heading.addDutyReg=Add Duty Register
+heading.addObser=Add Observation 
+heading.viewDuty=View Duty Register
+heading.viewObser=View Observation Register
+
+label.selGuardStaff=Select Guard Staff
+label.fName=First Name
+label.lName=Last Name
+label.name=Name
+label.age=Age
+label.desig=Designation
+label.contAddr=Contact Address
+label.contPhNo=Contact Phone number
+label.emailId=Email Id
+label.profileId=Profile Id 
+label.dateOfJoin=Date of Joining 
+label.dutyDate=Duty Date
+label.fromTime=From \ntime
+label.toTime=To\ntime
+label.dutyAt=Duty At
+label.observ=Observation
+label.dutyDetAre=Duty details  are
+label.selProfile=Select Profile
+
+message.photo_type=upload .jpg or .png or .gif files only
+message.photo_size=maximum file size is 2 MB
+message.noDutySelDates=No duty for {0} between selected dates
+message.objOnDate=Observations on Date
+
+option.selProfile=Select Profile
+button.savePhoto=Save Photo
+button.viewDuty=View Duty
+button.remProile=Remove Profile
+js.err.selGuardForPhoto=Sorry!Please Select Guard for adding Photo
+js.err.selPhotoForGuard=Sorry!Please Select Photo for Guard
+js.err.fileInvalid=Entered File type is not valid
+js.err.selProfile=Sorry! Please Select Profile ID
+js.err.fdateInvalid=Sorry! From date is not valid
+js.err.tdateInvalid=Sorry! To date is not valid
+js.err.chkOneProfile=Sorry! Check atleast one profile
+js.err.writeObsForprofile=Plase write observation for profile id
+heading.viewObserv=View Observation
+message.noDutyAddedOn=No duties Added On {0}
+
+
+
+
+
+
+
+label.FirDetails=FIR details

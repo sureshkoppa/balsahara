@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="form19" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" >
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[select * from form19;]]>
+	</queryString>
+	<field name="cpno" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cpday" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cpyear" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cnam" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cpr" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cpdat" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cpfa" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cpfa1" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cpfad" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cpfad1" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cpfad2" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cpcna" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cpcna1" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cpcw" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cppe" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cpper" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cpjuris" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cpsch" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cpschadd" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cpda" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cpmo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cpy" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="127" splitType="Stretch">
+			<staticText>
+				<reportElement x="233" y="78" width="78" height="20" />
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ FORM 19]]></text>
+			</staticText>
+			<image>
+				<reportElement x="233" y="17" width="78" height="61" />
+				<imageExpression><![CDATA["C:\\Users\\chaitanya.NLP-1\\Documents\\NetBeansProjects\\Balsahara_Hib\\web\\Images\\Telangana State Official Logo.jpg"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="430" y="0" width="100" height="50" />
+				<imageExpression><![CDATA["C:\\Users\\chaitanya.NLP-1\\Documents\\NetBeansProjects\\Balsahara_Hib\\web\\Images\\barcode.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="224" y="98" width="100" height="20" />
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[  [Rule 18(8)]]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="45" splitType="Stretch">
+			<staticText>
+				<reportElement x="34" y="0" width="521" height="20" />
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ORDER FOR PLACEMENT OF CHILD UNDER THE CARE OF A PARENT, GUARDIAN OR FIT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="209" y="20" width="169" height="20" />
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PERSON PENDING INQUIRY]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="64" splitType="Stretch">
+			<staticText>
+				<reportElement x="10" y="10" width="89" height="20" />
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[Case No. …….]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="56" y="10" width="43" height="20" forecolor="#0033FF" />
+				<textFieldExpression><![CDATA[$F{cpno}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="99" y="10" width="89" height="20" />
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[of ……………….]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="188" y="10" width="79" height="20" />
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[20………………………]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="224" y="10" width="54" height="20" forecolor="#0033FF" />
+				<textFieldExpression><![CDATA[$F{cpyear}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="41" width="121" height="20" />
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[In Re…………………]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="45" y="41" width="36" height="20" forecolor="#0033FF" />
+				<textFieldExpression><![CDATA[$F{cpr}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="434" splitType="Stretch">
+			<staticText>
+				<reportElement x="10" y="0" width="545" height="185" />
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[       Whereas (name of the child) …………………… has  on …………….(date) been  found  to  be  in  need
+of care and protection, and is placed under the care and supervision of (name)……………………...............
+(address)…………………..on executing a bond by the said ………………….. and the Committee is satisfied
+that it is expedient to deal with the said child by making an order placing him/her under supervision.
+Reason for the child being produced before the CWC……………………………………
+………………………………………………………………………………………………….
+       It     is     hereby     ordered     that      the    said     child   be    placed    under     the     supervision    of
+(name)………………………..     (address)........………………………………..........    for       a      period       of
+……………………………………….. This  shall  be  subject  to  the  following  conditions  that:
+1. the    child    along    with    the    copies   of   the   order   and   the   bond,   if   any,   executed   by     the
+said…………………………. shall  be  produced  before  the   Committee  as  and   when  required  by    the
+person  executing  the  bond
+2. the child shall reside at ……………………….. for a period of ………………….]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="178" y="0" width="46" height="14" forecolor="#0033FF" />
+				<textFieldExpression><![CDATA[$F{cnam}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="301" y="0" width="47" height="14" forecolor="#0033FF" />
+				<textFieldExpression><![CDATA[$F{cpdat}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="411" y="14" width="45" height="15" forecolor="#0033FF" />
+				<textFieldExpression><![CDATA[$F{cpfa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="67" y="29" width="64" height="13" forecolor="#0033FF" />
+				<textFieldExpression><![CDATA[$F{cpfad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="301" y="29" width="47" height="13" forecolor="#0033FF" />
+				<textFieldExpression><![CDATA[$F{cpfa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="10" y="66" width="46" height="16" forecolor="#0033FF" />
+				<textFieldExpression><![CDATA[$F{cpcw}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="56" y="96" width="54" height="15" forecolor="#0033FF" />
+				<textFieldExpression><![CDATA[$F{cpfa1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="214" y="96" width="53" height="15" forecolor="#0033FF" />
+				<textFieldExpression><![CDATA[$F{cpfad1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="10" y="111" width="46" height="14" forecolor="#0033FF" />
+				<textFieldExpression><![CDATA[$F{cppe}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="34" y="136" width="62" height="14" forecolor="#0033FF" />
+				<textFieldExpression><![CDATA[$F{cpcna}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="143" y="165" width="58" height="20" forecolor="#0033FF" />
+				<textFieldExpression><![CDATA[$F{cpfad2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="324" y="165" width="52" height="20" forecolor="#0033FF" />
+				<textFieldExpression><![CDATA[$F{cpper}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="185" width="545" height="249" />
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[3. the child shall not be allowed to quit the district jurisdiction of …………………without  the  permission  of
+the  Committee.
+4. the   child   shall    go    to    school/ vocational    training    centre   regularly.   The   child    shall    attend
+………………..................(name of)    school/ vocational    training     centre     ( if    already   identified )    at
+…………………...............................(address of school/ vocational training centre).
+5. the   person   under   whose   care   the  child is  placed shall arrange for the proper care, education  and
+welfare  of  the  child.
+6. the   child   shall   not  be  allowed to associate with undesirable  characters and shall be prevented  from
+coming  in  conflict  with  law.
+7. the    child   shall   be   prevented   from  taking  narcotic  drugs or psychotropic  substances or any  other
+intoxicants.
+8. the  directions  given  by  the  Committee  from  time  to  time,  for  the  due  observance of the conditions
+mentioned  above, shall  be  carried  out.
+
+Dated this ______________day of _____________20 _____________]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="323" y="185" width="53" height="15" forecolor="#0033FF" />
+				<textFieldExpression><![CDATA[$F{cpjuris}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="10" y="224" width="46" height="15" forecolor="#0033FF" />
+				<textFieldExpression><![CDATA[$F{cpsch}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="10" y="239" width="71" height="16" forecolor="#0033FF" />
+				<textFieldExpression><![CDATA[$F{cpschadd}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="67" y="377" width="43" height="14" forecolor="#0033FF" />
+				<textFieldExpression><![CDATA[$F{cpda}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="184" y="377" width="49" height="14" forecolor="#0033FF" />
+				<textFieldExpression><![CDATA[$F{cpmo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="278" y="377" width="37" height="14" forecolor="#0033FF" />
+				<textFieldExpression><![CDATA[$F{cpy}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="44" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="78" splitType="Stretch">
+			<staticText>
+				<reportElement x="67" y="50" width="380" height="20" />
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[• Additional conditions, if any may be inserted by the Child Welfare Committee]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="301" y="0" width="244" height="50" />
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[                                                          (Signature)
+                                        Chairperson/ Member
+                                  Child Welfare Committee]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

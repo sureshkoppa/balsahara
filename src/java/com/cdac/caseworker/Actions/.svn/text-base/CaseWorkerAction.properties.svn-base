@@ -1,0 +1,31 @@
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+
+msg.succ.childAdmInRU=Children Successfully Admitted in to Reception Unit
+mess.fail.childAdmInRU=Problem in Children Admission
+mess.succ.CWDetSave=Case work Details of {0} Saved Successfully
+mess.fail.CWDetSave=Problem in Saving Casework detials of {0}
+mess.succ.disSucc=Child with profile id {0} discharged Successfully
+mess.fail.discharge=Problem in discharge {0}
+mess.succ.saveIntrDet=Interview Details of  {0} profile id saved Successfully
+mess.fail.saveIntrDet=Problem in saving interview details of  child ProfileId{0}
+mess.succ.savePerDetCaseHis=Personal data of Case history Register for the {0} profile id saved Successfully
+mess.fail.savePerDetCaseHis=Problem in saving personal data of Case history Register for the {0}
+mess.succ.saveHouHoldDetCaseHis=House hold details of Case history Register for the  profile id {0} saved Successfully
+mess.fail.saveHouHoldDetCaseHis=Problem in saving House hold details of Case history Register for the {0}
+mess.succ.saveFamDetCaseHis=Family details of Case history Register for the {0} profile id saved Successfully
+mess.fail.saveFamDetCaseHis=Problem in saving Family details of Case history Register for the {0}
+mess.succ.saveAdolDetCaseHis=Adolscence details of Case history Register for the {0} profile id saved Successfully
+mess.fail.saveAdolDetCaseHis=Problem in saving Adolscence details of Case history Register for the {0}
+mess.succ.saveEmpDetCaseHis=Employment details of Case history Register for the {0} profile id saved Successfully
+mess.fail.saveEmpDetCaseHis=Problem in saving Employment details of Case history Register for the {0}
+mess.succ.savePriAdmEduDetCH=Prior Admission Education details of Case history Register for the {0} profile id saved Successfully
+mess.fail.savePriAdmEduDetCH=Problem in saving prior admission education details of Case history Register for the {0}
+mess.succ.saveFamCriDetCH=Family Crime details of Case history Register for the {0} profile id saved Successfully
+mess.fail.saveFamCriDetCH=Problem in saving family crime details of Case history Register for the {0}
+mess.succ.saveEduDetAftAdmCH=Education details after Admission of Case history Register for the {0} profile id saved Successfully
+mess.fail.saveEduDetAftAdmCH=Problem in saving Education details after admission of Case history Register for the {0}
+mess.succ.saveSocHisDetCH=Social History details of Case history Register for the {0} profile id saved Successfully
+mess.fail.saveSocHisDetCH=Problem in saving Social history details of Case history Register for the {0}
+mess.succ.saveCWCMeetMin=CWCMeetings Minutes Saved Suceessfully
+mess.fail.saveCWCMeetMin=Problem in saving CWCMeetings Minutes

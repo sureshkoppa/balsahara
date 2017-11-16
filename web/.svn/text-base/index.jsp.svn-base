@@ -1,0 +1,185 @@
+<%-- 
+    Document   : index
+    Created on : Jan 28, 2011, 12:12:43 PM
+    Author     : NEELAVA
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags"%>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="style.css"/>
+        <title>Welcome to Andhra Pradesh Child Homes</title>        
+            <link rel="stylesheet" href="jq/jquery-ui.css"/>
+	    <script src="jq/jquery-1.8.2.js"></script>
+	    <script src="jq/jquery-ui.js"></script>
+            <script type="text/javascript">
+            
+         function validate()
+            {
+                var $dialog = $('<div></div>')
+		.html('This dialog will show every time!')
+		.dialog({
+			autoOpen: false,
+                        height: 160,
+			width: 250,
+                        modal: true,
+                        /*to add red color to the title*/
+			title: '<s:text name="label.err.error"/>'.fontcolor('#FF0000'),
+                        buttons: {
+				Ok: function() {
+					$dialog.dialog('close');
+                                    }
+			}
+		});
+                   /*validating the fields present in the form*/
+                    if(document.getElementById("userId_txt").value.length<1)
+                        {
+                         
+                             $dialog.html("<s:text name="index.err.entUserId"/>");
+                             $dialog.parent().addClass( "ui-state-error" );
+                             $dialog.dialog('open');
+                             return false;
+                        }
+                        else if(document.getElementById("passwd_txt").value.length<1)
+                        {
+                             $dialog.html("<s:text name="index.err.entPass"/>");
+                             $dialog.parent().addClass( "ui-state-error" );
+                             $dialog.dialog('open');
+                             return false;
+                        
+                        }
+                       
+            }     
+            function selLang2(thisf)
+        {
+           // alert("***********"+thisf.selectedValue);
+            
+          /*  if(document.getElementById('sel_lan2').selectedValue=='en')
+                {
+                    alert("english");
+                    document.indexForm.action="/WDCW_hin2/index.action?request_locale=en";
+                    
+                  document.indexForm.submit();
+                }
+            else if(document.getElementById('sel_lan2').selectedValue=='hi')
+                {
+                     alert("hindi"); */
+        
+                  var e = document.getElementById("sel_lan2");
+                  var strUser = e.options[e.selectedIndex].value;
+  
+  
+                //alert("********"+strUser);
+                
+                if(strUser!='sel')
+                    {
+                     document.indexForm.action="index.action?request_locale="+strUser;
+                     document.indexForm.submit();
+                    }
+                    else
+                        {
+                            alert("Select Language");
+                        }
+                //}
+        }
+        </script>
+        
+       
+        
+    </head>
+    <body>
+        <div id="header">
+            
+		<h1></h1> 
+		<h2></h2>
+	</div>
+        
+    
+	<div id="container-top">
+            <p style="text-align: right">
+                <%--
+                <s:a href="%{url_en}">English</s:a> &nbsp;&nbsp;<s:a href="%{url_hi}">&#2361;&#2367;&#2306;&#2342;&#2368;</s:a>
+                --%>
+                
+                
+                
+                <select id="sel_lan2" onchange="selLang2(this);">
+                    <option value="sel">--<s:text name="global.option.selLang"/>--</option>
+                    <option value="en">English</option>
+                    <option value="hi">&#2361;&#2367;&#2306;&#2342;&#2368;</option>
+                    <option value="te">&#3108;&#3142;&#3122;&#3137;&#3095;&#3137;</option>
+                </select>
+              
+	 </div>
+	<div id="container">
+		<div id="left">
+			<div id="left-top"></div>
+			<div id="left-centre">
+
+                            <h2><s:text name="global.label.login"/></h2>
+				<p>
+                                <form method="post" action="ValidateLoginAction" name="indexForm" id="indexForm" >
+                                     <s:text name="global.index1.username"/><br /><input type="text" name="userId_txt" id="userId_txt" key="global.homeID"/><br />
+                                     <s:text name="global.index1.password"/><br/><input type="password" name="passwd_txt" id="passwd_txt"/><br/>
+                                     <span><font color="red"><i><s:property value="message" escape="false"/></i></font></span>
+                                <br/>                           
+                                <input type="submit" value="<s:text name="global.butt.label"/>" onclick="return validate();"/>
+                                
+                                
+                                
+                                </form>
+
+                                &nbsp;&nbsp;&nbsp;&nbsp;<a href="#"><s:text name="global.label.forgotPass"/></a>
+                                
+			</div>
+			<div id="left-bottom"></div>
+		</div>
+       
+                                
+                                
+	<div id="right">
+                    <%--
+                     <p style="text-align: right"> <s:a href="%{url_hi}">Hindi</s:a>&nbsp;&nbsp;<s:a href="%{url_en}">English</s:a></p>
+                    --%>
+			<div id="tabs">
+			<ul>
+                          <li><div class="tab-active"><a href="#"><span><s:text name="label.home"/></span></a></div></li>
+			 <%-- <li><div class="tab"><s:a action="UM-RegisterUser"><span><s:text name="global.label.register"/></span></s:a></div></li> --%>
+			  <li><div class="tab"><a href="#"><span><s:text name="global.label.aboutUs"/></span></a></div></li>
+			  <li><div class="tab"><a href="#"><span><s:text name="global.label.contatUs"/></span></a></div></li>
+                      </ul>
+                      </div>
+			<div id="right-top"></div>
+			<div id="right-centre">
+			  <h1><s:text name="global.label.mianPage"/></h1>
+				<s:text name="global.index.matter1"/>
+                                <s:text name="global.index.matter2"/>
+                                <s:text name="global.index.matter3"/>
+		  </div>
+			<div id="right-bottom">
+                            
+                            
+                        </div>
+		</div>
+		<div class="clear"></div>
+                 &nbsp;&nbsp;&nbsp;<s:a href="CW-Master-Report" target="_blank">Analytical Reports</s:a><img src="./images/gif_new.gif"/><br/><br/>
+                <!--suresh added 13-01-2011 start-->
+                &nbsp;&nbsp;&nbsp;<s:a href="displayMap.action" target="_blank"><s:text name="global.link.map" /></s:a><br/>
+                <!--suresh added 13-01-2011 end-->
+	</div>
+	<div id="container-bottom"></div>
+	<div id="footer-top"></div>
+	<div id="footer-centre">
+		<p>&copy; 2011 Department for Women, Children, Disabled & Senior Citizens  . All rights reserved.
+<br />
+                  <a href="http://www.cdachyd.in"><s:text name="global.footer.powCDAC"/></a></p>
+	</div>
+	<div id="footer-bottom"></div>
+
+
+    </body>
+</html>

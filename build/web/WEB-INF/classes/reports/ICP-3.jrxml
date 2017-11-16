@@ -1,0 +1,940 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ICP-3" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="1182"/>
+	<field name="profile_no" class="java.lang.String"/>
+	<field name="profile_year" class="java.lang.Integer"/>
+	<field name="child_name" class="java.lang.String"/>
+	<field name="child_age" class="java.lang.Integer"/>
+	<field name="father_name" class="java.lang.String"/>
+	<field name="mother_name" class="java.lang.String"/>
+	<field name="nationality" class="java.lang.String"/>
+	<field name="child_religion" class="java.lang.String"/>
+	<field name="child_cast" class="java.lang.String"/>
+	<field name="child_subcaste" class="java.lang.String"/>
+	<field name="child_eduAttain" class="java.lang.String"/>
+	<field name="health_needs" class="java.lang.String"/>
+	<field name="emoTrain_needs" class="java.lang.String"/>
+	<field name="leaCreate_play" class="java.lang.String"/>
+	<field name="attach_rel" class="java.lang.String"/>
+	<field name="relig_beliefs" class="java.lang.String"/>
+	<field name="prot_allAbuse" class="java.lang.String"/>
+	<field name="social_stream" class="java.lang.String"/>
+	<field name="follow_postAction" class="java.lang.String"/>
+	<field name="release_type" class="java.lang.String"/>
+	<field name="place_transfer" class="java.lang.String"/>
+	<field name="authority_responsible" class="java.lang.String"/>
+	<field name="skills_acquired" class="java.lang.String"/>
+	<field name="date_relase" class="java.util.Date"/>
+	<field name="date_repatriot" class="java.util.Date"/>
+	<field name="requisition_escort" class="java.lang.String"/>
+	<field name="identify_escort" class="java.lang.String"/>
+	<field name="rehabi_placement" class="java.lang.String"/>
+	<field name="sponser_require" class="java.lang.String"/>
+	<field name="ident_officer" class="java.lang.String"/>
+	<field name="mou_sa_is" class="java.lang.String"/>
+	<field name="ident_sponser" class="java.lang.String"/>
+	<field name="mou_childSponser" class="java.lang.String"/>
+	<field name="child_savAcc" class="java.lang.String"/>
+	<field name="child_earnBelong" class="java.lang.String"/>
+	<field name="child_awarReward" class="java.lang.String"/>
+	<field name="child_option" class="java.lang.String"/>
+	<field name="other_info" class="java.lang.String"/>
+	<field name="status_bankAcc" class="java.lang.String"/>
+	<field name="earning_handedOver" class="java.lang.String"/>
+	<field name="child_placement" class="java.lang.String"/>
+	<field name="child_familyBehav" class="java.lang.String"/>
+	<field name="social_milieu" class="java.lang.String"/>
+	<field name="how_skillUsed" class="java.lang.String"/>
+	<field name="whether_school" class="java.lang.String"/>
+	<field name="date_admit" class="java.util.Date"/>
+	<field name="name_school" class="java.lang.String"/>
+	<field name="details_place" class="java.lang.String"/>
+	<field name="date_admission" class="java.util.Date"/>
+	<field name="label.icp.heaNeeds" class="java.lang.String"/>
+	<field name="label.icp.emoTrainNeeds" class="java.lang.String"/>
+	<field name="global.label.staBankAcc" class="java.lang.String"/>
+	<field name="global.icp.earnBelChild" class="java.lang.String"/>
+	<field name="global.label.placeOfJuvOrChild" class="java.lang.String"/>
+	<field name="global.label.famTowChild" class="java.lang.String"/>
+	<field name="global.label.socMilOfChild" class="java.lang.String"/>
+	<field name="global.label.howChildUsingSkills" class="java.lang.String"/>
+	<field name="global.label.whetherChildAdm" class="java.lang.String"/>
+	<field name="global.label.dateOfAdm" class="java.lang.String"/>
+	<field name="global.label.nameOfSchool" class="java.lang.String"/>
+	<field name="global.heading.postRelease" class="java.lang.String"/>
+	<field name="global.heading.preRelease" class="java.lang.String"/>
+	<field name="global.label.detailsPlaceTrans" class="java.lang.String"/>
+	<field name="global.label.concernAuthResp" class="java.lang.String"/>
+	<field name="global.label.detailPlaDiff" class="java.lang.String"/>
+	<field name="global.label.dateOfRelTrans" class="java.lang.String"/>
+	<field name="global.label.dateOfRepart" class="java.lang.String"/>
+	<field name="global.label.reqEscortIfReq" class="java.lang.String"/>
+	<field name="global.label.identOfEscort" class="java.lang.String"/>
+	<field name="global.label.recomRehPlanIncPlace" class="java.lang.String"/>
+	<field name="global.label.sponReq" class="java.lang.String"/>
+	<field name="global.label.identPOCWetc" class="java.lang.String"/>
+	<field name="global.label.mouWtNGOforPRel" class="java.lang.String"/>
+	<field name="global.label.identSaOrIa" class="java.lang.String"/>
+	<field name="global.label.mouSaOrIa" class="java.lang.String"/>
+	<field name="global.label.detOfSaveAcc" class="java.lang.String"/>
+	<field name="global.label.detChildEarn" class="java.lang.String"/>
+	<field name="global.label.detAwaRewa" class="java.lang.String"/>
+	<field name="global.label.optOfChild" class="java.lang.String"/>
+	<field name="global.label.anyOtherInfo" class="java.lang.String"/>
+	<field name="global.heading.persDetails" class="java.lang.String"/>
+	<field name="label.icp.leaCreatPlay" class="java.lang.String"/>
+	<field name="label.icp.attachAndRel" class="java.lang.String"/>
+	<field name="label.icp.relBeliefs" class="java.lang.String"/>
+	<field name="label.icp.protFromAllAbuMalTreat" class="java.lang.String"/>
+	<field name="label.icp.socMainStream" class="java.lang.String"/>
+	<field name="global.label.followPostRetr" class="java.lang.String"/>
+	<field name="heading.summOfCaseHis" class="java.lang.String"/>
+	<field name="label.icp.eduAttain" class="java.lang.String"/>
+	<field name="global.icp.nameOfChild" class="java.lang.String"/>
+	<field name="label.age" class="java.lang.String"/>
+	<field name="global.label.fatName" class="java.lang.String"/>
+	<field name="global.label.matName" class="java.lang.String"/>
+	<field name="label.nationality" class="java.lang.String"/>
+	<field name="global.label.relg" class="java.lang.String"/>
+	<field name="global.label.caste" class="java.lang.String"/>
+	<field name="global.label.subCaste" class="java.lang.String"/>
+	<field name="global.heading.icp" class="java.lang.String"/>
+	<field name="global.icp.msg1" class="java.lang.String"/>
+	<field name="global.icp.preBioFam" class="java.lang.String"/>
+	<field name="global.icp.kinCare" class="java.lang.String"/>
+	<field name="global.icp.inCouAdopt" class="java.lang.String"/>
+	<field name="global.icp.fosterCare" class="java.lang.String"/>
+	<field name="global.icp.interCAdopt" class="java.lang.String"/>
+	<field name="global.icp.instCare" class="java.lang.String"/>
+	<field name="global.icp.yrBoaCom" class="java.lang.String"/>
+	<field name="global.icp.caseOrProf" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="262" splitType="Stretch">
+			<staticText>
+				<reportElement x="14" y="102" width="15" height="16"/>
+				<textElement/>
+				<text><![CDATA[i. ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="14" y="118" width="15" height="16"/>
+				<textElement markup="styled"/>
+				<text><![CDATA[ii. ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="15" y="134" width="14" height="15"/>
+				<textElement/>
+				<text><![CDATA[iii. ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="15" y="149" width="14" height="15"/>
+				<textElement/>
+				<text><![CDATA[iv.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="15" y="164" width="14" height="14"/>
+				<textElement/>
+				<text><![CDATA[v. ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="15" y="178" width="14" height="17"/>
+				<textElement/>
+				<text><![CDATA[vi. ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="88" y="207" width="115" height="20" forecolor="#3333FF"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{profile_no}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="305" y="207" width="53" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{profile_year}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="159" y="238" width="100" height="20" forecolor="#0000FF"/>
+				<textElement/>
+				<textFieldExpression class="java.util.Date"><![CDATA[$F{date_admission}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="205" y="207" width="100" height="20"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[of]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="14" y="238" width="145" height="20"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{global.label.dateOfAdm}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="188" y="0" width="165" height="20"/>
+				<textElement markup="styled">
+					<font size="13" isBold="true" isUnderline="true"/>
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{global.heading.icp}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="">
+				<reportElement x="16" y="20" width="525" height="51"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional" firstLineIndent="150"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{global.icp.msg1}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="31" y="102" width="202" height="16"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{global.icp.preBioFam}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="31" y="118" width="202" height="16"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{global.icp.kinCare}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="31" y="135" width="202" height="14"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{global.icp.inCouAdopt}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="31" y="149" width="202" height="15"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{global.icp.fosterCare}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="31" y="164" width="202" height="14"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{global.icp.interCAdopt}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="31" y="178" width="202" height="17"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{global.icp.instCare}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="358" y="207" width="147" height="20"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{global.icp.yrBoaCom}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="16" y="207" width="72" height="20"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{global.icp.caseOrProf}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="4" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="469" splitType="Stretch">
+			<staticText>
+				<reportElement x="17" y="25" width="14" height="20"/>
+				<textElement>
+					<font isBold="true" isItalic="false" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[1.]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="253" y="25" width="100" height="20" forecolor="#0000FF"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{child_name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="17" y="45" width="14" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[2.]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="254" y="45" width="100" height="20" forecolor="#0000FF"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{child_age}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="17" y="65" width="14" height="20"/>
+				<textElement>
+					<font isBold="true" isItalic="false" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[3.]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="254" y="65" width="100" height="20" forecolor="#0000FF"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{father_name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="17" y="85" width="14" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[4.]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="254" y="85" width="100" height="20" forecolor="#0000FF"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{mother_name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="17" y="105" width="14" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[5.]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="254" y="106" width="100" height="20" forecolor="#0000FF"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{nationality}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="254" y="126" width="48" height="20" forecolor="#0000FF"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{child_religion}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="17" y="126" width="14" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[6.]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="331" y="126" width="38" height="21" forecolor="#0000FF"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{child_cast}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="395" y="127" width="49" height="20" forecolor="#0000FF"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{child_subcaste}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="17" y="146" width="14" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[7.]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="254" y="147" width="100" height="20" forecolor="#0000FF"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{child_eduAttain}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="307" y="126" width="24" height="20" forecolor="#0000FF"/>
+				<textElement/>
+				<text><![CDATA[/]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="369" y="127" width="26" height="20" forecolor="#3333FF"/>
+				<textElement/>
+				<text><![CDATA[/]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="17" height="25"/>
+				<textElement>
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[A.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="17" y="166" width="14" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[8.]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="250" y="196" width="286" height="31" forecolor="#0000FF"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{health_needs}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="250" y="228" width="286" height="31" forecolor="#0000FF"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{emoTrain_needs}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="252" y="259" width="286" height="30" forecolor="#0000FF"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{leaCreate_play}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement mode="Opaque" x="252" y="289" width="286" height="29" forecolor="#0000FF"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{attach_rel}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement mode="Opaque" x="253" y="318" width="292" height="32" forecolor="#0000FF"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{relig_beliefs}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement mode="Opaque" x="252" y="350" width="286" height="32" forecolor="#0000FF"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{prot_allAbuse}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement mode="Opaque" x="250" y="382" width="286" height="32" forecolor="#0000FF"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{social_stream}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement mode="Opaque" x="250" y="414" width="286" height="37" forecolor="#0000FF"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{follow_postAction}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="57" y="196" width="188" height="32"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{label.icp.heaNeeds}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="59" y="228" width="186" height="31"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{label.icp.emoTrainNeeds}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="20" y="0" width="197" height="20"/>
+				<textElement markup="styled">
+					<font size="13" isBold="true"/>
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{global.heading.persDetails}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="59" y="259" width="186" height="30"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{label.icp.leaCreatPlay}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="60" y="289" width="186" height="29"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{label.icp.attachAndRel}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="">
+				<reportElement x="60" y="318" width="185" height="32"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{label.icp.relBeliefs}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="59" y="350" width="186" height="32"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{label.icp.protFromAllAbuMalTreat}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="60" y="382" width="185" height="32"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{label.icp.socMainStream}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="60" y="414" width="185" height="37"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{global.label.followPostRetr}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="31" y="167" width="215" height="19"/>
+				<textElement markup="styled">
+					<font size="13" isBold="true"/>
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{heading.summOfCaseHis}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="31" y="149" width="155" height="18"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{label.icp.eduAttain}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="31" y="25" width="140" height="20"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{global.icp.nameOfChild}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="31" y="45" width="140" height="20"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{label.age}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="31" y="65" width="140" height="20"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{global.label.fatName}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="31" y="86" width="140" height="20"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{global.label.matName}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="31" y="107" width="140" height="19"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{label.nationality}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="72" y="127" width="16" height="19" forecolor="#3333FF"/>
+				<textElement/>
+				<text><![CDATA[/]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="31" y="127" width="41" height="19"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{global.label.relg}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="88" y="129" width="51" height="18"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{global.label.caste}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="139" y="130" width="13" height="16" forecolor="#3333FF"/>
+				<textElement/>
+				<text><![CDATA[/]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="152" y="129" width="63" height="20"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{global.label.subCaste}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="530" splitType="Stretch">
+			<staticText>
+				<reportElement x="-2" y="4" width="16" height="20"/>
+				<textElement>
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[B. ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="15" y="34" width="233" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<text><![CDATA[Release Type]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="252" y="34" width="286" height="20" forecolor="#0000FF"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{release_type}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="253" y="54" width="286" height="19" forecolor="#0000FF"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{place_transfer}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="253" y="73" width="286" height="22" forecolor="#0000FF"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{authority_responsible}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="253" y="126" width="286" height="20" forecolor="#0000FF"/>
+				<textElement/>
+				<textFieldExpression class="java.util.Date"><![CDATA[$F{date_relase}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="253" y="146" width="286" height="20" forecolor="#0000FF"/>
+				<textElement/>
+				<textFieldExpression class="java.util.Date"><![CDATA[$F{date_repatriot}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="253" y="166" width="286" height="20" forecolor="#0000FF"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{requisition_escort}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="253" y="186" width="286" height="19" forecolor="#0000FF"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{identify_escort}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="253" y="205" width="286" height="33" forecolor="#0000FF"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{rehabi_placement}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="253" y="238" width="286" height="20" forecolor="#0000FF"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sponser_require}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="253" y="258" width="286" height="44" forecolor="#0000FF"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{ident_officer}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="253" y="305" width="286" height="40" forecolor="#0000FF"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{mou_sa_is}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="253" y="95" width="286" height="31" forecolor="#0000FF"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{details_place}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="253" y="454" width="286" height="27" forecolor="#0000FF"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{child_awarReward}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="253" y="430" width="286" height="24" forecolor="#0000FF"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{child_earnBelong}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="253" y="481" width="286" height="20" forecolor="#0000FF"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{child_option}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="253" y="501" width="286" height="20" forecolor="#0000FF"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{other_info}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="253" y="345" width="286" height="29" forecolor="#0000FF"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{ident_sponser}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="253" y="374" width="286" height="31" forecolor="#0000FF"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{mou_childSponser}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="253" y="405" width="286" height="25" forecolor="#0000FF"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{child_savAcc}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="14" y="5" width="201" height="20"/>
+				<textElement markup="styled">
+					<font size="13" isBold="true"/>
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{global.heading.preRelease}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="14" y="54" width="234" height="19"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{global.label.detailsPlaceTrans}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="14" y="73" width="233" height="20"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{global.label.concernAuthResp}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="14" y="93" width="233" height="33"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{global.label.detailPlaDiff}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="14" y="126" width="233" height="20"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{global.label.dateOfRelTrans}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="146" width="233" height="20"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{global.label.dateOfRepart}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="166" width="232" height="20"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{global.label.reqEscortIfReq}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="186" width="232" height="19"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{global.label.identOfEscort}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="205" width="232" height="31"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{global.label.recomRehPlanIncPlace}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="236" width="232" height="20"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{global.label.sponReq}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="258" width="232" height="44"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{global.label.identPOCWetc}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="16" y="305" width="231" height="40"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{global.label.mouWtNGOforPRel}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="345" width="232" height="29"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{global.label.identSaOrIa}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="14" y="374" width="234" height="30"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{global.label.mouSaOrIa}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="16" y="404" width="231" height="26"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{global.label.detOfSaveAcc}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="430" width="232" height="24"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{global.label.detChildEarn}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="454" width="231" height="27"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{global.label.detAwaRewa}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="481" width="230" height="20"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{global.label.optOfChild}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="15" y="501" width="230" height="20"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{global.label.anyOtherInfo}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="262">
+			<staticText>
+				<reportElement x="0" y="13" width="16" height="20"/>
+				<textElement>
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[C.]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="255" y="33" width="200" height="20" forecolor="#0000FF"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{status_bankAcc}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="255" y="243" width="200" height="18" forecolor="#0000FF"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{name_school}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="255" y="223" width="200" height="20" forecolor="#0000FF"/>
+				<textElement/>
+				<textFieldExpression class="java.util.Date"><![CDATA[$F{date_admit}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="253" y="205" width="200" height="18" forecolor="#0000FF"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{whether_school}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="255" y="175" width="200" height="30" forecolor="#0000FF"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{how_skillUsed}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="255" y="140" width="200" height="33" forecolor="#0000FF"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{social_milieu}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="254" y="108" width="200" height="34" forecolor="#0000FF"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{child_familyBehav}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="255" y="82" width="200" height="26" forecolor="#0000FF"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{child_placement}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="255" y="53" width="200" height="29" forecolor="#0000FF"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{earning_handedOver}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="20" y="33" width="226" height="20"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{global.label.staBankAcc}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="21" y="53" width="224" height="29"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{global.icp.earnBelChild}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="">
+				<reportElement x="20" y="82" width="225" height="26"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{global.label.placeOfJuvOrChild}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="20" y="108" width="224" height="34"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{global.label.famTowChild}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="21" y="140" width="225" height="33"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{global.label.socMilOfChild}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="21" y="173" width="224" height="32"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{global.label.howChildUsingSkills}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="23" y="205" width="221" height="18"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{global.label.whetherChildAdm}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="20" y="225" width="224" height="18"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{global.label.dateOfAdm}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="21" y="243" width="224" height="18"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{global.label.nameOfSchool}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="20" y="13" width="225" height="20"/>
+				<textElement markup="styled">
+					<font size="13" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{global.heading.postRelease}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="2" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="3" splitType="Stretch"/>
+	</summary>
+</jasperReport>

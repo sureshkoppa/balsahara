@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Form 32" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3dbeaaf1-db5e-48b7-bf65-913d8a4d7d5e">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[select * from form_32]]>
+	</queryString>
+	<field name="name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="age" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="mr" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="mrs" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="mr1" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="mrs1" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cno" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="name1" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="name2" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="period" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="contact" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<group name="name">
+		<groupExpression><![CDATA[$F{name}]]></groupExpression>
+	</group>
+	<group name="age">
+		<groupExpression><![CDATA[$F{age}]]></groupExpression>
+	</group>
+	<group name="mr">
+		<groupExpression><![CDATA[$F{mr}]]></groupExpression>
+	</group>
+	<group name="mrs">
+		<groupExpression><![CDATA[$F{mrs}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="129" splitType="Stretch">
+			<staticText>
+				<reportElement x="252" y="6" width="63" height="20" uuid="351f5fbf-3843-4e72-8b6b-c359ad4687e0"/>
+				<textElement>
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FORM 32]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="241" y="29" width="84" height="20" uuid="a94a6faf-256d-4cfc-8a46-1b12615405c4"/>
+				<textElement>
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[[Rule 23(15)]]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="95" y="52" width="353" height="20" uuid="e2ceee2e-1a40-4a06-9b1c-ca78c0fe1e28"/>
+				<textElement>
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ORDER OF FOSTER CARE PLACEMENT WITH A FAMILY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="272" y="78" width="28" height="20" uuid="6723167f-9ae4-4c84-be7b-dcf0b4d34b72"/>
+				<textElement>
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[OR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="212" y="103" width="147" height="20" uuid="63a314c6-718f-4ca2-9412-37091d5b0d47"/>
+				<textElement>
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[GROUP FOSTER CARE
+
+]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="264" splitType="Stretch">
+			<staticText>
+				<reportElement x="19" y="7" width="172" height="20" uuid="ef68ee38-22ea-4912-bb0c-0a7d5436c864"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[The child (name and address)]]></text>
+			</staticText>
+			<line>
+				<reportElement x="185" y="20" width="75" height="1" uuid="90293aa8-99a5-4ab4-8060-2bbbafe3f498"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="265" y="7" width="100" height="20" uuid="dbe8e0a6-139e-4de6-a594-bf068afceba1"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[approximate  age]]></text>
+			</staticText>
+			<line>
+				<reportElement x="363" y="21" width="120" height="1" uuid="16db97d6-536a-4d46-bf7c-ccc54ac4097c"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="484" y="7" width="61" height="20" uuid="6a4bc327-04e9-402d-8e7e-ed3d22bd3583"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[d/o or s/o ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="34" width="18" height="20" uuid="73545edd-d4a5-445a-8f4c-b11056b40f65"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Mr]]></text>
+			</staticText>
+			<line>
+				<reportElement x="14" y="49" width="75" height="1" uuid="d7d03370-76e6-4670-b65d-202722db0e19"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="94" y="34" width="48" height="20" uuid="d32e65d6-3553-4da4-8794-fa082ee2e8c9"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[and Mrs]]></text>
+			</staticText>
+			<line>
+				<reportElement x="138" y="48" width="125" height="1" uuid="65d1b95a-4dc4-4610-a2bd-b8c10562c90a"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="271" y="34" width="272" height="20" uuid="f1f16a53-e9ee-4b39-8ae7-2021f2a28112"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[is   in   need   of   care  and  protection of a family.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="94" y="61" width="48" height="20" uuid="9b3bdaeb-2e18-419b-9fc7-9b356f31435c"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[and Mrs]]></text>
+			</staticText>
+			<line>
+				<reportElement x="14" y="74" width="75" height="1" uuid="48eada93-be20-4d32-925b-4ea9aed85e96"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="140" y="73" width="122" height="1" uuid="d681afce-091f-43f4-8171-4ac4b76d11c2"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="1" y="61" width="18" height="20" uuid="ac2baa18-cb6b-4c68-9ee1-967d6caadf8b"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Mr]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="262" y="61" width="281" height="20" uuid="a0eafff9-d19f-4ad9-b9ab-05c22146dc22"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[resident of (complete address and contact number)]]></text>
+			</staticText>
+			<line>
+				<reportElement x="1" y="95" width="195" height="1" uuid="449d3235-e8e2-47c4-ad20-61f66b655b6b"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="199" y="81" width="340" height="20" uuid="bb786af9-6323-436c-869b-776fcb73dcd4"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[are  declared  fit   for   foster-care placement   of the  child after]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="104" width="501" height="20" uuid="6313f9ea-cb15-43b4-a04a-3ce86d87c44f"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[considering   the   Individual   Care   Plan,  Child   Study   Report   and  Home  Study  Report.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="272" y="134" width="22" height="20" uuid="3d4244b7-0e76-4f67-9a9d-1f8b7be2d488"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[OR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="19" y="168" width="239" height="20" uuid="6018c1e2-c9ab-47c4-b61f-a52eb5b325f8"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Child Care Institution (Name and Address)]]></text>
+			</staticText>
+			<line>
+				<reportElement x="252" y="187" width="130" height="1" uuid="1bc3f79a-3d83-47e8-87a2-7bdd0e0f34ba"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="382" y="168" width="153" height="20" uuid="4b3ece61-a48c-488f-ba2e-8103ed152250"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[is declared fit for foster-care]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="192" width="501" height="20" uuid="f5ac8a51-1a2b-4255-b2bb-5347531f8f0b"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[placement of the child after considering the Individual Care Plan and Child Study Report. ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="19" y="217" width="100" height="20" uuid="3016aa7b-81db-4caa-a65e-20eda33095d9"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[The child (name)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="315" y="217" width="230" height="20" uuid="9d420927-b9d3-42e3-9211-851ab743c5b1"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[is  placed in foster  care  for  a  period  of]]></text>
+			</staticText>
+			<line>
+				<reportElement x="112" y="230" width="200" height="1" uuid="fe3385c9-8f77-4c5f-bd38-73974e92b17e"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="5" y="254" width="125" height="1" uuid="aaf101ed-ccd7-4a1e-9400-e9c5b80ddc5b"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="126" y="244" width="419" height="20" uuid="cc9e1f46-25a5-46f7-852f-3426d28362f0"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[under of the supervision of the aforesaid Child Welfare Officer/Social Worker]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="203" y="6" width="49" height="20" uuid="36d206f9-5c2b-4230-8dcb-6944770e899e"/>
+				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="405" y="6" width="43" height="20" uuid="3389a4a9-fa33-4b39-9694-b97d751117e9"/>
+				<textFieldExpression><![CDATA[$F{age}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="32" y="34" width="41" height="20" uuid="ae34e6c1-87eb-49fb-8327-ef8a4a050065"/>
+				<textFieldExpression><![CDATA[$F{mr}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="173" y="33" width="39" height="20" uuid="569bae0d-3393-48bc-9a22-4d52b6c05b10"/>
+				<textFieldExpression><![CDATA[$F{mrs}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="27" y="59" width="46" height="20" uuid="1a158de9-d106-4464-b48d-416b69f62ca9"/>
+				<textFieldExpression><![CDATA[$F{mr1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="168" y="58" width="44" height="20" uuid="ceef6ce7-71e6-4984-a8ee-7e1bd4c697f3"/>
+				<textFieldExpression><![CDATA[$F{mrs1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="67" y="80" width="45" height="20" uuid="be9aacd0-7e17-4432-9928-4ae04df41a70"/>
+				<textFieldExpression><![CDATA[$F{cno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="277" y="171" width="52" height="20" uuid="ecc8ecb6-4fa1-4293-8efd-05294c6bd664"/>
+				<textFieldExpression><![CDATA[$F{name1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="185" y="215" width="53" height="20" uuid="3faf017d-9fdd-48ad-9e2e-7900dee36e4a"/>
+				<textFieldExpression><![CDATA[$F{name2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="44" y="240" width="49" height="20" uuid="f50e8d71-b42e-4e1e-9d74-ab2d4591cc86"/>
+				<textFieldExpression><![CDATA[$F{period}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="26">
+			<staticText>
+				<reportElement x="0" y="0" width="110" height="20" uuid="f18ca12a-c6ce-4691-94f5-88859a0fb4ed"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[(name and contact)]]></text>
+			</staticText>
+			<line>
+				<reportElement x="105" y="14" width="250" height="1" uuid="73474dc5-b060-4584-95e6-4e09a6807409"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="191" y="0" width="64" height="20" uuid="c3e9fc52-890d-4666-af4e-92a655b1690d"/>
+				<textFieldExpression><![CDATA[$F{contact}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="197" splitType="Stretch">
+			<staticText>
+				<reportElement x="445" y="25" width="100" height="20" uuid="31b42637-1982-4d78-8363-fa2af7f39e0f"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Chairperson/Member]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="394" y="50" width="149" height="20" uuid="b26afd63-a1b5-487c-9209-a8bbc00aa4a7"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ Child Welfare Committee]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="189" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="220" splitType="Stretch"/>
+	</summary>
+</jasperReport>

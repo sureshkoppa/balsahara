@@ -1,0 +1,866 @@
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+   <package name="com/cdac/caseworker/Actions" namespace="/" extends="jasperreports-default,struts-default,json-default">
+
+    <result-types>
+  <result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult" />
+  <result-type name="json" class="org.apache.struts2.json.JSONResult"/>
+  </result-types>
+  
+       <interceptors>
+        <interceptor name="requestCheckInterceptor" class="com.cdac.common.interceptors.RequestCheckInterceptor"/> 
+        <interceptor name="roleCheckInterceptor"    class="com.cdac.common.interceptors.RoleCheckInterceptor" />    
+        
+                <interceptor-stack name="loggingStack">                                      
+                    
+                    <interceptor-ref name="requestCheckInterceptor" />
+                    <interceptor-ref name="roleCheckInterceptor"/>                      
+                    <interceptor-ref name="defaultStack" />
+                </interceptor-stack>
+                
+                 <interceptor-stack name="fileUploadStack">
+<interceptor-ref name="exception" />
+<interceptor-ref name="alias" />
+<interceptor-ref name="servletConfig" />
+<interceptor-ref name="prepare" />
+<interceptor-ref name="i18n" />
+<interceptor-ref name="chain" />
+<interceptor-ref name="debugging" />
+<interceptor-ref name="profiling" />
+<interceptor-ref name="scopedModelDriven" />
+<interceptor-ref name="modelDriven" />
+<interceptor-ref name="fileUpload">
+<param name="maximumSize">3000000</param>
+<param name="allowedTypes"> image/jpeg,image/gif,image/png</param>
+</interceptor-ref>
+<interceptor-ref name="checkbox" />
+<interceptor-ref name="staticParams" />
+<interceptor-ref name="actionMappingParams" />
+<interceptor-ref name="params">
+<param name="excludeParams"> dojo\..*,^struts\..*</param>
+</interceptor-ref>
+<interceptor-ref name="conversionError" />
+<interceptor-ref name="validation">
+<param name="excludeMethods"> input,back,cancel,browse</param>
+</interceptor-ref>
+<interceptor-ref name="workflow">
+<param name="excludeMethods"> input,back,cancel,browse</param>
+</interceptor-ref>
+
+<interceptor-ref name="requestCheckInterceptor"/>
+</interceptor-stack>
+    </interceptors>
+
+
+  <action name="CW-AdmRH">
+      
+       <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+      
+  <result name="success" type="tiles">CW-AdmRH</result>
+  </action>
+
+
+
+   <action name="CW-AdmCH" class="com.cdac.caseworker.Actions.CaseWorkerAction" method="admissionToCH">
+        <interceptor-ref name="loggingStack"/>   
+        
+          <param name="operation">fetchList</param>
+            <result name="success" type="tiles">CW-AdmCH</result>
+            <result name="error" type="tiles">CW-Error</result>
+            <result name="logout" type="tiles">UM-Logout</result>
+  </action>
+    <!--Added by vinumol 08/03/2012-->
+  <action name="CW-ViewAdmCH" class="com.cdac.caseworker.Actions.CaseWorkerAction" method="getAdmissionRegisterDetails">
+        
+        <result name="logout" type="tiles">UM-Logout</result>
+         
+  <result name="success" type="tiles">CW-ViewAdmCH</result>
+  <param name="testing">viewadmissionfirst</param>
+  <result name="error" type="tiles">CW-Error</result>
+  </action>
+ 
+ <action name="viewadmission_dateentered" class="com.cdac.caseworker.Actions.CaseWorkerAction" method="getAdmissionRegisterDetails">
+      <!--interceptor-ref name="loggingStack"/-->   
+        <result name="logout" type="tiles">UM-Logout</result>
+          <result name="success" type="tiles">CW-ViewAdmCH</result>
+          <param name="testing">viewadmission_dateselect</param>
+    <result name="error" type="tiles">CW-Error</result>
+  </action> 
+  <action name="CHAdm_View" class="com.cdac.caseworker.Actions.CaseWorkerAction" method="getAdmissionRegisterDetails">
+      <!--interceptor-ref name="loggingStack"/-->   
+        <result name="logout" type="tiles">UM-Logout</result>
+          <result name="success" type="tiles">CW-ViewAdmCH</result>
+          <param name="testing">viewadmission_profidselect</param>
+    <result name="error" type="tiles">CW-Error</result>
+  </action>
+  <!--Ended by vinumol 08/03/2012-->
+  <action name="CW-Save-To-CH" class="com.cdac.caseworker.Actions.CaseWorkerCHSHAction" method="admissionToCHSave">
+      <!--interceptor-ref name="loggingStack"/-->   
+        <result name="logout" type="tiles">UM-Logout</result>
+  <result name="success" type="tiles">CW-Success</result>
+  <result name="error" type="tiles">CW-Error</result>
+  </action>
+
+  <action name="CW-AdmRH-Action" class="com.cdac.caseworker.Actions.CaseWorkerAction" method="admissionIntoRH">
+      <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+  <result name="success" type="tiles">CW-Success</result>
+  <result name="error" type="tiles">CW-Error</result>
+  </action>
+  
+  <action name="CW-Discharge" class="com.cdac.caseworker.Actions.CaseWorkerAction" method="populateChildDTOforDischarge">
+      <!--interceptor-ref name="loggingStack"/  old method  = getChildAndHomeLists -->   
+        <result name="logout" type="tiles">UM-Logout</result>
+  <result name="success" type="tiles">CW-Discharge</result>
+  <result name="error" type="tiles">CW-Error</result>
+  </action>
+
+
+  <action name="CW-Discharge-Action" class="com.cdac.caseworker.Actions.CaseWorkerAction" method="discharge">
+      <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+  <result name="success" type="tiles">CW-Success</result>
+  <result name="error" type="tiles">CW-Error</result>
+  </action>
+<!--Added by vinumol 08/03/2012-->
+  <action name="CW-ViewDischarge" class="com.cdac.caseworker.Actions.CaseWorkerAction" method="viewDischargeChildLists">
+      <!--interceptor-ref name="loggingStack"/-->   
+  <result name="logout" type="tiles">UM-Logout</result>
+  <result name="success" type="tiles">CW-ViewDischarge</result>
+  <param name="testing">viewdischargefirst</param>
+  <result name="error" type="tiles">CW-Error</result>
+  </action>
+  <action name="viewdischarge_dateentered" class="com.cdac.caseworker.Actions.CaseWorkerAction" method="viewDischargeChildLists">
+  <result name="logout" type="tiles">UM-Logout</result>
+  <result name="success" type="tiles">CW-ViewDischarge</result>
+  <param name="testing">viewdischarge_dateselect</param>
+  <result name="error" type="tiles">CW-Error</result>
+  </action>
+   <action name="viewDischargeReg_selectprofid" class="com.cdac.caseworker.Actions.CaseWorkerAction" method="viewDischargeChildLists">
+  <result name="logout" type="tiles">UM-Logout</result>
+  <result name="success" type="tiles">CW-ViewDischarge</result>
+  <param name="testing">viewdischarge_profidselect</param>
+  <result name="error" type="tiles">CW-Error</result>
+  </action>
+  <!--Ended by vinumol 08/03/2012-->
+ <action name="CW-Discharge-Transfer_other"  class="com.cdac.caseworker.Actions.CaseWorkerAction" method="getDistricts">
+          <!--param name="test_case">sicdbs</param-->
+          <!--interceptor-ref name="loggingStack"/-->   
+        <result name="logout" type="tiles">UM-Logout</result>
+            <result name="success">/WEB-INF/CW/Transfer_otherHome.jsp</result> 
+            <result name="error">/WEB-INF/CW/Transfer_otherHome.jsp</result>
+       </action>
+ <action name="CW-Discharge-Handover_Parents">
+          <!--param name="test_case">sicdbs</param-->
+          <!--interceptor-ref name="loggingStack"/-->   
+          <result name="logout" type="tiles">UM-Logout</result>
+          <result name="success">/WEB-INF/CW/Handover_parents.jsp</result>
+               </action>
+
+
+
+
+   <action name="CW-Discharge-FetchHomeDetail"  class="com.cdac.caseworker.Actions.CaseWorkerAction" method="populateHomesInADistrict">       
+          <!--param name="test_case">sicdbs</param-->
+          <!--interceptor-ref name="loggingStack"/-->   
+        <result name="logout" type="tiles">UM-Logout</result>
+            <result name="success" >/WEB-INF/CW/homesList_District.jsp</result> 
+            <result name="error">/WEB-INF/CW/homesList_District.jsp</result>
+       </action>
+       
+       
+       <action name="CW-Discharge-FetchHomesMap"  class="com.cdac.caseworker.Actions.CaseWorkerAction" method="populateHomeNamesInADistMap">
+                <!--param name="test_case">sicdbs</param-->
+          <!--interceptor-ref name="loggingStack"/-->   
+        <result name="logout" type="tiles">UM-Logout</result>
+            <result name="success" >/WEB-INF/CW/homesList_District.jsp</result> 
+            <result name="error">/WEB-INF/CW/homesList_District.jsp</result>
+       </action>
+       
+       <action name="CW-Discharge-FetchHomesMap-JSON"  class="com.cdac.caseworker.Actions.CaseWorkerAction" method="populateHomeNamesInADistMap">
+              <result name="success" type="json">
+           <param name="root">
+            homesInADistrictMap
+            </param>             
+           </result>
+       </action>
+       
+       <action name="CW-Active-ChildList-InHome-JSON"  class="com.cdac.caseworker.Actions.CaseWorkerAction" method="populateChildDTOforAdmission">
+              <result name="success" type="json">
+           <param name="root">
+            childDTOList
+            </param>             
+           </result>
+       </action>
+       
+       <action name="CW-Existing-AdmissiontoCHSHDTO"  class="com.cdac.caseworker.Actions.CaseWorkerCHSHAction" method="getExistingAdmissiontoCHSHDTO">
+              <result name="success" type="json">
+           <param name="root">
+            admissiontoCHSHDTO
+            </param>             
+           </result>
+       </action>
+       
+       
+       
+      <action name="CW-Get-Distinct-Values-JSON"  class="com.cdac.caseworker.Actions.CaseWorkerJsonAction" method="getDistinctItemsForCombo">
+           <result name="success" type="json">
+           <param name="root">
+            distinctValues
+            </param>             
+           </result>
+       </action>
+       
+       
+       <action name="CW-Get-Distinct-Values-Start-Pattern-JSON"  class="com.cdac.caseworker.Actions.CaseWorkerJsonAction" method="getDistinctItemsForComboStartsWithPattern">
+           <result name="success" type="json">
+           <param name="root">
+            distinctValues
+            </param>             
+           </result>
+       </action>
+       
+       
+       <action name="CW-Master-Report">           
+           <result name="success" >
+               /WEB-INF/CW/childMasterReport.jsp        
+           </result>
+       </action>
+       
+       
+       <action name="CW-Get-Master-Report-JSON"  class="com.cdac.caseworker.Actions.CaseWorkerJsonAction" method="getChildMasterReport">
+           <!---->
+           <result name="success" type="json">
+           <param name="root">
+            reportMap
+            </param>             
+           </result>
+       </action>
+
+
+
+
+
+  <action name="CW-Fetch-Trans-Child" class="com.cdac.caseworker.Actions.CaseWorkerAction" method="getTransferredChildDetails">
+  
+  <!--interceptor-ref name="loggingStack"/-->   
+        <result name="logout" type="tiles">UM-Logout</result>
+  
+  <result name="success">/WEB-INF/CW/AdmCH_sub.jsp</result>
+  <result name="error">/WEB-INF/CW/AdmCH_sub.jsp</result>
+  </action>
+  
+   <action name="CW-Casework" class="com.cdac.caseworker.Actions.CaseWorkerAction" method="populateAll">
+  <!--param name="test_case">cwbs</param-->
+  <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+  <result name="success" type="tiles">CW-Casework</result>
+    <result name="error" type="tiles">CW-Error</result>
+  </action>
+   <action name="CW-Casework-Fetch-Child" class="com.cdac.caseworker.Actions.CaseWorkerAction" method="getCaseworkChildDetails">
+  <!--param name="test_case">cwas</param-->
+  <!--interceptor-ref name="loggingStack"/-->   
+        <result name="logout" type="tiles">UM-Logout</result>
+        <result name="success" type="tiles">CW-CaseWork-Detail</result>
+        
+  <!--      
+ <result name="success">/WEB-INF/CW/casework_childdetails.jsp</result>
+    <result name="error">/WEB-INF/CW/casework_childdetails.jsp</result>
+  -->
+  </action>
+   <action name="CW-Casework-Save" class="com.cdac.caseworker.Actions.CaseWorkerAction" method="caseworkDetails_save">
+       <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+  <result name="success" type="tiles">CW-Success</result>
+    <result name="error" type="tiles">CW-Error</result>
+  </action>   
+  
+   <action name="CW-ViewCasework" class="com.cdac.caseworker.Actions.CaseWorkerAction" method="getCaseworkViewChildPID"><!--Change by vinumol on 08-03-2012 previous method was populateAll-->
+       <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+  <!--param name="test_case">cwbs</param-->
+  <result name="success" type="tiles">CW-ViewCasework</result>
+    <result name="error" type="tiles">CW-Error</result>
+  </action>
+ 
+ <action name="CW-View" class="com.cdac.caseworker.Actions.CaseWorkerAction" method="getCaseworkViewChildDetails">
+     <!--interceptor-ref name="loggingStack"/-->   
+        <result name="logout" type="tiles">UM-Logout</result>
+  <!--param name="test_case">cwas</param-->
+ <result name="success">/WEB-INF/CW/CaseworkView_Sub.jsp</result>
+    <result name="error">/WEB-INF/CW/CaseworkView_Sub.jsp</result>
+  </action>
+ 
+  <action name="CW-Home">
+      <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+            <result name="success" type="tiles">CWWelcome</result>      
+
+      </action>
+      
+      <action name="DS-Interview" class="com.cdac.caseworker.Actions.CaseWorkerAction" method="populateAll">
+          <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+  <result name="success" type="tiles">DS-Interview</result>
+  <result name="error" type="tiles">CW-Error</result>
+  </action>
+  
+       <action name="DS-Interview_Save" class="com.cdac.caseworker.Actions.CaseWorkerAction" method="interviewRegister_Save">
+           <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+  <result name="success" type="tiles">CW-Success</result>
+    <result name="error" type="tiles">CW-Error</result>
+  </action> 
+  
+  
+  <action name="DS-ViewInterview" class="com.cdac.caseworker.Actions.CaseWorkerAction" method="getInterviewRegisterChildPID"><!--Change by vinumol on 08-03-2012 previous method was populateAll-->
+      <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+  <result name="success" type="tiles">DS-ViewInterview</result>
+  <result name="error" type="tiles">CW-Error</result>
+  </action>
+  
+  <action name="DS-Interview_View" class="com.cdac.caseworker.Actions.CaseWorkerAction" method="getInterviewRegisterDetails">
+      <!--interceptor-ref name="loggingStack"/-->   
+        <result name="logout" type="tiles">UM-Logout</result>
+  <result name="success">/WEB-INF/CW/viewInterviewRegister_Sub.jsp</result>
+    <result name="error">/WEB-INF/CW/viewInterviewRegister_Sub.jsp</result>
+  </action> 
+  
+  
+  <action name="CW-Active-ChildList" class="com.cdac.caseworker.Actions.CaseWorkerAction" method="populateChildDTOforDischarge">
+      <result name="success" type="json">
+            <param name="root">childDTOList</param>
+      </result>
+  </action>
+    
+  
+   <action name="CW-CH-Personal" class="com.cdac.caseworker.Actions.CaseWorkerAction" method="dummyMethod">
+       <!--Old method = populateAll (class="com.cdac.caseworker.Actions.CaseWorkerAction" method="populateChildDTOforDischarge")-->
+    <interceptor-ref name="loggingStack"/>   
+    <result name="logout" type="tiles">UM-Logout</result>
+    <result name="success" type="tiles">CW-CH-Personal</result>
+    <result name="error" type="tiles">CW-Error</result>
+   </action>
+  
+  <action name="CW-CH-Fetch-Child" class="com.cdac.caseworker.Actions.CaseWorkerAction" method="getch_ChildDetails">
+      <!--interceptor-ref name="loggingStack"/-->   
+        <result name="logout" type="tiles">UM-Logout</result>
+   <result name="success">/WEB-INF/CW/CH_Pesonal_sub.jsp</result>
+    <result name="error">/WEB-INF/CW/CH_Pesonal_sub.jsp</result>
+  </action>
+ 
+ <action name="CW-CH-Personal-Save" class="com.cdac.caseworker.Actions.CaseWorkerAction" method="SaveCH_PersonalData">
+    <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+    
+    <!--    
+    <result name="success" type="tiles">CW-Success</result>
+    <result name="error" type="tiles">CW-Error</result>
+    -->
+    <result name="success" type="json"><param name="root">serverMessage</param></result>
+    <result name="error" type="json"><param name="root">serverMessage</param></result>
+  </action>
+ 
+ 
+ <action name="CW-CH-Household" class="com.cdac.caseworker.Actions.CaseWorkerAction" method="populateChildDTOforDischarge">
+     <!-- populateAll-->
+     <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+  <result name="success" type="tiles">CW-CH-Household</result>
+    <result name="error" type="tiles">CW-Error</result>
+  </action>
+ 
+ <action name="CH-HouseholdDetails-Save" class="com.cdac.caseworker.Actions.CaseWorkerAction" method="saveCH_HouseHold">
+     <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+  <result name="success" type="tiles">CW-Success</result>
+    <result name="error" type="tiles">CW-Error</result>
+  </action>
+ 
+ <action name="CW-CH-Family" class="com.cdac.caseworker.Actions.CaseWorkerAction" method="populateChildDTOforDischarge">
+     <!--populateAll-->
+     <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+  <result name="success" type="tiles">CW-CH-Family</result>
+    <result name="error" type="tiles">CW-Error</result>
+  </action>
+ 
+ <action name="CH-FamilyDetails-Save" class="com.cdac.caseworker.Actions.CaseWorkerAction" method="saveCHFamilyDetails">
+     <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+  <result name="success" type="tiles">CW-Success</result>
+    <result name="error" type="tiles">CW-Error</result>
+  </action>
+ 
+ <action name="CW-CH-Adolescence" class="com.cdac.caseworker.Actions.CaseWorkerAction" method="populateChildDTOforDischarge">
+     <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+  <result name="success" type="tiles">CW-CH-Adolescence</result>
+    <result name="error" type="tiles">CW-Error</result>
+  </action>
+  
+   <action name="CH-Adolescence-Save" class="com.cdac.caseworker.Actions.CaseWorkerAction" method="saveCHAdolscenceHistory">
+       <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+  <result name="success" type="tiles">CW-Success</result>
+    <result name="error" type="tiles">CW-Error</result>
+  </action>
+ 
+ <action name="CW-CH-Employment" class="com.cdac.caseworker.Actions.CaseWorkerAction" method="populateChildDTOforDischarge">
+     <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+  <result name="success" type="tiles">CW-CH-Employment</result>
+    <result name="error" type="tiles">CW-Error</result>
+  </action>
+
+<action name="CH-EmploymentDetails-Save" class="com.cdac.caseworker.Actions.CaseWorkerAction" method="saveCHEmploymentDetails">
+    <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+  <result name="success" type="tiles">CW-Success</result>
+    <result name="error" type="tiles">CW-Error</result>
+  </action>
+ 
+ <action name="CW-CH-PreEducation" class="com.cdac.caseworker.Actions.CaseWorkerAction" method="populateChildDTOforDischarge">
+     <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+  <result name="success" type="tiles">CW-CH-PreEducation</result>
+    <result name="error" type="tiles">CW-Error</result>
+  </action>
+ <action name="CH-PriorEducationDetails-Save" class="com.cdac.caseworker.Actions.CaseWorkerAction" method="saveCHPriorAdmEducationDetails">
+     <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+  <result name="success" type="tiles">CW-Success</result>
+    <result name="error" type="tiles">CW-Error</result>
+  </action>
+ 
+ <action name="CW-CH-FamilyCrime" class="com.cdac.caseworker.Actions.CaseWorkerAction" method="populateChildDTOforDischarge">
+     <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+  <result name="success" type="tiles">CW-CH-FamilyCrime</result>
+    <result name="error" type="tiles">CW-Error</result>
+  </action>
+  
+  <action name="CH-FamilyCrimeDetails-Save" class="com.cdac.caseworker.Actions.CaseWorkerAction" method="saveCHFamilyCrimeDetails">
+      <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+  <result name="success" type="tiles">CW-Success</result>
+    <result name="error" type="tiles">CW-Error</result>
+  </action>
+  
+  <action name="CW-CH-AfterEducation" class="com.cdac.caseworker.Actions.CaseWorkerAction" method="populateChildDTOforDischarge">
+      <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+  <result name="success" type="tiles">CW-CH-AfterEducation</result>
+    <result name="error" type="tiles">CW-Error</result>
+  </action>
+  
+  <action name="CH-AfterEducationDetails-Save" class="com.cdac.caseworker.Actions.CaseWorkerAction" method="saveCHAfterAdmEducationDetails">
+      <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+  <result name="success" type="tiles">CW-Success</result>
+    <result name="error" type="tiles">CW-Error</result>
+  </action>
+ 
+ <action name="CW-CH-SocialHistory" class="com.cdac.caseworker.Actions.CaseWorkerAction" method="populateChildDTOforDischarge">
+     <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+  <result name="success" type="tiles">CW-CH-SocialHistory</result>
+    <result name="error" type="tiles">CW-Error</result>
+  </action>
+ 
+ <action name="CH-SocialHistoryDetails-Save" class="com.cdac.caseworker.Actions.CaseWorkerAction" method="saveCHSocialHistoryDetails">
+     <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+  <result name="success" type="tiles">CW-Success</result>
+    <result name="error" type="tiles">CW-Error</result>
+  </action>
+ 
+  <!--Swetha added on 05-02-2013 for multilingual START-->
+  <action name="Select-Language-CWC*" class="com.cdac.caseworker.Actions.CaseWorkerAction" method="{1}">
+                    <result name="success" type="tiles">CWC-Welcome</result>
+                    <result name="error">/index.jsp</result>
+  </action>
+  <!--Swetha added on 05-02-2013 for multilingual END-->
+  <action name="CWC-Home">
+      <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+      
+            <result name="success" type="tiles">CWC-Welcome</result>      
+  </action>
+ <action name="CW-CWCMeetings" class="com.cdac.caseworker.Actions.CaseWorkerAction" method="getHomesInADist">
+     <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+  <result name="success" type="tiles">CW-CWCMeetings</result>
+    <result name="error" type="tiles">CWC-Error</result>
+  </action>
+  
+  <action name="CW-ViewCWCMeetings" class="com.cdac.caseworker.Actions.CaseWorkerAction" method="getHomesInADist">
+      <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+  <result name="success" type="tiles">CW-ViewCWCMeetings</result>
+    <result name="error" type="tiles">CWC-Error</result>
+  </action>
+  
+  
+  <action name="CW-CWCMeetings-setHome" class="com.cdac.caseworker.Actions.CaseWorkerAction" method="putHomeIdInSession">
+      <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+  <result name="success" type="tiles">CW-CWCMeetingsMinutes</result>
+    <result name="error" type="tiles">CWC-Error</result>
+  </action>
+  
+  <action name="CWCMeetings-Save" class="com.cdac.caseworker.Actions.CaseWorkerAction" method="SaveCWCMeetingsMinutes">
+      <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+  <result name="success" type="tiles">CWC-Success</result>
+    <result name="error" type="tiles">CWC-Error</result>
+  </action>
+  
+  
+  <action name="view_cwcmeetings" class="com.cdac.caseworker.Actions.CaseWorkerAction" method="getMeetingDate">
+      <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+  <result name="success" type="tiles">CW-CWCMeetingDate</result>
+    <result name="error" type="tiles">CWC-Error</result>
+  </action>
+  <action name="CW-MeetingMInutesDetails" class="com.cdac.caseworker.Actions.CaseWorkerAction" method="getMeetingMinutes">
+      <!--interceptor-ref name="loggingStack"/-->   
+        <result name="logout" type="tiles">UM-Logout</result>
+  <result name="success">/WEB-INF/CWC/CWC_MeetingMinutesDetails.jsp</result>
+    <result name="error">/WEB-INF/CWC/CWC_MeetingMinutesDetails.jsp</result>
+  </action>
+  
+  
+  
+ 
+  <!--Added by vinumol for reports-->
+   <action name="CW-CH-ReportSubAction" class="com.cdac.caseworker.Actions.CaseWorkerAction" method="getCaseHistoryChildPid"><!--Changed by vinumol 08-03-2012 the previous method was populate all-->
+        
+        <result name="success" type="tiles">CW-CH-Report</result>
+        <result name="error" type="tiles">CW-Error</result>
+    
+    </action>
+   
+   <action name="CH-ReportAction" class="com.cdac.caseworker.Actions.CaseWorkerReportAction" method="getCaseHistoryFromDto">
+        
+      <result name="success" type="json">
+           <param name="root">chdto</param>
+      </result>
+      
+      <!--result name="success">
+           <param name="dataSource">chdto</param>
+      </result-->  
+   </action>
+  
+   <action name="CW-Report" class="com.cdac.caseworker.Actions.CaseWorkerAction" method="getCaseworkViewChildPID"><!--Changed by vinumol 08-03-2012 the previous method was populate all-->
+        <result name="success" type="tiles">CW-Report</result>
+        <result name="error" type="tiles">CW-Error</result>
+   </action>
+   <action name="CW-View-Report" class="com.cdac.caseworker.Actions.CaseWorkerReportAction" method="getCaseworkFromDto">
+        
+      
+        
+        
+        <result name="success" type="json">
+            <param name="root">cwdto</param>
+       </result>
+            <!--param name="location">WEB-INF/classes/reports/CaseworkReport.jasper</param>
+            <param name="dataSource">cwdto</param>
+            <param name="reportParameters">reportParameter,reportMulParameter</param>
+            <param name="format">HTML</param>
+            <param name="imageServletUrl">/servlets/image?image=</param-->
+      
+        </action>
+   <!--Ended by vinumol for reports-->
+   
+   
+   <action name="Child-AddPhoto" class="com.cdac.caseworker.Actions.CaseWorkerAction" method="populateChildDTOforDischarge">
+            
+            <interceptor-ref name="loggingStack"/>              
+            <result name="success" type="tiles">Child-AddPhoto</result>
+            <result name="error" type="tiles">CW-Error</result>
+            <result name="logout" type="tiles">UM-Logout</result>
+      </action>
+      
+      <action name="Child-AddPhoto-Save" class="com.cdac.usermanagement.Actions.UserManagementAction" method="addPhoto">
+           <interceptor-ref name="fileUploadStack"/>
+            <!--interceptor-ref name="loggingStack"/--> 
+            <!--
+            <result name="success" type="tiles">CW-Success</result>
+            <result name="error" type="tiles">CW-Error</result>
+            <result name="logout" type="tiles">UM-Logout</result>
+            <result name="input" type="tiles">CW-Error</result>
+            -->
+            
+            <result name="success" type="json"><param name="root">serverMessage</param></result>
+            <result name="error" type="json"><param name="root">serverMessage</param></result>
+            
+      </action>
+      
+      <!--Anupam added on 29-02-2012 START-->
+       <action name="CW-RH-Adm-Check">      
+       <interceptor-ref name="loggingStack"/>         
+        <result name="logout" type="tiles">UM-Logout</result> 
+        
+        <result name="success" type="tiles">CW-RH-Adm-Check</result>
+        
+        </action>
+        
+        <action name="CW-RH-Adm-Check-Act" class="com.cdac.caseworker.Actions.CaseWorkerAction" method="admissionCheck">      
+       <interceptor-ref name="loggingStack"/>         
+        <result name="logout" type="tiles">UM-Logout</result> 
+        
+        <result name="notfound" type="tiles">CW-AdmRH</result>
+        <result name="found" type="tiles">CW-Show-Existing-Match</result>
+        
+        </action>
+        
+        
+        
+        <action name="CW-OverStayed" class="com.cdac.caseworker.Actions.CaseWorkerAction" method="getListofOverStayedChildren">      
+              
+        <result name="success" type="tiles">CW-Show-OverStayingChildren</result>       
+        
+        </action>
+        
+        
+        
+        
+      <!--Anupam added on 29-02-2012 END-->
+      
+      <!--Anupam added on 11-10-2012 START-->
+      <action name="CW-Edit-Child" class="com.cdac.caseworker.Actions.CaseWorkerAction" method="populateChildDTOforDischarge">      
+              <!--old method = populateChildListforDischarge-->
+        <result name="success" type="tiles">CW-Edit-Child</result>       
+        
+      </action>
+      
+      <action name="CW-JSON-Child-Details" class="com.cdac.caseworker.Actions.CaseWorkerJsonAction" method="getChildDetails">
+       	   <result name="success" type="json">
+           <param name="root">
+            child
+            </param>             
+           </result>
+      </action>
+      
+      <action name="CW-JSON-Child-Details-Update" class="com.cdac.caseworker.Actions.CaseWorkerJsonAction" method="saveChangedChildDetails">
+       	   <result name="success" type="json">
+           <param name="root">
+            serverMessage
+            </param>             
+           </result>
+      </action>
+      <!--Anupam added on 11-10-2012 END-->
+      
+      <!--added for admiission view by criteria 2-1-2013-->
+      <action name="CW-JSON-ChildDTOs-Search" class="com.cdac.caseworker.Actions.CaseWorkerJsonAction" method="searchChildDTOs">
+       	   <result name="success" type="json">
+           <param name="root">
+            childDTOList
+            </param>             
+           </result>
+      </action>
+      
+      <!--
+      ====***********************************************************====
+      ====^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^====
+      ====Actions For userDetails Modification and Resetting Password====
+      ====___________________________________________________________====
+      ====********************Added By Anupam************************====
+      ====**********************START********************************====
+      -->
+        
+        <action name="CW-ModifyMyDetails" class="com.cdac.usermanagement.Actions.UserManagementAction" method="modifyMyDetails">
+            <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+            <result name="success" type="chain">CW-ModifyUserMainAction</result>
+            <result name="error" type="tiles">CW-Error</result>
+      </action>
+
+      <action name="CW-ModifyUserMainAction" class="com.cdac.usermanagement.Actions.UserManagementAction" method="modifyUserMain">
+            <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+            <result name="success" type="tiles">CW-ModifyUser-Main</result>
+            <result name="error" type="tiles">CW-Error</result>
+      </action>
+
+
+      <action name="CW-ModifyUserSubAction" class="com.cdac.usermanagement.Actions.UserManagementAction" method="modifyUserSub">
+            <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+            <result name="success" type="tiles">CW-Success</result>
+            <result name="error" type="tiles">CW-Error</result>
+      </action>
+      
+       <action name="CW-ChangePassword">
+	    <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+            <result name="success" type="tiles">CW-ChangePassword</result>
+       </action>
+
+               <action name="CW-ChangePassword-Action" class="com.cdac.usermanagement.Actions.UserManagementAction" method="changePassword">
+			<interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+                        <result name="success" type="tiles">CW-Success</result>
+                        <result name="error" type="tiles">CW-Error</result>
+	       </action>
+      
+      <!--
+      ====***********************************************************====
+      ====^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^====
+      ====Actions For userDetails Modification and Resetting Password====
+      ====___________________________________________________________====
+      ====********************Added By Anupam************************====
+      ====**********************END**********************************====
+      -->
+      
+      
+      <!--
+      ====***********************************************************====
+      ====^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^====
+      ====Actions For userDetails Modification and Resetting Password====
+      ====___________________________________________________________====
+      ====********************Added By Anupam************************====
+      ====**********************START********************************====
+      -->
+        
+        <action name="CWC-ModifyMyDetails" class="com.cdac.usermanagement.Actions.UserManagementAction" method="modifyMyDetails">
+            <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+            <result name="success" type="chain">CWC-ModifyUserMainAction</result>
+            <result name="error" type="tiles">CWC-Error</result>
+      </action>
+
+      <action name="CWC-ModifyUserMainAction" class="com.cdac.usermanagement.Actions.UserManagementAction" method="modifyUserMain">
+            <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+            <result name="success" type="tiles">CWC-ModifyUser-Main</result>
+            <result name="error" type="tiles">CWC-Error</result>
+      </action>
+
+
+      <action name="CWC-ModifyUserSubAction" class="com.cdac.usermanagement.Actions.UserManagementAction" method="modifyUserSub">
+            <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+            <result name="success" type="tiles">CWC-Success</result>
+            <result name="error" type="tiles">CWC-Error</result>
+      </action>
+      
+       <action name="CWC-ChangePassword">
+	    <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+            <result name="success" type="tiles">CWC-ChangePassword</result>
+       </action>
+
+               <action name="CWC-ChangePassword-Action" class="com.cdac.usermanagement.Actions.UserManagementAction" method="changePassword">
+			<interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+                        <result name="success" type="tiles">CWC-Success</result>
+                        <result name="error" type="tiles">CWC-Error</result>
+	       </action>
+      
+      <!--
+      ====***********************************************************====
+      ====^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^====
+      ====Actions For userDetails Modification and Resetting Password====
+      ====___________________________________________________________====
+      ====********************Added By Anupam************************====
+      ====**********************END**********************************====
+      -->
+       
+    <!--
+      ====***********************************************************====
+      ====^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^====
+      =================Actions For Individual Care Plan==================
+      ====___________________________________________________________====
+      ====********************Added By Suresh************************====
+      ====**********************START********************************====
+      -->
+       <action name="ICP-Personal" class="com.cdac.caseworker.Actions.CaseWorkerAction" method="populateAll">
+                <interceptor-ref name="loggingStack"/>   
+                <result name="logout" type="tiles">UM-Logout</result>
+                <result name="success" type="tiles">ICP-Personal</result>
+                <result name="error" type="tiles">CW-Error</result>
+      </action>
+       
+       
+       <action name="ICP-Fetch-Child" class="com.cdac.caseworker.Actions.CaseWorkerAction" method="getICPChildMaster">
+      <!--interceptor-ref name="loggingStack"/-->   
+                <result name="logout" type="tiles">UM-Logout</result>
+                <result name="success">/WEB-INF/CW/ICP_Pesonal_sub.jsp</result>
+                <result name="error">/WEB-INF/CW/ICP_Pesonal_sub.jsp</result>
+       </action> 
+       
+       
+      <action name="ICP-Pre-Release" class="com.cdac.caseworker.Actions.CaseWorkerAction" method="populateAll">
+        <interceptor-ref name="loggingStack"/>    
+                <result name="logout" type="tiles">UM-Logout</result>
+                <result name="success" type="tiles">ICP-Pre-Release</result>
+                <result name="error" type="tiles">CW-Error</result>
+       </action>
+     
+     <action name="ICP-Post-Release" class="com.cdac.caseworker.Actions.CaseWorkerAction" method="populateAll">
+        <interceptor-ref name="loggingStack"/>   
+                <result name="logout" type="tiles">UM-Logout</result>
+                <result name="success" type="tiles">ICP-Post-Release</result>
+                <result name="error" type="tiles">CW-Error</result>
+       </action>
+       
+       <action name="ICP-Personal-Save" class="com.cdac.caseworker.Actions.CaseWorkerICPAction" method="icpPersonnalSave">
+        <interceptor-ref name="loggingStack"/>    
+                <result name="logout" type="tiles">UM-Logout</result>
+                <result name="success" type="tiles">CW-Success</result>
+                <result name="error" type="tiles">CW-Error</result>
+       </action>
+       
+       <action name="ICP-PreRelease-Save" class="com.cdac.caseworker.Actions.CaseWorkerICPAction" method="icpPreReleaseSave">
+        <interceptor-ref name="loggingStack"/>    
+                <result name="logout" type="tiles">UM-Logout</result>
+                <result name="success" type="tiles">CW-Success</result>
+                <result name="error" type="tiles">CW-Error</result>
+       </action>
+       
+       <action name="ICP-PostRelease-Save" class="com.cdac.caseworker.Actions.CaseWorkerICPAction" method="icpPostReleaseSave">
+        <interceptor-ref name="loggingStack"/> 
+                <result name="logout" type="tiles">UM-Logout</result>
+                <result name="success" type="tiles">CW-Success</result>
+                <result name="error" type="tiles">CW-Error</result>
+       </action>
+      
+      <action name="ICP-Report" class="com.cdac.caseworker.Actions.CaseWorkerAction" method="populateAll">
+        
+        <result name="success" type="tiles">ICP-Child-Report</result>
+        <result name="error" type="tiles">CW-Error</result>
+    
+    </action>
+  <action name="ICP-ReportAction" class="com.cdac.caseworker.Actions.CaseWorkerReportAction" method="getICPFromDto">
+        
+         <!--result name="success" type="jasper">
+        <param name="location">WEB-INF/classes/reports/ICP-3.jasper</param>
+        <param name="dataSource">icpdto</param>
+        <param name="reportParameters">reportParameter,reportMulParameter</param>
+        <param name="format">HTML</param>
+        <param name="imageServletUrl">/servlets/image?image=</param>
+        
+        </result-->
+        <result name="success" type="json"> 
+               <param name="root">icpdto</param>            
+        </result>
+        <result name="error" type="tiles">CW-Error</result>
+   </action>
+        <!--
+      ====***********************************************************====
+      ====^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^====
+      =================Actions For Individual Care Plan==================
+      ====___________________________________________________________====
+      ====********************Added By Suresh************************====
+      ====************************END********************************====
+      -->
+   
+    </package>
+</struts>
+

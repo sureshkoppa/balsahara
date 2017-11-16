@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="HandOverNew" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="15"/>
+	<property name="ireport.y" value="247"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="57" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="57"/>
+				<text><![CDATA[FORM 19
+[Rule 18(8)]
+ORDER FOR PLACEMENT OF CHILD UNDER THE CARE OF A PARENT, GUARDIAN OR FIT
+PERSON PENDING INQUIRY]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="35"/>
+				<text><![CDATA[Case No. …….of ……………….20………………………
+In Re…………………]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="350" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="335"/>
+				<text><![CDATA[Whereas (name of the child) …………………… has on …………….(date) been found to be in need
+of care and protection, and is placed under the care and supervision of (name)……………………..
+(address)…………………..on executing a bond by the said ………………….. and the Committee is satisfied
+that it is expedient to deal with the said child by making an order placing him/her under supervision.
+Reason for the child being produced before the CWC……………………………………
+………………………………………………………………………………………………….
+It is hereby ordered that the said child be placed under the supervision of
+(name)……………………….. (address)……………………………… for a period of
+……………………………………….. This shall be subject to the following conditions that:
+1. the child along with the copies of the order and the bond, if any, executed by the
+said…………………………. shall be produced before the Committee as and when required by the
+person executing the bond
+2. the child shall reside at ……………………….. for a period of ………………….
+3. the child shall not be allowed to quit the district jurisdiction of …………………without the permission of
+the Committee.
+4. the child shall go to school/ vocational training centre regularly. The child shall attend
+……………….(name of) school/ vocational training centre (if already identified) at
+………………….(address of school/ vocational training centre).
+5. the person under whose care the child is placed shall arrange for the proper care, education and
+welfare of the child.
+6. the child shall not be allowed to associate with undesirable characters and shall be prevented from
+coming in conflict with law.
+7. the child shall be prevented from taking narcotic drugs or psychotropic substances or any other
+intoxicants.
+8. the directions given by the Committee from time to time, for the due observance of the conditions
+mentioned above, shall be carried out.]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="63" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="54"/>
+				<text><![CDATA[Dated this ______________day of _____________20 _____________
+       (Signature)
+Chairperson/ Member
+Child Welfare Committee]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="23" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="23"/>
+				<text><![CDATA[• Additional conditions, if any may be inserted by the Child Welfare Committee]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

@@ -1,0 +1,152 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.cdac.usermanagement.ORM;
+
+import java.io.Serializable;
+import java.util.Date;
+import javax.persistence.Column;
+import javax.persistence.EmbeddedId;
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
+import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
+import javax.validation.constraints.Size;
+import javax.xml.bind.annotation.XmlRootElement;
+
+/**
+ *
+ * @author ANUPAM
+ */
+@Entity
+@Table(name = "casehistory_prioradm_education", catalog = "child_homes", schema = "")
+@XmlRootElement
+@NamedQueries({
+    @NamedQuery(name = "CasehistoryPrioradmEducation.findAll", query = "SELECT c FROM CasehistoryPrioradmEducation c"),
+    @NamedQuery(name = "CasehistoryPrioradmEducation.findByChildProfileId", query = "SELECT c FROM CasehistoryPrioradmEducation c WHERE c.casehistoryPrioradmEducationPK.childProfileId = :childProfileId"),
+    @NamedQuery(name = "CasehistoryPrioradmEducation.findByEducationPriorAdmission", query = "SELECT c FROM CasehistoryPrioradmEducation c WHERE c.educationPriorAdmission = :educationPriorAdmission"),
+    @NamedQuery(name = "CasehistoryPrioradmEducation.findByDetailsSchoolStudied", query = "SELECT c FROM CasehistoryPrioradmEducation c WHERE c.detailsSchoolStudied = :detailsSchoolStudied"),
+    @NamedQuery(name = "CasehistoryPrioradmEducation.findByMediumInstruction", query = "SELECT c FROM CasehistoryPrioradmEducation c WHERE c.mediumInstruction = :mediumInstruction"),
+    @NamedQuery(name = "CasehistoryPrioradmEducation.findByLastModifiedDate", query = "SELECT c FROM CasehistoryPrioradmEducation c WHERE c.casehistoryPrioradmEducationPK.lastModifiedDate = :lastModifiedDate"),
+    @NamedQuery(name = "CasehistoryPrioradmEducation.findByLastModifiedBy", query = "SELECT c FROM CasehistoryPrioradmEducation c WHERE c.lastModifiedBy = :lastModifiedBy")})
+public class CasehistoryPrioradmEducation implements Serializable {
+    private static final long serialVersionUID = 1L;
+    @EmbeddedId
+    protected CasehistoryPrioradmEducationPK casehistoryPrioradmEducationPK;
+    @Size(max = 50)
+    @Column(name = "EDUCATION_PRIOR_ADMISSION", length = 50)
+    private String educationPriorAdmission;
+    @Lob
+    @Size(max = 65535)
+    @Column(name = "REASON_LEAVING_SCHOOL", length = 65535)
+    private String reasonLeavingSchool;
+    @Size(max = 50)
+    @Column(name = "DETAILS_SCHOOL_STUDIED", length = 50)
+    private String detailsSchoolStudied;
+    @Size(max = 100)
+    @Column(name = "MEDIUM_INSTRUCTION", length = 100)
+    private String mediumInstruction;
+    @Size(max = 30)
+    @Column(name = "LAST_MODIFIED_BY", length = 30)
+    private String lastModifiedBy;
+    @JoinColumn(name = "CHILD_PROFILE_ID", referencedColumnName = "CHILD_PROFILE_ID", nullable = false, insertable = false, updatable = false)
+    @ManyToOne(optional = false)
+    private ChildMaster childMaster;
+
+    public CasehistoryPrioradmEducation() {
+    }
+
+    public CasehistoryPrioradmEducation(CasehistoryPrioradmEducationPK casehistoryPrioradmEducationPK) {
+        this.casehistoryPrioradmEducationPK = casehistoryPrioradmEducationPK;
+    }
+
+    public CasehistoryPrioradmEducation(String childProfileId, Date lastModifiedDate) {
+        this.casehistoryPrioradmEducationPK = new CasehistoryPrioradmEducationPK(childProfileId, lastModifiedDate);
+    }
+
+    public CasehistoryPrioradmEducationPK getCasehistoryPrioradmEducationPK() {
+        return casehistoryPrioradmEducationPK;
+    }
+
+    public void setCasehistoryPrioradmEducationPK(CasehistoryPrioradmEducationPK casehistoryPrioradmEducationPK) {
+        this.casehistoryPrioradmEducationPK = casehistoryPrioradmEducationPK;
+    }
+
+    public String getEducationPriorAdmission() {
+        return educationPriorAdmission;
+    }
+
+    public void setEducationPriorAdmission(String educationPriorAdmission) {
+        this.educationPriorAdmission = educationPriorAdmission;
+    }
+
+    public String getReasonLeavingSchool() {
+        return reasonLeavingSchool;
+    }
+
+    public void setReasonLeavingSchool(String reasonLeavingSchool) {
+        this.reasonLeavingSchool = reasonLeavingSchool;
+    }
+
+    public String getDetailsSchoolStudied() {
+        return detailsSchoolStudied;
+    }
+
+    public void setDetailsSchoolStudied(String detailsSchoolStudied) {
+        this.detailsSchoolStudied = detailsSchoolStudied;
+    }
+
+    public String getMediumInstruction() {
+        return mediumInstruction;
+    }
+
+    public void setMediumInstruction(String mediumInstruction) {
+        this.mediumInstruction = mediumInstruction;
+    }
+
+    public String getLastModifiedBy() {
+        return lastModifiedBy;
+    }
+
+    public void setLastModifiedBy(String lastModifiedBy) {
+        this.lastModifiedBy = lastModifiedBy;
+    }
+
+    public ChildMaster getChildMaster() {
+        return childMaster;
+    }
+
+    public void setChildMaster(ChildMaster childMaster) {
+        this.childMaster = childMaster;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 0;
+        hash += (casehistoryPrioradmEducationPK != null ? casehistoryPrioradmEducationPK.hashCode() : 0);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        // TODO: Warning - this method won't work in the case the id fields are not set
+        if (!(object instanceof CasehistoryPrioradmEducation)) {
+            return false;
+        }
+        CasehistoryPrioradmEducation other = (CasehistoryPrioradmEducation) object;
+        if ((this.casehistoryPrioradmEducationPK == null && other.casehistoryPrioradmEducationPK != null) || (this.casehistoryPrioradmEducationPK != null && !this.casehistoryPrioradmEducationPK.equals(other.casehistoryPrioradmEducationPK))) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "com.cdac.usermanagement.ORM.CasehistoryPrioradmEducation[ casehistoryPrioradmEducationPK=" + casehistoryPrioradmEducationPK + " ]";
+    }
+    
+}

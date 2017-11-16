@@ -1,0 +1,105 @@
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+
+#Hospital Module---Referral Register Labels
+package.label.rrProfIdName=Profile Id & Name
+package.label.rrRefDate=Referral Date
+package.label.rrRefHospital=Name Of The Hospital Referred
+package.label.rrRefReason=Reason For Referral
+package.label.rrAdmitDate=Date Of Admit
+package.label.rrTreatedBy=Treated By Whom
+package.label.rrTreatGiven=Treatment Given
+package.label.rrDischargeDate=Date Of Discharge
+package.label.rrDischPrescrip=Prescription At Discharge
+
+#Hospital Module---Referral Register preview labels
+package.label.rrProfId=Profile Id
+
+#Hospital Module---O.P Register Labels
+package.label.opregDiagnosis=Diagnosis(Pain/Fever/Swelling/Injury/Anxiety)
+package.label.opregTreatment=Treatment / Medical Recommendations
+package.label.opregTreatedAt=Treated At
+package.label.opregOPDetails=Please Enter The Details
+package.label.opregTreatSpec=Specify Treatment Given
+package.label.opregRefDetails=Please Enter Referral Details
+
+#Hospital Module---Medical Admission Register Labels
+package.label.admregDate=Date & Time of Admission
+package.label.admregFromWhere=From Where
+package.label.admregAge=Age
+package.label.admregIdenMarks=Identification Marks
+package.label.admregWeiAtAdm=Weight at the time of admission(in kgs)
+package.label.admregHeiAtAdm=Height at the time of admission(in cms)
+package.label.admregComplainSpec=Specific Complaints
+package.label.admregCongiAno=Any Congenital Anomalies
+package.label.admregNameSpec=Specify Name
+package.label.admregPhyHandi=Physically Handicapped
+package.label.admregDisabSpec=Specify % of Disability
+package.label.admregMenHandi=Mentally Handicapped
+package.label.admregStatSpec=Specify Status
+package.label.admregFits=Known Case of Fits
+package.label.admregTreatSpec=Specify Treatment
+package.label.admregCommuHist=History of any Communicable Diseases
+package.label.admregDiseaSpec=Specify Disease
+package.label.admregSpecOth=Specify Others
+package.label.admregComplainGen=General Complaints
+package.label.admregBodyPain=Body Pains
+package.label.admregFever=Fever
+package.label.admregVomit=Vomiting
+package.label.admregOthSpec=Others Specify
+package.label.admregPrevHealHist=Previous Health History
+package.label.admregCondAtAdm=General Condition at the Time of Admission
+package.label.admregPhyAppear=Physical Appearance
+package.label.admregConscLevel=Conscious Level (History Of Drug Addiction)
+package.label.admregDrugSpec=Specify Drug
+package.label.admregAnemic=Anemic
+package.label.admregLevel=Level
+package.label.admregHeart=Heart
+package.label.admregCHD=CHD
+package.label.admregMurmur=Murmur
+package.label.admregHeaSound=Heart Sounds
+package.label.admregHeadLungs=Lungs
+package.label.admregChestAbnor=Any Chest Abnormalities
+package.label.admregCerpts=Crepts
+package.label.admregBAE=BAE
+package.label.admregPerAbdomen=Per-abdomen (Any organomegaly)
+package.label.admregSpecify=Specify
+package.label.admregSkinDisea=Skin Diseases
+package.label.admregProvDiag=Provisional Diagnosis
+package.label.admregCNS=CNS
+package.label.admregCVS=CVS
+package.label.admregLabelLungs=Lungs
+package.label.admregGIT=GIT
+package.label.admregKidney=Kidney
+package.label.admregSkeSys=Skeletal System
+package.label.admregOffiSuggest=Medical Officer's Suggestion
+package.label.admregFemGenDet=General Details (Applicable for Girls)
+package.label.admregFemMarStat=Marital Status
+package.label.admregFemMenarAttai=Attained Menarche
+package.label.admregFemAtAge=At what age
+package.label.admregFemLMP=LMP
+package.label.admregFemAbuse=Sexual Abuse/Contact
+package.label.admregFemOnExam=On Examination
+package.label.admregFemExtFin=External Findings
+package.label.admregFemLocExam=Local Examination
+package.rad.label.yes=Yes
+package.rad.label.no=No
+package.rad.label.normal=normal
+package.rad.label.sick=sick
+package.rad.label.married=Married
+package.rad.label.unmarried=Unmarried
+package.button.admregSave=Save
+
+#Hospital Module---Height Weight Register Labels
+package.label.htwtSelect=Select
+package.label.htwtHei=Height(in cms)
+package.label.htwtWei=Weight(in kgs)
+package.label.htwtChiComplain=Child Complaints
+package.label.htwtObserSugg=Observations & Suggestions
+
+#Hospital Module---View Medical Admission Register Labels
+package.label.viewadmregChProfId=Child Profile Id
+package.label.viewadmregChName=Child Name
+
+#Hospital Module---View Height Weight Register Labels
+package.label.htwtBMI=BMI

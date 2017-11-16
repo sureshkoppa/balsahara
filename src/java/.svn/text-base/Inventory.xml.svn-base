@@ -1,0 +1,453 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <package name="com/cdac/ds/Actions" namespace="/" extends="struts-default">
+		<result-types>
+			<result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult"/>
+                        <result-type name="json" class="org.apache.struts2.json.JSONResult"/>
+		</result-types>
+                
+    <interceptors>
+        <interceptor name="requestCheckInterceptor" class="com.cdac.common.interceptors.RequestCheckInterceptor"/> 
+        <interceptor name="roleCheckInterceptor"    class="com.cdac.common.interceptors.RoleCheckInterceptor" />    
+        
+                <interceptor-stack name="loggingStack">                                      
+                    
+                    <interceptor-ref name="requestCheckInterceptor" />
+                    <interceptor-ref name="roleCheckInterceptor"/>                      
+                    <interceptor-ref name="defaultStack" />
+                </interceptor-stack>
+    </interceptors>
+                
+                
+                <action name="dssuccess">
+                    <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+			<result name="success" type="tiles">DSWelcome</result>
+                </action>
+                <action name="DS-reportSelectMonth">
+                    <interceptor-ref name="loggingStack"/>   
+                           <result name="logout" type="tiles">UM-Logout</result>
+		           <result name="success" type="tiles">DS-SelectMonth</result>
+                </action>
+                  
+                <action name="DS-reportDailyDiet" class="com.cdac.ds.action.InventoryAction" method="reportItext">
+                   
+                       <!--result name="success" type="jasper">
+                            <param name="location">WEB-INF/classes/reports/DietChart.jasper</param>
+                            <param name="dataSource">dietdto_list</param>  
+                            <param name="reportParameters">reportParameter</param>
+                            <param name="format">PDF</param>
+                        
+                        
+                        </result-->
+                       <result name="success" type="stream">
+                           
+                       </result>
+                    <result name="end" type="tiles">DS-Error</result>  
+                    
+                    
+               </action>     
+              
+               <action name="DS-reportTrans" class="com.cdac.ds.action.InventoryAction" method="repTransJSON">
+                    <result name="success" type="json">
+                        <param name="root">
+                            repTransList
+                        </param>             
+                    </result>
+               </action>
+
+                   <!--suresh added 13-01-2011 start-->
+<action name="displayMap" method="displayMap" class="com.cdac.ds.action.InventoryAction">
+                   <!--  <result name="success">/example/HomesMap.jsp</result-->               
+                   <result name="success" type="tiles">mapPage</result>
+                </action>
+<action name="popupex-*" method="{1}" class="com.cdac.ds.action.InventoryAction"> 
+                     <result name="success" type="tiles">DS-ChildHome_Map</result>    
+                </action> 
+
+             <!--suresh added 13-01-2011 end-->
+
+                <action name="DS-addCategory-*" method="{1}" class="com.cdac.ds.action.InventoryAction">
+                    <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+                        <param name="Item">category</param>
+                        <result name="populate-category" type="tiles">/DS-addCategory</result>
+                        <result name="popsubcat-success">/WEB-INF/DS/populateSubCat.jsp</result>
+                        <result name="addcat-success" type="tiles">SU-Success</result>
+                        <result name="addcat-failure" type="tiles">SU-Error</result>
+		</action>
+                
+                    <action name="DS-addItem-*" method="{1}" class="com.cdac.ds.action.InventoryAction">
+                        <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+                        <param name="Item">category</param>
+                        <result name="populate-category" type="tiles">/DS-addItem</result>
+			<result name="popsubcat-success">/WEB-INF/DS/populateSubCat.jsp</result>
+                        <result name="additem-success" type="tiles">DS-Success</result>
+                        <result name="ration-success" type="tiles">AddRation-Success</result>
+                        <result name="additem-failure" type="tiles">DS-Error</result>
+		   </action>
+               <action name="saveSingleBOM" class="com.cdac.ds.action.InventoryAction" method="saveSingleBOM">
+                        <result name="success" type="tiles">DS-Success</result>
+                        <result name="error" type="tiles">DS-Error</result>
+               </action>
+               <action name="DS-dietIssue-*" method="{1}" class="com.cdac.ds.action.InventoryAction">
+                   <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+                     <result name="dietchart-success" type="tiles">/DS-dietIssue</result>
+                     <result name="saveDiet-success" type="tiles">DS-Success</result>
+                     <result name="saveDiet-failure" type="tiles">DS-Error</result>
+                     <result name="error" type="tiles">DS-Error</result>
+                </action>
+              
+              <action name="DS-donation-*" method="{1}" class="com.cdac.ds.action.InventoryAction">
+                  <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+                        <param name="Item">Category</param>
+                        <result name="populate-category" type="tiles">/DS-DonationBook</result>
+                        <result name="popsubcat-success">/WEB-INF/DS/popSubcat.jsp</result>
+                        <result name="viewItem-success">/WEB-INF/DS/subcatItemsDonate.jsp</result>
+                        <result name="donation-success" type="tiles">DS-Success</result>
+                        <result name="donation-failure" type="tiles">DS-Error</result>
+                        <result name="viewDonation-success">/WEB-INF/DS/viewDonation.jsp</result>
+                        <result name="viewDonation-failure" type="tiles">/DS-Error</result>
+              </action>
+              <action name="DS-dietChart-*" method="{1}" class="com.cdac.ds.action.InventoryAction">
+                  
+                    <param name="Item">category</param> 
+                    <result name="populate-category" type="tiles">/DS-rationBOM</result>
+                    <result name="popsubcat-success">/WEB-INF/DS/popSubcat.jsp</result>
+                    <result name="rationBOM-success">/WEB-INF/DS/bomItem.jsp</result>
+                    <result name="saveBOM-success" type="tiles">SU-Success</result>
+                    <result name="saveBOM-failure" type="tiles">SU-Error</result>
+                    <result name="error" >/WEB-INF/DS/bomItem.jsp</result>
+                    
+                </action>        
+                
+                 <action name="DS-issue-*" method="{1}" class="com.cdac.ds.action.InventoryAction">
+                        <param name="Item">Category</param>
+			<result name="populate-category" type="tiles">/DS-IssueBook</result>
+                        <result name="popsubcat-success">/WEB-INF/DS/popSubcat.jsp</result>
+                        <result name="viewItem-success">/WEB-INF/DS/subcatItems.jsp</result>
+                        <result name="viewIssue-success">/WEB-INF/DS/viewIssue.jsp</result>
+                        <result name="viewIssue-failure">DS-Error</result>   
+                        
+                         <result name="viewDiet-success">/WEB-INF/DS/viewDietIssue.jsp</result>
+                        <result name="viewDiet-failure">DS-Error</result> 
+                           
+                        <result name="issue-success" type="tiles">DS-Success</result>
+                        <result name="issue-failure" type="tiles">DS-Error</result>
+                        <result name="pop-issuedto-success">/WEB-INF/DS/popIssueRadioOptions.jsp</result>
+                        
+		</action>
+                
+                <action name="DS-modifyItem-*" method="{1}" class="com.cdac.ds.action.InventoryAction">
+                    <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+                    <param name="Item">category</param>
+                    <result name="populate-category" type="tiles">/DS-modifyItem</result>
+                    <result name="popsubcat-success" type="tiles">/DS-modifyItem</result>
+                    <result name="viewItem-success" type="tiles">/DS-modifyItemDetails</result>
+                    <result name="modifyItem-success" type="tiles">DS-Success</result>
+                    <result name="modifyItem-failure" type="tiles">DS-Error</result>
+                </action>
+                  <action name="DS-receipt-*" method="{1}" class="com.cdac.ds.action.InventoryAction">
+                        <interceptor-ref name="loggingStack"/>   
+                        <result name="logout" type="tiles">UM-Logout</result>
+                        <param name="Item">Category</param>
+                        <result name="populate-category" type="tiles">/DS-receiptBook</result>
+			<result name="popsubcat-success">/WEB-INF/DS/popSubcat.jsp</result>
+                        <result name="viewItem-success" type="tiles">temp</result>
+                        <result name="viewReceipt-success">/WEB-INF/DS/viewReceipt.jsp</result>
+                        <result name="viewReceipt-failure" type="tiles">/DS-Error</result>
+                        <result name="receipt-success" type="tiles">DS-Success</result>
+                        <result name="receipt-failure" type="tiles">DS-Error</result>
+        	</action>
+              <!--action name="DS-loan-*" method="{1}" class="com.cdac.ds.action.InventoryAction">
+                        <interceptor-ref name="loggingStack"/>   
+                        <result name="logout" type="tiles">UM-Logout</result>
+                        <param name="Item">Category</param>
+                        <result name="populate-category" type="tiles">/DS-loanBook</result>
+			<result name="popsubcat-success" type="tiles">/DS-loanBook</result>
+                        <result name="viewItem-success" type="tiles">/DS-loanBook</result>
+                        
+                        <result name="viewLoan-success">/WEB-INF/DS/viewLoan.jsp</result>
+                        <result name="viewLoan-failure" type="tiles">/DS-Error</result>
+                        
+                        <result name="loan-success" type="tiles">DS-Success</result>
+                        <result name="loan-failure" type="tiles">DS-Error</result>
+        	</action-->
+                
+                <action name="DS-loan-*" method="{1}" class="com.cdac.ds.action.InventoryAction">
+                        <interceptor-ref name="loggingStack"/>   
+                        <result name="logout" type="tiles">UM-Logout</result>
+                        <param name="Item">Category</param>
+                        <result name="populate-category" type="tiles">/DS-loanBook</result>
+                        <result name="popsubcat-success">/WEB-INF/DS/popSubcat.jsp</result>
+                        <result name="viewItem-success" type="tiles">temp</result>
+                        <result name="viewLoan-success">/WEB-INF/DS/viewLoan.jsp</result>
+                        <result name="viewLoan-failure" type="tiles">/DS-Error</result>                        
+                        <result name="loan-success" type="tiles">DS-Success</result>
+                        <result name="loan-failure" type="tiles">DS-Error</result>
+        	</action>
+                        
+                        
+                        
+                        
+                <action name="DS-payBack-*" method="{1}" class="com.cdac.ds.action.InventoryAction">
+                        <interceptor-ref name="loggingStack"/>   
+                        <result name="logout" type="tiles">UM-Logout</result>
+                        <param name="Item">Category</param>
+                        <result name="payback-success" type="tiles">DS-Success</result>
+                        <result name="payback-failure" type="tiles">DS-Error</result>
+                        <result name="populate-prevloans">/WEB-INF/DS/populateLoans.jsp</result>
+        	</action>
+                <action name="DS-payBack">
+                    <interceptor-ref name="loggingStack"/>   
+                    <result name="logout" type="tiles">UM-Logout</result>
+                    <result name="success" type="tiles">/DS-payBackBook</result>
+                </action>
+                  
+                 <action name="DS-removeCategory-*" method="{1}" class="com.cdac.ds.action.InventoryAction">
+                     <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+                     
+                        <param name="Item">category</param>
+                        <result name="populate-category" type="tiles">/DS-removeCategory</result>
+                        <result name="popsubcat-success" type="tiles">/DS-removeCategory</result>                        
+                        <result name="popselectcat-success" type="tiles">/DS-removeCategory</result>
+                        <result name="removecat-success" type="tiles">SU-Success</result>
+                        <result name="removecat-failure" type="tiles">SU-Error</result>
+		</action>
+                 <action name="DS-removeItem-*" method="{1}" class="com.cdac.ds.action.InventoryAction">
+                     <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+                     
+                    <param name="Item">category</param>
+                    <result name="populate-category" type="tiles">/DS-removeItem</result>
+                    <result name="popsubcat-success" type="tiles">/DS-removeItem</result>
+                    <result name="viewItem-success" type="tiles">/DS-removeItem</result>
+                    <result name="removeitem-success" type="tiles">DS-Success</result>
+                    <result name="removeitem-failure" type="tiles">DS-Error</result>
+                </action>
+                
+                <action name="DS-deleteItemSubAction-*" method="{1}" class="com.cdac.ds.action.InventoryAction">
+                    <interceptor-ref name="loggingStack"/>   
+                    <result name="logout" type="tiles">UM-Logout</result>
+                     <result name="deleteItem-confirm" type="tiles">/DS-removeItemConfirm</result>
+                     <result name="removeitem-success" type="tiles">DS-Success</result>
+                    <result name="removeitem-failure" type="tiles">DS-Error</result>
+                 </action>
+                 <action name="DS-tailorIssue-*" method="{1}" class="com.cdac.ds.action.InventoryAction">
+                     <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+                        <param name="Item">category</param>
+                        <result name="tailorIssue-success" type="tiles">DS-Success</result>
+                        <result name="populate-category" type="tiles">/DS-issueTailor</result>
+                        <result name="popsubcat-success">/WEB-INF/DS/popSubcat.jsp</result>
+                        <result name="viewItem-success">/WEB-INF/DS/subcatItems.jsp</result>
+                        <result name="tailorIssue-failure" type="tiles">DS-Error</result>
+                </action>
+                <action name="DS-tailorReceive-*" method="{1}" class="com.cdac.ds.action.InventoryAction">
+                    <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+                        <param name="Item">category</param>
+                        <result name="populate-category" type="tiles">/DS-receiveTailor</result>
+                        <result name="popsubcat-success">/WEB-INF/DS/popSubcat.jsp</result>
+                        <result name="viewItem-success">/WEB-INF/DS/subcatItemsReceive.jsp</result>
+                        <result name="tailorReceive-success" type="tiles">DS-Success</result>
+                        <result name="tailorReceive-failure" type="tiles">DS-Error</result>                                                                               
+                </action>
+        <action name="DS-tailor-viewTailor" method="viewTailoring" class="com.cdac.ds.action.InventoryAction">
+                       <result name="viewIssue-success">/WEB-INF/DS/viewTailoring.jsp</result>
+                       <result name="viewIssue-failure">DS-Error</result>   
+        </action>
+                   <action name="DS-viewCategory-*" method="{1}" class="com.cdac.ds.action.InventoryAction">
+                       <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+                        <param name="Item">Category</param>
+                        <result name="viewcat-success" type="tiles">/DS-viewCategorySuccess</result>
+			<result name="populate-category" type="tiles">/DS-viewCategory</result>
+                        <result name="viewCat-failure" type="tiles">DS-Error</result>
+		</action>
+                 <action name="DS-viewCategory1-*" method="{1}" class="com.cdac.ds.action.InventoryAction">
+                       <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+                        <param name="Item">Category</param>
+                        <result name="viewcat-success" type="tiles">/DS-viewCategorySuccess1</result>
+			<result name="populate-category" type="tiles">/DS-viewCategory1</result>
+                        <result name="viewCat-failure" type="tiles">DS-Error</result>
+		</action>
+                    <action name="DS-viewItem-*" method="{1}" class="com.cdac.ds.action.InventoryAction">
+                        <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+                    <param name="Item">Item</param>
+                    <result name="viewcat-success" type="tiles">/DS-viewItem</result>
+                    <result name="viewItem-success" type="tiles">/DS-viewItemDetails</result>
+                    <result name="viewItem-failure" type="tiles">DS-Error</result>
+                </action>
+                <action name="DS-menu-saveMenu" method="saveMenuItem" class="com.cdac.ds.action.InventoryAction">
+                    <interceptor-ref name="loggingStack"/>   
+                    <result name="logout" type="tiles">UM-Logout</result>
+                    <result name="success" type="tiles">DS-Success</result>
+                    <result name="error" type="tiles">DS-Error</result>   
+                
+                </action>
+                
+                <action name="DS-menu-saveMenuDetail" method="saveMenuDetail" class="com.cdac.ds.action.InventoryAction">
+                    <interceptor-ref name="loggingStack"/>   
+                    <result name="logout" type="tiles">UM-Logout</result>
+                    <result name="success" type="tiles">DS-Success</result>
+                    <result name="error" type="tiles">DS-Error</result>   
+                
+                </action>
+                
+                <action name="DS-menu-viewMenu" method="viewMenu" class="com.cdac.ds.action.InventoryAction">
+                    <interceptor-ref name="loggingStack"/>   
+                    <result name="logout" type="tiles">UM-Logout</result>
+                    <result name="success">WEB-INF/DS/viewMenuDetail.jsp</result>
+                
+                </action>
+                
+                <action name="DS-dietMenu">
+                    <interceptor-ref name="loggingStack"/>   
+                    <result name="logout" type="tiles">UM-Logout</result>
+                    <result name="success" type="tiles">/DS-dietMenu</result>
+                </action>
+               <action name="DS-detailMenu" method="populateMenu" class="com.cdac.ds.action.InventoryAction">
+                    <interceptor-ref name="loggingStack"/>   
+                    <result name="logout" type="tiles">UM-Logout</result>
+                    <result name="success" type="tiles">/DS-detailMenu</result>
+                    <result name="error" type="tiles">/DS-Error</result>
+                    
+                </action>
+                
+               <action name="DS-viewMenu">
+                    <interceptor-ref name="loggingStack"/>   
+                    <result name="logout" type="tiles">UM-Logout</result>
+                    <result name="success" type="tiles">/DS-viewMenu</result>
+                </action>
+                
+                
+                <action name="DS-enterTopCategory">
+                    <interceptor-ref name="loggingStack"/>   
+                    <result name="logout" type="tiles">UM-Logout</result>
+                    <result name="success" type="tiles">/DS-enterTopCat</result>
+                </action>
+             
+                <action name="DS-Home">
+                    <interceptor-ref name="loggingStack"/>   
+                    <result name="logout" type="tiles">UM-Logout</result>
+                    <result name="success" type="tiles">DSWelcome</result>      
+                </action>
+                
+                <action name="DS-viewDonation">
+                      <interceptor-ref name="loggingStack"/>     
+                      <result name="logout" type="tiles">UM-Logout</result>
+                      <result name="success" type="tiles">/DS-viewDonation</result>
+                </action>
+                
+                <action name="DS-viewReceipt">
+                      <interceptor-ref name="loggingStack"/>     
+                      <result name="logout" type="tiles">UM-Logout</result>
+                      <result name="success" type="tiles">/DS-viewReceipt</result>
+                </action>
+                
+                <action name="DS-viewIssue">
+                      <interceptor-ref name="loggingStack"/>     
+                      <result name="logout" type="tiles">UM-Logout</result>
+                      <result name="success" type="tiles">/DS-viewIssue</result>
+                    
+                </action>
+                
+                 <action name="DS-viewLoan">
+                      <interceptor-ref name="loggingStack"/>     
+                      <result name="logout" type="tiles">UM-Logout</result>
+                      <result name="success" type="tiles">/DS-viewLoan</result>
+                    
+                </action>
+                <action name="DS-viewDiet">
+                      <interceptor-ref name="loggingStack"/>     
+                      <result name="logout" type="tiles">UM-Logout</result>
+                      <result name="success" type="tiles">/DS-viewDiet</result>
+                </action>
+               <action name="DS-viewTailoring">
+                      <interceptor-ref name="loggingStack"/>     
+                      <result name="logout" type="tiles">UM-Logout</result>
+                      <result name="success" type="tiles">/DS-viewTailoing</result>
+                    
+                </action>
+                
+                <action name="DS-reportRecIss">
+                      <interceptor-ref name="loggingStack"/>     
+                      <result name="logout" type="tiles">UM-Logout</result>
+                      <result name="success" type="tiles">DS-reportRecIss</result>
+                </action>
+      <!--
+      ====***********************************************************====
+      ====^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^====
+      ====Actions For userDetails Modification and Resetting Password====
+      ====___________________________________________________________====
+      ====********************Added By Anupam************************====
+      ====**********************START********************************====
+      -->
+        <action name="DS-ModifyMyDetails" class="com.cdac.usermanagement.Actions.UserManagementAction" method="modifyMyDetails">
+            <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+            <result name="success" type="chain">DS-ModifyUserMainAction</result>
+            <result name="error" type="tiles">DS-Error</result>
+      </action>
+
+      <action name="DS-ModifyUserMainAction" class="com.cdac.usermanagement.Actions.UserManagementAction" method="modifyUserMain">
+          <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+            <result name="success" type="tiles">DS-ModifyUser-Main</result>
+            <result name="error" type="tiles">DS-Error</result>
+      </action>
+
+
+      <action name="DS-ModifyUserSubAction" class="com.cdac.usermanagement.Actions.UserManagementAction" method="modifyUserSub">
+          <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+            <result name="success" type="tiles">DS-Success</result>
+            <result name="error" type="tiles">DS-Error</result>
+      </action>
+         <action name="DS-viewIssueDetail" method="viewIssueDetail" class="com.cdac.ds.action.InventoryAction">
+                      <interceptor-ref name="loggingStack"/>     
+                      <result name="logout" type="tiles">UM-Logout</result>
+                      <result name="success" type="tiles">/DS-viewIssueDetail</result>
+                      <result name="viewIssue-failure" type="tiles">DS-Error</result>
+                </action>
+
+       <action name="DS-ChangePassword">
+           <interceptor-ref name="loggingStack"/>   
+           <result name="logout" type="tiles">UM-Logout</result>
+	   <result name="success" type="tiles">DS-ChangePassword</result>
+       </action>
+
+               <action name="DS-ChangePassword-Action" class="com.cdac.usermanagement.Actions.UserManagementAction" method="changePassword">
+                   <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+			<result name="success" type="tiles">DS-Success</result>
+                        <result name="error" type="tiles">DS-Error</result>
+	       </action>
+      
+      <!--
+      ====***********************************************************====
+      ====^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^====
+      ====Actions For userDetails Modification and Resetting Password====
+      ====___________________________________________________________====
+      ====********************Added By Anupam************************====
+      ====**********************END**********************************====
+      -->
+                
+
+</package>
+
+
+</struts>
+
+

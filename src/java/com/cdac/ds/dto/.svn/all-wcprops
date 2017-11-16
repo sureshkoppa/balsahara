@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/ChildHomes/!svn/ver/116/WDCW_MLC/src/java/com/cdac/ds/dto
+END
+LoanDto.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/ChildHomes/!svn/ver/88/WDCW_MLC/src/java/com/cdac/ds/dto/LoanDto.java
+END
+BOMItemDto.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/ChildHomes/!svn/ver/116/WDCW_MLC/src/java/com/cdac/ds/dto/BOMItemDto.java
+END
+ItemDto.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/ChildHomes/!svn/ver/88/WDCW_MLC/src/java/com/cdac/ds/dto/ItemDto.java
+END
+TransObjectDto.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/ChildHomes/!svn/ver/88/WDCW_MLC/src/java/com/cdac/ds/dto/TransObjectDto.java
+END
+RepTransDTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/ChildHomes/!svn/ver/116/WDCW_MLC/src/java/com/cdac/ds/dto/RepTransDTO.java
+END
+DonationOrReceiptItem.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/ChildHomes/!svn/ver/88/WDCW_MLC/src/java/com/cdac/ds/dto/DonationOrReceiptItem.java
+END
+IssueDetail.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/ChildHomes/!svn/ver/88/WDCW_MLC/src/java/com/cdac/ds/dto/IssueDetail.java
+END
+TransDto.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/ChildHomes/!svn/ver/88/WDCW_MLC/src/java/com/cdac/ds/dto/TransDto.java
+END

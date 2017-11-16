@@ -1,0 +1,293 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/UserManagement
+END
+selectUserModify.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/UserManagement/selectUserModify.jsp
+END
+AddUser.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/UserManagement/AddUser.jsp
+END
+viewRole.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/UserManagement/viewRole.jsp
+END
+ReassignRole.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/UserManagement/ReassignRole.jsp
+END
+showHomeDetails.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/UserManagement/showHomeDetails.jsp
+END
+AddHome.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/UserManagement/AddHome.jsp
+END
+country.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/UserManagement/country.jsp
+END
+HomeInADistrictList_ForReassignRole.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/UserManagement/HomeInADistrictList_ForReassignRole.jsp
+END
+assignRole.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/UserManagement/assignRole.jsp
+END
+index.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/UserManagement/index.jsp
+END
+assignOneRole.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/UserManagement/assignOneRole.jsp
+END
+viewUser.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/UserManagement/viewUser.jsp
+END
+selectRole_new.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/UserManagement/selectRole_new.jsp
+END
+addRole.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/UserManagement/addRole.jsp
+END
+UserLoginDetails.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/UserManagement/UserLoginDetails.jsp
+END
+userExists.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/UserManagement/userExists.jsp
+END
+deleteUserConfirm.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/UserManagement/deleteUserConfirm.jsp
+END
+viewUserDetails.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/UserManagement/viewUserDetails.jsp
+END
+HomeInADistrictList.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/UserManagement/HomeInADistrictList.jsp
+END
+CwcRemoveMember.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/UserManagement/CwcRemoveMember.jsp
+END
+addPrivileges.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/UserManagement/addPrivileges.jsp
+END
+AddProductCatSubcat.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/UserManagement/AddProductCatSubcat.jsp
+END
+mainUser.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/UserManagement/mainUser.jsp
+END
+Reassign_Role_Success.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/UserManagement/Reassign_Role_Success.jsp
+END
+deleteRole.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/UserManagement/deleteRole.jsp
+END
+modifyUser.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/UserManagement/modifyUser.jsp
+END
+AddHome_Version2.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/UserManagement/AddHome_Version2.jsp
+END
+HomeDetailsView.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/UserManagement/HomeDetailsView.jsp
+END
+CwcDissoleGroupConformation.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/UserManagement/CwcDissoleGroupConformation.jsp
+END
+HomeAndRoleSelect.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/UserManagement/HomeAndRoleSelect.jsp
+END
+assignHome.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/UserManagement/assignHome.jsp
+END
+RemoveAssignedRole.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/UserManagement/RemoveAssignedRole.jsp
+END
+leftMenu1.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/UserManagement/leftMenu1.jsp
+END
+selectRole.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/UserManagement/selectRole.jsp
+END
+deleteUser.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/UserManagement/deleteUser.jsp
+END
+CwcModifyGroup.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/UserManagement/CwcModifyGroup.jsp
+END
+UsersInAHome.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/UserManagement/UsersInAHome.jsp
+END
+viewRoleDetails.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/UserManagement/viewRoleDetails.jsp
+END
+LoginFail.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/UserManagement/LoginFail.jsp
+END
+DelPrivilegeSuccess.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/UserManagement/DelPrivilegeSuccess.jsp
+END
+addPrivilegesDel.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/UserManagement/addPrivilegesDel.jsp
+END
+city.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/UserManagement/city.jsp
+END
+HomeInADistrictFor_assignHome.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/UserManagement/HomeInADistrictFor_assignHome.jsp
+END
+CWCGrpouCreate.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/UserManagement/CWCGrpouCreate.jsp
+END
+CwcAddMember.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/UserManagement/CwcAddMember.jsp
+END
+ApproveDPO.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/UserManagement/ApproveDPO.jsp
+END
+state.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/UserManagement/state.jsp
+END
+HomeInaDistrictForCWCJJBGroupCreation.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/UserManagement/HomeInaDistrictForCWCJJBGroupCreation.jsp
+END

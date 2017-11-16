@@ -1,0 +1,750 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Test" pageWidth="595" pageHeight="842" whenNoDataType="NoDataSection" columnWidth="535" leftMargin="40" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="58"/>
+	<property name="ireport.y" value="0"/>
+	<field name="childName" class="java.lang.String"/>
+	<field name="gender" class="java.lang.String"/>
+	<field name="ageAdmission" class="java.lang.Integer"/>
+	<field name="agePresent" class="java.lang.Integer"/>
+	<field name="religion" class="java.lang.String"/>
+	<field name="caste" class="java.lang.String"/>
+	<field name="subcaste" class="java.lang.String"/>
+	<field name="localResidence" class="java.lang.String"/>
+	<field name="nativeDistrict" class="java.lang.String"/>
+	<field name="nativeState" class="java.lang.String"/>
+	<field name="housingType" class="java.lang.String"/>
+	<field name="housingSpace" class="java.lang.String"/>
+	<field name="houseOwnership" class="java.lang.String"/>
+	<field name="broughtbeforeCwc" class="java.lang.String"/>
+	<field name="parentRelation" class="java.lang.String"/>
+	<field name="reasonLeavingFamily" class="java.lang.String"/>
+	<field name="verbalAbuse" class="java.lang.String"/>
+	<field name="physicalAbuse" class="java.lang.String"/>
+	<field name="sexualAbuse" class="java.lang.String"/>
+	<field name="otherAbuse" class="java.lang.String"/>
+	<field name="illtreatDenialFood" class="java.lang.String"/>
+	<field name="illtreatBeatenMercilessly" class="java.lang.String"/>
+	<field name="illtreatCauseInjury" class="java.lang.String"/>
+	<field name="illtreatOthers" class="java.lang.String"/>
+	<field name="exploitationChild" class="java.lang.String"/>
+	<field name="hsbaRespiratory" class="java.lang.String"/>
+	<field name="hsbaHearing" class="java.lang.String"/>
+	<field name="hsbaEye" class="java.lang.String"/>
+	<field name="hsbaDental" class="java.lang.String"/>
+	<field name="hsbaCordiac" class="java.lang.String"/>
+	<field name="hsbaSkin" class="java.lang.String"/>
+	<field name="hsbaSexualDiseases" class="java.lang.String"/>
+	<field name="hsbaNeurological" class="java.lang.String"/>
+	<field name="hsbaMentalHandicap" class="java.lang.String"/>
+	<field name="hsbaPhysicalHandicap" class="java.lang.String"/>
+	<field name="hsbaOthers" class="java.lang.String"/>
+	<field name="childStayPriorAdmission" class="java.lang.String"/>
+	<field name="vchfPriorInsti" class="java.lang.String"/>
+	<field name="vpmcAfterInsti" class="java.lang.String"/>
+	<field name="vpmcPriorInsti" class="java.lang.String"/>
+	<field name="cwpPriorInsti" class="java.lang.String"/>
+	<field name="vchfAfterInsti" class="java.lang.String"/>
+	<field name="cwpAfterInsti" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="50">
+			<rectangle>
+				<reportElement x="0" y="0" width="545" height="29"/>
+			</rectangle>
+			<staticText>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="8" y="0" width="501" height="17"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true" isItalic="false" isUnderline="true" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[FORM - XXVIII  ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="8" y="16" width="501" height="15"/>
+				<textElement textAlignment="Center">
+					<font size="8" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[See Schedule 3(5)(b) of AP JJ(CPC) RULES 2003]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="8" y="31" width="501" height="15"/>
+				<textElement textAlignment="Center">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CASE HISTORY FORMAT ]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="48" width="545" height="1"/>
+				<graphicElement>
+					<pen lineWidth="3.0" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Prevent"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Prevent"/>
+	</columnHeader>
+	<detail>
+		<band height="739" splitType="Stretch">
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="10" y="20" width="49" height="18"/>
+				<textElement>
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<text><![CDATA[1.   Name:    ]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="58" y="20" width="212" height="18"/>
+				<textElement>
+					<font fontName="SansSerif" size="10"/>
+					<paragraph tabStopWidth="20"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{childName}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="403" y="19" width="87" height="18"/>
+				<textElement>
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{gender}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="366" y="19" width="39" height="18"/>
+				<textElement>
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<text><![CDATA[Gender :  ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="10" y="37" width="163" height="18"/>
+				<textElement>
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<text><![CDATA[2.  a)  Age at the time of  Admission:  ]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="173" y="37" width="82" height="18"/>
+				<textElement>
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{ageAdmission}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="258" y="37" width="75" height="18"/>
+				<textElement>
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<text><![CDATA[b)  Present Age:   ]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="332" y="36" width="177" height="18"/>
+				<textElement>
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{agePresent}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="10" y="55" width="55" height="18"/>
+				<textElement>
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<text><![CDATA[3.  Religion: ]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="63" y="55" width="201" height="18"/>
+				<textElement>
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{religion}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="366" y="52" width="33" height="15"/>
+				<textElement>
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<text><![CDATA[Caste : ]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="398" y="52" width="92" height="15"/>
+				<textElement>
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{caste}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="366" y="66" width="45" height="15"/>
+				<textElement>
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<text><![CDATA[subcaste :  ]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="410" y="66" width="80" height="15"/>
+				<textElement>
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{subcaste}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="123" y="72" width="161" height="18"/>
+				<textElement>
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{localResidence}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" x="10" y="89" width="94" height="18"/>
+				<textElement>
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<text><![CDATA[5.  a)  Native District:   ]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="104" y="89" width="130" height="18"/>
+				<textElement>
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{nativeDistrict}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" x="263" y="89" width="88" height="18"/>
+				<textElement>
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<text><![CDATA[     b)  Native State:  ]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="351" y="89" width="158" height="18"/>
+				<textElement>
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{nativeState}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="10" y="106" width="144" height="18"/>
+				<textElement>
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<text><![CDATA[6.  Description of the  Housing:  ]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="296" y="145" width="181" height="18"/>
+				<textElement>
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{housingSpace}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="280" y="125" width="229" height="20"/>
+				<textElement>
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{housingType}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="106" y="163" width="339" height="18"/>
+				<textElement>
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{houseOwnership}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="26" y="125" width="255" height="20"/>
+				<textElement>
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<text><![CDATA[i)  Concrete building/Tiled House/Hut/On the street/others : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="26" y="145" width="270" height="18"/>
+				<textElement>
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<text><![CDATA[ii)  Three bed room/two-bed room/one-bed room/no seperate bed room :  ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="26" y="163" width="81" height="18"/>
+				<textElement>
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<text><![CDATA[iii)  Owned/rental : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="7" y="181" width="185" height="18"/>
+				<textElement>
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<text><![CDATA[7. By whom the juvenile brought before the CWC : ]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="192" y="181" width="301" height="18"/>
+				<textElement>
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{broughtbeforeCwc}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="8" y="199" width="116" height="18"/>
+				<textElement>
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<text><![CDATA[8. ReasonLeavingFamily : ]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="124" y="199" width="301" height="18"/>
+				<textElement>
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{reasonLeavingFamily}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="7" y="217" width="155" height="18"/>
+				<textElement>
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<text><![CDATA[9. Types of abuse met by the child  ]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="322" y="235" width="151" height="18"/>
+				<textElement>
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{verbalAbuse}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="24" y="235" width="298" height="18"/>
+				<textElement>
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<text><![CDATA[a)   Verbal abuse - Parents / siblings/employers /others (pl.specify): ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="24" y="253" width="95" height="18"/>
+				<textElement>
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<text><![CDATA[b)   Physical abuse : ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="119" y="253" width="346" height="18"/>
+				<textElement>
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{physicalAbuse}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="24" y="271" width="299" height="18"/>
+				<textElement>
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<text><![CDATA[c)   Sexual abuse Parents/Siblings/Employers/Others (pl. specify ): ]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="322" y="271" width="157" height="18"/>
+				<textElement>
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sexualAbuse}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="24" y="289" width="298" height="18"/>
+				<textElement>
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<text><![CDATA[d)   Others - parents / siblings /employers / others (pl. specify): ]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="322" y="289" width="158" height="18"/>
+				<textElement>
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{otherAbuse}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="6" y="307" width="186" height="18"/>
+				<textElement>
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<text><![CDATA[10. Types of ill-treatment met by the child . ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="24" y="325" width="307" height="18"/>
+				<textElement>
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<text><![CDATA[i)    Denial of food - parents / siblings /employers /others (pl. specify) : ]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="330" y="325" width="148" height="18"/>
+				<textElement>
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{illtreatDenialFood}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="24" y="342" width="307" height="18"/>
+				<textElement>
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<text><![CDATA[ii)   Beaten mercilessley - parents / siblings /employers /others: ]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="330" y="342" width="234" height="18"/>
+				<textElement>
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{illtreatBeatenMercilessly}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="24" y="359" width="307" height="18"/>
+				<textElement>
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<text><![CDATA[iii)  Causing injury -  parents / siblings /employers /others (pl. specify) : ]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="330" y="359" width="157" height="18"/>
+				<textElement>
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{illtreatCauseInjury}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="24" y="376" width="232" height="18"/>
+				<textElement>
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<text><![CDATA[iv)   Others (pl. specify) - parents / siblings /employers /others  :  ]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="256" y="376" width="210" height="18"/>
+				<textElement>
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{illtreatOthers}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="6" y="394" width="156" height="20"/>
+				<textElement>
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<text><![CDATA[11. Exploitation faced by the Child: ]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="162" y="394" width="309" height="20"/>
+				<textElement>
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{exploitationChild}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="6" y="413" width="179" height="20"/>
+				<textElement>
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<text><![CDATA[12. Health Status of the child before admission . ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="24" y="432" width="100" height="20"/>
+				<textElement>
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<text><![CDATA[i)    Respiratory disorders : ]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="123" y="432" width="367" height="20"/>
+				<textElement>
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{hsbaRespiratory}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="24" y="451" width="100" height="20"/>
+				<textElement>
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<text><![CDATA[ii)   Hearing impairment : ]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="124" y="451" width="367" height="20"/>
+				<textElement>
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{hsbaHearing}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="24" y="470" width="100" height="18"/>
+				<textElement>
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<text><![CDATA[iii)   Eye diseases : ]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="124" y="470" width="367" height="18"/>
+				<textElement>
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{hsbaEye}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="24" y="488" width="100" height="18"/>
+				<textElement>
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<text><![CDATA[iv)   Dental diseases : ]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="124" y="488" width="367" height="18"/>
+				<textElement>
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{hsbaDental}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="24" y="505" width="100" height="18"/>
+				<textElement>
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<text><![CDATA[v)    Cardiac diseases : ]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="123" y="505" width="367" height="18"/>
+				<textElement>
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{hsbaCordiac}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="24" y="523" width="100" height="18"/>
+				<textElement>
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<text><![CDATA[vi)   Skin diseases : ]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="124" y="523" width="367" height="18"/>
+				<textElement>
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{hsbaSkin}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" x="24" y="540" width="161" height="18"/>
+				<textElement>
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<text><![CDATA[vii)   Sexually transmitted Diseases :  ]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="185" y="540" width="305" height="18"/>
+				<textElement>
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{hsbaSexualDiseases}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="24" y="557" width="111" height="18"/>
+				<textElement>
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<text><![CDATA[viii)   Neurological disorders : ]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="135" y="557" width="356" height="18"/>
+				<textElement>
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{hsbaNeurological}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="24" y="574" width="111" height="18"/>
+				<textElement>
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<text><![CDATA[ix)    Mental Handicap : ]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="135" y="574" width="356" height="18"/>
+				<textElement>
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{hsbaMentalHandicap}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="24" y="591" width="111" height="18"/>
+				<textElement>
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<text><![CDATA[x)    Physical Handicap :]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="135" y="591" width="354" height="18"/>
+				<textElement>
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{hsbaPhysicalHandicap}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="24" y="609" width="111" height="18"/>
+				<textElement>
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<text><![CDATA[xi)   Others (pl. specify ) : ]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="135" y="608" width="355" height="18"/>
+				<textElement>
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{hsbaOthers}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="10" y="72" width="114" height="18"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[4. Location of Recidence: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="7" y="625" width="248" height="18"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[13. With whom the chils was staying prior to admission :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="254" y="625" width="204" height="18"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{childStayPriorAdmission}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="8" y="643" width="177" height="18"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[14. Visit of the parent to meet the child]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="24" y="661" width="138" height="18"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[i)   Prior to institutionalization - ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="162" y="661" width="118" height="18"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{vpmcPriorInsti}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="298" y="661" width="123" height="18"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[ ii)   After Institutionalization -  ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="421" y="661" width="101" height="18"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{vpmcAfterInsti}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="8" y="679" width="146" height="18"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[15. Visit of the child to his family]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="24" y="697" width="138" height="17"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[i)   Prior to institutionalization - ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="162" y="697" width="100" height="17"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{vchfPriorInsti}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="298" y="697" width="122" height="17"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[ii)   After Institutionalization -  ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="420" y="697" width="102" height="17"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{vchfAfterInsti}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="8" y="713" width="154" height="13"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[16. Correspondence with parents -  ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="23" y="725" width="139" height="13"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[i)   Prior to institutionalization - ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="162" y="725" width="133" height="13"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cwpPriorInsti}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="298" y="724" width="122" height="13"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[ii)   After Institutionalization -  ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="421" y="724" width="107" height="13"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cwpAfterInsti}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="0" width="100" height="20"/>
+				<textElement>
+					<font size="10" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[A. PERSONAL DATA]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,485 @@
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/ChildHomes/!svn/ver/84/WDCW_SVN/lib
+END
+struts2-tiles-plugin-2.0.9.jar
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/ChildHomes/!svn/ver/7/WDCW_SVN/lib/struts2-tiles-plugin-2.0.9.jar
+END
+spring-beans-3.0.2.RELEASE.jar
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/ChildHomes/!svn/ver/7/WDCW_SVN/lib/spring-beans-3.0.2.RELEASE.jar
+END
+tiles-core-2.0.7.jar
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/ChildHomes/!svn/ver/7/WDCW_SVN/lib/tiles-core-2.0.7.jar
+END
+spring-context-support-3.0.2.RELEASE.jar
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/ChildHomes/!svn/ver/7/WDCW_SVN/lib/spring-context-support-3.0.2.RELEASE.jar
+END
+nblibraries.properties
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/ChildHomes/!svn/ver/84/WDCW_SVN/lib/nblibraries.properties
+END
+jstl.jar
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/ChildHomes/!svn/ver/7/WDCW_SVN/lib/jstl.jar
+END
+commons-dbcp-1.0.jar
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/ChildHomes/!svn/ver/7/WDCW_SVN/lib/commons-dbcp-1.0.jar
+END
+jta.jar
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/ChildHomes/!svn/ver/7/WDCW_SVN/lib/jta.jar
+END
+tree4jsp_1.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/ChildHomes/!svn/ver/7/WDCW_SVN/lib/tree4jsp_1.2.jar
+END
+commons-collections-2.1.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/ChildHomes/!svn/ver/7/WDCW_SVN/lib/commons-collections-2.1.1.jar
+END
+commons-fileupload-1.2.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/ChildHomes/!svn/ver/7/WDCW_SVN/lib/commons-fileupload-1.2.1.jar
+END
+ognl-2.7.3.jar
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/ChildHomes/!svn/ver/7/WDCW_SVN/lib/ognl-2.7.3.jar
+END
+ejb3-persistence.jar
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/ChildHomes/!svn/ver/7/WDCW_SVN/lib/ejb3-persistence.jar
+END
+hibernate-entitymanager.jar
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/ChildHomes/!svn/ver/7/WDCW_SVN/lib/hibernate-entitymanager.jar
+END
+freemarker-2.3.15.jar
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/ChildHomes/!svn/ver/7/WDCW_SVN/lib/freemarker-2.3.15.jar
+END
+spring-orm-3.0.2.RELEASE.jar
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/ChildHomes/!svn/ver/7/WDCW_SVN/lib/spring-orm-3.0.2.RELEASE.jar
+END
+spring-instrument-tomcat-3.0.2.RELEASE.jar
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/ChildHomes/!svn/ver/7/WDCW_SVN/lib/spring-instrument-tomcat-3.0.2.RELEASE.jar
+END
+asm-attrs.jar
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/ChildHomes/!svn/ver/7/WDCW_SVN/lib/asm-attrs.jar
+END
+spring-expression-3.0.2.RELEASE.jar
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/ChildHomes/!svn/ver/7/WDCW_SVN/lib/spring-expression-3.0.2.RELEASE.jar
+END
+tiles-jsp-2.0.7.jar
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/ChildHomes/!svn/ver/7/WDCW_SVN/lib/tiles-jsp-2.0.7.jar
+END
+spring-jdbc-3.0.2.RELEASE.jar
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/ChildHomes/!svn/ver/7/WDCW_SVN/lib/spring-jdbc-3.0.2.RELEASE.jar
+END
+struts2-core-2.1.8.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/ChildHomes/!svn/ver/7/WDCW_SVN/lib/struts2-core-2.1.8.1.jar
+END
+asm.jar
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/ChildHomes/!svn/ver/7/WDCW_SVN/lib/asm.jar
+END
+spring-struts-3.0.2.RELEASE.jar
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/ChildHomes/!svn/ver/7/WDCW_SVN/lib/spring-struts-3.0.2.RELEASE.jar
+END
+spring-webmvc.jar
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/ChildHomes/!svn/ver/7/WDCW_SVN/lib/spring-webmvc.jar
+END
+struts2-jasperreports-plugin-2.1.8.jar
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/ChildHomes/!svn/ver/7/WDCW_SVN/lib/struts2-jasperreports-plugin-2.1.8.jar
+END
+mysql-connector-java-5.1.7-bin.jar
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/ChildHomes/!svn/ver/7/WDCW_SVN/lib/mysql-connector-java-5.1.7-bin.jar
+END
+tiles-api-2.0.7.jar
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/ChildHomes/!svn/ver/7/WDCW_SVN/lib/tiles-api-2.0.7.jar
+END
+flex-messaging-remoting.jar
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/ChildHomes/!svn/ver/7/WDCW_SVN/lib/flex-messaging-remoting.jar
+END
+spring-test-3.0.2.RELEASE.jar
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/ChildHomes/!svn/ver/7/WDCW_SVN/lib/spring-test-3.0.2.RELEASE.jar
+END
+spring-aop-3.0.2.RELEASE.jar
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/ChildHomes/!svn/ver/7/WDCW_SVN/lib/spring-aop-3.0.2.RELEASE.jar
+END
+commons-logging.jar
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/ChildHomes/!svn/ver/7/WDCW_SVN/lib/commons-logging.jar
+END
+itext-2.1.7.jar
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/ChildHomes/!svn/ver/7/WDCW_SVN/lib/itext-2.1.7.jar
+END
+jasperreports-4.0.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/ChildHomes/!svn/ver/7/WDCW_SVN/lib/jasperreports-4.0.2.jar
+END
+xwork-core-2.1.6.jar
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/ChildHomes/!svn/ver/7/WDCW_SVN/lib/xwork-core-2.1.6.jar
+END
+spring-jms-3.0.2.RELEASE.jar
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/ChildHomes/!svn/ver/7/WDCW_SVN/lib/spring-jms-3.0.2.RELEASE.jar
+END
+spring-tx-3.0.2.RELEASE.jar
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/ChildHomes/!svn/ver/7/WDCW_SVN/lib/spring-tx-3.0.2.RELEASE.jar
+END
+cfgatewayadapter.jar
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/ChildHomes/!svn/ver/7/WDCW_SVN/lib/cfgatewayadapter.jar
+END
+jdbc2_0-stdext.jar
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/ChildHomes/!svn/ver/7/WDCW_SVN/lib/jdbc2_0-stdext.jar
+END
+dom4j-1.6.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/ChildHomes/!svn/ver/7/WDCW_SVN/lib/dom4j-1.6.1.jar
+END
+struts2-dojo-plugin-2.1.8.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/ChildHomes/!svn/ver/7/WDCW_SVN/lib/struts2-dojo-plugin-2.1.8.1.jar
+END
+spring-aspects-3.0.2.RELEASE.jar
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/ChildHomes/!svn/ver/7/WDCW_SVN/lib/spring-aspects-3.0.2.RELEASE.jar
+END
+cglib-2.1.3.jar
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/ChildHomes/!svn/ver/7/WDCW_SVN/lib/cglib-2.1.3.jar
+END
+concurrent.jar
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/ChildHomes/!svn/ver/7/WDCW_SVN/lib/concurrent.jar
+END
+commons-digester-1.8.jar
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/ChildHomes/!svn/ver/7/WDCW_SVN/lib/commons-digester-1.8.jar
+END
+spring-instrument-3.0.2.RELEASE.jar
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/ChildHomes/!svn/ver/7/WDCW_SVN/lib/spring-instrument-3.0.2.RELEASE.jar
+END
+spring-webmvc-portlet-3.0.2.RELEASE.jar
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/ChildHomes/!svn/ver/7/WDCW_SVN/lib/spring-webmvc-portlet-3.0.2.RELEASE.jar
+END
+flex-messaging-proxy.jar
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/ChildHomes/!svn/ver/7/WDCW_SVN/lib/flex-messaging-proxy.jar
+END
+commons-logging-1.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/ChildHomes/!svn/ver/7/WDCW_SVN/lib/commons-logging-1.1.jar
+END
+hibernate-annotations.jar
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/ChildHomes/!svn/ver/7/WDCW_SVN/lib/hibernate-annotations.jar
+END
+hibernate-tools.jar
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/ChildHomes/!svn/ver/7/WDCW_SVN/lib/hibernate-tools.jar
+END
+flex-messaging-common.jar
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/ChildHomes/!svn/ver/7/WDCW_SVN/lib/flex-messaging-common.jar
+END
+standard.jar
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/ChildHomes/!svn/ver/7/WDCW_SVN/lib/standard.jar
+END
+xalan.jar
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/ChildHomes/!svn/ver/7/WDCW_SVN/lib/xalan.jar
+END
+spring-core-3.0.2.RELEASE.jar
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/ChildHomes/!svn/ver/7/WDCW_SVN/lib/spring-core-3.0.2.RELEASE.jar
+END
+hibernate-commons-annotations.jar
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/ChildHomes/!svn/ver/7/WDCW_SVN/lib/hibernate-commons-annotations.jar
+END
+javassist.jar
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/ChildHomes/!svn/ver/7/WDCW_SVN/lib/javassist.jar
+END
+flex-messaging-opt.jar
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/ChildHomes/!svn/ver/7/WDCW_SVN/lib/flex-messaging-opt.jar
+END
+commons-io-1.3.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/ChildHomes/!svn/ver/7/WDCW_SVN/lib/commons-io-1.3.2.jar
+END
+cglib-2.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/ChildHomes/!svn/ver/7/WDCW_SVN/lib/cglib-2.2.jar
+END
+ehcache-1.2.3.jar
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/ChildHomes/!svn/ver/7/WDCW_SVN/lib/ehcache-1.2.3.jar
+END
+spring-oxm-3.0.2.RELEASE.jar
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/ChildHomes/!svn/ver/7/WDCW_SVN/lib/spring-oxm-3.0.2.RELEASE.jar
+END
+validation-api-1.0.0.GA.jar
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/ChildHomes/!svn/ver/84/WDCW_SVN/lib/validation-api-1.0.0.GA.jar
+END
+commons-pool-1.5.jar
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/ChildHomes/!svn/ver/7/WDCW_SVN/lib/commons-pool-1.5.jar
+END
+hibernate3.jar
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/ChildHomes/!svn/ver/7/WDCW_SVN/lib/hibernate3.jar
+END
+commons-httpclient-3.0.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/ChildHomes/!svn/ver/7/WDCW_SVN/lib/commons-httpclient-3.0.1.jar
+END
+commons-codec-1.3.jar
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/ChildHomes/!svn/ver/7/WDCW_SVN/lib/commons-codec-1.3.jar
+END
+antlr-2.7.6.jar
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/ChildHomes/!svn/ver/7/WDCW_SVN/lib/antlr-2.7.6.jar
+END
+spring-web-3.0.2.RELEASE.jar
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/ChildHomes/!svn/ver/7/WDCW_SVN/lib/spring-web-3.0.2.RELEASE.jar
+END
+struts2-json-plugin-2.1.8.1.jar
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/ChildHomes/!svn/ver/84/WDCW_SVN/lib/struts2-json-plugin-2.1.8.1.jar
+END
+spring-hibernate3-2.0-m2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/ChildHomes/!svn/ver/7/WDCW_SVN/lib/spring-hibernate3-2.0-m2.jar
+END
+spring-asm-3.0.2.RELEASE.jar
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/ChildHomes/!svn/ver/7/WDCW_SVN/lib/spring-asm-3.0.2.RELEASE.jar
+END
+commons-logging-1.0.4.jar
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/ChildHomes/!svn/ver/7/WDCW_SVN/lib/commons-logging-1.0.4.jar
+END
+flex-messaging-core.jar
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/ChildHomes/!svn/ver/7/WDCW_SVN/lib/flex-messaging-core.jar
+END
+struts2-spring-plugin-2.0.11.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/ChildHomes/!svn/ver/7/WDCW_SVN/lib/struts2-spring-plugin-2.0.11.2.jar
+END
+spring-webmvc-3.0.2.RELEASE.jar
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/ChildHomes/!svn/ver/7/WDCW_SVN/lib/spring-webmvc-3.0.2.RELEASE.jar
+END
+commons-beanutils-1.7.0.jar
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/ChildHomes/!svn/ver/7/WDCW_SVN/lib/commons-beanutils-1.7.0.jar
+END
+backport-util-concurrent.jar
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/ChildHomes/!svn/ver/7/WDCW_SVN/lib/backport-util-concurrent.jar
+END
+spring-context-3.0.2.RELEASE.jar
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/ChildHomes/!svn/ver/7/WDCW_SVN/lib/spring-context-3.0.2.RELEASE.jar
+END
+spring.jar
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/ChildHomes/!svn/ver/7/WDCW_SVN/lib/spring.jar
+END

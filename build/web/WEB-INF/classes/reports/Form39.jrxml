@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Form 39" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f5cb9d3a-8e92-43eb-8894-b2861842ab2a">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="50"/>
+	<queryString language="SQL">
+		<![CDATA[select * from form_39]]>
+	</queryString>
+	<field name="on" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="the" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="from" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="years" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="date1" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="day1" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="year1" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="date2" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="day2" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="year2" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<group name="on">
+		<groupExpression><![CDATA[$F{on}]]></groupExpression>
+	</group>
+	<group name="the">
+		<groupExpression><![CDATA[$F{the}]]></groupExpression>
+	</group>
+	<group name="from">
+		<groupExpression><![CDATA[$F{from}]]></groupExpression>
+	</group>
+	<group name="years">
+		<groupExpression><![CDATA[$F{years}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="89" splitType="Stretch">
+			<staticText>
+				<reportElement x="220" y="5" width="139" height="22" uuid="e202bb69-d1cf-4622-bcb9-44a9610a1955"/>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[        Form 39]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="230" y="29" width="139" height="22" uuid="fc0248b7-e35f-46da-b6a8-d0e8c55b9ca0"/>
+				<textElement>
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[      [Rule 27(4)]]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="7" y="57" width="587" height="22" uuid="c7670195-ff20-4649-a1fc-ef0d978278e6"/>
+				<textElement>
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CERTIFICATE OF RECOGNITION OF FIT FACILITY INCLUDING GROUP FOSTER CARE]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="1" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="480" splitType="Stretch">
+			<staticText>
+				<reportElement x="10" y="9" width="557" height="20" uuid="d1683e2d-b885-4ab2-b7cb-8f88ab9e4448"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[After  perusal  of  the documents and on the basis   of   an  inspection   of   the   Institution   conducted]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-11" y="36" width="14" height="20" uuid="cfa69b5d-69d6-4ab2-a935-d2187d992c80"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[on]]></text>
+			</staticText>
+			<line>
+				<reportElement x="7" y="49" width="50" height="1" uuid="ae0ce224-1b50-4c51-8833-a5ee48c80800"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="61" y="38" width="20" height="20" uuid="72296606-ddea-4f1a-a6e7-8953a4925e97"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[the]]></text>
+			</staticText>
+			<line>
+				<reportElement x="81" y="48" width="50" height="1" uuid="9addfbbe-f686-4d4b-a9c8-1934f1ce3937"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="135" y="33" width="432" height="20" uuid="84beabaa-3075-45d5-b195-aae1c28d2ddb"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[( Name of the Institution ) is recognized as a  Fit Facility  under  Section  51  of]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-11" y="60" width="431" height="20" uuid="6210aa66-c807-4397-9fa9-b3784124d327"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[the Juvenile Justice ( Care and Protection of Children ) Act, 2015 with effect from]]></text>
+			</staticText>
+			<line>
+				<reportElement x="417" y="73" width="50" height="1" uuid="d055042a-5efe-4ec2-93a2-c1b3094dd3d7"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="467" y="60" width="100" height="20" uuid="a33e1e47-6c4c-471c-b046-181c0759ac4f"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[for  a  period of]]></text>
+			</staticText>
+			<line>
+				<reportElement x="-11" y="93" width="50" height="1" uuid="763b050e-0841-4468-87f3-874b1d6b7290"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="39" y="81" width="100" height="20" uuid="5d58211e-ff6a-4410-898e-fb9628172d3d"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[years.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="104" width="557" height="20" uuid="c6e7b377-68f6-45c1-8fd6-fa58bba7ec10"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[The   Facility   shall remain bound  to follow  the Juvenile Justice (Care  and   Protection  of  Children )]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-11" y="127" width="578" height="20" uuid="5d57bcdf-05ff-4f15-8bf4-cf49ee582d96"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Act, 2015, the Juvenile  Justice (Care  and  Protection of Children )  Rules, 2016  and  regulations  framed]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-11" y="152" width="288" height="20" uuid="dd12e2b6-01f3-4ef6-ab03-6fef6d70e446"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[by  the  appropriate  Government  from  time  to  time.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="180" width="557" height="20" uuid="83b0c8b3-5fe9-48eb-89f4-cfaa8a1c18b7"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[The   Facility    shall    remain    bound  to  comply  with  the  orders passed   by   the  Juvenile  Justice]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-11" y="203" width="331" height="20" uuid="657f957f-e985-431e-b1d7-ecd4abfbe3c2"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Board or the Child Welfare Committee from time to time.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="245" width="57" height="20" uuid="983c0269-5a0c-4d9e-a13c-28bfc6ecd087"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Dated this]]></text>
+			</staticText>
+			<line>
+				<reportElement x="56" y="258" width="50" height="1" uuid="d12fcb9c-fe3c-4235-8d1d-5d272188d6a3"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="106" y="245" width="33" height="20" uuid="e129b94a-8fc0-427e-b6e5-c3ecf1f3bf9c"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[day of]]></text>
+			</staticText>
+			<line>
+				<reportElement x="139" y="259" width="50" height="1" uuid="b5458c52-3194-46f2-bec2-c1741030904f"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="189" y="245" width="20" height="20" uuid="49b55d8b-8af6-472e-b9e6-7f5b951cdaa0"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[20]]></text>
+			</staticText>
+			<line>
+				<reportElement x="206" y="257" width="50" height="1" uuid="a536585e-bc71-4d1d-8889-4c554397e38b"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="456" y="281" width="111" height="19" uuid="75876772-f8a4-4532-aac6-1ef0bbc90794"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[           (Signature)
+                      ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="189" y="350" width="20" height="20" uuid="e3a32aee-41e4-438a-a8d1-9a8bfc0332ed"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[20]]></text>
+			</staticText>
+			<line>
+				<reportElement x="139" y="364" width="50" height="1" uuid="04cabd8e-a9cf-40ef-bae0-02f04283f56d"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="106" y="350" width="33" height="20" uuid="eef7eb2c-9abc-42dd-a802-d4d3b5bb92f1"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[day of]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="350" width="57" height="20" uuid="bf676146-c48e-4cc3-a0f0-821e96b298a3"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Dated this]]></text>
+			</staticText>
+			<line>
+				<reportElement x="206" y="362" width="50" height="1" uuid="bebd7205-ee6f-4ac2-848f-55bb875bf405"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="56" y="363" width="50" height="1" uuid="3bad47f2-7408-4bc1-a0a3-4de5f7e7472a"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="21" y="34" width="30" height="20" uuid="5e9a9550-155b-469d-8846-344a413232e8"/>
+				<textFieldExpression><![CDATA[$F{on}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="81" y="33" width="34" height="20" uuid="0df00e16-4844-42ca-848c-501b049945ee"/>
+				<textFieldExpression><![CDATA[$F{the}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="420" y="59" width="50" height="20" uuid="a7ad631e-4012-4748-8342-c11f53fe4e11"/>
+				<textFieldExpression><![CDATA[$F{from}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="59" y="245" width="53" height="20" uuid="04b8940a-0b5d-4a01-9719-affe6a4f26b3"/>
+				<textFieldExpression><![CDATA[$F{date1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="142" y="243" width="44" height="20" uuid="455bdf89-05c7-4764-a24e-e529db0d102f"/>
+				<textFieldExpression><![CDATA[$F{day1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="212" y="241" width="44" height="20" uuid="6ab8e806-da8f-4ac9-bfff-152781842dfe"/>
+				<textFieldExpression><![CDATA[$F{year1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="59" y="350" width="50" height="20" uuid="2dd24e30-07cf-4c45-b154-c93b89f43ddc"/>
+				<textFieldExpression><![CDATA[$F{date2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="142" y="349" width="43" height="20" uuid="83ebf5e0-9e6a-416e-9c09-a04cf0c6de96"/>
+				<textFieldExpression><![CDATA[$F{day2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="211" y="348" width="52" height="20" uuid="7aa891d0-fd6d-4e4b-9caf-36341e3b4899"/>
+				<textFieldExpression><![CDATA[$F{year2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="79" width="46" height="20" uuid="0badfc9f-4d59-4718-94bd-fc1d9fd6bd61"/>
+				<textFieldExpression><![CDATA[$F{years}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="522" y="304" width="45" height="20" uuid="879125df-7fbc-4b27-8f56-2201dc5d8b03"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[(Seal)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="510" y="370" width="71" height="20" uuid="fda345c2-64b4-4294-99e3-6774bf1d89ae"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[(Signature)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="122" y="392" width="484" height="20" uuid="889b6437-c591-4b6a-8fab-7950da5e48ea"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Chairperson, Child Welfare Committee / Principal Magistrate, Juvenile Justice Board]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="186" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="36" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

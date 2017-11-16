@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="PlaaceCCI" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="96"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="76" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="66"/>
+				<text><![CDATA[FORM 18
+[Rules 18 (5), 18 (9) and 19 (26) ]
+ORDER OF PLACEMENT OF A CHILD IN AN INSTITUTION
+(Children’s Home/Fit Facility/SAA)]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="49" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="45"/>
+				<text><![CDATA[Case No………………………………
+To,
+The Officer-in-Charge,]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="171" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="160"/>
+				<text><![CDATA[Whereas on the …………………..day of …………….20 …………. (name of the child)
+……………………., son/daughter of ………………. aged ………..residing at …………………. being in care
+and protection under the Juvenile Justice (Care and Protection) Act 2015 is ordered by the Child Welfare
+Committee …………………, to be kept in the Children’s Home/SAA/Fit Facility……………………..for a
+period of …………………
+This is to authorize and require you to receive the said child in your charge, and to keep him/her in
+the Children’s Home/ Fit Facility /SAA……………….. for the aforesaid order to be carried into execution
+according to law. The concerned official shall upload the details in case of an orphan or abandoned child in
+the TrackChild/ relevant Web Portal.
+Given under my hand and the seal of Child Welfare Committee.
+This ……………. day of ………………………..]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="53"/>
+				<text><![CDATA[(Signature)
+Chairperson/ Member
+Child Welfare Committee]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="42"/>
+				<text><![CDATA[Encl:
+Copy of the orders, particulars of home and previous record, case history and individual care plan, as
+applicable:]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

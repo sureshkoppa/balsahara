@@ -1,0 +1,569 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<!-- Author: Anupam -->
+ 
+<struts>
+    <!-- Add your configuration elements here -->
+<package name="com/cdac/headmaster/Actions" namespace="/" extends="jasperreports-default,struts-default,json-default">
+
+  <result-types>
+  <result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult" />
+  <result-type name="json" class="org.apache.struts2.json.JSONResult"/>
+  </result-types>
+  
+  <interceptors>
+      <interceptor name="json" class="org.apache.struts2.json.JSONInterceptor"/>
+        <interceptor name="requestCheckInterceptor" class="com.cdac.common.interceptors.RequestCheckInterceptor"/> 
+           <interceptor name="roleCheckInterceptor"    class="com.cdac.common.interceptors.RoleCheckInterceptor" />    
+        
+                <interceptor-stack name="loggingStack">                                      
+                    
+                    <interceptor-ref name="requestCheckInterceptor" />
+                    <interceptor-ref name="roleCheckInterceptor"/>                      
+                    <interceptor-ref name="defaultStack" />
+                </interceptor-stack>
+                
+                <interceptor-stack name="fileUploadStack">
+                    <interceptor-ref name="exception" />
+                    <interceptor-ref name="alias" />
+                    <interceptor-ref name="servletConfig" />
+                    <interceptor-ref name="prepare" />
+                    <interceptor-ref name="i18n" />
+                    <interceptor-ref name="chain" />
+                    <interceptor-ref name="debugging" />
+                    <interceptor-ref name="profiling" />
+                    <interceptor-ref name="scopedModelDriven" />
+                    <interceptor-ref name="modelDriven" />
+                    <interceptor-ref name="fileUpload">
+                    <param name="maximumSize">3000000</param>
+                    <param name="allowedTypes"> image/jpeg,image/gif,image/png</param>
+                    </interceptor-ref>
+                    <interceptor-ref name="checkbox" />
+                    <interceptor-ref name="staticParams" />
+                    <interceptor-ref name="actionMappingParams" />
+                    <interceptor-ref name="params">
+                    <param name="excludeParams"> dojo\..*,^struts\..*</param>
+                    </interceptor-ref>
+                    <interceptor-ref name="conversionError" />
+                    <interceptor-ref name="validation">
+                    <param name="excludeMethods"> input,back,cancel,browse</param>
+                    </interceptor-ref>
+                    <interceptor-ref name="workflow">
+                    <param name="excludeMethods"> input,back,cancel,browse</param>
+                    </interceptor-ref>
+                    <interceptor-ref name="requestCheckInterceptor"/>
+                </interceptor-stack>
+    </interceptors>
+  
+  
+  
+  
+
+    <action name="HM-Attendence" class="com.cdac.headmaster.Actions.HeadMasterAction" method="setSchoolAndVocationalCollections"> <!--Old method = setChildListAndVocationalMap-->
+	
+        <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+        
+        <result name="success" type="tiles">HM-Attendence</result>
+        <result name="error" type="tiles">HM-Error</result>
+    </action>
+    
+    <action name="HM-StudentList-Attendence" class="com.cdac.headmaster.Actions.HeadMasterAction" method="getStudentListOfAClass">
+	
+        <interceptor-ref name="loggingStack"/>   
+        <result name="logout">/WEB-INF/HM/AttendenceSheet.jsp</result>
+        
+        <result name="success">/WEB-INF/HM/AttendenceSheet.jsp</result>
+        <result name="error">/WEB-INF/HM/AttendenceSheet.jsp</result>
+    </action>
+    
+     <action name="HM-Attendence-Save" class="com.cdac.headmaster.Actions.HeadMasterAction" method="saveAttendence">
+	
+        <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+        
+        <result name="success" type="tiles">HM-Success</result>
+        <result name="error" type="tiles">HM-Error</result>
+    </action>
+    
+    
+    
+    
+    
+    
+    <action name="HM-Admission" class="com.cdac.headmaster.Actions.HeadMasterAction" method="setStudentDTOListAndVocationalMap">
+	<!--old method = setChildListAndVocationalMap-->
+        <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+        
+        <result name="success" type="tiles">HM-Admission</result>
+        <result name="error" type="tiles">HM-Error</result>
+    </action>
+    
+    <action name="HM-Admission-Save" class="com.cdac.headmaster.Actions.HeadMasterAction" method="saveAdmission">
+	
+        <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+        
+        <result name="success" type="tiles">HM-Success</result>
+        <result name="error" type="tiles">HM-Error</result>
+    </action>
+    
+    
+    <action name="HM-Exam-Conduct" class="com.cdac.headmaster.Actions.HeadMasterAction" method="setStudentDTOListAndVocationalMap">
+        <!--old method= setChildListAndVocationalMap -->
+        <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+        
+	<result name="success" type="tiles">HM-Exam-Conduct</result>
+        <result name="error" type="tiles">HM-Error</result>
+    </action>
+    
+    <action name="HM-Exam-Save" class="com.cdac.headmaster.Actions.HeadMasterAction" method="saveExam">
+	
+        <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+        
+        <result name="success" type="tiles">HM-Success</result>
+        <result name="error" type="tiles">HM-Error</result>
+    </action>
+    
+     <action name="HM-Scheduled-Exams" class="com.cdac.headmaster.Actions.HeadMasterAction" method="getScheduledExamList">
+	
+        <!--
+        <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+        -->
+        <result name="success" type="tiles">HM-Scheduled-Exams</result>
+        <result name="error" type="tiles">HM-Error</result>
+    </action>
+    
+    <action name="HM-Save-ScheduledExam-Att" class="com.cdac.headmaster.Actions.HeadMasterAction" method="takeExamAttendence">
+	
+        <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+        
+        <result name="success" type="tiles">HM-Exam-Attendence</result>
+        <result name="error" type="tiles">HM-Error</result>
+    </action>
+    
+    
+    
+    
+    
+     <action name="HM-Exam-Att-Save" class="com.cdac.headmaster.Actions.HeadMasterAction" method="saveExamAttendence">
+	
+        <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+        
+        <result name="success" type="tiles">HM-Success</result>
+        <result name="error" type="tiles">HM-Error</result>
+    </action>
+    
+    <action name="HM-Exam-Marks" class="com.cdac.headmaster.Actions.HeadMasterAction" method="populateUncheakedExams">
+	
+        <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+        
+        <result name="success" type="tiles">HM-Exam-Marks</result>
+        <result name="error" type="tiles">HM-Error</result>
+    </action>
+    
+    <action name="HM-Exam-Marks-Entry" class="com.cdac.headmaster.Actions.HeadMasterAction" method="populateExamMarks">
+	
+        <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+        
+        <result name="success">/WEB-INF/HM/ExamMarksEntry.jsp</result>
+        <result name="error">/WEB-INF/HM/ExamMarksEntry.jsp</result>
+    </action>
+    
+    <action name="HM-Exam-Marks-Save" class="com.cdac.headmaster.Actions.HeadMasterAction" method="saveOrUpdateExamMarks">
+	
+        <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+        
+        <result name="success" type="tiles">HM-Success</result>
+        <result name="error" type="tiles">HM-Error</result>
+    </action>
+    
+    <action name="HM-Exam-View-1">
+	
+        <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+        
+        <result name="success" type="tiles">HM-Exam-View-1</result>
+        <result name="error" type="tiles">HM-Error</result>
+    </action>
+    
+    <action name="HM-Exam-View-1-Action" class="com.cdac.headmaster.Actions.HeadMasterAction" method="populateExamListBasedOnCiteria">
+	
+        <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+        
+        <result name="success" type="tiles">HM-Exam-View-2</result>
+        <result name="error" type="tiles">HM-Error</result>
+    </action>
+    
+    <action name="HM-Exam-View-2-Action" class="com.cdac.headmaster.Actions.HeadMasterAction" method="populateExamMarksListBasedOnId">
+	
+        <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+        
+        <result name="success" type="tiles">HM-Exam-View-3</result>
+        <result name="error" type="tiles">HM-Error</result>
+    </action>
+    
+    <action name="HM-Exam-View-3">
+	
+        <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+        
+        <result name="success" type="tiles">HM-Exam-View-3</result>
+        <result name="error" type="tiles">HM-Error</result>
+    </action>
+    
+    
+    <!--Vocational START-->
+    
+    <action name="HM-AddNewVocational">
+	
+        <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+        
+        <result name="success" type="tiles">HM-AddNewVocational</result>
+        <result name="error" type="tiles">HM-Error</result>
+    </action>
+    
+    <action name="HM-AddNewVocational-Save" class="com.cdac.headmaster.Actions.HeadMasterAction" method="saveVocationalCourse">
+	
+        <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+        
+        <result name="success" type="tiles">HM-Success</result>
+        <result name="error" type="tiles">HM-Error</result>
+    </action>
+    
+    
+    <action name="HM-DeleteVocationalCourse" class="com.cdac.headmaster.Actions.HeadMasterAction" method="listVocationalCourses">
+	
+        <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+        
+        <result name="success" type="tiles">HM-DeleteVocationalCourse</result>
+        <result name="error" type="tiles">HM-Error</result>
+    </action>
+    
+    <action name="HM-DeleteVocationalCourse-Action" class="com.cdac.headmaster.Actions.HeadMasterAction" method="deleteAVocationaCouse">
+	
+        <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+        
+        <result name="success" type="tiles">HM-Success</result>
+        <result name="error" type="tiles">HM-Error</result>
+    </action>
+    
+    <action name="HM-VocationAssesment" class="com.cdac.headmaster.Actions.HeadMasterAction" method="listVocationalCourses">
+	
+        <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+        
+        <result name="success" type="tiles">HM-VocationAssesment</result>        
+    </action>
+    
+    
+    <action name="HM-StudentList-ofA-Vocational" class="com.cdac.headmaster.Actions.HeadMasterAction" method="setEducationAdmissionListForVocational">
+	
+        <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+        
+        <result name="success">/WEB-INF/HM/StudentInACourse.jsp</result>
+        <result name="error">/WEB-INF/HM/StudentInACourse.jsp</result>
+    </action>
+    
+    <action name="HM-VocationalAssesment-Save" class="com.cdac.headmaster.Actions.HeadMasterAction" method="vocationalAssesmentSave">
+	
+        <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+        
+        <result name="success" type="tiles">HM-Success</result>
+        <result name="error" type="tiles">HM-Error</result>
+    </action>
+    
+    
+     <action name="HM-View-Assesment" class="com.cdac.headmaster.Actions.HeadMasterAction" method="setChildListAndVocationalMap">
+	
+        <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+        
+        <result name="success" type="tiles">HM-View-Assesment</result>
+        <result name="error" type="tiles">HM-Error</result>
+    </action>
+    
+     <action name="HM-StudentList-For-Assesment" class="com.cdac.headmaster.Actions.HeadMasterAction" method="prePopulateStudentsForAssessmet">
+	
+        <interceptor-ref name="loggingStack"/>   
+        <result name="logout">/WEB-INF/HM/StudentsForAssessment.jsp</result>
+        
+        <result name="success">/WEB-INF/HM/StudentsForAssessment.jsp</result>
+        <result name="error">/WEB-INF/HM/StudentsForAssessment.jsp</result>
+    </action>
+    
+    
+    
+    <action name="HM-View-Vocational-Assesment" class="com.cdac.headmaster.Actions.HeadMasterAction" method="populateVocationalMasters">
+        
+        <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+        
+        <result name="success" type="tiles">HM-View-Vocational-Assesment</result>
+        <result name="error" type="tiles">HM-Error</result>
+    </action>
+   
+   
+   
+   <action name="HM-Vocational-Details" class="com.cdac.headmaster.Actions.HeadMasterAction" method="showVocationalDetails">
+	
+        <interceptor-ref name="loggingStack"/>   
+        <result name="logout">/WEB-INF/HM/VocationalAssessmentViewAjax.jsp</result>
+        
+        <result name="success">/WEB-INF/HM/VocationalAssessmentViewAjax.jsp</result>
+        <result name="error">/WEB-INF/HM/VocationalAssessmentViewAjax.jsp</result>
+    </action>
+    
+    
+    
+    
+   
+    
+    
+    
+    
+    
+    <!--Vocational END-->
+    
+    <!--Anupam added on 14-01-2012 START-->
+    
+    
+<action name="HM-Add-School" class="com.cdac.usermanagement.Actions.UserManagementAction" method="prePopulateDistrict">
+    <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+        
+        <result name="success" type="tiles">HM-Add-School</result>
+        <result name="error" type="tiles">HM-Error</result>
+</action>
+
+<action name="HM-AddSchool-Save" class="com.cdac.headmaster.Actions.HeadMasterAction" method="saveSchool">
+    <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+        
+        <result name="success" type="tiles">HM-Success</result>
+        <result name="error" type="tiles">HM-Error</result>
+</action>
+
+<action name="HM-Promotion" class="com.cdac.headmaster.Actions.HeadMasterAction" method="setChildListAndVocationalMap">
+    <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+        
+        <result name="success" type="tiles">HM-Promotion</result>
+        <result name="error" type="tiles">HM-Error</result>
+</action>
+
+
+
+<action name="HM-PromotionDetail" class="com.cdac.headmaster.Actions.HeadMasterAction" method="getStudentListChildListAndVocMap">
+   
+        <result name="success" type="tiles">HM-PromotionDetail</result>
+        <result name="error" type="tiles">HM-Error</result>
+</action>
+
+<action name="HM-PromotionDetail-Save" class="com.cdac.headmaster.Actions.HeadMasterAction" method="promoteChildren">
+   
+        <result name="success" type="tiles">HM-Success</result>
+        <result name="error" type="tiles">HM-Error</result>
+</action>
+
+    
+    <!--Anupam added on 14-01-2012 END-->
+    
+    <!--Anupam added on 6-02-2012 START-->
+    
+    <action name="HM-ViewSchoolChildReport" class="com.cdac.headmaster.Actions.HeadMasterAction" method="populateAllSchools">
+   
+        <result name="success" type="tiles">HM-ViewSchoolChildReport</result>
+        <result name="error" type="tiles">HM-Error</result>
+</action>
+    
+    
+    
+    <!--Anupam added on 6-02-2012 END-->
+    
+    
+    
+    <!--Anupam added on 7-02-2012 START-->
+    
+    <action name="HM-StudentList-On-School-Class" class="com.cdac.headmaster.Actions.HeadMasterAction" method="populateChildrenBasedOnClassAndSchool">
+   
+        <result name="success">/WEB-INF/HM/StudentListOfASchoolClass.jsp</result>
+        <result name="error">/WEB-INF/HM/StudentListOfASchoolClass.jsp</result>
+</action>
+    
+    
+    
+    <!--Anupam added on 7-02-2012 END-->
+    
+    <!--Anupam added on 9-02-2012 START-->
+    
+    <action name="HM-ClassWiseStudentReport">
+   
+        <result name="success" type="tiles">HM-ClassWiseStudentReport</result>
+        <result name="error"  type="tiles">HM-Error</result>
+</action>
+    
+    
+    
+    <!--Anupam added on 9-02-2012 END-->
+    
+    
+    
+    
+    
+    
+    
+     <!--Report Stuff START-->
+<action name="HM-test-assesment" class="com.cdac.headmaster.Actions.HeadMasterAction" method="showReport">
+    <result name="success" type="json">
+           <param name="root">assessmentDTOsForReport</param>
+    <!--<result name="success" type="jasper">
+        <param name="location">WEB-INF/classes/reports/MarkSheet.jasper</param>
+        <param name="dataSource">assessmentDTOsForReport</param>
+        <param name="format">PDF</param>-->
+    </result>    
+</action>
+
+<!--Anupam added on 9-02-2012 START-->
+    
+    <action name="HM-ClassWiseStudentReport-Show" class="com.cdac.headmaster.Actions.HeadMasterAction" method="getEducationPopulationRepots">
+     <result name="school-success" type="json">
+         <param name="root">schoolTypeStudentsNoDTOs</param>
+   <!--<result name="school-success" type="jasper">
+        <param name="location">WEB-INF/classes/reports/SchoolClassStudentReport.jasper</param>
+        <param name="reportParameters">reportParameter</param>
+        <param name="dataSource">schoolTypeStudentsNoDTOs</param>
+        <param name="format">PDF</param>-->
+    </result>    
+    
+    <result name="vocational-success" type="json">
+         <param name="root">vocationalCoursePoulationDTOs</param>
+    <!--<result name="vocational-success" type="jasper">
+        <param name="location">WEB-INF/classes/reports/VocationalTrainingReport.jasper</param>
+        <param name="reportParameters">reportParameter</param>
+        <param name="dataSource">vocationalCoursePoulationDTOs</param>
+        <param name="format">PDF</param>-->
+    </result> 
+</action>
+
+  
+    
+    <!--Anupam added on 9-02-2012 END-->
+    
+    <!--Anupam added on 15-02-2012 START-->
+    <action name="HM-SchoolwiseVocationalStudets-Show" class="com.cdac.headmaster.Actions.HeadMasterAction" method="getVocationalStudets">
+      <result name="vocatioanl-student-list-success" type="json">
+         <param name="root">VocationalStudentDTOs</param>
+      <!--<result name="vocatioanl-student-list-success" type="jasper">
+        <param name="location">WEB-INF/classes/reports/VocationalStudetsReport.jasper</param>        
+        <param name="dataSource">VocationalStudentDTOs</param>
+        <param name="format">PDF</param>-->
+      </result>    
+  
+   </action>
+
+
+ <action name="HM-SchoolwiseSchoolStudets-Show" class="com.cdac.headmaster.Actions.HeadMasterAction" method="getSchoolStudents">
+   <result name="school-student-list-success" type="json">
+         <param name="root">schoolStudentDTOs</param>
+   <!--<result name="school-student-list-success" type="jasper">
+        <param name="location">WEB-INF/classes/reports/VocationalStudetsReport.jasper</param>        
+        <param name="dataSource">schoolStudentDTOs</param>
+        <param name="format">PDF</param>-->
+    </result>    
+  
+</action>
+
+
+
+
+    <!--Anupam added on 15-02-2012 END-->
+    
+    
+    
+    
+      <!--
+      ====***********************************************************====
+      ====^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^====
+      ====Actions For userDetails Modification and Resetting Password====
+      ====___________________________________________________________====
+      ====********************Added By Anupam************************====
+      ====**********************START********************************====
+      -->
+        <action name="HM-ModifyMyDetails" class="com.cdac.usermanagement.Actions.UserManagementAction" method="modifyMyDetails">
+            
+            <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+            
+            <result name="success" type="chain">HM-ModifyUserMainAction</result>
+            <result name="error" type="tiles">HM-Error</result>
+      </action>
+
+      <action name="HM-ModifyUserMainAction" class="com.cdac.usermanagement.Actions.UserManagementAction" method="modifyUserMain">
+            
+            <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+            
+            <result name="success" type="tiles">HM-ModifyUser-Main</result>
+            <result name="error" type="tiles">HM-Error</result>
+      </action>
+
+
+      <action name="HM-ModifyUserSubAction" class="com.cdac.usermanagement.Actions.UserManagementAction" method="modifyUserSub">
+            
+            <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+            
+            <result name="success" type="tiles">HM-Success</result>
+            <result name="error" type="tiles">HM-Error</result>
+      </action>
+      
+       <action name="HM-ChangePassword">
+           
+           <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+        
+	    <result name="success" type="tiles">HM-ChangePassword</result>
+       </action>
+
+               <action name="HM-ChangePassword-Action" class="com.cdac.usermanagement.Actions.UserManagementAction" method="changePassword">
+			
+                        <interceptor-ref name="loggingStack"/>   
+                        <result name="logout" type="tiles">UM-Logout</result>
+                        
+                        <result name="success" type="tiles">HM-Success</result>
+                        <result name="error" type="tiles">HM-Error</result>
+	       </action>
+      
+      <!--
+      ====***********************************************************====
+      ====^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^====
+      ====Actions For userDetails Modification and Resetting Password====
+      ====___________________________________________________________====
+      ====********************Added By Anupam************************====
+      ====**********************END**********************************====
+      -->
+
+    
+</package>
+    
+</struts>

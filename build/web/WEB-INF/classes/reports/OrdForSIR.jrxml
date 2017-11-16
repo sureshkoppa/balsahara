@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="OrdForSIR" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="42" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="42"/>
+				<text><![CDATA[FORM 21
+[Rule 19(3)]
+ORDER FOR SOCIAL INVESTIGATION REPORT OF CHILD IN NEED OF CARE AND PROTECTION]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="159" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="156"/>
+				<text><![CDATA[To
+Child Welfare Officer/ Social Worker/Case Worker/ Person in-charge of Home/ representative of
+Non- Governmental Organization
+Whereas a report under section 31 (2) of the Juvenile Justice (Care and Protection of Children) Act,
+2015 has been received from …………………. in respect of (name of the child)……………, aged
+(approximate)………, son/daughter of …………………………residing at……………………, who has been
+produced before the Committee under section 31 of the Juvenile Justice (Care and Protection of Children)
+Act, 2015.
+You are hereby directed to conduct Social Investigation as per Form 22 for the above child. You are
+directed to enquire into socio economic and family background of the said child.
+You are directed to submit the Social Investigation Report on or before …………….. (date).
+Dated this ………….day of …………………..20………………………
+]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<summary>
+		<band height="51" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="560" height="43"/>
+				<text><![CDATA[(Signature)
+Chairperson/Member
+Child Welfare Committee]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

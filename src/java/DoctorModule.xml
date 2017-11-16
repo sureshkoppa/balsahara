@@ -1,0 +1,422 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<!-- Author: trainee -->
+ 
+<struts>
+    <!-- Configuration for the default package. -->
+   <package name="com/cdac/hospitalmodule/Actions" namespace="/" extends="struts-default,json-default">
+
+      <result-types>
+       <result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult" />
+      </result-types>
+      
+      <interceptors>
+        <interceptor name="requestCheckInterceptor" class="com.cdac.common.interceptors.RequestCheckInterceptor"/> 
+        <interceptor name="roleCheckInterceptor"    class="com.cdac.common.interceptors.RoleCheckInterceptor" />    
+        
+                <interceptor-stack name="loggingStack">                                      
+                    
+                    <interceptor-ref name="requestCheckInterceptor" />
+                    <interceptor-ref name="roleCheckInterceptor"/>                      
+                    <interceptor-ref name="defaultStack" />
+                </interceptor-stack>
+     </interceptors>
+      
+      
+      
+      
+      <!--Displaying the Hospital forms START-->
+          <action name="Hospital_adm_reg" class="com.cdac.hospitalmodule.Actions.HospitalModuleAction" method="fetchprof_id">
+               <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+               
+               <param name="testing">admismedregfirst</param>
+                <result name="success" type="tiles">/Hospital_adm_reg.tiles</result>
+                <result name="session_expire_error" type="tiles">DOC-Sess_error</result>
+                <result name="error" type="tiles">DOC-Error</result>
+          </action>
+          <action name="loadchdetails" class="com.cdac.hospitalmodule.Actions.HospitalModuleAction" method="fetchprof_id">
+               <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+               
+               <param name="testing">admismedregselect</param>
+                <result name="admreg_male" type="tiles">/Hospital_adm_reg.tiles</result>
+                <result name="admreg_female" type="tiles">/Hospital_adm_regfemale.tiles</result>
+                <result name="session_expire_error" type="tiles">DOC-Sess_error</result>
+                <result name="error" type="tiles">DOC-Error</result>
+          </action>
+          <action name="Hospital_op_reg" class="com.cdac.hospitalmodule.Actions.HospitalModuleAction" method="fetchprof_id">
+              <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+              
+              <param name="testing">opregfirst</param>
+            <result name="success" type="tiles">/Hospital_op_reg.tiles</result>
+            <result name="session_expire_error" type="tiles">DOC-Sess_error</result>
+            <result name="error" type="tiles">DOC-Error</result>
+          </action>
+          <action name="Hospital_referral_reg" class="com.cdac.hospitalmodule.Actions.HospitalModuleAction" method="fetchprof_id">
+            <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+            
+            <param name="testing">referralfirst</param>
+	    <result name="success" type="tiles">/Hospital_referral_reg.tiles</result>
+            <result name="session_expire_error" type="tiles">DOC-Sess_error</result>
+            <result name="error" type="tiles">DOC-Error</result>
+	  </action>
+          <action name="Hospital_mgen_reg">
+              <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+	    <result name="success" type="tiles">/Hospital_mgen_reg.tiles</result>
+	  </action>
+          <action name="Hospital_wh_reg" class="com.cdac.hospitalmodule.Actions.HospitalModuleAction" method="fetchprof_id">
+            <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+            <param name="testing">whregfirst</param>
+	    <result name="success" type="tiles">/Hospital_wh_reg.tiles</result>
+            <result name="session_expire_error" type="tiles">DOC-Sess_error</result>
+            <result name="error" type="tiles">DOC-Error</result>
+	  </action>
+          <action name="Hospital_tabindex_reg">
+	    <interceptor-ref name="loggingStack"/>   
+             <result name="logout" type="tiles">UM-Logout</result>
+            <result name="success" type="tiles">/Hospital_tabindex_reg.tiles</result>
+	  </action>
+          
+          <action name="Hospital_tabrec_reg">
+	    <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+            <result name="success" type="tiles">/Hospital_tabrec_reg.tiles</result>
+	  </action>
+          <action name="Hospital_locpur_reg">
+	    <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+            <result name="success" type="tiles">/Hospital_locpur_reg.tiles</result>
+	  </action>
+          <action name="Hospital_donbook_reg">
+	    <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+            <result name="success" type="tiles">/Hospital_donbook_reg.tiles</result>
+	  </action>
+          <action name="Hospital_view_adm_reg" class="com.cdac.hospitalmodule.Actions.HospitalModuleAction" method="View_AdmissionMedicalRegister">
+                <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+                
+                <param name="viewregisters">viewadmreg_first</param>
+                <result name="ViewAdmRegSuccess" type="tiles">/Hospital_view_adm_reg.tiles</result>
+                <result name="session_expire_error" type="tiles">DOC-Sess_error</result>
+                <result name="ViewAdmRegError" type="tiles">DOC-Error</result>
+          </action>
+          <action name="viewadmreg_profid" class="com.cdac.hospitalmodule.Actions.HospitalModuleAction" method="View_AdmissionMedicalRegister">
+                <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+                
+                <param name="viewregisters">viewadmreg_select</param>
+                <result name="ViewAdmRegSuccess" type="tiles">/Hospital_view_adm_reg.tiles</result>
+                <result name="session_expire_error" type="tiles">DOC-Sess_error</result>
+                <result name="ViewAdmRegError" type="tiles">DOC-Error</result>
+          </action>
+          <action name="Hospital_view_htwt_reg" class="com.cdac.hospitalmodule.Actions.HospitalModuleAction" method="View_HeightWeightRegister">
+              <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+              
+              <param name="viewregisters">viewhtwtreg_first</param>
+                <result name="ViewHtWtRegSuccess" type="tiles">/Hospital_view_htwt_reg.tiles</result>
+                <result name="session_expire_error" type="tiles">DOC-Sess_error</result>
+                <result name="ViewHtWtRegError" type="tiles">DOC-Error</result>
+          </action>
+          <action name="view_htwtreg_dateentered" class="com.cdac.hospitalmodule.Actions.HospitalModuleAction" method="View_HeightWeightRegister">
+                <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+                
+                <param name="viewregisters">viewhtwtreg_select</param>
+                <result name="ViewHtWtRegSuccess" type="tiles">/Hospital_view_htwt_reg.tiles</result>
+                <result name="session_expire_error" type="tiles">DOC-Sess_error</result>
+                <result name="ViewHtWtRegError" type="tiles">DOC-Error</result>
+          </action>
+          <action name="Hospital_view_mgen_reg" class="com.cdac.hospitalmodule.Actions.HospitalModuleAction" method="View_MedicalGeneralRegister">
+             <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+             
+             <param name="viewregisters">viewmgenreg_first</param>
+                <result name="ViewMgenRegSuccess" type="tiles">/Hospital_view_mgen_reg.tiles</result>
+                <result name="session_expire_error" type="tiles">DOC-Sess_error</result>
+                <result name="ViewMgenRegError" type="tiles">DOC-Error</result>
+          </action>
+          <action name="view_mgenreg_dateentered" class="com.cdac.hospitalmodule.Actions.HospitalModuleAction" method="View_MedicalGeneralRegister">
+                
+                <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+                <param name="viewregisters">viewmgenreg_select</param>
+                <result name="ViewMgenRegSuccess" type="tiles">/Hospital_view_mgen_reg.tiles</result>
+                <result name="session_expire_error" type="tiles">DOC-Sess_error</result>
+                <result name="ViewMgenRegError" type="tiles">DOC-Error</result>
+          </action>
+          <action name="Hospital_view_op_reg" class="com.cdac.hospitalmodule.Actions.HospitalModuleAction" method="View_OPRegister">
+              
+              <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+              <param name="viewregisters">viewopreg_first</param>
+                <result name="ViewOPRegSuccess" type="tiles">/Hospital_view_op_reg.tiles</result>
+                <result name="session_expire_error" type="tiles">DOC-Sess_error</result>
+                <result name="ViewOPRegError" type="tiles">DOC-Error</result>
+          </action>
+          <action name="view_opreg_dateentered" class="com.cdac.hospitalmodule.Actions.HospitalModuleAction" method="View_OPRegister">
+                <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+                
+                <param name="viewregisters">viewopreg_select</param>
+                <result name="ViewOPRegSuccess" type="tiles">/Hospital_view_op_reg.tiles</result>
+                <result name="session_expire_error" type="tiles">DOC-Sess_error</result>
+                <result name="ViewOPRegError" type="tiles">DOC-Error</result>
+          </action>
+          <action name="viewopreg_selectprofid" class="com.cdac.hospitalmodule.Actions.HospitalModuleAction" method="View_OPRegister">
+                <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+                
+                <param name="viewregisters">viewopreg_secondselect</param>
+                <result name="ViewOPRegSuccess" type="tiles">/Hospital_view_op_reg.tiles</result>
+                <result name="session_expire_error" type="tiles">DOC-Sess_error</result>
+                <result name="ViewOPRegError" type="tiles">DOC-Error</result>
+          </action>
+          <action name="Hospital_view_refe_reg" class="com.cdac.hospitalmodule.Actions.HospitalModuleAction" method="View_RefeRegister">
+              <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+              
+              <param name="viewregisters">viewrefereg_first</param>
+                <result name="ViewRefeRegSuccess" type="tiles">/Hospital_view_refe_reg.tiles</result>
+                <result name="session_expire_error" type="tiles">DOC-Sess_error</result>
+                <result name="ViewRefeRegError" type="tiles">DOC-Error</result>
+          </action>
+          <action name="view_refereg_dateentered" class="com.cdac.hospitalmodule.Actions.HospitalModuleAction" method="View_RefeRegister">
+              
+              <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+              
+              <param name="viewregisters">viewrefereg_select</param>
+                <result name="ViewRefeRegSuccess" type="tiles">/Hospital_view_refe_reg.tiles</result>
+                <result name="session_expire_error" type="tiles">DOC-Sess_error</result>
+                <result name="ViewRefeRegError" type="tiles">DOC-Error</result>
+          </action>
+          <action name="viewrefereg_selectprofid" class="com.cdac.hospitalmodule.Actions.HospitalModuleAction" method="View_RefeRegister">
+              
+              <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+              
+              <param name="viewregisters">viewrefereg_secondselect</param>
+                <result name="ViewRefeRegSuccess" type="tiles">/Hospital_view_refe_reg.tiles</result>
+                <result name="session_expire_error" type="tiles">DOC-Sess_error</result>
+                <result name="ViewRefeRegError" type="tiles">DOC-Error</result>
+          </action>
+          <action name="Hospital_update_adm_reg" class="com.cdac.hospitalmodule.Actions.HospitalModuleAction" method="fetchprof_id">
+               
+               <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+               
+               <param name="testing">updateadmregfirst</param>
+                <result name="success" type="tiles">/Hospital_update_adm_reg.tiles</result>
+                <result name="session_expire_error" type="tiles">DOC-Sess_error</result>
+                <result name="error" type="tiles">DOC-Error</result>
+          </action>
+          <action name="loadmodifydetails" class="com.cdac.hospitalmodule.Actions.HospitalModuleAction" method="fetchprof_id">
+               
+               <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+               
+               <param name="testing">updateadmregselect</param>
+                <result name="update_admreg_male" type="tiles">/Hospital_update_adm_reg.tiles</result>
+                <result name="update_admreg_female" type="tiles">/Hospital_update_adm_regfemale.tiles</result>
+                <result name="session_expire_error" type="tiles">DOC-Sess_error</result>
+                <result name="error" type="tiles">DOC-Error</result>
+          </action>
+      <!--Displaying the Hospital forms END -->
+
+      <!--Adding the form details to database START-->
+          <action name="storereferralregister" class="com.cdac.hospitalmodule.Actions.HospitalModuleAction" method="Store_Referral_Register">
+            
+            <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+            
+            <result name="AddRefeRegSuccess" type="tiles">DOC-Success</result>
+            <result name="AddRefeRegError" type="tiles">DOC-Error</result>
+          </action>
+          <action name="storemedicalgeneralregister" class="com.cdac.hospitalmodule.Actions.HospitalModuleAction" method="Store_MedicalGeneralRegister">
+            
+            <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+            
+            <result name="AddMgenRegSuccess" type="tiles">DOC-Success</result>
+            <result name="session_expire_error" type="tiles">DOC-Sess_error</result>
+            <result name="AddMgenRegError" type="tiles">DOC-Error</result>
+          </action>
+          <action name="storeweightheightregister" class="com.cdac.hospitalmodule.Actions.HospitalModuleAction" method="Store_HtWtRegister">
+            
+            <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+            
+            <result name="AddHtWtRegSuccess" type="tiles">DOC-Success</result>
+            <result name="AddHtWtRegdkex" type="tiles">DOC-dkexerror</result>
+            <result name="AddHtWtRegError" type="tiles">DOC-Error</result>
+          </action>
+          <action name="storeopregister" class="com.cdac.hospitalmodule.Actions.HospitalModuleAction" method="Store_OpRegister">
+            
+            <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+            
+            <result name="AddOpRegSuccess" type="tiles">DOC-Success</result>
+            <result name="AddOpRegError" type="tiles">DOC-Error</result>
+          </action>
+          <action name="storeadmbookregister" class="com.cdac.hospitalmodule.Actions.HospitalModuleAction" method="Store_AdmissionMedicalRegister">
+            
+            <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+            
+            <result name="AddAdmRegSuccess" type="tiles">DOC-Success</result>
+            <result name="AddAdmRegError" type="tiles">DOC-Error</result>
+          </action>
+          <!--Added by vinumol 17/02/2012-->
+          <action name="DOC-ViewByDisease" class="com.cdac.hospitalmodule.Actions.HospitalModuleAction" method="fetchChildDisease">
+             <interceptor-ref name="loggingStack"/>   
+            <result name="logout" type="tiles">UM-Logout</result>
+            <param name="viewregisters">viewdisease_first</param>
+            <result name="viewdiseasesuccess" type="tiles">/DOC-ViewByDisease.tiles</result>
+            <result name="session_expire_error" type="tiles">DOC-Sess_error</result>
+            <result name="error" type="tiles">DOC-Error</result>
+	  </action>
+          <action name="DOC-ViewChildDisease" class="com.cdac.hospitalmodule.Actions.HospitalModuleAction" method="fetchChildDisease">
+             <interceptor-ref name="loggingStack"/>   
+            <result name="logout" type="tiles">UM-Logout</result>
+            <param name="viewregisters">viewdisease_select</param>
+	    <result name="viewdiseasesuccess" type="tiles">/DOC-ViewByDisease.tiles</result>
+            <result name="session_expire_error" type="tiles">DOC-Sess_error</result>
+            <result name="error" type="tiles">DOC-Error</result>
+	  </action>
+          <action name="viewadmreg_selectprofid" class="com.cdac.hospitalmodule.Actions.HospitalModuleAction" method="fetchChildDisease">
+             <interceptor-ref name="loggingStack"/>   
+            <result name="logout" type="tiles">UM-Logout</result>
+            <param name="viewregisters">viewdisease_profileIdselected</param>
+	    <result name="viewdiseasesuccess" type="tiles">/DOC-ViewByDisease.tiles</result>
+            <result name="session_expire_error" type="tiles">DOC-Sess_error</result>
+            <result name="error" type="tiles">DOC-Error</result>
+	  </action>
+        
+         <!--Ended by vinumol-->
+      <!--Adding the form details to database END-->
+      <action name="updateadmbookregister" class="com.cdac.hospitalmodule.Actions.HospitalModuleAction" method="Update_AdmissionMedicalRegister">
+            
+            <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+            
+            <result name="UpdateAdmRegSuccess" type="tiles">DOC-UpdateSuccess</result>
+            <result name="UpdateAdmRegError" type="tiles">DOC-Error</result>
+          </action>
+          
+          <!--Anupam added on 09-01-2012 START-->
+          
+          <action name="docHWYearly" class="com.cdac.hospitalmodule.Actions.HospitalModuleAction" method="fetchChildren">
+            
+            <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+        
+        
+            <result name="success" type="tiles">DOC-HW-Yearly</result>
+            <result name="session_expire_error" type="tiles">DOC-Sess_error</result>
+            <result name="error" type="tiles">DOC-Error</result>
+          </action>
+          
+          <action name="HWSaveYearly" class="com.cdac.hospitalmodule.Actions.HospitalModuleAction" method="saveHWData">
+            
+            <interceptor-ref name="loggingStack"/>   
+            <result name="logout" type="tiles">UM-Logout</result>
+        
+        
+            <result name="success" type="chain">docHWYearly</result>
+            <result name="session_expire_error" type="tiles">DOC-Sess_error</result>
+            <result name="error" type="tiles">DOC-Error</result>
+          </action>
+          
+         
+          
+          <!--Anupam added on 09-01-2012 END-->
+          
+           <action name="DOC-Disease-Report">
+              <result name="success">
+                /WEB-INF/DOC/DiseaseWiseReport.jsp
+             </result>                   
+          </action>
+          
+          
+          <action name="DOC-Disease-Report-JSON" class="com.cdac.hospitalmodule.Actions.HospitalModuleAction" method="getConsolidatedDiseaseReport">
+              <result type="json" name="success">
+                <param name="root">
+                    diseaseMap
+                </param>  
+             </result>                   
+          </action>
+          
+          
+      
+      <!--
+      ====***********************************************************====
+      ====^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^====
+      ====Actions For userDetails Modification and Resetting Password====
+      ====___________________________________________________________====
+      ====********************Added By Anupam************************====
+      ====**********************START********************************====
+      -->
+         
+        <action name="DOC-ModifyMyDetails" class="com.cdac.usermanagement.Actions.UserManagementAction" method="modifyMyDetails">
+            <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+            
+            <result name="success" type="chain">DOC-ModifyUserMainAction</result>
+            <result name="error" type="tiles">DOC-Error</result>
+      </action>
+
+      <action name="DOC-ModifyUserMainAction" class="com.cdac.usermanagement.Actions.UserManagementAction" method="modifyUserMain">
+            <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+            
+            <result name="success" type="tiles">DOC-ModifyUser-Main</result>
+            <result name="error" type="tiles">DOC-Error</result>
+      </action>
+
+
+      <action name="DOC-ModifyUserSubAction" class="com.cdac.usermanagement.Actions.UserManagementAction" method="modifyUserSub">
+            
+            <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+            
+            <result name="success" type="tiles">DOC-Success</result>
+            <result name="error" type="tiles">DOC-Error</result>
+      </action>
+      
+       <action name="DOC-ChangePassword">
+           <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+	    <result name="success" type="tiles">DOC-ChangePassword</result>
+       </action>
+
+               <action name="DOC-ChangePassword-Action" class="com.cdac.usermanagement.Actions.UserManagementAction" method="changePassword">
+			
+                        <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+                        
+                        <result name="success" type="tiles">DOC-Success</result>
+                        <result name="error" type="tiles">DOC-Error</result>
+	       </action>
+      
+     <!--
+      ====***********************************************************====
+      ====^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^====
+      ====Actions For userDetails Modification and Resetting Password====
+      ====___________________________________________________________====
+      ====********************Added By Anupam************************====
+      ====**********************END**********************************====
+      -->
+
+          
+          
+    </package>
+</struts>

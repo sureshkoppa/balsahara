@@ -1,0 +1,14 @@
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+
+struts.messages.error.uploading= UPLOADING ERROR
+struts.messages.error.file.too.large=UPLOADED FILE SIZE TOO LARGE
+struts.messages.error.content.type.not.allowed = UPLOADED FILE TYPE NOT ALLOWED
+
+
+
+#messages for server-side validation
+errors.invalid=${getText(fieldName)} is invalid.
+errors.required=${getText(fieldName)} is required.
+errors.number=${getText(fieldName)} must be a number.
+errors.range=${getText(fieldName)} is not in the range ${min} and ${max}.

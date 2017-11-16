@@ -1,0 +1,303 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.cdac.usermanagement.ORM;
+
+import java.io.Serializable;
+import java.util.Date;
+import java.util.List;
+import javax.persistence.Basic;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
+
+/**
+ *
+ * @author ANUPAM
+ */
+@Entity
+@Table(name = "user_master", catalog = "child_homes_new", schema = "")
+@XmlRootElement
+@NamedQueries({
+    @NamedQuery(name = "UserMaster.findAllForAssignHome", query = "SELECT u from UserMaster u where u.registrationType = 'homeuser' AND u.userId NOT IN (SELECT u1.userDetailPK.userId from UserDetail u1 WHERE u1.status='active')"),
+    @NamedQuery(name = "UserMaster.findAllDPO", query = "SELECT u from UserMaster u where u.registrationType = 'dpo' AND u.userId NOT IN (SELECT u1.userDetailPK.userId from UserDetail u1 WHERE u1.status='active')"),
+    @NamedQuery(name = "UserMaster.findAllCWCJJB", query = "SELECT u from UserMaster u where u.registrationType = 'cwc_jjb' AND u.userId NOT IN (SELECT u1.userDetailPK.userId from UserDetail u1 WHERE u1.status='active')"),
+    @NamedQuery(name = "UserMaster.findAllManager", query = "SELECT u from UserMaster u where u.registrationType = 'management' AND u.userId NOT IN (SELECT u1.userDetailPK.userId from UserDetail u1 WHERE u1.status='active')"),
+    
+    
+    @NamedQuery(name = "UserMaster.findAll", query = "SELECT u FROM UserMaster u"),
+    @NamedQuery(name = "UserMaster.findByUserId", query = "SELECT u FROM UserMaster u WHERE u.userId = :userId"),
+    @NamedQuery(name = "UserMaster.findByPassword", query = "SELECT u FROM UserMaster u WHERE u.password = :password"),
+    @NamedQuery(name = "UserMaster.findByFirstName", query = "SELECT u FROM UserMaster u WHERE u.firstName = :firstName"),
+    @NamedQuery(name = "UserMaster.findByLastName", query = "SELECT u FROM UserMaster u WHERE u.lastName = :lastName"),
+    @NamedQuery(name = "UserMaster.findByPermanentAddress", query = "SELECT u FROM UserMaster u WHERE u.permanentAddress = :permanentAddress"),
+    @NamedQuery(name = "UserMaster.findByCity", query = "SELECT u FROM UserMaster u WHERE u.city = :city"),
+    @NamedQuery(name = "UserMaster.findByState", query = "SELECT u FROM UserMaster u WHERE u.state = :state"),
+    @NamedQuery(name = "UserMaster.findByCountry", query = "SELECT u FROM UserMaster u WHERE u.country = :country"),
+    @NamedQuery(name = "UserMaster.findByTelOffice", query = "SELECT u FROM UserMaster u WHERE u.telOffice = :telOffice"),
+    @NamedQuery(name = "UserMaster.findByTelResidence", query = "SELECT u FROM UserMaster u WHERE u.telResidence = :telResidence"),
+    @NamedQuery(name = "UserMaster.findByEmail", query = "SELECT u FROM UserMaster u WHERE u.email = :email"),
+    @NamedQuery(name = "UserMaster.findByZipcode", query = "SELECT u FROM UserMaster u WHERE u.zipcode = :zipcode"),
+    @NamedQuery(name = "UserMaster.findByGender", query = "SELECT u FROM UserMaster u WHERE u.gender = :gender"),
+    @NamedQuery(name = "UserMaster.findByAge", query = "SELECT u FROM UserMaster u WHERE u.age = :age"),
+    @NamedQuery(name = "UserMaster.findByRegDate", query = "SELECT u FROM UserMaster u WHERE u.regDate = :regDate"),
+    @NamedQuery(name = "UserMaster.findByRegistrationType", query = "SELECT u FROM UserMaster u WHERE u.registrationType = :registrationType")})
+public class UserMaster implements Serializable {
+    private static final long serialVersionUID = 1L;
+    @Id
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 30)
+    @Column(name = "USER_ID", nullable = false, length = 30)
+    private String userId;
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 15)
+    @Column(name = "PASSWORD", nullable = false, length = 15)
+    private String password;
+    @Size(max = 100)
+    @Column(name = "FIRST_NAME", length = 100)
+    private String firstName;
+    @Size(max = 100)
+    @Column(name = "LAST_NAME", length = 100)
+    private String lastName;
+    @Size(max = 150)
+    @Column(name = "PERMANENT_ADDRESS", length = 150)
+    private String permanentAddress;
+    @Size(max = 120)
+    @Column(name = "CITY", length = 120)
+    private String city;
+    @Size(max = 120)
+    @Column(name = "STATE", length = 120)
+    private String state;
+    @Size(max = 120)
+    @Column(name = "COUNTRY", length = 120)
+    private String country;
+    @Size(max = 20)
+    @Column(name = "TEL_OFFICE", length = 20)
+    private String telOffice;
+    @Size(max = 20)
+    @Column(name = "TEL_RESIDENCE", length = 20)
+    private String telResidence;
+    // @Pattern(regexp="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?", message="Invalid email")//if the field contains email address consider using this annotation to enforce field validation
+    @Size(max = 50)
+    @Column(name = "EMAIL", length = 50)
+    private String email;
+    @Size(max = 10)
+    @Column(name = "ZIPCODE", length = 10)
+    private String zipcode;
+    @Size(max = 7)
+    @Column(name = "GENDER", length = 7)
+    private String gender;
+    @Column(name = "AGE")
+    private Integer age;
+    @Column(name = "REG_DATE")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date regDate;
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 150)
+    @Column(name = "REGISTRATION_TYPE", nullable = false, length = 150)
+    private String registrationType;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "userMaster")
+    private List<UserDetail> userDetailList;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "userMaster")
+    private List<ChildEnquery> childEnqueryList;
+
+    public UserMaster() {
+    }
+
+    public UserMaster(String userId) {
+        this.userId = userId;
+    }
+
+    public UserMaster(String userId, String password, String registrationType) {
+        this.userId = userId;
+        this.password = password;
+        this.registrationType = registrationType;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getPermanentAddress() {
+        return permanentAddress;
+    }
+
+    public void setPermanentAddress(String permanentAddress) {
+        this.permanentAddress = permanentAddress;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public String getTelOffice() {
+        return telOffice;
+    }
+
+    public void setTelOffice(String telOffice) {
+        this.telOffice = telOffice;
+    }
+
+    public String getTelResidence() {
+        return telResidence;
+    }
+
+    public void setTelResidence(String telResidence) {
+        this.telResidence = telResidence;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getZipcode() {
+        return zipcode;
+    }
+
+    public void setZipcode(String zipcode) {
+        this.zipcode = zipcode;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
+    public Date getRegDate() {
+        return regDate;
+    }
+
+    public void setRegDate(Date regDate) {
+        this.regDate = regDate;
+    }
+
+    public String getRegistrationType() {
+        return registrationType;
+    }
+
+    public void setRegistrationType(String registrationType) {
+        this.registrationType = registrationType;
+    }
+
+    @XmlTransient
+    public List<UserDetail> getUserDetailList() {
+        return userDetailList;
+    }
+
+    public void setUserDetailList(List<UserDetail> userDetailList) {
+        this.userDetailList = userDetailList;
+    }
+
+    @XmlTransient
+    public List<ChildEnquery> getChildEnqueryList() {
+        return childEnqueryList;
+    }
+
+    public void setChildEnqueryList(List<ChildEnquery> childEnqueryList) {
+        this.childEnqueryList = childEnqueryList;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 0;
+        hash += (userId != null ? userId.hashCode() : 0);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        // TODO: Warning - this method won't work in the case the id fields are not set
+        if (!(object instanceof UserMaster)) {
+            return false;
+        }
+        UserMaster other = (UserMaster) object;
+        if ((this.userId == null && other.userId != null) || (this.userId != null && !this.userId.equals(other.userId))) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "com.cdac.usermanagement.ORM.UserMaster[ userId=" + userId + " ]";
+    }
+    
+}

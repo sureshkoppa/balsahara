@@ -1,0 +1,426 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+package com.cdac.caseworker.Actions;
+
+import com.cdac.caseworker.DTO.caseHistoryDTO;
+import com.cdac.caseworker.DTO.caseWorkDTO;
+import com.cdac.caseworker.DTO.icpChildDTO;
+import com.cdac.caseworker.Service.CaseWorkerService;
+import com.cdac.usermanagement.ORM.CasehistoryPersonal;
+
+import com.cdac.usermanagement.ORM.ChildDetails;
+import com.cdac.usermanagement.ORM.ChildMaster;
+import com.cdac.usermanagement.Service.AdminService;
+import com.opensymphony.xwork2.ActionContext;
+import com.opensymphony.xwork2.ActionSupport;
+import com.opensymphony.xwork2.ModelDriven;
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
+import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import net.sf.jasperreports.engine.JasperCompileManager;
+import org.apache.struts2.interceptor.ServletRequestAware;
+import org.apache.struts2.interceptor.SessionAware;
+import org.apache.struts2.util.ServletContextAware;
+
+/**
+ *
+ * @author vinumol
+ */
+public class CaseWorkerReportAction extends ActionSupport implements ServletRequestAware,ModelDriven,SessionAware,ServletContextAware
+{
+private HttpServletRequest request;
+private HttpServletResponse response;
+private Map session;
+String path;
+String imagepath;
+ServletContext sc;
+private CaseWorkerService caseWorkerService;
+List<CasehistoryPersonal> childList=new ArrayList<CasehistoryPersonal>();
+List<caseHistoryDTO> chdto=new ArrayList<caseHistoryDTO>();
+List<caseWorkDTO> cwdto=new ArrayList<caseWorkDTO>();
+
+    public List<caseWorkDTO> getCwdto() 
+    {
+        return cwdto;
+    }
+
+    public void setCwdto(List<caseWorkDTO> cwdto) {
+        this.cwdto = cwdto;
+    }
+    private Map<String, String> reportParameter = null;
+
+
+    public String getImagepath() {
+        return imagepath;
+    }
+
+    public void setImagepath(String imagepath) {
+        this.imagepath = imagepath;
+    }
+
+    public void setPath(String path) {
+        this.path = path;
+    }
+
+    public Map<String, String> getReportParameter() {
+        return reportParameter;
+    }
+
+    public void setReportParameter(Map<String, String> reportParameter) {
+        this.reportParameter = reportParameter;
+    }
+
+    public List<caseHistoryDTO> getChdto() {
+        return chdto;
+    }
+
+    public void setChdto(List<caseHistoryDTO> chdto) 
+    {
+        this.chdto = chdto;
+    }
+    private String childProfileId;
+
+ public CaseWorkerService getCaseWorkerService() 
+    {
+        return caseWorkerService;
+    }
+
+    public void setCaseWorkerService(CaseWorkerService caseWorkerService) 
+    {
+        this.caseWorkerService = caseWorkerService;
+    }
+    public String getChildProfileId() 
+    {
+        return childProfileId;
+    }
+
+    public void setChildProfileId(String childProfileId) 
+    {
+        this.childProfileId = childProfileId;
+    }
+
+    public List<CasehistoryPersonal> getChildList() 
+    {
+        return childList;
+    }
+
+    public void setChildList(List<CasehistoryPersonal> childList) 
+    {
+        this.childList = childList;
+    }
+
+/*public String getCaseHistory()
+   {
+        String result="error";
+      
+    System.out.println("---------- inside getCaseHistory -------------");
+
+    //get current home id
+    String homeId=ActionContext.getContext().getSession().get("homeid").toString();
+     
+        try
+        {
+            childList=caseWorkerService.getChildHistory_by_id(getChildProfileId());
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+System.out.println("The childList retrieved from action is"+childList);
+      return "success";
+   }*/
+
+
+public String getCaseHistoryFromDto()
+{
+     try
+        {
+    /*added by swetha on 12-07-2012 START*/
+     //String filePath="C:/Testpics";/*specifying the path in windows*/
+     //String filePath=System.getProperty("user.dir")+"/files";/*specifying the path in the server*/
+     //String filePath="/files";/*specifying the path in windows and linux*/
+    //Line below is changed by anupam on 7-11-2012 
+     reportMulParameter = new HashMap<String, Object>();
+     reportMulParameter.put("REPORT_LOCALE",getLocale());       
+     ResourceBundle testRB=ResourceBundle.getBundle("global-messages", getLocale());
+     reportMulParameter.put("REPORT_RESOURCE_BUNDLE",testRB);
+     
+     
+     String filePath=request.getSession().getServletContext().getInitParameter("fileUploadPath");/*specifying the path in windows and linux in web.xml*/
+     /*added by swetha on 12-07-2012 END*/
+    setPath(sc.getRealPath("/"));
+    System.out.println("path&&&&&&&&&&&&&&&& is"+filePath);
+    setImagepath(""+new File(filePath+"/"+getChildProfileId()+".jpg"));
+    //setImagepath(""+new File(path+"/images/sample.jpg"));
+    reportParameter = new HashMap<String, String>();
+    reportMulParameter.put("SUBREPORT_DIR", path+"WEB-INF/classes/reports/"); 
+    
+    System.out.println("path&&&&&&&&&&&&&&&& is ------------------------"+reportMulParameter.get("SUBREPORT_DIR"));
+    
+    reportMulParameter.put("IMAGE_DIR",imagepath);
+    reportMulParameter.put("SUBREPORT_LOCALE",getLocale());
+    reportMulParameter.put("SUBREPORT_RESOURCE_BUNDLE",testRB);
+    System.out.println("The hash map value$$$$$$$$$$$$$$"+reportMulParameter.get("IMAGE_DIR"));
+    System.out.println("---------- inside getCaseHistory -------"+reportMulParameter.get("REPORT_LOCALE")+"------"+reportMulParameter.get("SUBREPORT_LOCALE"));
+    //setPath(sc.getRealPath("/"));
+    //get current home id
+   // String homeId=ActionContext.getContext().getSession().get("homeid").toString();
+     
+       
+     setChdto(caseWorkerService.getChildHistoryFromDto_by_id(getChildProfileId()));     
+            System.out.println("in cw action==============>"+getChdto().get(0).getDeliquentBehaviour()+"---------"+getChdto().get(0).getDrugAbuse());
+            
+            
+            
+   /*    caseHistoryDTO testdto=new caseHistoryDTO();
+       
+       testdto.setChildName("mahesh");
+       ArrayList dtList=new ArrayList();
+       dtList.add(testdto);
+ //com      setChdto(dtList);*/
+       } catch (Exception e) 
+        {
+          e.printStackTrace();
+        }
+      if(request.getSession(false)!=null)
+          request.getSession().setMaxInactiveInterval(600);
+      else
+          System.out.println("SESSION EXPIRED.........");
+      return "success";   
+}
+
+
+
+/*-----------------
+ * for HTML report
+ * -----------------*/
+ public String getCaseworkFromDto()
+ {
+     String homeId=ActionContext.getContext().getSession().get("homeid").toString();
+      Map<String,String> hometype=new HashMap();
+        hometype.put("CHB", getText("homeName.chb","Children Home For Boys"));
+        hometype.put("RUB", getText("homeName.rub","Reception Unit For Boys"));
+        hometype.put("CHG", getText("homeName.chg","Children Home For Girls"));
+        hometype.put("RUG", getText("homeName.rug","Reception Unit For Girls"));
+        hometype.put("OHB", getText("homeName.ohb","Observation Home For Boys"));
+        hometype.put("SHB", getText("homeName.shb","Special Home For Boys"));
+        hometype.put("OHG", getText("homeName.ohg","Observation Home For Girls"));
+        hometype.put("SHG", getText("homeName.shg","Special Home For Girls"));
+        
+        List<caseWorkDTO> cwList=caseWorkerService.getCaseworkFromDto(homeId,getChildProfileId());
+        String homeName=hometype.get(cwList.get(0).getHomeName());
+        cwList.get(0).setHomeName(homeName);
+        String disName=homeName+","+getText("global.district."+cwList.get(0).getHomeAddrMat());  
+        cwList.get(0).setHomeAddrMat(disName);
+     setCwdto(cwList);
+    
+     return "success";
+     
+     
+     
+ }
+/* -----------------*/
+
+/*
+public String getCaseworkFromDto()        
+{
+    String homeId=ActionContext.getContext().getSession().get("homeid").toString();
+    System.out.println("HomeId in vinumol's report action...,,,"+homeId);
+    
+        reportMulParameter = new HashMap<String, Object>();
+        reportMulParameter.put("REPORT_LOCALE",getLocale());
+            System.out.println("Locale .. is ------------------------"+reportMulParameter.get("REPORT_LOCALE"));
+        //ResourceBundle testRB=getTexts();
+        ResourceBundle testRB=ResourceBundle.getBundle("global-messages", getLocale());
+        System.out.println("Testing-------------"+testRB.containsKey("global.heading.medicalJournal")+testRB.getString("global.heading.medicalJournal"));
+        reportMulParameter.put("REPORT_RESOURCE_BUNDLE",testRB);
+        
+    setPath(sc.getRealPath("/"));
+    reportParameter = new HashMap<String, String>();
+    reportParameter.put("SUBREPORT_DIR", path+"WEB-INF/classes/reports/"); 
+    
+    System.out.println("path&&&&&&&&&&&&&&&& is ------------------------"+reportParameter.get("SUBREPORT_DIR"));
+    //reportParameter.put("IMAGE_DIR",imagepath);
+    setCwdto(caseWorkerService.getCaseworkFromDto(homeId,getChildProfileId()));
+    
+    return "success";
+}
+*/
+    private String icp_childProfileId;
+
+    public String getIcp_childProfileId() {
+        return icp_childProfileId;
+    }
+
+    public void setIcp_childProfileId(String icp_childProfileId) {
+        this.icp_childProfileId = icp_childProfileId;
+    }
+
+    private icpChildDTO icpdto;
+
+    public icpChildDTO getIcpdto() {
+        return icpdto;
+    }
+
+    public void setIcpdto(icpChildDTO icpdto) {
+        this.icpdto = icpdto;
+    }
+    
+    private Map<String, Object> reportMulParameter = null;
+
+    public Map<String, Object> getReportMulParameter() {
+        return reportMulParameter;
+    }
+
+    public void setReportMulParameter(Map<String, Object> reportMulParameter) {
+        this.reportMulParameter = reportMulParameter;
+    }
+    
+   public String getICPFromDto()
+    {
+        try {
+            String homeId=ActionContext.getContext().getSession().get("homeid").toString();
+        reportMulParameter = new HashMap<String, Object>();
+        reportMulParameter.put("REPORT_LOCALE",getLocale());
+            //System.out.println("Locale .. is ------------------------"+reportMulParameter.get("REPORT_LOCALE"));
+        //ResourceBundle testRB=getTexts();
+        
+        ResourceBundle testRB=ResourceBundle.getBundle("global-messages", getLocale());
+        
+        //System.out.println("Testing-------------"+testRB.containsKey("global.heading.medicalJournal")+testRB.getString("global.heading.medicalJournal"));
+        reportMulParameter.put("REPORT_RESOURCE_BUNDLE",testRB);
+       
+        setPath(sc.getRealPath("/"));
+            
+            ChildMaster cm=caseWorkerService.getChild_by_id(getIcp_childProfileId());
+            
+            icpChildDTO icp_dto=caseWorkerService.getICPFromDto(homeId,getIcp_childProfileId());
+            icp_dto.setProfile_no(homeId);
+            Calendar cal=new GregorianCalendar();
+            cal.setTime(cm.getDateTimeAdm());
+            icp_dto.setProfile_year(cal.get(Calendar.YEAR));
+            icp_dto.setDate_admission(cm.getDateTimeAdm());
+
+            
+            setIcpdto(icp_dto);
+            
+            return "success";
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            return "error";
+        }
+    }
+    
+   
+     public String getICPFromDto1()
+    {
+        try {
+          //  String homeId=ActionContext.getContext().getSession().get("homeid").toString();
+        reportMulParameter = new HashMap<String, Object>();
+        reportMulParameter.put("REPORT_LOCALE",getLocale());
+            //System.out.println("Locale .. is ------------------------"+reportMulParameter.get("REPORT_LOCALE"));
+        //ResourceBundle testRB=getTexts();
+        
+        ResourceBundle testRB=ResourceBundle.getBundle("global-messages", getLocale());
+        
+        //System.out.println("Testing-------------"+testRB.containsKey("global.heading.medicalJournal")+testRB.getString("global.heading.medicalJournal"));
+        reportMulParameter.put("REPORT_RESOURCE_BUNDLE",testRB);
+       
+        setPath(sc.getRealPath("/"));
+            System.out.println("in found child***"+getChildProfileId());
+            ChildMaster cm=caseWorkerService.getChild_by_id(getChildProfileId());
+            
+            icpChildDTO icp_dto=caseWorkerService.getICPFromDto("",getChildProfileId());
+            icp_dto.setProfile_no("");
+            Calendar cal=new GregorianCalendar();
+            cal.setTime(cm.getDateTimeAdm());
+            icp_dto.setProfile_year(cal.get(Calendar.YEAR));
+            icp_dto.setDate_admission(cm.getDateTimeAdm());
+
+            
+            setIcpdto(icp_dto);
+            
+            return "success";
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            return "error";
+        }
+    }
+    private ChildMaster cm;
+
+    public ChildMaster getCm() {
+        return cm;
+    }
+
+    public void setCm(ChildMaster cm) {
+        this.cm = cm;
+    }
+
+    private ChildDetails cd;
+
+    public ChildDetails getCd() {
+        return cd;
+    }
+
+    public void setCd(ChildDetails cd) {
+        this.cd = cd;
+    }
+    
+    
+     
+ public String getCase()
+ {
+        try {
+            cd =  caseWorkerService.getExistingChildDetails(childProfileId);
+            System.out.println("cm**** FC"+cd+"name***->"+cd.getChildName());
+            
+            setCd(cd);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            Logger.getLogger(CaseWorkerReportAction.class.getName()).log(Level.SEVERE, null, ex);
+        }
+   return SUCCESS;
+ }
+     
+ public void setServletRequest(HttpServletRequest hsr)
+ {
+        //throw new UnsupportedOperationException("Not supported yet.");
+        request=hsr;
+ }
+
+    public void setServletResponse(HttpServletResponse hsr)
+    {
+        //throw new UnsupportedOperationException("Not supported yet.");
+        response=hsr;
+    }
+
+    public Object getModel()
+    {
+       // throw new UnsupportedOperationException("Not supported yet.");
+        return "Hello";
+    }
+
+     public void setSession(Map session)
+     {
+        this.session = session;
+     }
+
+    public void setServletContext(ServletContext sc) 
+    {
+     this.sc=sc  ;
+    }
+}

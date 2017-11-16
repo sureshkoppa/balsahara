@@ -1,0 +1,631 @@
+  <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+       <!-- Configuration for the default package. -->
+   <package name="com/cdac/usermanagement/Actions" namespace="/" extends="struts-default">
+       
+       
+    
+
+  <result-types>
+  <result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult" />
+  </result-types>
+  
+  <interceptors>
+        <interceptor name="requestCheckInterceptor" class="com.cdac.common.interceptors.RequestCheckInterceptor"/> 
+        
+          <interceptor name="roleCheckInterceptor"    class="com.cdac.common.interceptors.RoleCheckInterceptor" />    
+        
+                <interceptor-stack name="loggingStack">                                    
+                    
+                    <interceptor-ref name="requestCheckInterceptor" />
+                    <interceptor-ref name="roleCheckInterceptor"/>                      
+                    <interceptor-ref name="defaultStack" />
+                </interceptor-stack>
+    </interceptors>
+    
+     <global-results>
+    <result name="error">/error.jsp</result>
+    </global-results>
+
+
+
+
+
+
+ <!--before login-->
+ <action name="UM-RegisterUser" class="com.cdac.usermanagement.Actions.UserManagementAction" method="setOperation">
+    <param name="Operation">reg</param>
+  <result name="success" type="tiles">UM-RegisterUser</result>
+ </action>
+ 
+ <action name="UM-RegisterUser-save" class="com.cdac.usermanagement.Actions.UserManagementAction" method="addUserSecure">
+  <result name="success">/index.jsp</result>
+  <result name="error">/index.jsp</result>
+ </action>
+ 
+ 
+ 
+
+         <!--Login-->
+         <action name="ValidateLoginAction" class="com.cdac.usermanagement.Actions.ValidateLoginAction">
+             
+       
+
+             
+                <!--interceptor-ref name="loggingStack"/-->             
+            
+			
+                       <result name="success" type="tiles">UM-SelectHomeRole</result>
+                       <result name="error">/index.jsp</result>
+                        
+                        <!--patch for dpo code modified by anupam on 6th july 2011-->
+                        
+                        <result name="cwc_jjb" type="tiles">CWC-Welcome</result>
+                        <result name="admin" type="tiles">UMWelcome</result>
+                        <result name="dpo" type="tiles">DPOWelcome</result>
+                        
+                        <result name="logout" type="tiles">UM-Logout</result>
+
+	       </action>
+               
+                <!--checking validation of choosen role START-->
+                
+                <!--For Switching the roles START-->
+                <action name="Switch-HomeRole-Action" class="com.cdac.usermanagement.Actions.ValidateLoginAction" method="switchHomeRole">
+                     <!--interceptor-ref name="loggingStack"/--> 
+                     <interceptor-ref name="requestCheckInterceptor" />
+                    <result name="success" type="tiles">UM-SelectHomeRole</result>
+                    <result name="error">/index.jsp</result>
+                </action>
+                
+                <!--For Switching the roles END-->
+              
+               <!--Swetha added for multilingual on 08-08-2012 START-->
+               <action name="Select-Language-Action*" class="com.cdac.usermanagement.Actions.ValidateLoginAction" method="{1}">
+                    <result name="success" type="tiles">UM-SelectHomeRole</result>
+                    <result name="error">/index.jsp</result>
+                </action>
+               <!--Swetha added for multilingual on 08-08-2012 END-->
+               
+               <action name="UM-Role-Exp-Check" class="com.cdac.usermanagement.Actions.UserManagementAction" method="roleExpiryDateChecker">
+                   
+                   <interceptor-ref name="loggingStack"/>             
+			
+                       <result name="success" type="chain">UM-UserPage</result>
+                       <result name="error">/index.jsp</result>
+                       
+                       
+                       <result name="logout" type="tiles">UM-Logout</result>
+                    
+
+	       </action>
+               <!--checking validation of choosen role END-->
+              
+               
+               
+               
+               <action name="UM-UserPage" class="com.cdac.usermanagement.Actions.UserManagementAction" method="goToUserPage">
+                    	
+                        <!--interceptor-ref name="loggingStack"/-->             
+                        <!--result name="admin" type="tiles">UMWelcome</result-->
+                        <result name="headmaster" type="tiles">HMWelcome</result>
+                        <result name="caseworker" type="tiles">CWWelcome</result>
+                        <result name="deputysuper" type="tiles">DSWelcome</result>
+                        <result name="super" type="tiles">SUWelcome</result>
+                        <result name="doctor" type="tiles">DOCWelcome</result>
+                        <result name="counselor" type="tiles">CRWelcome</result>
+                        <result name="error">/index.jsp</result>
+                        
+                        <result name="logout" type="tiles">UM-Logout</result>
+               </action>
+               
+               
+               
+               
+                <action name="UM-Logout" class="com.cdac.usermanagement.Actions.UserManagementAction" method="logout">
+                    <!--interceptor-ref name="loggingStack"/-->             
+                    	<result name="success" type="tiles">UM-Logout</result>
+                        <result name="error" type="tiles">UM-Logout</result>
+                        <result name="logout" type="tiles">UM-Logout</result>
+               </action>
+               
+            
+               
+               
+               
+
+              <!--Add User-->
+
+               <action name="UM-AddUser" class="com.cdac.usermanagement.Actions.UserManagementAction" method="prePopulateDistrict">
+                   <interceptor-ref name="loggingStack"/>             
+			<result name="success" type="tiles">UM-AddUser</result>
+                        <result name="error" type="tiles">UM-Error</result>
+                        <result name="logout" type="tiles">UM-Logout</result>
+	       </action>
+
+
+
+             <!--Ajax call handeling-->
+               <action name="UM-AddUser-With-Home" class="com.cdac.usermanagement.Actions.UserManagementAction" method="populateHomesInADistrict">
+			<interceptor-ref name="loggingStack"/>             
+                        <result name="success" type="tiles">HomeListOfADistrict</result>
+                        <result name="error" type="tiles">HomeListOfADistrict</result>
+                        <result name="logout" type="tiles">UM-Logout</result>
+	       </action>
+               
+               <action name="UM-AddUser-Duplication-check" class="com.cdac.usermanagement.Actions.UserManagementAction" method="checkDuplicateUser">
+			<!--interceptor-ref name="loggingStack"/-->             
+                        <result name="success">/WEB-INF/UserManagement/userExists.jsp</result>
+                        <result name="error">/WEB-INF/UserManagement/userExists.jsp</result>
+                        <result name="first">/WEB-INF/UserManagement/userExists.jsp</result>               
+                        <result name="logout" type="tiles">UM-Logout</result>
+                        
+	       </action>
+               
+               
+
+
+               <!--View-->
+               <action name="UM-ViewUser">
+                   <interceptor-ref name="loggingStack"/>             
+			<result name="success" type="chain">Chained_UserFetchAction_view</result>
+                        <result name="logout" type="tiles">UM-Logout</result>
+	       </action>
+
+
+                
+
+
+
+               <!--action name="UM-ModifyUser">
+			<result name="success" type="tiles">UM-ModifyUser.tiles</result>
+	       </-->
+
+
+      <action name="AddUserAction" class="com.cdac.usermanagement.Actions.UserManagementAction" method="addUser">
+          
+          <interceptor-ref name="loggingStack"/>             
+
+        <result name="success" type="chain">Chained_UserFetchAction_view</result>
+
+        <result name="error">mainUser.jsp?parameter1=addVendorFailure</result>
+        <result name="logout" type="tiles">UM-Logout</result>
+
+      </action> 
+      
+      
+      <action name="Chained_UserFetchAction_view" class="com.cdac.usermanagement.Actions.UserManagementAction" method="userFetch">
+          <interceptor-ref name="loggingStack"/>             
+          <param name="Operation">view</param>          
+            <result name="ViewFetchSuccess" type="tiles">UM-ViewUser</result>
+            <result name="error" type="tiles">UM-Error</result>
+            <result name="logout" type="tiles">UM-Logout</result>
+      </action>
+
+    <!--Modify-->
+      <action name="UM-ModifyUser" class="com.cdac.usermanagement.Actions.UserManagementAction" method="userFetch">
+          <interceptor-ref name="loggingStack"/>             
+          <param name="Operation">modify</param>
+            <result name="ModifyFetchUserSuccess" type="tiles">UM-ViewUser</result>
+            <result name="error" type="tiles">UM-Error</result>
+            <result name="logout" type="tiles">UM-Logout</result>
+      </action>
+
+
+      <!--Delete-->
+      <action name="UM-DeleteUser" class="com.cdac.usermanagement.Actions.UserManagementAction" method="userFetch">
+          <interceptor-ref name="loggingStack"/>             
+          <param name="Operation">delete</param>
+            <result name="DeleteFetchSuccess" type="tiles">UM-ViewUser</result>
+            <result name="error" type="tiles">UM-Error</result>
+            <result name="logout" type="tiles">UM-Logout</result>
+      </action>
+
+       <action name="DeleteUserSubAction" class="com.cdac.usermanagement.Actions.UserManagementAction" method="deleteUserSub">
+          
+          <interceptor-ref name="loggingStack"/>             
+          <result name="confirmSuccess" type="tiles">UM-DeleteUserConfirm</result>
+            <result name="error" type="tiles">UM-Error</result>
+            <result name="logout" type="tiles">UM-Logout</result>
+      </action>
+
+
+      <action name="DeleteUserMainAction" class="com.cdac.usermanagement.Actions.UserManagementAction" method="deleteUserMain">
+
+        <interceptor-ref name="loggingStack"/>             
+            <result name="deleteSuccess" type="chain">Chained_UserFetchAction_view</result>
+            <result name="deleteCancel" type="chain">UM-DeleteUser</result>
+            <result name="deleteError" type="tiles">UM-Error</result>
+            <result name="logout" type="tiles">UM-Logout</result>
+      </action>
+
+
+
+      
+
+
+
+
+
+
+
+        <!--action name="UserFetchAction" class="com.cdac.usermanagement.Actions.UserFetchAction">
+			<result name="ModifyFetchUserSuccess">/mainUser.jsp?parameter1=assignRole</result>
+                        <result name="ViewFetchSuccess">/mainUser.jsp?parameter1=View</result>
+                        <result name="UpdateFetchSuccess">/mainUser.jsp?parameter1=update</result>
+                        <result name="DeleteFetchSuccess">/mainUser.jsp?parameter1=delete</result>
+                        <result name="failure">/faliure.jsp</result>
+	       </action-->
+               <!--Role management-->
+            <action name="UM-ViewRole" class="com.cdac.usermanagement.Actions.UserManagementAction" method="viewRole">
+                        <interceptor-ref name="loggingStack"/>             
+                        
+                        <param name="Operation">view</param>
+			<result name="ViewRoleSuccess" type="tiles">UM-ViewRole</result>
+                        <result name="error" type="tiles">UM-Error</result>
+                        <result name="logout" type="tiles">UM-Logout</result>
+	       </action>
+               
+               <action name="UM-AddRole" class="com.cdac.usermanagement.Actions.UserManagementAction" method="viewRole">
+                        
+                        <interceptor-ref name="loggingStack"/>             
+                        <param name="Operation">add</param>
+			<result name="ViewRoleSuccess" type="tiles">UM-AddRole</result>
+                        <result name="error" type="tiles">UM-Error</result>
+                        <result name="logout" type="tiles">UM-Logout</result>
+	       </action>
+               
+               <action name="UM-DeleteRole" class="com.cdac.usermanagement.Actions.UserManagementAction" method="viewRole">
+                        
+                        <interceptor-ref name="loggingStack"/>             
+                        <result name="ViewRoleSuccess" type="tiles">UM-DeleteRole</result>
+                        <result name="error" type="tiles">UM-Error</result> 
+                        <result name="logout" type="tiles">UM-Logout</result>
+	       </action>
+
+
+
+
+                <action name="AddRoleAction" class="com.cdac.usermanagement.Actions.UserManagementAction" method="addRole">
+			<interceptor-ref name="loggingStack"/>             
+                        <result name="AddRoleSuccess" type="chain">UM-ViewRole</result>
+                        <result name="AddRoleError" type="tiles">UM-Error</result>
+                        <result name="logout" type="tiles">UM-Logout</result>
+	       </action>
+
+
+               <!--Home management-->
+
+               <action name="UM-AddHome" class="com.cdac.usermanagement.Actions.UserManagementAction" method="prePopulateDistrict">
+			<interceptor-ref name="loggingStack"/>             
+                        <result name="success" type="tiles">UM-AddHome</result>
+                        <result name="logout" type="tiles">UM-Logout</result>
+	       </action>
+
+               <action name="AddHomeAction" class="com.cdac.usermanagement.Actions.UserManagementAction" method="addHome">
+			<interceptor-ref name="loggingStack"/>             
+                        <result name="success" type="tiles">UM-Success</result>
+                        <result name="error" type="tiles">UM-Error</result>
+                        <result name="logout" type="tiles">UM-Logout</result>
+	       </action>
+               
+               
+               
+               <action name="UM-AssignHome" class="com.cdac.usermanagement.Actions.UserManagementAction" method="prePopulateDistrict">
+			<interceptor-ref name="loggingStack"/>             
+                        <result name="success" type="tiles">UM-AssignHome</result>
+                        <result name="error" type="tiles">UM-Error</result>
+                        <result name="logout" type="tiles">UM-Logout</result>
+	       </action>
+
+               <!--Role Management-->
+
+               <!--assign role choose home page-->
+      <action name="UM-AssignRole" class="com.cdac.usermanagement.Actions.UserManagementAction" method="homeListFetch">
+         <interceptor-ref name="loggingStack"/>             
+         <param name="roleHomeId">none</param>
+            <result name="homeFetchSuccess" type="tiles">UM-AssignRole</result>
+            <result name="homeFetchError" type="tiles">UM-Error</result>
+            <result name="logout" type="tiles">UM-Logout</result>
+      </action>
+
+      <action name="UM-AssignOneRole" class="com.cdac.usermanagement.Actions.UserManagementAction" method="homeListFetch">
+         <interceptor-ref name="loggingStack"/>             
+         <param name="roleHomeId">none</param>
+            <result name="homeFetchSuccess" type="tiles">UM-AssignOneRole</result>
+            <result name="homeFetchError" type="tiles">UM-Error</result>
+            <result name="logout" type="tiles">UM-Logout</result>
+      </action>
+
+      <!--Reassigning role-->
+       <action name="UM-RemoveAssignedRole" class="com.cdac.usermanagement.Actions.UserManagementAction" method="prePopulateDistrict">
+	      <interceptor-ref name="loggingStack"/>             
+              <result name="success" type="tiles">UM-RemoveAssignedRole</result>
+                        <result name="error" type="tiles">UM-Error</result>
+                        <result name="logout" type="tiles">UM-Logout</result>
+	       </action>
+
+        <action name="UM-AddUser-With-Home-Role" class="com.cdac.usermanagement.Actions.UserManagementAction" method="populateHomesInADistrict">
+                        <interceptor-ref name="loggingStack"/>                       
+			<result name="success" >/WEB-INF/UserManagement/HomeInADistrictList_ForReassignRole.jsp</result>
+                        <result name="error" >/WEB-INF/UserManagement/HomeInADistrictList_ForReassignRole.jsp</result>
+                        <result name="logout" type="tiles">UM-Logout</result>
+	       </action>
+
+
+        <action name="UM-ReAssignRole-UserFetch" class="com.cdac.usermanagement.Actions.UserManagementAction" method="usersMapAndRoleListFetcher">
+                        <!--param name="roleHomeId">NOT none</param-->
+                        <!--interceptor-ref name="loggingStack"/-->             
+			<result name="homeFetchSuccess" >/WEB-INF/UserManagement/UsersInAHome.jsp</result>
+                        <result name="homeFetchError" >/WEB-INF/UserManagement/UsersInAHome.jsp</result>
+                        <result name="logout" type="tiles">UM-Logout</result>
+	       </action>
+
+
+               <action name="UM-ReAssignRole-RoleFetch" class="com.cdac.usermanagement.Actions.UserManagementAction" method="UserRoleFetcherForReassign">
+                        <!--param name="roleHomeId">NOT none</param-->
+                        <!--interceptor-ref name="loggingStack"/-->             
+			<result name="success" >/WEB-INF/UserManagement/ReassignRole.jsp</result>
+                        <result name="error" >/WEB-INF/UserManagement/ReassignRole.jsp</result>
+                        <result name="logout" type="tiles">UM-Logout</result>
+	       </action>
+
+
+               <action name="UM-ReAssignRole-Delete" class="com.cdac.usermanagement.Actions.UserManagementAction" method="deleteRoleFromUserDetails">
+                        <!--param name="roleHomeId">NOT none</param-->
+                        <!--interceptor-ref name="loggingStack"/-->             
+			<result name="success" type="tiles" >UM-Reassign_Role_Success</result>
+                        <result name="error" type="tiles">UM-Error</result>
+                        <result name="logout" type="tiles">UM-Logout</result>
+	       </action>
+               
+               <action name="UM-GetHomeList-assignHome" class="com.cdac.usermanagement.Actions.UserManagementAction" method="populateHomeBasedoOnDistrictAndType">
+                        <!--param name="roleHomeId">NOT none</param-->
+                        <interceptor-ref name="loggingStack"/>             
+			<result name="success" >/WEB-INF/UserManagement/HomeInADistrictFor_assignHome.jsp</result>
+                        <result name="error" >/WEB-INF/UserManagement/HomeInADistrictFor_assignHome.jsp</result>
+                        <result name="logout" type="tiles">UM-Logout</result>
+	       </action>
+               
+                <action name="UM-assignHome-Action" class="com.cdac.usermanagement.Actions.UserManagementAction" method="assignHome">
+                       <interceptor-ref name="loggingStack"/>             
+                       <result name="assignRoleSuccess" type="tiles">UM-Success</result>
+                        <result name="assignRoleError" type="tiles">UM-Error</result> 
+                        <result name="logout" type="tiles">UM-Logout</result>
+	       </action>
+               
+               
+               
+               
+
+
+
+
+
+      <action name="UM-AssignRoleSub" class="com.cdac.usermanagement.Actions.UserManagementAction" method="assignRole">
+          <interceptor-ref name="loggingStack"/>             
+          <param name="roleHomeId">none</param>
+            <result name="assignRoleSuccess" type="chain">UM-AssignRole</result>
+            <result name="assignRoleError" type="tiles">UM-Error</result>
+            <result name="logout" type="tiles">UM-Logout</result>
+      </action>
+
+      <action name="UM-AssignOneRoleSub" class="com.cdac.usermanagement.Actions.UserManagementAction" method="assignOneRole">
+          <interceptor-ref name="loggingStack"/>             
+          <param name="roleHomeId">none</param>
+            <result name="success" type="chain">UM-AssignOneRole</result>
+            <result name="error" type="tiles">UM-Error</result>
+            <result name="logout" type="tiles">UM-Logout</result>
+      </action>
+      
+      <!--cwc jjb-->
+      <action name="UM-AssignCWCJJB" class="com.cdac.usermanagement.Actions.UserManagementAction" method="prePopulateDistrictWithOutCWC">
+                        <interceptor-ref name="loggingStack"/>                 
+                        <result name="success" type="tiles">UM-AssignCWCJJB</result>
+                        <result name="error" type="tiles">UM-Error</result>
+                        <result name="logout" type="tiles">UM-Logout</result>
+	       </action>
+               
+               <action name="UM-GetHomeList-CWC-GroupCreation" class="com.cdac.usermanagement.Actions.UserManagementAction" method="populateHomeBasedoOnDistrictAndTypeWithCWCorDPOmembers">
+                        <!--param name="roleHomeId">NOT none</param-->
+                        <interceptor-ref name="loggingStack"/>             
+			<result name="success" >/WEB-INF/UserManagement/HomeInaDistrictForCWCJJBGroupCreation.jsp</result>
+                        <result name="error" >/WEB-INF/UserManagement/HomeInaDistrictForCWCJJBGroupCreation.jsp</result>
+                        <result name="logout" type="tiles">UM-Logout</result>
+	       </action>
+               
+               <action name="UM-CWC-Group-Save" class="com.cdac.usermanagement.Actions.UserManagementAction" method="cwcCreateGroup">
+                        <!--param name="roleHomeId">NOT none</param-->
+                        <interceptor-ref name="loggingStack"/>             
+			<result name="success" type="tiles" >UM-Success</result>
+                        <result name="error" type="tiles">UM-Error</result>
+                        <result name="logout" type="tiles">UM-Logout</result>
+	       </action>
+               
+               <action name="UM-ApproveDPO" class="com.cdac.usermanagement.Actions.UserManagementAction" method="fetchDPOList">
+                        <!--param name="roleHomeId">NOT none</param-->
+                        <interceptor-ref name="loggingStack"/>             
+			<result name="success" type="tiles" >UM-ApproveDPO</result>
+                        <result name="error" type="tiles">UM-Error</result>
+                        <result name="logout" type="tiles">UM-Logout</result>
+	       </action>
+               
+               <action name="UM-ApproveDPO-Save" class="com.cdac.usermanagement.Actions.UserManagementAction" method="approveDPO">
+                        <!--param name="roleHomeId">NOT none</param-->
+                        <interceptor-ref name="loggingStack"/>             
+			<result name="success" type="tiles" >UM-Success</result>
+                        <result name="error" type="tiles">UM-Error</result>
+                        <result name="logout" type="tiles">UM-Logout</result>
+	       </action>
+               
+               <action name="UM-CwcModifyGroup" class="com.cdac.usermanagement.Actions.UserManagementAction" method="prePopulateDistrictWithCwc">
+                        <!--param name="roleHomeId">NOT none</param-->
+                        <interceptor-ref name="loggingStack"/>             
+			<result name="success" type="tiles" >UM-CwcModifyGroup</result>
+                        <result name="error" type="tiles">UM-Error</result>
+                        <result name="logout" type="tiles">UM-Logout</result>
+	       </action>
+               
+               <action name="UM-CWCRemoveMember" class="com.cdac.usermanagement.Actions.UserManagementAction" method="removeCwcMember_init">
+                        <!--param name="roleHomeId">NOT none</param-->
+                        <interceptor-ref name="loggingStack"/>             
+			<result name="success" type="tiles" >UM-CWCRemoveMember</result>
+                        <result name="error" type="tiles">UM-Error</result>
+                        <result name="logout" type="tiles">UM-Logout</result>
+	       </action>
+               
+               <action name="UM-CWCRemoveMember-Action" class="com.cdac.usermanagement.Actions.UserManagementAction" method="removeCwcMember_do">
+                        <!--param name="roleHomeId">NOT none</param-->
+                        <interceptor-ref name="loggingStack"/>             
+			<result name="success" type="tiles" >UM-Success</result>
+                        <result name="error" type="tiles">UM-Error</result>
+                        <result name="logout" type="tiles">UM-Logout</result>
+	       </action>
+               
+               <action name="UM-CWCAddMember" class="com.cdac.usermanagement.Actions.UserManagementAction" method="populateDetailsForAddCwcMember">
+                        <!--param name="roleHomeId">NOT none</param-->
+                        <interceptor-ref name="loggingStack"/>             
+			<result name="success" type="tiles" >UM-CWCAddMember</result>
+                        <result name="error" type="tiles">UM-Error</result>
+                        <result name="logout" type="tiles">UM-Logout</result>
+	       </action>
+               
+               <action name="UM-CWCAddMember-Save" class="com.cdac.usermanagement.Actions.UserManagementAction" method="cwcAddNewMembers">
+                        <!--param name="roleHomeId">NOT none</param-->
+                        <interceptor-ref name="loggingStack"/>             
+			<result name="success" type="chain">UM-CWCAddMember</result>
+                        <result name="error" type="tiles">UM-Error</result>
+                        <result name="logout" type="tiles">UM-Logout</result>
+	       </action>
+               
+               <action name="UM-CWCDissolveGroup" class="com.cdac.usermanagement.Actions.UserManagementAction" method="cwcDissolveGroup_init">
+                        <!--param name="roleHomeId">NOT none</param-->
+                        <interceptor-ref name="loggingStack"/>             
+			<result name="success" type="tiles">UM-CWCDissolveGroup</result>
+                        <result name="error" type="tiles">UM-Error</result>
+                        <result name="logout" type="tiles">UM-Logout</result>
+	       </action>
+               
+               <action name="UM-CWCDissolveGroup-Action" class="com.cdac.usermanagement.Actions.UserManagementAction" method="cwcDissolveGroup_do">
+                        <!--param name="roleHomeId">NOT none</param-->
+                        <interceptor-ref name="loggingStack"/>             
+			<result name="success" type="tiles">UM-Success</result>
+                        <result name="error" type="tiles">UM-Error</result>
+                        <result name="logout" type="tiles">UM-Logout</result>
+	       </action>
+               
+               <action name="UM-ShowHomeDetails" class="com.cdac.usermanagement.Actions.UserManagementAction" method="populateAllHomes">                                
+			<result name="success" type="tiles">UM-ShowHomeDetails</result>
+                        <result name="error" type="tiles">UM-Error</result>
+                        <result name="logout" type="tiles">UM-Logout</result>
+	       </action>
+               
+               <action name="UM-ShowHomeDetails-View" class="com.cdac.usermanagement.Actions.UserManagementAction" method="viewHomeDetails">                                
+			<result name="success">/WEB-INF/UserManagement/HomeDetailsView.jsp</result>
+                        <result name="error">/WEB-INF/UserManagement/HomeDetailsView.jsp</result>                        
+	       </action>
+               
+              <action name="UM-GetCurrentUserImage" class="com.cdac.usermanagement.Actions.UserManagementAction" method="curretUserImage">                                
+			<!--result name="success">/WEB-INF/UserManagement/HomeDetailsView.jsp</result>
+                        <result name="error">/WEB-INF/UserManagement/HomeDetailsView.jsp</result-->                        
+	       </action>
+               
+               
+               
+               
+               
+      <!--
+      ====***********************************************************====
+      ====^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^====
+      ====Actions For userDetails Modification and Resetting Password====
+      ====___________________________________________________________====
+      ====********************Added By Anupam************************====
+      ====**********************START********************************====
+      -->
+             <!--Photo uplooadtion for UM START-->             
+      <action name="UM-AddPhoto">
+            <interceptor-ref name="loggingStack"/>             
+            <result name="success" type="tiles">UM-AddPhoto</result>
+            <result name="error" type="tiles">UM-Error</result>
+            <result name="logout" type="tiles">UM-Logout</result>
+      </action>
+      
+      <action name="UM-AddPhoto-Save" class="com.cdac.usermanagement.Actions.UserManagementAction" method="addPhoto">
+            <interceptor-ref name="loggingStack"/>             
+            <result name="success" type="tiles">UM-Success</result>
+            <result name="error" type="tiles">UM-Error</result>
+            <result name="logout" type="tiles">UM-Logout</result>
+      </action>
+      
+             <!--Photo uplooadtion for UM END-->
+               
+      <action name="UM-ModifyMyDetails" class="com.cdac.usermanagement.Actions.UserManagementAction" method="modifyMyDetails">
+            <interceptor-ref name="loggingStack"/>             
+            <result name="success" type="chain">UM-ModifyUserMainAction</result>
+            <result name="error" type="tiles">UM-Error</result>
+            <result name="logout" type="tiles">UM-Logout</result>
+      </action>
+
+      <action name="UM-ModifyUserMainAction" class="com.cdac.usermanagement.Actions.UserManagementAction" method="modifyUserMain">
+            <interceptor-ref name="loggingStack"/>             
+            <result name="success" type="tiles">UM-ModifyUser-Main</result>
+            <result name="error" type="tiles">UM-Error</result>
+            <result name="logout" type="tiles">UM-Logout</result>
+      </action>
+
+
+      <action name="UM-ModifyUserSubAction" class="com.cdac.usermanagement.Actions.UserManagementAction" method="modifyUserSub">
+            <interceptor-ref name="loggingStack"/>             
+            <result name="success" type="chain">UM-ModifyUser</result>
+            <result name="error" type="tiles">UM-Error</result>
+            <result name="logout" type="tiles">UM-Logout</result>
+      </action>
+
+               <!--change password-->
+                <action name="UM-ChangePassword">
+                    <interceptor-ref name="loggingStack"/>             
+			<result name="success" type="tiles">UM-ChangePassword</result>
+                        <result name="logout" type="tiles">UM-Logout</result>
+                </action>
+
+               <action name="UM-ChangePassword-Action" class="com.cdac.usermanagement.Actions.UserManagementAction" method="changePassword">
+			<interceptor-ref name="loggingStack"/>             
+                        <result name="success" type="tiles">UM-Success</result>
+                        <result name="error" type="tiles">UM-Error</result>
+                        <result name="logout" type="tiles">UM-Logout</result>
+	       </action>
+               
+               
+               
+               <action name="UM-GetLoggedInDetails" class="com.cdac.usermanagement.Actions.UserManagementAction" method="getUserDetailsOfLogIn">
+			<interceptor-ref name="loggingStack"/>             
+                        <result name="success" type="tiles">UM-LogginReport</result>
+                       
+	       </action>
+               
+               
+               
+               <action name="UM-CurrentUserImage" class="com.cdac.usermanagement.Actions.UserManagementAction" method="curretUserImage">
+			    <result name="success" type="tiles">UM-ModifyUser</result>
+                       
+	       </action>
+               
+               
+      <!--
+      ====***********************************************************====
+      ====^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^====
+      ====Actions For userDetails Modification and Resetting Password====
+      ====___________________________________________________________====
+      ====********************Added By Anupam************************====
+      ====**********************END**********************************====
+      -->   
+
+
+
+
+
+
+    </package>
+</struts>

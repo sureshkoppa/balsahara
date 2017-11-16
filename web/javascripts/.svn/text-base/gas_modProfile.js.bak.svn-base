@@ -1,0 +1,138 @@
+/* 
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+/*this file is used to validate and show preview for Modify Profile Form*/
+$(function() {
+		$( "#dialog:ui-dialog" ).dialog( "destroy" );
+                
+                $( "#dialog-form_mod_gas" ).dialog({
+			autoOpen: false,
+			height: 400,
+			width: 350,
+			modal: true,
+			buttons: {
+                            "Submit": function() {
+					var bValid = true;
+					if ( bValid ) {
+                                            /*for submitting the form when this button is clicked*/
+                                            document.ModifyGASForm.submit();
+						$( this ).dialog( "close" );
+					}
+				},
+				Cancel: function() {
+                                    /*to set the whole preview to null as we are appending the fields in preview*/
+                                        $( "#modgas_preview" ).html("");
+					$( this ).dialog( "close" );
+				}
+			},
+			close: function() {
+                            /*to set the whole preview to null as we are appending the fields in preview*/
+                                $( "#modgas_preview" ).html("");
+				allFields.val("").removeClass( "ui-state-error" );
+			}
+		});
+  /*this var $dialog is for displaying the error dialog box*/
+                var $dialog = $('<div></div>')
+		.html('This dialog will show every time!')
+		.dialog({
+			autoOpen: false,
+                        height: 110,
+			width: 250,
+                        modal: true,
+                        /*to add red color to the title*/
+			title: 'ERROR'.fontcolor('#FF0000'),
+                        buttons: {
+				Ok: function() {
+					$dialog.dialog('close');
+                                    }
+			}
+		});
+
+           /*following function will be called when OP Register form is submitted*/
+            /*validating the fields present in the form*/
+                     /*****************REG EX*************************/
+                    var char_only=/^[a-zA-Z ]+$/;
+                    var Digits_only=/^[0-9]{1,2}$/;                 //allows digits with 10 or more occurences
+                    var datepattern = /^[0-9]{2}\/[0-9]{2}\/[0-9]{4}$/i;
+                    var indian_phno = /^[0-9]\d{2,4}-\d{6,8}$/;
+                    var zip_code=/^([0-9]{6})$/;
+                    var email_Reg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+                    var user_pass_regex=/^[a-zA-Z0-9_]{5,20}$/;
+                    /*****************REG EX*************************/
+                $('form#ModifyGASForm').submit(function(){
+                    /*validating the fields present in the form*/
+                    if($("#modifyProfile_name").val().length<1)
+                        {
+                            $dialog.html("Sorry! Please Enter Name");
+                            $dialog.parent().addClass( "ui-state-error" );
+                            $dialog.dialog('open');
+                            return false;
+                        }
+                        else if(!char_only.test($("#modifyProfile_name").val()))
+                        {
+                            $dialog.html("Name should contain only characters and spaces");
+                            $dialog.parent().addClass( "ui-state-error" );
+                            $dialog.dialog('open');
+                            return false;
+                        }
+                        else if($("#modifyProfile_age").val().length>2)
+                        {
+                            $dialog.html("Sorry! Entered age is not valid");
+                            $dialog.parent().addClass( "ui-state-error" );
+                            $dialog.dialog('open');
+                            return false;
+                        }
+                        else if(!Digits_only.test($("#modifyProfile_age").val()))
+                        {
+                            $dialog.html("Sorry! Age should contain only digits");
+                            $dialog.parent().addClass( "ui-state-error" );
+                            $dialog.dialog('open');
+                            return false;
+                        }   
+                        else if($("#modifyProfile_contactAddr").val().length<1||$("#modifyProfile_contactAddr").val().length>75)
+                        {
+                            $dialog.html("Sorry! Entered Address is not valid");
+                            $dialog.parent().addClass( "ui-state-error" );
+                            $dialog.dialog('open');
+                            return false;
+                        }
+                        
+                        else if($("#modifyProfile_contactPhno").val().length<1)
+                        {
+                            $dialog.html("Sorry! Entered Phno is not valid");
+                            $dialog.parent().addClass( "ui-state-error" );
+                            $dialog.dialog('open');
+                            return false;
+                        }
+                        else if(!Digits_only.test($("#modifyProfile_contactPhno").val()))
+                        {
+                            $dialog.html("Sorry! Enter only digits for phone number");
+                            $dialog.parent().addClass( "ui-state-error" );
+                            $dialog.dialog('open');
+                            return false;
+                        }
+                       
+                       else
+                       {
+                              /*making the form details visible in preview*/
+                           document.getElementById('dialog-form_mod_gas').style.visibility='visible';
+                            /*adding the fields common in the form to the preview*/
+                            $( "#modgas_preview" ).append( "<tr><td align='right'>Name:</td><td>"+$("#modifyProfile_name").val()+"</td></tr>"+
+                                                       
+                                                       "<tr><td align='right'>Age:</td><td>"+$("#modifyProfile_age").val()+"</td></tr>"+
+                                                       "<tr><td align='right'>Designation:</td><td>"+$("#modifyProfile_desig").val()+"</td></tr>"+
+                                                       "<tr><td align='right'>Address:</td><td>"+$("#modifyProfile_address").val()+"</td></tr>"+
+                                                       "<tr><td align='right'>Phone no:</td><td>"+$("#modifyProfile_Phno").val()+"</td></tr>"+
+                                                       "<tr><td align='right'>Email Id:</td><td>"+$("#modifyProfile_EmailId").val()+"</td></tr>"+
+                                                       "<tr><td align='right'>Joining Date:</td><td>"+document.ModifyGASForm.modifyProfileDate.value.toString()+"</td></tr>");
+                         
+                           
+                           
+                                    $('#dialog-form_mod_gas').dialog('open');
+	                            return false;
+                           }
+	        });
+	});
+
+

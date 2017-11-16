@@ -1,0 +1,18 @@
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+   <package name="com/cdac/multimedia/Actions" namespace="/" extends="struts-default">
+
+    <result-types>
+	<result-type name="imageResult"	class="com.cdac.multimedia.result.CustomImageBytesResult" />
+    </result-types>
+  
+    <action name="ImageAction" class="com.cdac.multimedia.Actions.ImageAction">
+			<result name="success" type="imageResult">
+			</result>
+    </action>
+      
+    </package>
+</struts>
+

@@ -1,0 +1,107 @@
+<%-- 
+    Document   : CWC_MeetingsMinutes
+    Created on : Jul 1, 2011, 11:43:49 AM
+    Author     : Ramu Parupalli
+--%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+<%@ taglib prefix="s" uri="/struts-tags"%>
+<%@taglib  prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script>
+            <jsp:include page="../../javascripts/CWC_MeetingsMins_Validation.jsp"></jsp:include>
+        </script>
+    </head>
+    <body onload="document.getElementById('dialog-form_CWCMeetingsminutes').style.visibility='hidden'">
+    
+        <center>
+            <CAPTION><font size="3"><b><s:text name="global.heading.CWCMeetMinsReg"/></b></font></CAPTION> 
+            
+           
+              <s:form action="CWCMeetings-Save" method="POST" name="cwcmeets" id="cwcmeets" theme="css_xhtml"> <!--new action = SICD-Save-->
+                                      
+       <s:hidden name="formName" value="cwcmeets"/>
+                <table cellspacing="0">
+                    <tr><td align="right"><s:text name="package.label.CWCMeetMinMeetDate" />:</td><td><s:textfield name="dateofcwcmeeting" id="datepicker" readonly="true" /></td></tr>
+                    <tr><td align="right"><s:text name="package.label.CWCMeetMinVenue" />:</td><td><s:textfield name="venue" id="venue" onfocus='VirtualKeyboard.attachInput(this);currentTB=this.id;'/></td></tr>
+                    <tr><td align="right"><s:text name="package.label.CWCMeetMinMemNo" />:</td><td><s:textfield name="noOfMembers" id="noOfMembers" onfocus='VirtualKeyboard.attachInput(this);currentTB=this.id;'/></td></tr>
+                    <tr><td align="right"><s:text name="package.label.CWCMeetMinChaPer" />:</td><td><s:textfield name="designation" id="designation" onfocus='VirtualKeyboard.attachInput(this);currentTB=this.id;'/></td></tr>
+                </table>   
+                  <table border="1" id="CWCMeet">
+                         <thead>
+                             <tr><th><s:text name="package.label.CWCMeetMinSelect" /></th> <th><s:text name="package.label.CWCMeetMinRecs" /></th></tr>
+                         </thead>
+                         <tr><td><INPUT type="checkbox" name="chk"/></td>
+                             
+                        <td>
+                            <table> 
+                                                                  
+                       <tr><th><s:text name="package.label.CWCMeetMinChProfId" /></th><td><select name="childProfileId_cwc" id="childProfileId_cwc">
+                                   <option value="1">---<s:text name='global.option.headerKey'/>---</option>
+                                   <c:forEach items="${childrenListInAHome}" var="obj">
+                                       <option value=${obj.childProfileId}>${obj.childName}---->${obj.childProfileId}</option>
+                                   </c:forEach>
+                               </select><%--s:select name="childProfileId_cwc" id="childProfileId_cwc" labelposition="left" headerKey="1" headerValue="--Please Select--" list="childrenListInAHome" listKey="childProfileId" listValue="%{childName+'-->'+childProfileId}"/--%></td></tr>
+                       <tr><th><s:text name="package.label.CWCMeetMinObser" /></th><td><s:textarea id="observations" name="observations" rows="2" cols="15" onfocus='VirtualKeyboard.attachInput(this);currentTB=this.id;'/></td></tr>
+                       <tr><th><s:text name="package.label.CWCMeetMinActTake" /></th><td><s:textarea id="actiontobeTaken" name="actiontobeTaken" rows="2" cols="15" onfocus='VirtualKeyboard.attachInput(this);currentTB=this.id;'/></td></tr>
+                        <tr><th><s:text name="package.label.CWCMeetMinFollUp" /></th><td><s:textarea id="followUp" name="followUp" rows="2" cols="15" onfocus='VirtualKeyboard.attachInput(this);currentTB=this.id;'/></td></tr>
+                        <tr><th><s:text name="package.label.CWCMeetMinOrdIssu" /></th><td><select id="orderIssued" name="orderIssued">
+                              <option value="1">--<s:text name='global.option.headerKey'/>--</option> 
+                              <option value="<s:text name='package.selectOption.CWCMeetMinICAVal'/>"><s:text name='package.selectOption.CWCMeetMinICA'/></option>
+                              <option value="<s:text name='package.selectOption.CWCMeetMinTOHVal'/>"><s:text name='package.selectOption.CWCMeetMinTOH'/></option>
+                              <option value="<s:text name='package.selectOption.CWCMeetMinHOPVal'/>"><s:text name='package.selectOption.CWCMeetMinHOP'/></option>
+                              <option value="<s:text name='package.selectOption.CWCMeetMinTOSVal'/>"><s:text name='package.selectOption.CWCMeetMinTOS'/></option>
+                              <option value="<s:text name='package.selectOption.CWCMeetMinCDRVal'/>"><s:text name='package.selectOption.CWCMeetMinCDR'/></option>
+                          </select><%--s:select id="orderIssued" name="orderIssued" headerKey="1" headerValue="---Please select----" list="#{'Interviewagian':'Interview the child again','transfer':'Transfer to other home','handover':'Hand over to parents','otherstate':'Transfer to other State','callfordpo':'Call for DPO Report'}"/--%></td></tr>
+                        <tr><th><s:text name="package.label.CWCMeetMinOrderNo" /></th><td><s:textfield id="cwcJjbOrderNo" name="cwcJjbOrderNo" onfocus='VirtualKeyboard.attachInput(this);currentTB=this.id;'/></td></tr>
+                       <tr><th><s:text name="package.label.CWCMeetMinRemarks" /></th><td><s:textarea id="remarks" name="remarks" rows="2" cols="15" onfocus='VirtualKeyboard.attachInput(this);currentTB=this.id;'/></td></tr>
+                            </table>
+                       </td>
+                     </tr>
+                 </table>
+                     <INPUT type="button" value="<s:text name="global.button.AddRow"/>" onclick="addRow('CWCMeet')" />&nbsp;&nbsp;<INPUT type="button" value="<s:text name="global.button.DeleteRow"/>" onclick="deleteRow('CWCMeet')"/>
+              
+                     
+                     
+                             <center> <input type="submit" value="<s:text name="global.button.submit"/>"/><input type="reset" value="<s:text name="global.button.clear"/>"/></center>
+              </s:form>
+                      
+                 
+                             
+                    <div id="dialog-form_CWCMeetingsminutes" title="<s:text name="global.heading.CWCMeetMinsReg"/> <s:text name="global.heading.preview"/>">
+	<form name="CWCMeetingsminutes_prevwindow">
+              <s:text name="package.label.CWCMeetMinMeetDate" />:<span id="dateofcwcmeeting_span"></span><br>
+              <s:text name="package.label.CWCMeetMinVenue" />:<span id="venue_span"></span><br>
+              <s:text name="package.label.CWCMeetMinMemNo" />:<span id="noOfMembers_span"></span><br>
+              <s:text name="package.label.CWCMeetMinChaPer" />:<span id="designation_span"></span>
+	<table border="1" id="cwcmeetings_span">
+            <thead>
+             <tr>
+                 <th><s:text name="package.label.CWCMeetMinSNO" /></th>
+                <th><s:text name="package.label.CWCMeetMinChProfId" /></th>
+                <th><s:text name="package.label.CWCMeetMinObser" /></th>
+                <th><s:text name="package.label.CWCMeetMinActTake" /></th>
+                <th><s:text name="package.label.CWCMeetMinFollUp" /></th>
+                <th><s:text name="package.label.CWCMeetMinOrdIssu" /></th>
+                <th><s:text name="package.label.CWCMeetMinOrderNo" /></th>
+                 <th><s:text name="package.label.CWCMeetMinRemarks" /></th>
+              </tr>
+            </thead>
+            <tbody>
+             <tr>
+             </tr>
+            </tbody>
+        </table>
+	</form>
+        </div>          
+                             
+         
+                             
+                             
+        </center>
+    </body>
+</html>
+

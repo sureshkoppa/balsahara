@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CaseHistoy_socialhistorylist" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<field name="friendshipDetails" class="java.lang.String"/>
+	<field name="friendsMajority" class="java.lang.String"/>
+	<field name="membershipGroups" class="java.lang.String"/>
+	<field name="membershipDetails" class="java.lang.String"/>
+	<field name="positionGroups" class="java.lang.String"/>
+	<field name="purposeMembership" class="java.lang.String"/>
+	<field name="attitudeGroup" class="java.lang.String"/>
+	<field name="meetingPointGroup" class="java.lang.String"/>
+	<field name="reactionSocity" class="java.lang.String"/>
+	<field name="reactionPolice" class="java.lang.String"/>
+	<field name="responsePublic" class="java.lang.String"/>
+	<field name="label.s5CH.socHis" class="java.lang.String"/>
+	<field name="label.s5CH.detFr" class="java.lang.String"/>
+	<field name="label.s5CH.mjrFr" class="java.lang.String"/>
+	<field name="label.s5CH.detMem" class="java.lang.String"/>
+	<field name="label.s5CH.posChild" class="java.lang.String"/>
+	<field name="label.s5CH.purMship" class="java.lang.String"/>
+	<field name="label.s5CH.attGrp" class="java.lang.String"/>
+	<field name="label.s5CH.reaSoc" class="java.lang.String"/>
+	<field name="label.s5CH.reaPol" class="java.lang.String"/>
+	<field name="label.s5CH.resGP" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="5" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="1" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="1" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="222" splitType="Stretch">
+			<textField>
+				<reportElement positionType="Float" x="315" y="20" width="187" height="20" forecolor="#0033FF"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{friendshipDetails}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="152" y="40" width="163" height="20" forecolor="#0033FF"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{friendsMajority}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="288" y="60" width="214" height="20" forecolor="#0033FF"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{membershipGroups}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="237" y="80" width="100" height="20" forecolor="#0033FF"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{positionGroups}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="237" y="100" width="120" height="20" forecolor="#0033FF"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{purposeMembership}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="171" y="120" width="186" height="20" forecolor="#0033FF"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{attitudeGroup}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="140" width="217" height="20"/>
+				<textElement/>
+				<text><![CDATA[44 . Location / meeting point of the groups : ]]></text>
+			</staticText>
+			<textField>
+				<reportElement positionType="Float" x="217" y="140" width="170" height="20" forecolor="#0033FF"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{meetingPointGroup}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="357" y="160" width="145" height="20" forecolor="#0033FF"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{reactionSocity}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="387" y="181" width="115" height="20" forecolor="#0033FF"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{reactionPolice}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="276" y="201" width="100" height="20" forecolor="#0033FF"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{responsePublic}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="16" width="121" height="1"/>
+			</line>
+			<textField>
+				<reportElement x="0" y="0" width="204" height="20"/>
+				<textElement markup="styled">
+					<font size="12" isBold="true"/>
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["V  "+$R{label.s5CH.socHis}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="20" width="315" height="20"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["38. "+$R{label.s5CH.detFr}+" :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="41" width="253" height="20"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["39. "+$R{label.s5CH.mjrFr}+" :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="61" width="288" height="20"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["40 . "+$R{label.s5CH.detMem}+" :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="80" width="237" height="20"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["41 . "+$R{label.s5CH.posChild}+" :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="100" width="237" height="20"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["42 . "+$R{label.s5CH.purMship}+" :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="120" width="217" height="20"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["43 . "+$R{label.s5CH.attGrp}+" :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="160" width="357" height="20"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["45 . "+$R{label.s5CH.reaSoc}+" :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="181" width="387" height="20"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["46 . "+$R{label.s5CH.reaPol}+" :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="201" width="276" height="21"/>
+				<textElement markup="styled">
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["47 . "+$R{label.s5CH.resGP}+" :"]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="1" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="1" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

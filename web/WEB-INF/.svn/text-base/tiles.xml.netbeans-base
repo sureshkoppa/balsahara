@@ -1,0 +1,1984 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : tiles.xml
+    Created on : February 15, 2011, 1:56 PM
+    Author     : ramu
+    Description:
+        Purpose of the document follows.
+-->
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+
+	<definition name="baseLayout" template="/WEB-INF/tiles/BaseLayout.jsp">
+		<put-attribute name="title" value="" />
+		<!--put-attribute name="header" value="/Header_1.jsp" /-->
+		<put-attribute name="menu" value="" />
+                <put-attribute name="tabs" value="" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="/WEB-INF/tiles/Footer.jsp" />
+                 <put-list-attribute name="jsfiles">
+                     
+                     
+                 </put-list-attribute>    
+               
+	</definition>
+
+<!--suresh added 13-01-2012 start-->
+  <definition name="mapPage" extends="baseLayout">
+            <put-attribute name="tabs" value="/example/MapTabs.jsp"/>
+           <put-attribute name="menu" value="/example/HomeList1.jsp"/>  
+            <put-attribute name="body" value="/example/HomesMap.jsp"/>
+            
+
+            </definition>
+          
+        <definition name="DS-ChildHome_Map" extends="baseLayout">
+              <put-attribute name="tabs" value="/example/MapTabs2.jsp"/> 
+              <put-attribute name="menu" value="/example/HomeList1.jsp"/> 
+              <put-attribute name="body" value="/example/popupex.jsp"/>
+                
+        </definition>
+
+
+<!--suresh added 13-01-2012 end-->
+<!--Added by vinumol 17/02/2012-->
+<definition name="SU-Showreport" extends="SULayout">
+            <put-attribute name="title" value="Show Report" />
+            <put-attribute name="body" value="/WEB-INF/SU/ShowReport.jsp"/>
+        </definition>
+<!--Ended by vinumol 17/02/2012-->
+<!--role based menu adding in layout-->
+        <definition name="HMLayout" extends="baseLayout">
+            <put-attribute name="tabs" value="/WEB-INF/HM/Main/HMUppertab.jsp" />
+            <put-attribute name="menu" value="/WEB-INF/HM/Main/HMLeftMenu.jsp" />
+        </definition>
+
+        <definition name="DSLayout" extends="baseLayout">
+            <put-attribute name="menu" value="/WEB-INF/DS/Main/DSLeftMenu.jsp" />
+            <put-attribute name="tabs" value="/WEB-INF/DS/Main/DSUppertab.jsp" />
+        </definition>
+
+        <definition name="CWLayout" extends="baseLayout">
+            <put-attribute name="tabs" value="/WEB-INF/CW/Main/CWUppertab.jsp" />
+            <put-attribute name="menu" value="/WEB-INF/CW/Main/CWLeftMenu.jsp" />
+        </definition>
+
+          <!--Doctor module layout START-->
+
+         <definition name="DOCLayout" extends="baseLayout">
+            <put-attribute name="tabs" value="/WEB-INF/DOC/Main/DOCUppertab.jsp" />
+            <put-attribute name="menu" value="/WEB-INF/DOC/Main/DOCLeftMenu.jsp" />
+        </definition>
+
+        <!--Doctor module layout END-->
+    
+         <!--suresh start-->
+        <definition name="DSLayout" extends="baseLayout">
+            <put-attribute name="menu" value="/WEB-INF/DS/Main/DSLeftMenu.jsp" />
+            <put-attribute name="tabs" value="/WEB-INF/DS/Main/DSUppertab.jsp" />
+        </definition>
+          <definition name="SULayout" extends="baseLayout">
+            <put-attribute name="tabs" value="/WEB-INF/SU/Main/SUUppertab.jsp" />
+            <put-attribute name="menu" value="/WEB-INF/SU/Main/SULeftMenu.jsp" />
+        </definition>
+        <definition name="CRLayout" extends="baseLayout">
+            <put-attribute name="tabs" value="/WEB-INF/CR/Main/CRUppertab.jsp" />
+            <put-attribute name="menu" value="/WEB-INF/CR/Main/CRLeftMenu.jsp" />
+        </definition>
+    <!--suresh end-->    
+
+        
+        
+        <!--START of DPO Layout -->
+         <!--Ramu added this on 26-05-2011 for DPO -->
+        <definition name="DPOLayout" extends="baseLayout">
+            <put-attribute name="tabs" value="/WEB-INF/DPO/Main/DPOUppertab.jsp" />
+            <put-attribute name="menu" value="/WEB-INF/DPO/Main/DPOLeftMenu.jsp" />
+        </definition>
+            <!--End of DPO Layout -->
+            
+            
+            <!--CWC layout added by anupam START-->
+        <definition name="CWCLayout" extends="baseLayout">
+            <put-attribute name="tabs" value="/WEB-INF/CWC/Main/CWCUppertab.jsp" />
+            <put-attribute name="menu" value="/WEB-INF/CWC/Main/CWCLeftMenu.jsp" />
+        </definition>
+            <!--CWC layout added by anupam END-->
+
+
+   <!--role based menu adding in layout ends-->
+   
+   
+   
+   
+  <!--head master page tiles configuration-->
+	<definition name="HMWelcome" extends="HMLayout">
+		<put-attribute name="title" value="Welcome" />                
+                <put-attribute name="body" value="/WEB-INF/HM/HeadMasterHome.jsp" />
+	</definition>
+        
+        <definition name="HM-Admission" extends="HMLayout">
+            
+		<put-attribute name="title" value="Admission" />                
+                <put-attribute name="body" value="/WEB-INF/HM/AdmissionRegister_Education.jsp" />
+                <!--put-list-attribute name="jsfiles">
+                       <add-attribute value="javascripts/HM_studentAdmissionForm_Validation.js"/>
+            </put-list-attribute-->
+	</definition>
+         
+         
+        <definition name="HM-Success" extends="HMLayout">
+		<put-attribute name="title" value="Success" />                
+                <put-attribute name="body" value="/success.jsp" />
+	</definition>
+        
+        <definition name="HM-Error" extends="HMLayout">
+		<put-attribute name="title" value="Error" />                
+                <put-attribute name="body" value="/error.jsp" />
+	</definition>
+        
+        <definition name="HM-ModifyUser-Main" extends="HMLayout">
+            
+                <put-attribute name="title" value="Modify User" />
+		<put-attribute name="body" value="/WEB-INF/UserManagement/modifyUser.jsp" />
+                
+                <put-list-attribute name="jsfiles">
+                       <add-attribute value=""/>
+            </put-list-attribute>
+        </definition>
+        
+        <definition name="HM-ChangePassword" extends="HMLayout">
+            
+                <put-attribute name="title" value="Change Password" />
+		<put-attribute name="body" value="/WEB-INF/common/ResetPassword.jsp" />
+                
+                <put-list-attribute name="jsfiles">
+                       <add-attribute value=""/>
+            </put-list-attribute>
+        </definition>  
+       
+
+
+	<definition name="HM-Attendence" extends="HMLayout">
+            
+		<put-attribute name="title" value="Attendance Register" />
+                <put-attribute name="body" value="/WEB-INF/HM/AttendanceRegister.jsp" />
+                <!--put-list-attribute name="jsfiles">
+                       <add-attribute value="javascripts/HM_eduAttendenceRegister_Validation.js"/>
+            </put-list-attribute-->
+	</definition>
+        
+        <!--Anupam added this for headmaster attendence success START-->
+        <definition name="HM-attendance-success" extends="HMLayout">
+            
+		<put-attribute name="title" value="Attendance Successful" />
+                <put-attribute name="body" value="/WEB-INF/HM/AttendenceSuccess.jsp" />
+                
+                <put-list-attribute name="jsfiles">
+                       <add-attribute value=""/>
+            </put-list-attribute>
+	</definition>
+        <!--Anupam added this for headmaster attendence success END-->
+
+        <!--Anupam added this for Exam Conduct START -->
+        <definition name="HM-Exam-Conduct" extends="HMLayout">
+            
+		<put-attribute name="title" value="Exam Conduct" />                
+                <put-attribute name="body" value="/WEB-INF/HM/ExamGenerationRegistor_sub.jsp" />
+                
+                <put-list-attribute name="jsfiles">
+                       <add-attribute value="javascripts/HM_examGenerationRegister_Validation.js"/>
+            </put-list-attribute>
+	</definition>
+        <!--Anupam added this for Exam Conduct END -->
+
+         <!--Anupam added this for Library book view START -->
+        <definition name="HM-View-Books" extends="HMLayout">
+            
+		<put-attribute name="title" value="Libray Book View" />
+                <put-attribute name="body" value="/WEB-INF/HM/LibraryBookView.jsp" />
+                
+                <put-list-attribute name="jsfiles">
+                       <add-attribute value=""/>
+            </put-list-attribute>
+	</definition>
+        <!--Anupam added this for Library Book view END -->
+
+        <!--Anupam added this for Library book add START -->
+        <definition name="HM-Add-Books" extends="HMLayout">
+            
+		<put-attribute name="title" value="Libray Book Add" />
+                <put-attribute name="body" value="/WEB-INF/HM/AddBook.jsp" />
+                <put-list-attribute name="jsfiles">
+                       <add-attribute value=""/>
+            </put-list-attribute>
+	</definition>
+        <!--Anupam added this for Library Book add END -->
+
+
+        <definition name="HM-Exam-Conduct" extends="HMLayout">
+            
+		<put-attribute name="title" value="Exam Conduct Register" />
+                <put-attribute name="body" value="/WEB-INF/HM/ExamConductRegister.jsp" />
+                <!--put-list-attribute name="jsfiles">
+                       <add-attribute value="javascripts/HM_examGenerationRegister_Validation.js"/>
+            </put-list-attribute-->
+	</definition>
+        
+        
+        <definition name="HM-Scheduled-Exams" extends="HMLayout">
+            
+		<put-attribute name="title" value="Scheduled Exams" />
+                <put-attribute name="body" value="/WEB-INF/HM/SheduledExamRegister.jsp" />
+                <!--put-list-attribute name="jsfiles">
+                       <add-attribute value="javascripts/HM_scheduledExamsForm_validation.js"/>
+            </put-list-attribute-->
+	</definition>
+        
+        
+        
+        
+        <definition name="HM-Exam-Attendence" extends="HMLayout">
+            
+            
+		<put-attribute name="title" value="Exam Conduct Register" />
+                <put-attribute name="body" value="/WEB-INF/HM/ExamAttendenceRegister.jsp" />
+                
+                <!--<put-list-attribute name="jsfiles">
+                       <add-attribute value=""/>
+            </put-list-attribute> -->
+	</definition>
+
+        <definition name="HM-Exam-Marks" extends="HMLayout">
+            
+            
+		<put-attribute name="title" value="Exam Marks Register" />
+                <put-attribute name="body" value="/WEB-INF/HM/ExamMarksRegister.jsp" />
+                
+                <put-list-attribute name="jsfiles">
+                       <add-attribute value=""/>
+            </put-list-attribute>
+	</definition>
+        
+        <definition name="HM-Exam-View-1" extends="HMLayout">
+            
+           
+		<put-attribute name="title" value="Filter Exams" />
+                <put-attribute name="body" value="/WEB-INF/HM/ViewExamination.jsp" />
+                
+                 <!--put-list-attribute name="jsfiles">
+                       <add-attribute value="javascripts/HM_viewExamRegister_Validation.js"/>
+            </put-list-attribute-->
+	</definition>
+        
+        <definition name="HM-Exam-View-2" extends="HMLayout">
+            
+            
+		<put-attribute name="title" value="Filtered Exams" />
+                <put-attribute name="body" value="/WEB-INF/HM/ShowExamsAndStatus.jsp" />
+                
+                <put-list-attribute name="jsfiles">
+                       <add-attribute value=""/>
+            </put-list-attribute>
+	</definition>
+        
+         <definition name="HM-Exam-View-3" extends="HMLayout">
+             
+             
+		<put-attribute name="title" value="View Exam Details"/>
+                <put-attribute name="body" value="/WEB-INF/HM/ViewMarksAndAttendence.jsp" />
+                <put-list-attribute name="jsfiles">
+                       <add-attribute value=""/>
+            </put-list-attribute>
+	</definition>
+        
+        <definition name="HM-AddNewVocational" extends="HMLayout">
+            
+            
+		<put-attribute name="title" value="Enter New Vocational Course"/>
+                <put-attribute name="body" value="/WEB-INF/HM/AddNewVocational.jsp" />
+                <!--put-list-attribute name="jsfiles">
+                       <add-attribute value="javascripts/HM_AddNewVocational_Validation.js"/>
+            </put-list-attribute-->
+	</definition>
+        
+        <definition name="HM-DeleteVocationalCourse" extends="HMLayout">
+            
+            
+		<put-attribute name="title" value="Delete Vocational Course"/>
+                <put-attribute name="body" value="/WEB-INF/HM/DeleteVocationalCourse.jsp" />
+                <put-list-attribute name="jsfiles">
+                       <add-attribute value=""/>
+            </put-list-attribute>
+	</definition>
+        
+        <definition name="HM-VocationAssesment" extends="HMLayout">
+            
+            
+		<put-attribute name="title" value="Vocational assesment"/>
+                <put-attribute name="body" value="/WEB-INF/HM/VocationalAssesment.jsp" />
+                
+                <put-list-attribute name="jsfiles">
+                       <add-attribute value=""/>
+            </put-list-attribute>
+	</definition>
+        
+        <definition name="HM-View-Assesment" extends="HMLayout">
+            
+            
+		<put-attribute name="title" value="View assesment"/>
+                <put-attribute name="body" value="/WEB-INF/HM/ViewSchoolAssesment.jsp" />
+                <put-list-attribute name="jsfiles">
+                       <add-attribute value=""/>
+            </put-list-attribute>
+	</definition>
+        
+        
+        <definition name="HM-View-Vocational-Assesment" extends="HMLayout">
+            
+            
+		<put-attribute name="title" value="View assesment"/>
+                <put-attribute name="body" value="/WEB-INF/HM/VocationalAssessmentView.jsp" />
+                <put-list-attribute name="jsfiles">
+                       <add-attribute value=""/>
+            </put-list-attribute>
+	</definition>
+        
+        <!--Anupam added on 14-01-2012 START-->
+        <definition name="HM-Add-School" extends="HMLayout">
+            
+           
+		<put-attribute name="title" value="Add School"/>
+                <put-attribute name="body" value="/WEB-INF/HM/AddSchool.jsp" />
+                 <!--put-list-attribute name="jsfiles">
+                       <add-attribute value="javascripts/HM_AddOutSideSchool_Validation.js"/>
+            </put-list-attribute-->
+	</definition>
+        
+        <definition name="HM-Promotion" extends="HMLayout">
+            
+            
+		<put-attribute name="title" value="Promotion Register"/>
+                <put-attribute name="body" value="/WEB-INF/HM/Promotion.jsp" />
+                <put-list-attribute name="jsfiles">
+                       <add-attribute value=""/>
+            </put-list-attribute>
+	</definition>
+        
+        <definition name="HM-PromotionDetail" extends="HMLayout">
+            
+            
+		<put-attribute name="title" value="Promotion Details"/>
+                <put-attribute name="body" value="/WEB-INF/HM/PromotionDetail.jsp" />
+                <!--put-list-attribute name="jsfiles">
+                       <add-attribute value="javascripts/HM_PromotionDetail_Validation.js"/>
+            </put-list-attribute-->
+	</definition>
+        
+        
+        
+        
+         <!--Anupam added on 14-01-2012 END-->
+         
+         <!--Anupam added on 6-2-2012 START-->
+         
+         <definition name="HM-ViewSchoolChildReport" extends="HMLayout">
+             
+		<put-attribute name="title" value="School Child Report"/>
+                <put-attribute name="body" value="/WEB-INF/HM/ViewSchoolChildReport.jsp" />
+                <put-list-attribute name="jsfiles">
+                       <add-attribute value=""/>
+            </put-list-attribute>
+	</definition>
+        
+         <!--Anupam added on 6-2-2012 END-->
+         
+          <!--Anupam added on 9-2-2012 START-->
+         
+         <definition name="HM-ClassWiseStudentReport" extends="HMLayout">
+             
+		<put-attribute name="title" value="Classwise Student Report"/>
+                <put-attribute name="body" value="/WEB-INF/HM/ClassWiseStudentReport.jsp" />
+                <put-list-attribute name="jsfiles">
+                       <add-attribute value="JQscript/handlebars-v1.3.0.js" /> 
+                       <add-attribute value="javascripts/HM_ClassWiseStuRepo.js"/>
+            </put-list-attribute>
+	</definition>
+        
+         <!--Anupam added on 9-2-2012 END-->
+         
+         
+        
+     <!--head master page tiles configuration ends-->
+
+
+
+ <!-- SURESH dsuper page tiles configuration start-->
+        
+        <definition name="DSWelcome" extends="DSLayout">
+		<put-attribute name="title" value="Welcome" />
+                <put-attribute name="body" value="/WEB-INF/DS/DeputySuperIndentPage.jsp" />
+	</definition>
+
+       <definition name="/DS-addCategory" extends="SULayout">
+               
+		<put-attribute name="title" value="Add Category" />
+                <put-attribute name="body" value="/WEB-INF/DS/AddCategoryRegister.jsp" />
+                  <!--put-list-attribute name="jsfiles">
+                       <add-attribute value="javascripts/ds_addCat.js" />
+                  </put-list-attribute--> 
+	</definition>
+       
+        <definition name="/DS-removeCategory" extends="SULayout">
+		<put-attribute name="title" value="Remove Category" />
+                <put-attribute name="body" value="/WEB-INF/DS/RemoveCategoryRegister.jsp" />
+	</definition>
+       
+        <definition name="/DS-viewCategory" extends="DSLayout">
+            <put-attribute name="title" value="View Category"/>
+            <put-attribute name="body" value="/WEB-INF/DS/ViewCategoryRegister.jsp"/>
+        </definition>
+        <definition name="/DS-viewCategorySuccess" extends="DSLayout">
+            <put-attribute name="title" value="View Category Success"/>
+            <put-attribute name="body" value="/WEB-INF/DS/ViewCategorySuccess.jsp"/>
+        </definition>
+        
+          <definition name="/DS-viewCategory1" extends="SULayout">
+            <put-attribute name="title" value="View Category"/>
+            <put-attribute name="body" value="/WEB-INF/SU/ViewCategoryRegister.jsp"/>
+        </definition>
+        <definition name="/DS-viewCategorySuccess1" extends="SULayout">
+            <put-attribute name="title" value="View Category Success"/>
+            <put-attribute name="body" value="/WEB-INF/DS/ViewCategorySuccess.jsp"/>
+        </definition>
+        <definition name="/DS-enterTopCat" extends="SULayout">
+            <put-attribute name="title" value="Add Top Category"/>
+            <put-attribute name="body" value="/WEB-INF/DS/EnterTopCategory.jsp"/>
+               <!--put-list-attribute name="jsfiles">
+                       <add-attribute value="javascripts/ds_addTopCat.js" />
+               </put-list-attribute--> 
+            
+        </definition>
+        
+        <definition name="/DS-dietIssue" extends="DSLayout">
+            <put-attribute name="title" value="Diet Chart/BOM"/>
+            <put-attribute name="body" value="/WEB-INF/DS/DietIssue.jsp"/>
+             <!--put-list-attribute name="jsfiles">
+                    <add-attribute value="javascripts/ds_dietIssue.js" />
+             </put-list-attribute-->        
+        </definition>
+        
+        <definition name="/DS-rationBOM" extends="SULayout">
+            <put-attribute name="title" value="Enter BOM Chart"/>
+            <put-attribute name="body" value="/WEB-INF/DS/EnterBOMChart.jsp"/>
+            <!--put-list-attribute name="jsfiles">
+                    <add-attribute value="javascripts/ds_bomDetails.js" />
+             </put-list-attribute-->
+            
+        </definition>
+        
+        <definition name="/DS-addItem" extends="DSLayout">
+		<put-attribute name="title" value="Add Item" />
+                <put-attribute name="body" value="/WEB-INF/DS/AddItemRegister.jsp" />
+                <!--put-list-attribute name="jsfiles">
+                    <add-attribute value="javascripts/ds_addItem.js" />
+                </put-list-attribute-->
+               
+	</definition>
+
+      
+    
+        <definition name="/DS-modifyItem" extends="DSLayout">
+		<put-attribute name="title" value="Enter QOH" />
+                <put-attribute name="body" value="/WEB-INF/DS/ModifyItemTree.jsp" />
+	</definition>
+        
+        <definition name="/DS-modifyItemDetails" extends="DSLayout">
+		<put-attribute name="title" value="Modify Item Details" />
+                <put-attribute name="body" value="/WEB-INF/DS/ModifyItem.jsp" />
+                <!--put-list-attribute name="jsfiles">
+                    <add-attribute value="javascripts/ds_modifyItem.js" />
+                </put-list-attribute-->
+	</definition>
+   
+         <definition name="/DS-IssueBook" extends="DSLayout">
+		<put-attribute name="title" value="Issue Register" />
+                <put-attribute name="body" value="/WEB-INF/DS/IssueBookRegister.jsp" />
+                <!--put-list-attribute name="jsfiles">
+                    <add-attribute value="javascripts/ds_issue_book.js" />
+                </put-list-attribute--> 
+	</definition>
+         <definition name="/DS-DonationBook" extends="DSLayout">
+		<put-attribute name="title" value="Donation Register" />
+                <put-attribute name="body" value="/WEB-INF/DS/DonationBookRegister.jsp" />
+                 <!--put-list-attribute name="jsfiles">
+                       <add-attribute value="javascripts/ds_donation_book.js" />
+                 </put-list-attribute-->    
+	</definition>
+         <definition name="/DS-payBackBook" extends="DSLayout">
+		<put-attribute name="title" value="PayBack Book Register" />
+                <put-attribute name="body" value="/WEB-INF/DS/PayBackRegister.jsp" />
+                 <!--put-list-attribute name="jsfiles">
+                       <add-attribute value="javascripts/ds_Payback.js"/>
+                 </put-list-attribute-->    
+                
+	</definition>  
+        <definition name="/DS-loanBook" extends="DSLayout">
+		<put-attribute name="title" value="Loan Book Register" />
+                <put-attribute name="body" value="/WEB-INF/DS/LoanBookRegister.jsp" />
+                <!--put-list-attribute name="jsfiles">
+                       <add-attribute value="javascripts/ds_LoanBookReg.js"/>
+                 </put-list-attribute-->
+                
+	</definition>
+        <definition name="/DS-receiptBook" extends="DSLayout">
+		<put-attribute name="title" value="Receipt Book Register" />
+                <put-attribute name="body" value="/WEB-INF/DS/ReceiptBookRegister.jsp" />
+                <!--put-list-attribute name="jsfiles">
+                       <add-attribute value="javascripts/ds_receipt_book.js"/>
+                 </put-list-attribute-->
+                
+	</definition>  
+       
+       
+        <definition name="/DS-issueTailor" extends="DSLayout">
+		<put-attribute name="title" value="Tailor Issue Register" />
+                <put-attribute name="body" value="/WEB-INF/DS/TailorIssueRegister.jsp" />
+                <!--put-list-attribute name="jsfiles">
+                       <add-attribute value="javascripts/ds_tailorIssue.js"/>
+                 </put-list-attribute-->
+                
+	</definition>
+        
+        <definition name="/DS-receiveTailor" extends="DSLayout">
+		<put-attribute name="title" value="Tailor Receipt Register" />
+                <put-attribute name="body" value="/WEB-INF/DS/TailorReceiveRegister.jsp" />
+                <!--put-list-attribute name="jsfiles">
+                       <add-attribute value="javascripts/ds_tailorReceive.js"/>
+                 </put-list-attribute-->
+                
+	</definition>
+        
+         <definition name="/DS-removeItem" extends="DSLayout">
+		<put-attribute name="title" value="Remove Item" />
+                <put-attribute name="body" value="/WEB-INF/DS/RemoveItemRegister.jsp" />
+	</definition>
+        
+         <definition name="/DS-removeItemConfirm" extends="DSLayout">
+		<put-attribute name="title" value="Confirm Item Delete" />
+                <put-attribute name="body" value="/WEB-INF/DS/DeleteItemConfirm.jsp" />
+	</definition>
+        
+     
+        <definition name="/DS-viewItem" extends="DSLayout">
+		<put-attribute name="title" value="View Item" />
+                <put-attribute name="body" value="/WEB-INF/DS/ViewItemRegister.jsp" />
+	</definition>
+        <definition name="/DS-viewItemDetails" extends="DSLayout">
+		<put-attribute name="title" value="View Item Success" />
+                <put-attribute name="body" value="/WEB-INF/DS/ViewItemSuccess.jsp" />
+	</definition>
+        
+        <definition name="DS-Error" extends="DSLayout">
+                <put-attribute name="title" value="Error" />
+		<put-attribute name="body" value="/error.jsp" />
+        </definition>
+       
+     
+        <definition name="DS-Success" extends="DSLayout">
+                <put-attribute name="title" value="Success" />
+		<put-attribute name="body" value="/success.jsp" />
+        </definition>
+        
+         <definition name="AddRation-Success" extends="DSLayout">
+                <put-attribute name="title" value="Success" />
+		<put-attribute name="body" value="/WEB-INF/DS/RationSuccess.jsp" />
+        </definition>
+         <!--new tiles begins-->
+         <definition name="/DS-viewDonation" extends="DSLayout">
+		<put-attribute name="title" value="View Donation Register" />
+                <put-attribute name="body" value="/WEB-INF/DS/ViewDonationRegister.jsp" />
+	</definition>
+        
+        <definition name="/DS-viewIssue" extends="DSLayout">
+		<put-attribute name="title" value="View Issue Register" />
+                <put-attribute name="body" value="/WEB-INF/DS/ViewIssueRegister.jsp" />
+	</definition>
+        <definition name="/DS-viewReceipt" extends="DSLayout">
+		<put-attribute name="title" value="View Reciept Register" />
+                <put-attribute name="body" value="/WEB-INF/DS/ViewReceiptRegister.jsp" />
+	</definition>
+        <definition name="/DS-viewLoan" extends="DSLayout">
+		<put-attribute name="title" value="View Reciept Register" />
+                <put-attribute name="body" value="/WEB-INF/DS/ViewLoanRegister.jsp" />
+	</definition>
+        
+        <definition name="/DS-viewTailoing" extends="DSLayout">
+		<put-attribute name="title" value="View Tailoring Register" />
+                <put-attribute name="body" value="/WEB-INF/DS/ViewTailoringRegister.jsp" />
+	</definition>
+           <definition name="DS-SelectMonth" extends="DSLayout">
+		<put-attribute name="title" value="Select Month Year" />
+                <put-attribute name="body" value="/WEB-INF/DS/SelectMonthYear.jsp" />
+	</definition>
+        
+        <definition name="DS-reportRecIss" extends="DSLayout">
+		<put-attribute name="title" value="View Monthly Reports" />
+                <put-attribute name="body" value="/WEB-INF/DS/SelectRecIssReport.jsp" />
+	</definition>
+        <definition name="/DS-viewIssueDetail" extends="DSLayout">
+		<put-attribute name="title" value="View Issue Detail" />
+                <put-attribute name="body" value="/WEB-INF/DS/ViewIssueDetail.jsp" />
+	</definition>
+
+	<definition name="tempLayout" template="/WEB-INF/DS/temp.jsp">
+                 <put-attribute name="body" value="" />
+        </definition>
+       <definition name="temp" extends="tempLayout">
+           <put-attribute name="body"  value="/WEB-INF/DS/subcatItemsReceive.jsp"/>           
+           
+       </definition>    
+       <definition name="/DS-viewDiet" extends="DSLayout">
+		<put-attribute name="title" value="View Diet Register" />
+                <put-attribute name="body" value="/WEB-INF/DS/ViewDietRegister.jsp" />
+	</definition>
+         <definition name="/DS-dietMenu" extends="DSLayout">
+		<put-attribute name="title" value="Add Menu Item" />
+                <put-attribute name="body" value="/WEB-INF/DS/MenuRegister.jsp" />
+	</definition> 
+        
+        <definition name="/DS-detailMenu" extends="DSLayout">
+		<put-attribute name="title" value="Enter Menu Details" />
+                <put-attribute name="body" value="/WEB-INF/DS/EnterMenu.jsp" />
+	</definition> 
+
+        <definition name="/DS-viewMenu" extends="DSLayout">
+		<put-attribute name="title" value="View Menu" />
+                <put-attribute name="body" value="/WEB-INF/DS/ViewMenu.jsp" />
+	</definition> 
+       
+       
+       
+        <!--new tiles ends-->
+        
+            
+<!--SURESH dsuper page tiles configuration ends-->
+
+<!--case worker page tiles configuration-->
+        <definition name="CWWelcome" extends="CWLayout">
+		<put-attribute name="title" value="Welcome" />
+                <put-attribute name="body" value="/WEB-INF/CW/CWHome.jsp" />
+	</definition>
+        <definition name="CW-AdmRH" extends="CWLayout">
+		<put-attribute name="title" value="Admission to Reception Homes" />
+                <put-attribute name="body" value="/WEB-INF/CW/AdmissionRH.jsp" />
+                <!--put-list-attribute name="jsfiles">
+                       <add-attribute value="javascripts/RHOH_Admform_Validation.js"/>
+                 </put-list-attribute-->
+	</definition>
+        
+         <!-- Old CW-AdmCH
+         <definition name="CW-AdmCH" extends="CWLayout">
+		<put-attribute name="title" value="Admission to Child Homes" />
+                <put-attribute name="body" value="/WEB-INF/CW/AdmissionCH.jsp" />
+                
+	</definition>
+         --> 
+       
+         <definition name="CW-AdmCH" extends="CWLayout">
+		<put-attribute name="title" value="Admission to Special Homes" />
+                <put-attribute name="body" value="/WEB-INF/CW/AdmissionCHSH_Modified.jsp" />
+                <put-list-attribute name="jsfiles">
+                       <add-attribute value="javascripts/AdmissionCHSH_Modified_Operation.js"/>
+                       
+                       <add-attribute value="javascripts/CHSHAdm_validation.js"/>
+                 
+                 </put-list-attribute>
+	</definition>
+        
+         <!--Added by vinumol5/9/2011-->
+        
+        <definition name="CW-ViewAdmCH" extends="CWLayout">
+		<put-attribute name="title" value="View CHAdmission Register" />
+                <!--put-attribute name="body" value="/WEB-INF/CW/viewAdmissionCHRegister.jsp" /-->
+                <put-attribute name="body" value="/WEB-INF/CW/ViewAdmissionRegisterByCriteria.jsp" />                
+                
+                <put-list-attribute name="jsfiles">
+                       <add-attribute value="javascripts/ViewAdmissionByCriteriaJS.js"/>
+                 </put-list-attribute>
+	</definition>
+         <!--Ended by vinumol5/9/2011-->
+        <definition name="CW-Discharge" extends="CWLayout">
+		<put-attribute name="title" value="Discharge" />
+                <put-attribute name="body" value="/WEB-INF/CW/DischargeRegister.jsp" />
+                <!--put-list-attribute name="jsfiles">
+                       <add-attribute value="javascripts/Discharge_validation.js"/>
+                 </put-list-attribute-->
+	</definition>
+        <!--Added by vinumo08/03/2012-->
+        <definition name="CW-ViewDischarge" extends="CWLayout">
+		<put-attribute name="title" value="View Discharge Register" />
+                <put-attribute name="body" value="/WEB-INF/CW/ViewDischarge.jsp" />
+	</definition>
+        <!--Ended by vinumo08/03/2012-->
+         <definition name="CW-Casework" extends="CWLayout">
+		<put-attribute name="title" value="Casework" />
+                <put-attribute name="body" value="/WEB-INF/CW/casework.jsp" />
+                 <!--put-list-attribute name="jsfiles">
+                       <add-attribute value="javascripts/casework_validation.js"/>
+                 </put-list-attribute-->
+	</definition>
+        
+        <!--Experimet-->
+        <definition name="CW-CaseWork-Detail" template="/WEB-INF/CW/casework_childdetails.jsp">                     
+            
+        </definition>
+        <!--Experimet-->
+        
+         <definition name="CW-ViewCasework" extends="CWLayout">
+		<put-attribute name="title" value="View Casework" />
+                <put-attribute name="body" value="/WEB-INF/CW/CaseWork_View.jsp" />
+	</definition>
+        
+        <definition name="CW-Success" extends="CWLayout">
+                <put-attribute name="title" value="Success" />
+		<put-attribute name="body" value="/success.jsp" />
+        </definition>
+
+        <definition name="CW-Error" extends="CWLayout">
+                <put-attribute name="title" value="Error" />
+		<put-attribute name="body" value="/error.jsp" />
+        </definition>
+
+         <!--Files not found start-->
+        <definition name="CW-SocInv1" extends="CWLayout">
+		<put-attribute name="title" value="Welcome" />
+                <put-attribute name="body" value="/WEB-INF/CW/SocialInvestigation1_sub.jsp" />
+	</definition>
+        <definition name="CW-HomeDetails" extends="CWLayout">
+		<put-attribute name="title" value="HomeDetails" />
+                <put-attribute name="body" value="/WEB-INF/CW/HomeDetails_sub.jsp" />
+	</definition>
+        <definition name="CW-Facilities" extends="CWLayout">
+		<put-attribute name="title" value="HomeFacilities" />
+                <put-attribute name="body" value="/WEB-INF/CW/Facilities_sub.jsp" />
+	</definition>
+        <!--Files not found end-->
+        
+        
+        <definition name="DS-Interview" extends="CWLayout">
+		<put-attribute name="title" value="Visitor Register" />
+                <put-attribute name="body" value="/WEB-INF/CW/InterviewRegister.jsp" />
+                <!--put-list-attribute name="jsfiles">
+                       <add-attribute value="javascripts/InterviewRegister_Validation.js"/>
+                 </put-list-attribute-->
+	</definition>
+        
+        <definition name="DS-ViewInterview" extends="CWLayout">
+		<put-attribute name="title" value="View Visitor Register" />
+                <put-attribute name="body" value="/WEB-INF/CW/viewInterviewRegister.jsp" />
+	</definition>
+       
+        <!--for Case History-->
+        <definition name="CW-CH-Personal" extends="CWLayout">
+		<put-attribute name="title" value="Case History Personal data" />
+                <put-attribute name="body" value="/WEB-INF/CW/CaseHistory_PersonalData.jsp" />
+                <!--put-list-attribute name="jsfiles">
+                       <add-attribute value="javascripts/CaseHistory_PD.js"/>
+                 </put-list-attribute-->
+	</definition>        
+        <definition name="CW-CH-Household" extends="CWLayout">
+		<put-attribute name="title" value="Child House Hold Details" />
+                <put-attribute name="body" value="/WEB-INF/CW/CH_ChildHouseholdDetails.jsp" />
+                <!--put-list-attribute name="jsfiles">
+                       <add-attribute value="javascripts/CH_Household_validation.js"/>
+                 </put-list-attribute-->
+	</definition>   
+        <definition name="CW-CH-Family" extends="CWLayout">
+		<put-attribute name="title" value="Child Family Details" />
+                <put-attribute name="body" value="/WEB-INF/CW/CH_FamilyDetails.jsp" />
+                <!--put-list-attribute name="jsfiles">
+                       <add-attribute value="javascripts/CH_FamilyDetails_validations.js"/>
+                 </put-list-attribute-->
+	</definition>          
+          <definition name="CW-CH-Adolescence" extends="CWLayout">
+		<put-attribute name="title" value="Child Adolescence History Details" />
+                <put-attribute name="body" value="/WEB-INF/CW/CH_AdolescenceHistory.jsp" />
+                <!--put-list-attribute name="jsfiles">
+                       <add-attribute value="javascripts/CH_AdolescenceHistory_Validation.js"/>
+                 </put-list-attribute-->
+	</definition>        
+         <definition name="CW-CH-Employment" extends="CWLayout">
+		<put-attribute name="title" value="Child Employment Details" />
+                <put-attribute name="body" value="/WEB-INF/CW/CH_EmploymentDetails.jsp" />
+                <!--put-list-attribute name="jsfiles">
+                       <add-attribute value="javascripts/CH_EmploymentDetails_Validation.js"/>
+                 </put-list-attribute-->
+	</definition>
+         <definition name="CW-CH-PreEducation" extends="CWLayout">
+		<put-attribute name="title" value="Child Prior admission Education Details" />
+                <put-attribute name="body" value="/WEB-INF/CW/CH_PriorAdmEducationDetails.jsp" />
+                <!--put-list-attribute name="jsfiles">
+                       <add-attribute value="javascripts/CH_PriorAdmEdu_Validations.js"/>
+                 </put-list-attribute-->
+	</definition>
+         <definition name="CW-CH-FamilyCrime" extends="CWLayout">
+		<put-attribute name="title" value="History of Family crime Details" />
+                <put-attribute name="body" value="/WEB-INF/CW/CH_FamilyCrimeDetails.jsp" />
+                <!--put-list-attribute name="jsfiles">
+                       <add-attribute value="javascripts/CH_FamilyCrime_Validations.js"/>
+                 </put-list-attribute-->
+	</definition>
+        <definition name="CW-CH-AfterEducation" extends="CWLayout">
+		<put-attribute name="title" value="Child after admission Education Details" />
+                <put-attribute name="body" value="/WEB-INF/CW/CH_AfterAdmEducationDetails.jsp" />
+                <!--put-list-attribute name="jsfiles">
+                       <add-attribute value="javascripts/CH_AfterAdmEdu_Validations.js"/>
+                 </put-list-attribute-->
+	</definition>
+        <definition name="CW-CH-SocialHistory" extends="CWLayout">
+		<put-attribute name="title" value="Child Social History Details" />
+                <put-attribute name="body" value="/WEB-INF/CW/CH_SocialHistory.jsp" />
+                <!--put-list-attribute name="jsfiles">
+                       <add-attribute value="javascripts/CH_SocialHistory_Validations.js"/>
+                 </put-list-attribute-->
+	</definition>        
+        
+             <!--Added by vinumol-->
+         <definition name="CW-CH-Report" extends="CWLayout">
+		<put-attribute name="title" value="Case History Report"/>
+                <put-attribute name="body" value="/WEB-INF/CW/CWC_CHReportSub.jsp" />
+	</definition>
+
+<definition name="CW-Report" extends="CWLayout">
+		<put-attribute name="title" value="Case Work Report"/>
+                <put-attribute name="body" value="/WEB-INF/CW/CW_Report.jsp" />
+	</definition>
+        <!--end by vinumol-->
+        
+        <!--Anupam added on 29-02-2012 START-->
+        <definition name="CW-RH-Adm-Check" extends="CWLayout">
+            
+            
+           
+		<put-attribute name="title" value="Admission Check"/>
+                <put-attribute name="body" value="/WEB-INF/CW/AdmissionRegisterCheck.jsp" />
+                
+                <!--put-list-attribute name="jsfiles">
+                       <add-attribute value="javascripts/RU_AdmCheckForm_Validation.js"/>
+                 </put-list-attribute-->
+	</definition>
+        
+        <definition name="CW-Show-Existing-Match" extends="CWLayout">
+		<put-attribute name="title" value="Existing Records"/>
+                <put-attribute name="body" value="/WEB-INF/CW/ExistingChildView.jsp" />
+	</definition>
+        <!--Anupam added on 29-02-2012 END-->
+        
+        <!--Anupam added on 13-07-2012 START-->
+        <definition name="CW-Show-OverStayingChildren" extends="CWLayout">
+		<put-attribute name="title" value="Over Staying Students"/>
+                <put-attribute name="body" value="/WEB-INF/CW/OverStayingChildren.jsp" />
+	</definition>
+          <!--Anupam added on 13-07-2012 END-->
+          
+          
+        <!--Anupam added on 11-10-2012 START-->
+        <definition name="CW-Edit-Child" extends="CWLayout">
+		<put-attribute name="title" value="Edit Child Data"/>
+                <put-attribute name="body" value="/WEB-INF/CW/ChildProfileEdit.jsp" />
+	</definition>
+          <!--Anupam added on 11-10-2012 END-->
+        
+        
+         
+        
+<!--case worker page tiles configuration ends-->
+
+
+<!--Doctor config starts-->
+
+        <definition name="DOCWelcome" extends="DOCLayout">
+            <put-attribute name="title" value="Doctor Welcome" />
+            <put-attribute name="body" value="/WEB-INF/DOC/DOCHome.jsp"/>
+        </definition>
+        <definition name="/Hospital_adm_reg.tiles" extends="DOCLayout">
+		<put-attribute name="title" value="Medical Admission Register" />
+		<put-attribute name="body" value="/WEB-INF/DOC/AdmissionBookRegister.jsp" />
+                <put-list-attribute name="jsfiles">
+                       <!--add-attribute value="javascripts/adm_med_reg_javascript.js"/-->
+                       <add-attribute value="javascripts/DOC_DynamicFieldsAddition.js"/>
+                </put-list-attribute>
+	</definition>
+        <!--Admission Medical Register for girls START-->
+        <definition name="/Hospital_adm_regfemale.tiles" extends="DOCLayout">
+		<put-attribute name="title" value="Medical Admission Register" />
+		<put-attribute name="body" value="/WEB-INF/DOC/AdmissionBookRegister_Fem.jsp" />
+                <put-list-attribute name="jsfiles">
+                       <!--add-attribute value="javascripts/adm_med_regfem_javascript.js"/-->
+                       <add-attribute value="javascripts/DOC_DynamicFieldsAddition.js"/>
+                </put-list-attribute>
+	</definition>
+        <!--Admission Medical Register for girls END-->
+	<definition name="/Hospital_op_reg.tiles" extends="DOCLayout">
+		<put-attribute name="title" value="O.P Register" />
+		<put-attribute name="body" value="/WEB-INF/DOC/OPRegister.jsp" />
+                <put-list-attribute name="jsfiles">
+                       <!--add-attribute value="javascripts/op_reg_javascript.js"/-->
+                       <add-attribute value="javascripts/DOC_DynamicFieldsAddition.js"/>
+                </put-list-attribute>
+	</definition>
+        <definition name="/Hospital_referral_reg.tiles" extends="DOCLayout">
+		<put-attribute name="title" value="Referral Register" />
+		<put-attribute name="body" value="/WEB-INF/DOC/ReferralRegister.jsp" />
+                <!--put-list-attribute name="jsfiles">
+                       <add-attribute value="javascripts/refe_reg_javascript.js"/>
+                </put-list-attribute-->
+	</definition>
+        <definition name="/Hospital_mgen_reg.tiles" extends="DOCLayout">
+		<put-attribute name="title" value="Medical Journal Register" />
+		<put-attribute name="body" value="/WEB-INF/DOC/MedicalGeneralRegister.jsp" />
+                <!--put-list-attribute name="jsfiles">
+                       <add-attribute value="javascripts/mgen_reg_javascript.js"/>
+                </put-list-attribute-->
+	</definition>
+        <definition name="/Hospital_wh_reg.tiles" extends="DOCLayout">
+		<put-attribute name="title" value="Weight And Height Register" />
+		<put-attribute name="body" value="/WEB-INF/DOC/WeightHeightRegister.jsp" />
+                <!--put-list-attribute name="jsfiles">
+                       <add-attribute value="javascripts/wh_reg_javascript.js"/>
+                </put-list-attribute-->
+	</definition>
+        <definition name="/Hospital_tabindex_reg.tiles" extends="DOCLayout">
+		<put-attribute name="title" value="Tablets Index Register" />
+		<put-attribute name="body" value="/WEB-INF/DOC/TabletsIndexRegister.jsp" />
+	</definition>
+        <definition name="/Hospital_tabrec_reg.tiles" extends="DOCLayout">
+		<put-attribute name="title" value="Tablets Received Register" />
+		<put-attribute name="body" value="/WEB-INF/DOC/TabletsReceivedRegister.jsp" />
+	</definition>
+        <definition name="/Hospital_locpur_reg.tiles" extends="DOCLayout">
+		<put-attribute name="title" value="Local Purchase Register" />
+		<put-attribute name="body" value="/WEB-INF/DOC/LocalPurchaseRegister.jsp" />
+	</definition>
+        <definition name="/Hospital_donbook_reg.tiles" extends="DOCLayout">
+		<put-attribute name="title" value="Donation Book Register" />
+		<put-attribute name="body" value="/WEB-INF/DOC/DonationBookRegister.jsp" />
+	</definition>
+        <definition name="/Hospital_view_adm_reg.tiles" extends="DOCLayout">
+		<put-attribute name="title" value="View Admission Medical Register" />
+		<put-attribute name="body" value="/WEB-INF/DOC/ViewAdmissionBookRegister.jsp" />
+	</definition>
+        <definition name="/Hospital_view_htwt_reg.tiles" extends="DOCLayout">
+		<put-attribute name="title" value="View Height Weight Register" />
+		<put-attribute name="body" value="/WEB-INF/DOC/ViewHtWtRegister.jsp" />
+                <!--put-list-attribute name="jsfiles">
+                       <add-attribute value="javascripts/viewhtwt_javascript.js"/>
+                </put-list-attribute-->
+	</definition>
+        <definition name="/Hospital_view_mgen_reg.tiles" extends="DOCLayout">
+		<put-attribute name="title" value="View Medical Journal Register" />
+		<put-attribute name="body" value="/WEB-INF/DOC/ViewMGeneralRegister.jsp" />
+                <!--put-list-attribute name="jsfiles">
+                       <add-attribute value="javascripts/viewmgen_javascript.js"/>
+                </put-list-attribute-->
+	</definition>
+
+         <definition name="/Hospital_view_op_reg.tiles" extends="DOCLayout">
+		<put-attribute name="title" value="View OP Register" />
+		<put-attribute name="body" value="/WEB-INF/DOC/ViewOPRegister.jsp" />
+                <!--put-list-attribute name="jsfiles">
+                       <add-attribute value="javascripts/viewopreg_javascript.js"/>
+                </put-list-attribute-->
+	</definition>
+
+        <!--swetha added on 12th may START-->
+        <definition name="/Hospital_view_refe_reg.tiles" extends="DOCLayout">
+		<put-attribute name="title" value="View Referral Register" />
+		<put-attribute name="body" value="/WEB-INF/DOC/ViewReferralRegister.jsp" />
+                <!--put-list-attribute name="jsfiles">
+                       <add-attribute value="javascripts/viewrefe_javascript.js"/>
+                </put-list-attribute-->
+	</definition>
+        <!--swetha added on 12th may END-->
+        <!--Aded by vinumol 17/02/2012-->
+        <definition name="/DOC-ViewByDisease.tiles" extends="DOCLayout">
+		<put-attribute name="title" value="View Children By Disease" />
+		<put-attribute name="body" value="/WEB-INF/DOC/ViewChildByDesease.jsp" />
+	</definition>
+        <!--Ended by vinumol 17/02/2012-->
+
+        <!--for admission book register update-->
+        <definition name="/Hospital_update_adm_reg.tiles" extends="DOCLayout">
+		<put-attribute name="title" value="Update Admission Medical Register" />
+		<put-attribute name="body" value="/WEB-INF/DOC/UpdateAdmissionBookReg.jsp" />
+                <put-list-attribute name="jsfiles">
+                       <add-attribute value="javascripts/upda_admreg_first_javascript.js"/>
+                       <!--add-attribute value="javascripts/upda_admreg_javascript.js"/-->      
+                       <add-attribute value="javascripts/DOC_DynamicFieldsAddition.js"/>
+                </put-list-attribute>
+	</definition>
+        <definition name="/Hospital_update_adm_regfemale.tiles" extends="DOCLayout">
+		<put-attribute name="title" value="Update Admission Medical Register" />
+		<put-attribute name="body" value="/WEB-INF/DOC/UpdateAdmissionBookReg_Fem.jsp" />
+                <put-list-attribute name="jsfiles">
+                       <!--add-attribute value="javascripts/upda_admregfem_javascript.js"/-->
+                       <add-attribute value="javascripts/DOC_DynamicFieldsAddition.js"/>
+                </put-list-attribute>
+	</definition>
+
+        <!--For Doctor module Error-->
+        <definition name="DOC-Error" extends="DOCLayout">
+                <put-attribute name="title" value="Error" />
+		<put-attribute name="body" value="/WEB-INF/DOC/DoctorModuleError.jsp" />
+        </definition>
+        <!--For Doctor module Success-->
+        <definition name="DOC-Success" extends="DOCLayout">
+                <put-attribute name="title" value="Success" />
+		<put-attribute name="body" value="/WEB-INF/DOC/DoctorModuleSuccess.jsp" />
+        </definition>
+
+        <!--For Doctor module Update Success-->
+        <definition name="DOC-UpdateSuccess" extends="DOCLayout">
+                <put-attribute name="title" value="Success" />
+		<put-attribute name="body" value="/WEB-INF/DOC/UpdateAdmBookRegSuccess.jsp" />
+        </definition>
+        <!--For Doctor module Session Expiry Error-->
+        <definition name="DOC-Sess_error" extends="DOCLayout">
+                <put-attribute name="title" value="Login Again" />
+		<put-attribute name="body" value="/WEB-INF/DOC/SessionExpiryError.jsp" />
+        </definition>
+        <!--For Doctor module Duplicate Key Exception Error-->
+        <definition name="DOC-dkexerror" extends="DOCLayout">
+                <put-attribute name="title" value="Error" />
+		<put-attribute name="body" value="/WEB-INF/DOC/WtHtReg_dupliexception.jsp" />
+        </definition>
+        
+        <!--Anupam Added on 09-01-2012 START-->
+        <definition name="DOC-HW-Yearly" extends="DOCLayout">
+                <put-attribute name="title" value="Doctor Height Weight Yearly Entry" />
+		<put-attribute name="body" value="/WEB-INF/DOC/WeightHeightYearly.jsp" />
+        </definition>
+        <!--Anupam Added on 09-01-2012 END-->
+        
+        
+        
+<!--Doctor config ends-->
+
+<!--Doctor config ends-->
+
+
+<!--Super config STARTS-->
+     <definition name="SUWelcome" extends="SULayout">
+            <put-attribute name="title" value="Super" />
+            <put-attribute name="body" value="/WEB-INF/SU/SUHome.jsp"/>
+        </definition>
+
+        <definition name="SU-homedetails" extends="SULayout">
+            
+            
+            <put-attribute name="title" value="Home Details" />
+            <put-attribute name="body" value="/WEB-INF/SU/RegisterHome.jsp"/>
+            <!--put-list-attribute name="jsfiles">
+                       <add-attribute value="javascripts/SU_registerHomeForm_Validation.js"/>
+                 </put-list-attribute-->
+        </definition>
+
+        <definition name="SU-ChildStatus" extends="SULayout">
+            
+            
+            <put-attribute name="title" value="Child Status" />
+            <put-attribute name="body" value="/WEB-INF/SU/ChildCurrentStatus.jsp"/>
+            <!--put-list-attribute name="jsfiles">
+                       <add-attribute value="javascripts/SU_Childstatus_Validation.js"/>
+                 </put-list-attribute-->
+        </definition>
+        <!--Accounting Module Tiles start-->
+        <definition name="SU-cashBook" extends="SULayout">
+                <put-attribute name="title" value="Cash Book Register"/>
+		<put-attribute name="body" value="/WEB-INF/SU/CashBook.jsp"/>
+        </definition>
+        
+        <definition name="SU-selCash" extends="SULayout">
+                <put-attribute name="title" value="View Cash Book"/>
+		<put-attribute name="body" value="/WEB-INF/SU/SelCashBook.jsp"/>
+        </definition>
+        
+        <definition name="SU-genLedge" extends="SULayout">
+                <put-attribute name="title" value="General Ledger"/>
+		<put-attribute name="body" value="/WEB-INF/SU/SelGenLedge.jsp"/>
+        </definition>
+      
+       <!--Accounting Module Tiles ends-->
+       
+       <definition name="SU-Success" extends="SULayout">
+                <put-attribute name="title" value="Success"/>
+		<put-attribute name="body" value="/success.jsp"/>
+        </definition>
+
+        <definition name="SU-Error" extends="SULayout">
+                <put-attribute name="title" value="Error"/>
+		<put-attribute name="body" value="/error.jsp"/>
+        </definition>
+
+
+         <definition name="GAS-addProfile" extends="DSLayout">
+                <put-attribute name="title" value="Add Profile Details" />
+		<put-attribute name="body" value="/WEB-INF/SU/AddProfile.jsp" />
+                <!--put-list-attribute name="jsfiles">
+                       <add-attribute value="javascripts/gas_addProfile.js"/>
+                 </put-list-attribute-->
+                
+        </definition>
+        <definition name="GAS-modifyProfile" extends="DSLayout">
+                <put-attribute name="title" value="Modify Profile Details" />
+		<put-attribute name="body" value="/WEB-INF/SU/ModifyProfile.jsp" />
+                <put-list-attribute name="jsfiles">
+                       <add-attribute value="javascripts/gas_modProfile.js"/>
+                 </put-list-attribute>
+                
+        </definition>
+        
+        <definition name="GAS-viewProfile" extends="DSLayout">
+                <put-attribute name="title" value="View Profile Details"/>
+                <put-attribute name="body" value="/WEB-INF/SU/ViewProfile.jsp"/> 
+        </definition>
+        
+         <definition name="GAS-removeProfile" extends="DSLayout">
+                <put-attribute name="title" value="Remove Profile Details"/>
+                <put-attribute name="body" value="/WEB-INF/SU/RemoveProfile.jsp"/> 
+        </definition>
+        
+     
+        
+        
+        <definition name="GAS-addDuty" extends="DSLayout">
+                <put-attribute name="title" value="Add Duty Details" />
+		<put-attribute name="body" value="/WEB-INF/SU/AddDuty.jsp" />
+                 <put-list-attribute name="jsfiles">
+                       <add-attribute value="javascripts/gas_addDuty.js"/>
+                 </put-list-attribute>
+                
+               
+        </definition>
+        
+      
+        <definition name="GAS-viewObservation" extends="DSLayout">
+                <put-attribute name="title" value="View Observation" />
+		<put-attribute name="body" value="/WEB-INF/SU/ViewObservation.jsp" />
+        </definition>
+     
+          <definition name="GAS-selObservation" extends="DSLayout">
+                <put-attribute name="title" value="Add Observation" />
+		<put-attribute name="body" value="/WEB-INF/SU/SelObservation.jsp" />
+        </definition>
+        
+         <definition name="GAS-selViewObservation" extends="DSLayout">
+                <put-attribute name="title" value="View Observation" />
+		<put-attribute name="body" value="/WEB-INF/SU/SelViewObservation.jsp" />
+        </definition>
+        
+        <definition name="GAS-addObservation" extends="DSLayout">
+                <put-attribute name="title" value="Add Observation" />
+		<put-attribute name="body" value="/WEB-INF/SU/AddObservation.jsp" />
+        </definition>
+        
+        <definition name="GAS-viewDuty" extends="DSLayout">
+                <put-attribute name="title" value="View Duty Details" />
+		<put-attribute name="body" value="/WEB-INF/SU/ViewDuty.jsp" />
+                 <put-list-attribute name="jsfiles">
+                       <add-attribute value="javascripts/gas_viewDuty.js"/>
+                 </put-list-attribute>                
+        </definition>
+       
+        <definition name="GAS-viewDutyDetails" extends="DSLayout">
+                <put-attribute name="title" value="View Duty Details" />
+		<put-attribute name="body" value="/WEB-INF/SU/ViewDutyDetails.jsp" />
+        </definition>
+        
+       
+        <!--new code -->
+        
+         <definition name="GAS-addGuardPhoto" extends="DSLayout">
+                <put-attribute name="title" value="Add Photo" />
+		<put-attribute name="body" value="/WEB-INF/SU/AddGuardPhoto.jsp" />
+                <put-list-attribute name="jsfiles">
+                       <add-attribute value="javascripts/gas_addPhoto.js"/>
+                 </put-list-attribute>
+        </definition>
+
+
+        <!--new code ends -->   
+
+<!--Super config ENDS-->
+
+ <!-- DPO Added By Ramu on 26-05-2011  -->
+             <definition name="DPOWelcome" extends="DPOLayout">
+		<put-attribute name="title" value="Welcome" />
+                <put-attribute name="body" value="/WEB-INF/DPO/DPOHome.jsp" />
+            </definition>
+             <definition name="DPO-cwcjjb" extends="DPOLayout">
+		<put-attribute name="title" value="Child Details From CWC/JJB" />
+                <put-attribute name="body" value="/WEB-INF/DPO/Childdetails_CWCJJB.jsp" />
+                
+                <!--put-list-attribute name="jsfiles">
+                       <add-attribute value="javascripts/SIch_cwcjjb_validation.js"/>
+                 </put-list-attribute-->
+            </definition>
+             <definition name="DPO-FM" extends="DPOLayout">
+		<put-attribute name="title" value="Child Family Members Details" />
+                <put-attribute name="body" value="/WEB-INF/DPO/Ch_FamilyMembers.jsp" />
+                
+                
+                <!--put-list-attribute name="jsfiles">
+                       <add-attribute value="javascripts/SIChildFamilyMember_validation.js"/>
+                 </put-list-attribute-->
+                
+            </definition>
+             <definition name="DPO-FB" extends="DPOLayout">
+		<put-attribute name="title" value="Child Family Background Detail" />
+                <put-attribute name="body" value="/WEB-INF/DPO/Ch_FamilyBackground.jsp" />
+                
+                <!--put-list-attribute name="jsfiles">
+                       <add-attribute value="javascripts/SIChildbackgroundDetails_validation.js"/>
+                 </put-list-attribute-->
+                
+                
+                
+            </definition>
+             <definition name="DPO-CH" extends="DPOLayout">
+		<put-attribute name="title" value="Child History Details" />
+                <put-attribute name="body" value="/WEB-INF/DPO/Ch_History.jsp" />
+                
+                <!--put-list-attribute name="jsfiles">
+                       <add-attribute value="javascripts/SIChildHistory_validation.js"/>
+                 </-->
+                   
+            </definition>
+             <definition name="DPO-RE" extends="DPOLayout">
+		<put-attribute name="title" value="Result of Enquiry Details" />
+                <put-attribute name="body" value="/WEB-INF/DPO/Ch_ResultofEnquiry.jsp" />
+                
+                <!--put-list-attribute name="jsfiles">
+                       <add-attribute value="javascripts/SIResultofEnquiry_validation.js"/>
+                 </put-list-attribute-->
+                
+            </definition>
+             <definition name="DPO-Success" extends="DPOLayout">
+		<put-attribute name="title" value="Success" />
+                <put-attribute name="body" value="/WEB-INF/DPO/success.jsp" />
+            </definition>
+            <definition name="DPO-Error" extends="DPOLayout">
+		<put-attribute name="title" value="Success" />
+                <put-attribute name="body" value="/WEB-INF/DPO/error.jsp" />
+            </definition>
+            
+              <definition name="DPO-SICD-FetchChildDetail-Report" extends="DPOLayout">
+		<put-attribute name="title" value="Child Social History Report" />
+                <put-attribute name="body" value="/WEB-INF/DPO/Ch_EnquiryReport.jsp" />
+            </definition>
+                 <!-- DPO End-  -->
+ 
+
+
+<!--User management-->
+
+        <definition name="UMLayout" extends="baseLayout">
+            <put-attribute name="tabs" value="/WEB-INF/UserManagement/Main/UMUppertab.jsp" />
+            <put-attribute name="menu" value="/WEB-INF/UserManagement/Main/UMLeftMenu.jsp" />
+        </definition>
+          <definition name="UMWelcome" extends="UMLayout">
+            <put-attribute name="title" value="Administrator" />
+            <put-attribute name="body" value="/WEB-INF/UserManagement/mainUser.jsp"/>
+        </definition>
+         <definition name="UMRole" extends="UMLayout">
+            <put-attribute name="title" value="Role" />
+            <put-attribute name="body" value="/WEB-INF/UserManagement/selectRole.jsp" />
+        </definition>
+                
+        <definition name="UM-AddUser" extends="UMLayout">
+            
+            
+               
+                <put-attribute name="title" value="Add User" />
+		<put-attribute name="body" value="/WEB-INF/UserManagement/AddUser.jsp" />
+                
+                <put-list-attribute name="jsfiles">
+                       <add-attribute value="javascripts/UM_AddUser_Validation.js"/>
+            </put-list-attribute>
+        </definition>
+
+        <definition name="UM-ModifyUser" extends="UMLayout">
+            
+            
+            
+                <put-attribute name="title" value="Modify User" />
+		<put-attribute name="body" value="/WEB-INF/UserManagement/viewUser.jsp" />
+                
+                <put-list-attribute name="jsfiles">
+                       <add-attribute value="javascripts/UM_ModifyUser_Validation.js"/>
+            </put-list-attribute>
+        </definition>
+        
+        <definition name="UM-ModifyUser-Main" extends="UMLayout">
+            
+           
+            
+                <put-attribute name="title" value="Modify User" />
+		<put-attribute name="body" value="/WEB-INF/UserManagement/modifyUser.jsp" />
+                
+                 <put-list-attribute name="jsfiles">
+                       <add-attribute value="javascripts/UM_ModifyUser_Validation.js"/>
+            </put-list-attribute>
+        </definition>
+
+        <definition name="UM-DeleteUser" extends="UMLayout">
+            
+            
+            
+                <put-attribute name="title" value="Delete User" />
+		<put-attribute name="body" value="/WEB-INF/UserManagement/deleteUser.jsp" />
+                
+                 <put-list-attribute name="jsfiles">
+                       <add-attribute value="javascripts/UM_DeleteUser_Validation.js"/>
+            </put-list-attribute>
+        </definition>
+
+        <definition name="UM-DeleteUserConfirm" extends="UMLayout">
+            
+             
+                <put-attribute name="title" value="Delete User" />
+		<put-attribute name="body" value="/WEB-INF/UserManagement/deleteUserConfirm.jsp" />
+                
+                <put-list-attribute name="jsfiles">
+                       <add-attribute value=""/>
+            </put-list-attribute>
+        </definition>
+
+
+        <definition name="UM-ViewUser" extends="UMLayout">
+            
+            
+                <put-attribute name="title" value="View User" />
+		<put-attribute name="body" value="/WEB-INF/UserManagement/viewUser.jsp" />
+                
+                 <put-list-attribute name="jsfiles">
+                       <add-attribute value=""/>
+            </put-list-attribute>
+        </definition>
+
+        <definition name="UM-AddRole" extends="UMLayout">
+            
+             
+                <put-attribute name="title" value="Add Role" />
+		<put-attribute name="body" value="/WEB-INF/UserManagement/viewRole.jsp" />
+                
+                <put-list-attribute name="jsfiles">
+                       <add-attribute value=""/>
+            </put-list-attribute>
+        </definition>
+
+        <definition name="UM-DeleteRole" extends="UMLayout">
+            
+             
+                <put-attribute name="title" value="Delete Role" />
+		<put-attribute name="body" value="/WEB-INF/UserManagement/deleteRole.jsp" />
+                <put-list-attribute name="jsfiles">
+                       <add-attribute value=""/>
+            </put-list-attribute>
+        </definition>
+
+        <definition name="UM-ViewRole" extends="UMLayout">
+            
+             
+                <put-attribute name="title" value="View Role" />
+		<put-attribute name="body" value="/WEB-INF/UserManagement/viewRole.jsp" />
+                <put-list-attribute name="jsfiles">
+                       <add-attribute value=""/>
+            </put-list-attribute>
+        </definition>
+
+        <definition name="UM-AssignRole" extends="UMLayout">
+            
+            
+                <put-attribute name="title" value="Assign Role" />
+		<put-attribute name="body" value="/WEB-INF/UserManagement/assignRole.jsp" />
+                 <put-list-attribute name="jsfiles">
+                       <add-attribute value=""/>
+            </put-list-attribute>
+        </definition>
+
+        <definition name="UM-AssignOneRole" extends="UMLayout">
+             
+                <put-attribute name="title" value="Assign One Role" />
+		<put-attribute name="body" value="/WEB-INF/UserManagement/assignOneRole.jsp" />
+                <put-list-attribute name="jsfiles">
+                       <add-attribute value="javascripts/UM_asssignRoleForm_Validation.js"/>
+            </put-list-attribute>
+        </definition>
+
+        <definition name="UM-RemoveAssignedRole" extends="UMLayout">
+            
+             
+                <put-attribute name="title" value="Remove Assign Role" />
+		<put-attribute name="body" value="/WEB-INF/UserManagement/RemoveAssignedRole.jsp" />
+                <put-list-attribute name="jsfiles">
+                       <add-attribute value="javascripts/UM_removeAssignRoleForm_Validation.js"/>
+            </put-list-attribute>
+        </definition>
+
+
+        <definition name="UM-AddPrevilege" extends="UMLayout">
+            
+            
+                <put-attribute name="title" value="Add Previlege" />
+		<put-attribute name="body" value="/WEB-INF/UserManagement/addPrivileges.jsp" />
+                 <put-list-attribute name="jsfiles">
+                       <add-attribute value=""/>
+            </put-list-attribute>
+        </definition>
+
+        <definition name="UM-DeletePrevilege" extends="UMLayout">
+            
+             
+                <put-attribute name="title" value="Delete Previlege" />
+		<put-attribute name="body" value="/WEB-INF/UserManagement/DelPrivilegeSuccess.jsp" />
+                <put-list-attribute name="jsfiles">
+                       <add-attribute value=""/>
+            </put-list-attribute>
+        </definition>
+
+        <definition name="UM-AddHome" extends="UMLayout">
+            
+            
+                <put-attribute name="title" value="AddHome" />
+		<put-attribute name="body" value="/WEB-INF/UserManagement/AddHome_Version2.jsp" /><!--AddHome.jsp-->
+        
+         <put-list-attribute name="jsfiles">
+                       <add-attribute value="javascripts/UM_addHomeForm_Validation.js"/>
+            </put-list-attribute>
+        </definition>
+        
+        <definition name="UM-AssignHome" extends="UMLayout">
+            
+            
+            
+            
+                <put-attribute name="title" value="AddHome" />
+		<put-attribute name="body" value="/WEB-INF/UserManagement/assignHome.jsp" />
+                
+                 <put-list-attribute name="jsfiles">
+                       <add-attribute value="javascripts/UM_assignHomeForm_Validation.js"/>
+            </put-list-attribute>
+        </definition>
+        
+        
+        <!--For user management module error and success-->
+        <definition name="UM-Error" extends="UMLayout">            
+                <put-attribute name="title" value="Error" />
+		<put-attribute name="body" value="/error.jsp" />
+        </definition>
+
+        <definition name="UM-Success" extends="UMLayout">
+                <put-attribute name="title" value="Success" />
+		<put-attribute name="body" value="/success.jsp" />
+        </definition>
+
+        <!--for user management change or reset password-->
+        <definition name="UM-ChangePassword" extends="UMLayout">
+            
+            
+                <put-attribute name="title" value="Change Password" />
+		<put-attribute name="body" value="/WEB-INF/common/ResetPassword.jsp" />
+                <put-list-attribute name="jsfiles">
+                       <add-attribute value="javascripts/UM_pwdResetForm_validation.js"/>
+            </put-list-attribute>
+        </definition>
+
+
+
+        <definition name="UM-Reassign_Role_Success" extends="UMLayout">
+            
+                <put-attribute name="title" value="Reassign Role Success" />
+		<put-attribute name="body" value="/WEB-INF/UserManagement/Reassign_Role_Success.jsp" />
+                <put-list-attribute name="jsfiles">
+                       <add-attribute value=""/>
+            </put-list-attribute>
+        </definition>
+        
+        <!-- For HomeAndRoleSelect -->
+        
+         <definition name="UM-SelectHomeRole" extends="baseLayout">
+             
+             <put-attribute name="menu" value="/leftWelcome.jsp" />
+            <put-attribute name="body" value="/WEB-INF/UserManagement/HomeAndRoleSelect.jsp" />
+            
+            <!--put-list-attribute name="jsfiles">
+                       <add-attribute value=""/>
+            </put-list-attribute-->
+        </definition>
+        
+        <!--for registering user-->
+        <definition name="UM-RegisterUser" extends="baseLayout">
+             <!--put-attribute name="menu" value="/leftWelcome.html" /-->
+             
+            <put-attribute name="body" value="/WEB-INF/UserManagement/AddUser.jsp" />
+            <put-list-attribute name="jsfiles">
+                       <add-attribute value="javascripts/UM_AddUser_Validation.js"/>
+            </put-list-attribute>
+        </definition>
+        
+        
+
+
+
+       <!--ajax telated tiles-->
+        <definition name="HomeListOfADistrict" template="/WEB-INF/UserManagement/HomeInADistrictList.jsp">
+            <put-list-attribute name="jsfiles">
+                       <add-attribute value=""/>
+            </put-list-attribute>
+		
+        </definition>
+        
+        <definition name="UM-AssignCWCJJB" extends="UMLayout">
+            
+            
+                <put-attribute name="title" value="CWC JJB Group Creation" />
+		<put-attribute name="body" value="/WEB-INF/UserManagement/CWCGrpouCreate.jsp" />
+                <put-list-attribute name="jsfiles">
+                       <add-attribute value="javascripts/UM_createCWCGroupForm_Validation.js"/>
+            </put-list-attribute>
+        </definition>
+        
+        
+        <definition name="UM-ApproveDPO" extends="UMLayout">
+            
+            
+                <put-attribute name="title" value="Approve DPO" />
+		<put-attribute name="body" value="/WEB-INF/UserManagement/ApproveDPO.jsp" />
+                <put-list-attribute name="jsfiles">
+                       <add-attribute value="javascripts/UM-ApproveDPO.js"/>
+            </put-list-attribute>
+        </definition>
+        
+        <definition name="UM-CwcModifyGroup" extends="UMLayout">
+            
+           
+                <put-attribute name="title" value="CWC Modify Group" />
+		<put-attribute name="body" value="/WEB-INF/UserManagement/CwcModifyGroup.jsp" />
+                 <put-list-attribute name="jsfiles">
+                       <add-attribute value="javascripts/UM-CwcModifyGroup.js"/>
+            </put-list-attribute>
+        </definition>
+        
+        <definition name="UM-CWCRemoveMember" extends="UMLayout">
+            
+            
+                <put-attribute name="title" value="Remove CWC Member" />
+		<put-attribute name="body" value="/WEB-INF/UserManagement/CwcRemoveMember.jsp" />
+                <put-list-attribute name="jsfiles">
+                       <add-attribute value=""/>
+            </put-list-attribute>
+        </definition>
+        
+        <definition name="UM-CWCAddMember" extends="UMLayout">
+            
+            
+                <put-attribute name="title" value="Add CWC Member" />
+		<put-attribute name="body" value="/WEB-INF/UserManagement/CwcAddMember.jsp" />
+                <put-list-attribute name="jsfiles">
+                       <add-attribute value="javascripts/UM-AddNewMember.js"/>
+            </put-list-attribute>
+        </definition>
+        
+        <definition name="UM-CWCDissolveGroup" extends="UMLayout">
+            
+            
+                <put-attribute name="title" value="CWC dissolve group" />
+		<put-attribute name="body" value="/WEB-INF/UserManagement/CwcDissoleGroupConformation.jsp" />
+                <put-list-attribute name="jsfiles">
+                       <add-attribute value=""/>
+            </put-list-attribute>
+        </definition>
+        
+        <definition name="UM-ShowHomeDetails" extends="UMLayout">
+            
+            
+                <put-attribute name="title" value="CWC dissolve group" />
+		<put-attribute name="body" value="/WEB-INF/UserManagement/showHomeDetails.jsp" />
+                <put-list-attribute name="jsfiles">
+                       <add-attribute value=""/>
+            </put-list-attribute>
+        </definition>
+        
+        
+        
+        
+       <!--CWC Start-->
+         <definition name="CWC-Welcome" extends="CWCLayout">
+             
+            
+                <put-attribute name="title" value="Welcome CWC" />
+		<put-attribute name="body" value="/WEB-INF/CWC/CWCHome.jsp" />
+                 <put-list-attribute name="jsfiles">
+                       <add-attribute value=""/>
+            </put-list-attribute>
+        </definition>
+        <definition name="CW-CWCMeetings" extends="CWCLayout">
+            
+            
+		<put-attribute name="title" value="CWC Meetings Minutes" />
+                <put-attribute name="body" value="/WEB-INF/CWC/CWC_Meetings.jsp" />
+                <!--put-list-attribute name="jsfiles">
+                       <add-attribute value="javascripts/CWCMeetings_Validation.js"/>
+                </put-list-attribute-->
+	</definition>
+        
+        <definition name="CW-CWCMeetingsMinutes" extends="CWCLayout">
+            
+            
+		<put-attribute name="title" value="CWC Meetings Minutes" />
+                <put-attribute name="body" value="/WEB-INF/CWC/CWC_MeetingsMinutes.jsp" />
+                <put-list-attribute name="jsfiles">
+                       <add-attribute value=""/>
+            </put-list-attribute>
+	</definition>
+        
+        
+         <definition name="CW-ViewCWCMeetings" extends="CWCLayout">
+             
+             
+		<put-attribute name="title" value="View CWC Meetings Minutes" />
+                <put-attribute name="body" value="/WEB-INF/CWC/View_CWCMeetingsMinutes.jsp" />
+                <put-list-attribute name="jsfiles">
+                       <add-attribute value=""/>
+            </put-list-attribute>
+	</definition>
+        
+         <definition name="CW-CWCMeetingDate" extends="CWCLayout">
+             
+             
+		<put-attribute name="title" value="Select CWC Meeting Date" />
+                <put-attribute name="body" value="/WEB-INF/CWC/SelectCWCMeetingDate.jsp" />
+                <put-list-attribute name="jsfiles">
+                       <add-attribute value=""/>
+            </put-list-attribute>
+	</definition>
+        
+        <definition name="CWC-Error" extends="CWCLayout">
+            
+            
+                <put-attribute name="title" value="Error" />
+		<put-attribute name="body" value="/error.jsp" />
+                <put-list-attribute name="jsfiles">
+                       <add-attribute value=""/>
+            </put-list-attribute>
+        </definition>
+
+        <definition name="CWC-Success" extends="CWCLayout">
+            
+            
+                <put-attribute name="title" value="Success" />
+		<put-attribute name="body" value="/success.jsp" />
+                <put-list-attribute name="jsfiles">
+                       <add-attribute value=""/>
+            </put-list-attribute>
+        </definition>
+        
+        
+        
+        
+        
+        <!--CWC END-->
+         
+        <!--Log out Page START-->
+        <definition name="UM-Logout" extends="baseLayout">
+            
+            
+             <put-attribute name="menu" value="/leftWelcome.jsp" />
+            <put-attribute name="body" value="/logout.jsp" />
+            <put-list-attribute name="jsfiles">
+                       <add-attribute value=""/>
+            </put-list-attribute>
+        </definition>
+        
+        <!--Log out Page End-->
+        
+        
+        <!--Anupam added on 8 aug 2012 START-->
+        <definition name="UM-LogginReport" extends="UMLayout">        
+            
+                <put-attribute name="title" value="Remove CWC Member" />
+		<put-attribute name="body" value="/WEB-INF/UserManagement/UserLoginDetails.jsp" />
+                <put-list-attribute name="jsfiles">
+                       <add-attribute value=""/>
+            </put-list-attribute>
+        </definition>       
+
+        <!--Anupam added on 8 aug 2012 START-->
+        
+        <!--Photo upload child START-->
+       
+        <definition name="Child-AddPhoto" extends="CWLayout">
+            
+            
+                <put-attribute name="title" value="Add Photo" />
+		<put-attribute name="body" value="/WEB-INF/CW/AddChildPhoto.jsp" />
+                <!--put-list-attribute name="jsfiles">
+                       <add-attribute value=""/>
+            </put-list-attribute-->
+      </definition>
+      <!--Photo upload child END-->
+        
+        
+      <!--
+      ====*********************************************************====
+      ====^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^====
+      ====Tiles For userDetails Modification and Resetting Password====
+      ====_________________________________________________________====
+      ====********************Added By Anupam**********************====
+      ====**********************START******************************====
+      -->
+      <!--Photo upload UM START-->
+      <definition name="UM-AddPhoto" extends="UMLayout">
+          
+          
+                <put-attribute name="title" value="Add Photo" />
+		<put-attribute name="body" value="/WEB-INF/common/AddPhoto.jsp" />
+                <put-list-attribute name="jsfiles">
+                       <add-attribute value=""/>
+            </put-list-attribute>
+      </definition>
+      <!--Photo upload UM END-->
+      
+      
+      
+      
+      <!--Head Master START-->
+        <definition name="HM-ModifyUser-Main" extends="HMLayout">
+            
+            
+                <put-attribute name="title" value="Modify User" />
+		<put-attribute name="body" value="/WEB-INF/UserManagement/modifyUser.jsp" />
+                <put-list-attribute name="jsfiles">
+                       <add-attribute value="javascripts/UM_ModifyUser_Validation.js"/>
+            </put-list-attribute>
+        </definition>
+        
+        <definition name="HM-ChangePassword" extends="HMLayout">
+            
+            
+                <put-attribute name="title" value="Change Password" />
+		<put-attribute name="body" value="/WEB-INF/common/ResetPassword.jsp" />
+                <put-list-attribute name="jsfiles">
+                       <add-attribute value="javascripts/UM_pwdResetForm_validation.js"/>
+            </put-list-attribute>
+        </definition>
+        <!--Head Master End-->
+        
+        <!--Doctor Start-->
+        <definition name="DOC-ModifyUser-Main" extends="DOCLayout">
+            
+            
+                <put-attribute name="title" value="Modify User" />
+		<put-attribute name="body" value="/WEB-INF/UserManagement/modifyUser.jsp" />
+                <put-list-attribute name="jsfiles">
+                       <add-attribute value="javascripts/UM_ModifyUser_Validation.js"/>
+            </put-list-attribute>
+        </definition>
+        
+        <definition name="DOC-ChangePassword" extends="DOCLayout">
+            
+            
+                <put-attribute name="title" value="Change Password" />
+		<put-attribute name="body" value="/WEB-INF/common/ResetPassword.jsp" />
+                <put-list-attribute name="jsfiles">
+                       <add-attribute value="javascripts/UM_pwdResetForm_validation.js"/>
+            </put-list-attribute>
+        </definition>
+        <!--Doctor End-->
+        
+         <!--CaseWorker Start-->
+        <definition name="CW-ModifyUser-Main" extends="CWLayout">
+            
+            
+                <put-attribute name="title" value="Modify User" />
+		<put-attribute name="body" value="/WEB-INF/UserManagement/modifyUser.jsp" />
+                <!--put-list-attribute name="jsfiles">
+                       <add-attribute value="javascripts/UM_ModifyUser_Validation.js"/>
+                 </put-list-attribute-->
+        </definition>
+        
+        <definition name="CW-ChangePassword" extends="CWLayout">
+            
+            
+                <put-attribute name="title" value="Change Password" />
+		<put-attribute name="body" value="/WEB-INF/common/ResetPassword.jsp" />
+                <!--put-list-attribute name="jsfiles">
+                       <add-attribute value="javascripts/UM_pwdResetForm_validation.js"/>
+                </put-list-attribute-->
+        </definition>
+        <!--CaseWorker End-->
+        
+         <!--CWC Start-->
+        <definition name="CWC-ModifyUser-Main" extends="CWCLayout">
+            
+            
+                <put-attribute name="title" value="Modify User" />
+		<put-attribute name="body" value="/WEB-INF/UserManagement/modifyUser.jsp" />
+                <put-list-attribute name="jsfiles">
+                       <add-attribute value="javascripts/UM_ModifyUser_Validation.js"/>
+            </put-list-attribute>
+        </definition>
+        
+        <definition name="CWC-ChangePassword" extends="CWCLayout">
+            
+            
+                <put-attribute name="title" value="Change Password" />
+		<put-attribute name="body" value="/WEB-INF/common/ResetPassword.jsp" />
+                <put-list-attribute name="jsfiles">
+                       <add-attribute value="javascripts/UM_pwdResetForm_validation.js"/>
+            </put-list-attribute>
+        </definition>
+        <!--CWC End-->
+        
+        <!--SU Start-->
+        <definition name="SU-ModifyUser-Main" extends="SULayout">
+            
+            
+                <put-attribute name="title" value="Modify User" />
+		<put-attribute name="body" value="/WEB-INF/UserManagement/modifyUser.jsp" />
+                <put-list-attribute name="jsfiles">
+                       <add-attribute value="javascripts/UM_ModifyUser_Validation.js"/>
+            </put-list-attribute>
+        </definition>
+        
+        <definition name="SU-ChangePassword" extends="SULayout">
+            
+            
+                <put-attribute name="title" value="Change Password" />
+		<put-attribute name="body" value="/WEB-INF/common/ResetPassword.jsp" />
+                <put-list-attribute name="jsfiles">
+                       <add-attribute value="javascripts/UM_pwdResetForm_validation.js"/>
+            </put-list-attribute>
+        </definition>
+        <!--SU End-->
+        
+        <!--DPO Start-->
+        <definition name="DPO-ModifyUser-Main" extends="DPOLayout">
+            
+            
+                <put-attribute name="title" value="Modify User" />
+		<put-attribute name="body" value="/WEB-INF/UserManagement/modifyUser.jsp" />
+                <put-list-attribute name="jsfiles">
+                       <add-attribute value="javascripts/UM_ModifyUser_Validation.js"/>
+            </put-list-attribute>
+        </definition>
+        
+        <definition name="DPO-ChangePassword" extends="DPOLayout">
+            
+            
+                <put-attribute name="title" value="Change Password" />
+		<put-attribute name="body" value="/WEB-INF/common/ResetPassword.jsp" />
+                <put-list-attribute name="jsfiles">
+                       <add-attribute value="javascripts/UM_pwdResetForm_validation.js"/>
+            </put-list-attribute>
+        </definition>
+        <!--DPO End-->
+        
+        <!--DS Start-->
+        <definition name="DS-ModifyUser-Main" extends="DSLayout">
+            
+            
+                <put-attribute name="title" value="Modify User" />
+		<put-attribute name="body" value="/WEB-INF/UserManagement/modifyUser.jsp" />
+                <put-list-attribute name="jsfiles">
+                       <add-attribute value="javascripts/UM_ModifyUser_Validation.js"/>
+            </put-list-attribute>
+        </definition>
+        
+        <definition name="DS-ChangePassword" extends="DSLayout">
+            
+            
+                <put-attribute name="title" value="Change Password" />
+		<put-attribute name="body" value="/WEB-INF/common/ResetPassword.jsp" />
+                <put-list-attribute name="jsfiles">
+                       <add-attribute value="javascripts/UM_pwdResetForm_validation.js"/>
+            </put-list-attribute>
+        </definition>
+        <!--DS End-->
+        
+       
+        
+           
+      
+      <!--
+      ====*********************************************************====
+      ====^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^====
+      ====Tiles For userDetails Modification and Resetting Password====
+      ====_________________________________________________________====
+      ====********************Added By Anupam**********************====
+      ====**********************END********************************====
+      --> 
+        
+        
+            <definition name="CR-Counsel" extends="CRLayout">
+               <put-attribute name="title" value="Counseler Form"/>
+               <put-attribute name="body" value="/WEB-INF/CR/CounselorForm.jsp" />   
+               <!--put-list-attribute name="jsfiles">
+                       <add-attribute value="javascripts/cr_addCounsel.js"/>
+            </put-list-attribute-->
+         </definition>
+        
+        
+         <definition name="CR-ViewCounselForm" extends="CRLayout">
+               <put-attribute name="title" value="Counseler View Form"/>
+               <put-attribute name="body" value="/WEB-INF/CR/ViewCounselorForm.jsp" />   
+             
+         </definition>
+        
+
+        <definition name="CRWelcome" extends="CRLayout">
+		<put-attribute name="title" value="Welcome" />                
+                <put-attribute name="body" value="/WEB-INF/CR/CounselorHome.jsp" />
+	</definition>
+    
+       <definition name="CR-Success" extends="CRLayout">
+                <put-attribute name="title" value="Success" />
+		<put-attribute name="body" value="/success.jsp" />
+        </definition>  
+        
+           <definition name="CR-Error" extends="CRLayout">
+                <put-attribute name="title" value="Error" />
+		<put-attribute name="body" value="/error.jsp" />
+        </definition>
+
+
+          <!---suresh added for ICP on 11-10-2012 start-->
+        
+          <definition name="ICP-Personal" extends="CWLayout">
+		<put-attribute name="title" value="Individual Care Plan-Personal Details" />
+                <put-attribute name="body" value="/WEB-INF/CW/ICP_PersonalDetails.jsp" />               
+	  </definition> 
+          
+          <definition name="ICP-Pre-Release" extends="CWLayout">
+		<put-attribute name="title" value="Individual Care Plan-Pre Release" />
+                <put-attribute name="body" value="/WEB-INF/CW/ICP_PreRelease.jsp" />               
+	  </definition> 
+          
+           <definition name="ICP-Post-Release" extends="CWLayout">
+		<put-attribute name="title" value="Individual Care Plan-Post Release" />
+                <put-attribute name="body" value="/WEB-INF/CW/ICP_PostRelease.jsp" />               
+	  </definition> 
+         
+         <definition name="ICP-Child-Report" extends="CWLayout">
+		<put-attribute name="title" value="ICP-Select Child"/>
+                <put-attribute name="body" value="/WEB-INF/CW/ICP_ReportSub.jsp" />
+	</definition>
+        <!---suresh added for ICP on 11-10-2012 end-->
+</tiles-definitions>
+

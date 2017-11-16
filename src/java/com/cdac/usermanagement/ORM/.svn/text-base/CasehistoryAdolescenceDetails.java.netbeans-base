@@ -1,0 +1,213 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.cdac.usermanagement.ORM;
+
+import java.io.Serializable;
+import java.util.Date;
+import javax.persistence.Column;
+import javax.persistence.EmbeddedId;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
+import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
+import javax.validation.constraints.Size;
+import javax.xml.bind.annotation.XmlRootElement;
+
+/**
+ *
+ * @author ANUPAM
+ */
+@Entity
+@Table(name = "casehistory_adolescence_details", catalog = "child_homes", schema = "")
+@XmlRootElement
+@NamedQueries({
+    @NamedQuery(name = "CasehistoryAdolescenceDetails.findAll", query = "SELECT c FROM CasehistoryAdolescenceDetails c"),
+    @NamedQuery(name = "CasehistoryAdolescenceDetails.findByChildProfileId", query = "SELECT c FROM CasehistoryAdolescenceDetails c WHERE c.casehistoryAdolescenceDetailsPK.childProfileId = :childProfileId"),
+    @NamedQuery(name = "CasehistoryAdolescenceDetails.findByPuberty", query = "SELECT c FROM CasehistoryAdolescenceDetails c WHERE c.puberty = :puberty"),
+    @NamedQuery(name = "CasehistoryAdolescenceDetails.findByDeliquentBehaviour", query = "SELECT c FROM CasehistoryAdolescenceDetails c WHERE c.deliquentBehaviour = :deliquentBehaviour"),
+    @NamedQuery(name = "CasehistoryAdolescenceDetails.findByReasonDeliquentBehaviour", query = "SELECT c FROM CasehistoryAdolescenceDetails c WHERE c.reasonDeliquentBehaviour = :reasonDeliquentBehaviour"),
+    @NamedQuery(name = "CasehistoryAdolescenceDetails.findByHabits", query = "SELECT c FROM CasehistoryAdolescenceDetails c WHERE c.habits = :habits"),
+    @NamedQuery(name = "CasehistoryAdolescenceDetails.findByIncomeUtilization", query = "SELECT c FROM CasehistoryAdolescenceDetails c WHERE c.incomeUtilization = :incomeUtilization"),
+    @NamedQuery(name = "CasehistoryAdolescenceDetails.findBySavingDetails", query = "SELECT c FROM CasehistoryAdolescenceDetails c WHERE c.savingDetails = :savingDetails"),
+    @NamedQuery(name = "CasehistoryAdolescenceDetails.findByWorkingHours", query = "SELECT c FROM CasehistoryAdolescenceDetails c WHERE c.workingHours = :workingHours"),
+    @NamedQuery(name = "CasehistoryAdolescenceDetails.findByHobbies", query = "SELECT c FROM CasehistoryAdolescenceDetails c WHERE c.hobbies = :hobbies"),
+    @NamedQuery(name = "CasehistoryAdolescenceDetails.findByLastModifiedDate", query = "SELECT c FROM CasehistoryAdolescenceDetails c WHERE c.casehistoryAdolescenceDetailsPK.lastModifiedDate = :lastModifiedDate"),
+    @NamedQuery(name = "CasehistoryAdolescenceDetails.findByLastModifiedBy", query = "SELECT c FROM CasehistoryAdolescenceDetails c WHERE c.lastModifiedBy = :lastModifiedBy")})
+public class CasehistoryAdolescenceDetails implements Serializable {
+    private static final long serialVersionUID = 1L;
+    @EmbeddedId
+    protected CasehistoryAdolescenceDetailsPK casehistoryAdolescenceDetailsPK;
+    @Size(max = 20)
+    @Column(name = "PUBERTY", length = 20)
+    private String puberty;
+    @Size(max = 150)
+    @Column(name = "DELIQUENT_BEHAVIOUR", length = 150)
+    private String deliquentBehaviour;
+    @Size(max = 250)
+    @Column(name = "REASON_DELIQUENT_BEHAVIOUR", length = 250)
+    private String reasonDeliquentBehaviour;
+    @Size(max = 250)
+    @Column(name = "HABITS", length = 250)
+    private String habits;
+    @Lob
+    @Size(max = 65535)
+    @Column(name = "DRUG_ABUSE", length = 65535)
+    private String drugAbuse;
+    @Size(max = 50)
+    @Column(name = "INCOME_UTILIZATION", length = 50)
+    private String incomeUtilization;
+    @Size(max = 250)
+    @Column(name = "SAVING_DETAILS", length = 250)
+    private String savingDetails;
+    @Size(max = 50)
+    @Column(name = "WORKING_HOURS", length = 50)
+    private String workingHours;
+    @Size(max = 250)
+    @Column(name = "HOBBIES", length = 250)
+    private String hobbies;
+    @Size(max = 30)
+    @Column(name = "LAST_MODIFIED_BY", length = 30)
+    private String lastModifiedBy;
+    @JoinColumn(name = "CHILD_PROFILE_ID", referencedColumnName = "CHILD_PROFILE_ID", nullable = false, insertable = false, updatable = false)
+    @ManyToOne(optional = false)
+    private ChildMaster childMaster;
+
+    public CasehistoryAdolescenceDetails() {
+    }
+
+    public CasehistoryAdolescenceDetails(CasehistoryAdolescenceDetailsPK casehistoryAdolescenceDetailsPK) {
+        this.casehistoryAdolescenceDetailsPK = casehistoryAdolescenceDetailsPK;
+    }
+
+    public CasehistoryAdolescenceDetails(String childProfileId, Date lastModifiedDate) {
+        this.casehistoryAdolescenceDetailsPK = new CasehistoryAdolescenceDetailsPK(childProfileId, lastModifiedDate);
+    }
+
+    public CasehistoryAdolescenceDetailsPK getCasehistoryAdolescenceDetailsPK() {
+        return casehistoryAdolescenceDetailsPK;
+    }
+
+    public void setCasehistoryAdolescenceDetailsPK(CasehistoryAdolescenceDetailsPK casehistoryAdolescenceDetailsPK) {
+        this.casehistoryAdolescenceDetailsPK = casehistoryAdolescenceDetailsPK;
+    }
+
+    public String getPuberty() {
+        return puberty;
+    }
+
+    public void setPuberty(String puberty) {
+        this.puberty = puberty;
+    }
+
+    public String getDeliquentBehaviour() {
+        return deliquentBehaviour;
+    }
+
+    public void setDeliquentBehaviour(String deliquentBehaviour) {
+        this.deliquentBehaviour = deliquentBehaviour;
+    }
+
+    public String getReasonDeliquentBehaviour() {
+        return reasonDeliquentBehaviour;
+    }
+
+    public void setReasonDeliquentBehaviour(String reasonDeliquentBehaviour) {
+        this.reasonDeliquentBehaviour = reasonDeliquentBehaviour;
+    }
+
+    public String getHabits() {
+        return habits;
+    }
+
+    public void setHabits(String habits) {
+        this.habits = habits;
+    }
+
+    public String getDrugAbuse() {
+        return drugAbuse;
+    }
+
+    public void setDrugAbuse(String drugAbuse) {
+        this.drugAbuse = drugAbuse;
+    }
+
+    public String getIncomeUtilization() {
+        return incomeUtilization;
+    }
+
+    public void setIncomeUtilization(String incomeUtilization) {
+        this.incomeUtilization = incomeUtilization;
+    }
+
+    public String getSavingDetails() {
+        return savingDetails;
+    }
+
+    public void setSavingDetails(String savingDetails) {
+        this.savingDetails = savingDetails;
+    }
+
+    public String getWorkingHours() {
+        return workingHours;
+    }
+
+    public void setWorkingHours(String workingHours) {
+        this.workingHours = workingHours;
+    }
+
+    public String getHobbies() {
+        return hobbies;
+    }
+
+    public void setHobbies(String hobbies) {
+        this.hobbies = hobbies;
+    }
+
+    public String getLastModifiedBy() {
+        return lastModifiedBy;
+    }
+
+    public void setLastModifiedBy(String lastModifiedBy) {
+        this.lastModifiedBy = lastModifiedBy;
+    }
+
+    public ChildMaster getChildMaster() {
+        return childMaster;
+    }
+
+    public void setChildMaster(ChildMaster childMaster) {
+        this.childMaster = childMaster;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 0;
+        hash += (casehistoryAdolescenceDetailsPK != null ? casehistoryAdolescenceDetailsPK.hashCode() : 0);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        // TODO: Warning - this method won't work in the case the id fields are not set
+        if (!(object instanceof CasehistoryAdolescenceDetails)) {
+            return false;
+        }
+        CasehistoryAdolescenceDetails other = (CasehistoryAdolescenceDetails) object;
+        if ((this.casehistoryAdolescenceDetailsPK == null && other.casehistoryAdolescenceDetailsPK != null) || (this.casehistoryAdolescenceDetailsPK != null && !this.casehistoryAdolescenceDetailsPK.equals(other.casehistoryAdolescenceDetailsPK))) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "com.cdac.usermanagement.ORM.CasehistoryAdolescenceDetails[ casehistoryAdolescenceDetailsPK=" + casehistoryAdolescenceDetailsPK + " ]";
+    }
+    
+}

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CaseworkReport_subreport2" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="32d101dc-86d5-4ceb-84a7-9fc8a5f6e752">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<field name="homeAddress" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="2" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="1" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="1" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="92" splitType="Stretch">
+			<staticText>
+				<reportElement x="388" y="0" width="100" height="20" uuid="f262ceaf-7d91-4fe3-88ac-633511673429"/>
+				<text><![CDATA[Yours Faithfully ,]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="388" y="33" width="100" height="20" uuid="4bc8a2d8-2a84-4b8a-8e0f-03a34c46a08c"/>
+				<text><![CDATA[Case Worker , ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="388" y="52" width="147" height="20" uuid="e2cd755c-e9cb-417f-9092-77a957cf5790"/>
+				<text><![CDATA[Govt, Children Home for Boys, ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="388" y="72" width="100" height="20" uuid="8e81ab6e-f71d-4d27-abe5-52158695fb7f"/>
+				<textFieldExpression><![CDATA[$F{homeAddress}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,173 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/ChildHomes/!svn/ver/114/WDCW_MLC/web/WEB-INF/HM
+END
+Promotion.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/ChildHomes/!svn/ver/114/WDCW_MLC/web/WEB-INF/HM/Promotion.jsp
+END
+HeadMasterHome.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/HM/HeadMasterHome.jsp
+END
+AdmissionRegister_Education.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/ChildHomes/!svn/ver/114/WDCW_MLC/web/WEB-INF/HM/AdmissionRegister_Education.jsp
+END
+StudentsForAssessment.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/HM/StudentsForAssessment.jsp
+END
+ViewMarksAndAttendence.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/HM/ViewMarksAndAttendence.jsp
+END
+ExamAttendenceRegister.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/HM/ExamAttendenceRegister.jsp
+END
+hmSuccess.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/HM/hmSuccess.jsp
+END
+ExamMarksRegister.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/HM/ExamMarksRegister.jsp
+END
+StudentInACourse.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/HM/StudentInACourse.jsp
+END
+VocationalAssessmentView.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/HM/VocationalAssessmentView.jsp
+END
+AddSchool.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/HM/AddSchool.jsp
+END
+ClassWiseStudentReport.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/ChildHomes/!svn/ver/114/WDCW_MLC/web/WEB-INF/HM/ClassWiseStudentReport.jsp
+END
+AttendenceSheet.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/HM/AttendenceSheet.jsp
+END
+DeleteVocationalCourse.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/HM/DeleteVocationalCourse.jsp
+END
+VocationalAssessmentViewAjax.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/HM/VocationalAssessmentViewAjax.jsp
+END
+ViewSchoolAssesment.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/HM/ViewSchoolAssesment.jsp
+END
+ShowExamsAndStatus.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/HM/ShowExamsAndStatus.jsp
+END
+StudentListOfASchoolClass.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/HM/StudentListOfASchoolClass.jsp
+END
+ViewExamination.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/HM/ViewExamination.jsp
+END
+PromotionDetail.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/HM/PromotionDetail.jsp
+END
+ExamMarksEntry.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/HM/ExamMarksEntry.jsp
+END
+AttendanceRegister.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/ChildHomes/!svn/ver/114/WDCW_MLC/web/WEB-INF/HM/AttendanceRegister.jsp
+END
+SheduledExamRegister.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/HM/SheduledExamRegister.jsp
+END
+ExamConductRegister.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/HM/ExamConductRegister.jsp
+END
+AddNewVocational.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/HM/AddNewVocational.jsp
+END
+StudentList.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/HM/StudentList.jsp
+END
+ViewSchoolChildReport.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/ChildHomes/!svn/ver/114/WDCW_MLC/web/WEB-INF/HM/ViewSchoolChildReport.jsp
+END
+VocationalAssesment.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/HM/VocationalAssesment.jsp
+END

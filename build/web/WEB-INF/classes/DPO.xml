@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : DPO.xml
+    Created on : May 27, 2011, 9:52 AM
+    Author     : Ramu Parupalli
+    Description:
+        Purpose of the document follows.
+-->
+
+
+  <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+   <package name="com/cdac/dpo/Actions" namespace="/" extends="jasperreports-default,struts-default,json-default">
+
+    <result-types>
+  <result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult" />
+  <result-type name="json" class="org.apache.struts2.json.JSONResult"/>
+  </result-types>
+  
+   <interceptors>
+       <interceptor name="json" class="org.apache.struts2.json.JSONInterceptor"/>
+        <interceptor name="requestCheckInterceptor" class="com.cdac.common.interceptors.RequestCheckInterceptor"/> 
+        <interceptor name="roleCheckInterceptor"    class="com.cdac.common.interceptors.RoleCheckInterceptor" />    
+        
+                <interceptor-stack name="loggingStack">                                      
+                    
+                    <interceptor-ref name="requestCheckInterceptor" />
+                    <interceptor-ref name="roleCheckInterceptor"/>                      
+                    <interceptor-ref name="defaultStack" />
+                </interceptor-stack>
+                <interceptor-stack name="fileUploadStack">
+                    <interceptor-ref name="exception" />
+                    <interceptor-ref name="alias" />
+                    <interceptor-ref name="servletConfig" />
+                    <interceptor-ref name="prepare" />
+                    <interceptor-ref name="i18n" />
+                    <interceptor-ref name="chain" />
+                    <interceptor-ref name="debugging" />
+                    <interceptor-ref name="profiling" />
+                    <interceptor-ref name="scopedModelDriven" />
+                    <interceptor-ref name="modelDriven" />
+                    <interceptor-ref name="fileUpload">
+                    <param name="maximumSize">3000000</param>
+                    <param name="allowedTypes"> image/jpeg,image/gif,image/png</param>
+                    </interceptor-ref>
+                    <interceptor-ref name="checkbox" />
+                    <interceptor-ref name="staticParams" />
+                    <interceptor-ref name="actionMappingParams" />
+                    <interceptor-ref name="params">
+                    <param name="excludeParams"> dojo\..*,^struts\..*</param>
+                    </interceptor-ref>
+                    <interceptor-ref name="conversionError" />
+                    <interceptor-ref name="validation">
+                    <param name="excludeMethods"> input,back,cancel,browse</param>
+                    </interceptor-ref>
+                    <interceptor-ref name="workflow">
+                    <param name="excludeMethods"> input,back,cancel,browse</param>
+                    </interceptor-ref>
+                    <interceptor-ref name="requestCheckInterceptor"/>
+                </interceptor-stack>
+    </interceptors>
+   
+  <action name="DPO-Home">
+      <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+      
+            <result name="success" type="tiles">DPOWelcome</result>      
+  </action>
+  <!--Swetha added on 05-02-2013 for multilingual START-->
+  <action name="Select-Language-DPO*" class="com.cdac.dpo.Actions.DpoAction" method="{1}">
+                    <result name="success" type="tiles">DPOWelcome</result>
+                    <result name="error">/index.jsp</result>
+  </action>
+  <!--Swetha added on 05-02-2013 for multilingual END-->
+  
+      <!--action name="DPO-cwcjjb"  class="com.cdac.dpo.Actions.DpoAction" method="populateAllTransferred">
+          <param name="test_case">sicdbs</param>
+            <result name="success" type="tiles">DPO-cwcjjb</result> 
+            <result name="error" type="tiles">CW-Error</result>
+       </action-->
+       
+          
+               
+        <action name="DPO-cwcjjb"  class="com.cdac.dpo.Actions.DpoAction" method="getDistricts">
+            <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+          <!--param name="test_case">sicdbs</param-->
+            <result name="success" type="tiles">DPO-cwcjjb</result> 
+            <result name="error" type="tiles">DPO-Error</result>
+       </action>
+           <action name="DPO-SICD-FetchHomeDetail"  class="com.cdac.dpo.Actions.DpoAction" method="populateHomesInADistrict">
+          <!--param name="test_case">sicdbs</param-->
+            <result name="success" >/WEB-INF/DPO/homesList_District.jsp</result> 
+            <result name="error">/WEB-INF/DPO/homesList_District.jsp</result>
+       </action>
+       
+        <action name="DPO-SICD-FetchChildDetail" class="com.cdac.dpo.Actions.DpoAction" method="populateCallforDPOChildsInAHome" >
+          <!--param name="test_case">sicdas</param-->
+            <result name="success">/WEB-INF/DPO/childList_Home.jsp</result> 
+            <result name="error">/WEB-INF/DPO/childList_Home.jsp</result>
+       </action>
+       
+       <action name="DPO-SICD-FetchChildData" class="com.cdac.dpo.Actions.DpoAction" method="populateChildDetailsfromChilddetail" >
+          <!--param name="test_case">sicdas</param-->
+          <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+            <result name="success" type="chain">DPO-cwcjjb</result> <!--changed-->
+            <result name="error" type="chain">DPO-cwcjjb</result>  <!--changed-->
+       </action>
+        <action name="SICD-Save" class="com.cdac.dpo.Actions.SICDSaveAction">
+          <!--param name="test_case">sicdas</param-->
+          <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+            <result name="success" type="tiles">DPO-Success</result> 
+            <result name="error" type="tiles">DPO-Error</result>
+       </action>
+       
+       <action name="DPO-FM"  class="com.cdac.dpo.Actions.DpoAction" method="getDistricts">
+          <!--param name="test_case">sicdbs</param-->
+          <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+            <result name="success" type="tiles">DPO-FM</result> 
+            <result name="error" type="tiles">DPO-Error</result>
+       </action>
+          
+       <action name="DPO-FM-FetchHomeDetail"  class="com.cdac.dpo.Actions.DpoAction" method="populateHomesInADistrict">
+          <!--param name="test_case">sicdbs</param-->
+            <result name="success" >/WEB-INF/DPO/homesList_District.jsp</result> 
+            <result name="error" >/WEB-INF/DPO/homesList_District.jsp</result>
+       </action>    
+        
+         <action name="DPO-FM-FetchChildDetail" class="com.cdac.dpo.Actions.DpoAction" method="populateCallforDPOChildsInAHome" >
+          <!--param name="test_case">sicdas</param-->
+            <result name="success">/WEB-INF/DPO/childList_Home.jsp</result> 
+            <result name="error">/WEB-INF/DPO/childList_Home.jsp</result>
+       </action>
+              
+        <action name="SIFMD-Save" class="com.cdac.dpo.Actions.DpoAction" method="SaveChildFamilyDetails" >
+          <!--param name="test_case">sicdas</param-->
+          <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+            <result name="success" type="tiles">DPO-Success</result> 
+            <result name="error" type="tiles">DPO-Error</result>
+       </action>
+           
+           
+           <action name="DPO-FB"  class="com.cdac.dpo.Actions.DpoAction" method="getDistricts">
+          <!--param name="test_case">sicdbs</param-->
+          <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+            <result name="success" type="tiles">DPO-FB</result> 
+            <result name="error" type="tiles">DPO-Error</result>
+       </action>
+          
+                  
+      <action name="DPO-FB-FetchHomeDetail"  class="com.cdac.dpo.Actions.DpoAction" method="populateHomesInADistrict">
+          <!--param name="test_case">sicdbs</param-->
+            <result name="success" >/WEB-INF/DPO/homesList_District.jsp</result> 
+            <result name="error">/WEB-INF/DPO/homesList_District.jsp</result>
+       </action>    
+        
+         <action name="DPO-FB-FetchChildDetail" class="com.cdac.dpo.Actions.DpoAction" method="populateCallforDPOChildsInAHome" >
+          <!--param name="test_case">sicdas</param-->
+            <result name="success">/WEB-INF/DPO/childList_Home.jsp</result> 
+            <result name="error">/WEB-INF/DPO/childList_Home.jsp</result>
+       </action>
+       <action name="SIFBG-Save" class="com.cdac.dpo.Actions.DpoAction" method="SaveChildBackgroundDetails" >
+          <!--param name="test_case">sicdas</param-->
+          <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+            <result name="success" type="tiles">DPO-Success</result> 
+            <result name="error" type="tiles">DPO-Error</result>
+       </action>
+      
+       
+        
+           <action name="DPO-CH"  class="com.cdac.dpo.Actions.DpoAction" method="getDistricts">
+          <!--param name="test_case">sicdbs</param-->
+          <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+            <result name="success" type="tiles">DPO-CH</result> 
+            <result name="error" type="tiles">DPO-Error</result>
+       </action>
+          
+                  
+      <action name="DPO-SICH-FetchHomeDetail"  class="com.cdac.dpo.Actions.DpoAction" method="populateHomesInADistrict">
+          <!--param name="test_case">sicdbs</param-->
+            <result name="success" >/WEB-INF/DPO/homesList_District.jsp</result> 
+            <result name="error">/WEB-INF/DPO/homesList_District.jsp</result>
+       </action>    
+        
+         <action name="DPO-SICH-FetchChildDetail" class="com.cdac.dpo.Actions.DpoAction" method="populateCallforDPOChildsInAHome" >
+          <!--param name="test_case">sicdas</param-->
+            <result name="success">/WEB-INF/DPO/childList_Home.jsp</result> 
+            <result name="error">/WEB-INF/DPO/childList_Home.jsp</result>
+       </action>
+       <action name="SICH-Save" class="com.cdac.dpo.Actions.DpoAction" method="SaveChildHistory" >
+          <!--param name="test_case">sicdas</param-->
+          <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+            <result name="success" type="tiles">DPO-Success</result> 
+            <result name="error" type="tiles">DPO-Error</result>
+       </action>
+      
+       
+       
+       
+       
+       <action name="DPO-RE"  class="com.cdac.dpo.Actions.DpoAction" method="getDistricts">
+          <!--param name="test_case">sicdbs</param-->
+          <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+            <result name="success" type="tiles">DPO-RE</result> 
+            <result name="error" type="tiles">DPO-Error</result>
+       </action>
+          
+                  
+      <action name="DPO-RE-FetchHomeDetail"  class="com.cdac.dpo.Actions.DpoAction" method="populateHomesInADistrict">
+          <!--param name="test_case">sicdbs</param-->
+            <result name="success" >/WEB-INF/DPO/homesList_District.jsp</result> 
+            <result name="error">/WEB-INF/DPO/homesList_District.jsp</result>
+       </action>    
+        
+         <action name="DPO-RE-FetchChildDetail" class="com.cdac.dpo.Actions.DpoAction" method="populateCallforDPOChildsInAHome" >
+          <!--param name="test_case">sicdas</param-->
+            <result name="success">/WEB-INF/DPO/childList_Home.jsp</result> 
+            <result name="error">/WEB-INF/DPO/childList_Home.jsp</result>
+       </action>
+       <action name="SIREQ-Save" class="com.cdac.dpo.Actions.DpoAction" method="SaveResultofEnquiry" >
+          <!--param name="test_case">sicdas</param-->
+          <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+            <result name="success" type="tiles">DPO-Success</result> 
+            <result name="error" type="tiles">DPO-Error</result>
+       </action>
+       
+           <!--Added by vinumol 2/08/11-->
+        <action name="DPO-SICD-FetchChildDetail-Report" class="com.cdac.dpo.Actions.DpoAction" method="getDistricts" >
+          <!--param name="test_case">sicdas</param-->
+           <result name="success" type="tiles">DPO-SICD-FetchChildDetail-Report</result> 
+            <result name="error" type="tiles">DPO-Error</result>
+       </action>
+       <action name="SIFBG-REPORT" class="com.cdac.dpo.Actions.DpoReportAction" method="getSiChildDetails" >
+           <result name="success" type="json">
+           <param name="root">sicdList</param>
+           
+           <!--<result name="success" type="jasper">
+           <param name="location">WEB-INF/classes/reports/Dporeport.jasper</param>
+           <param name="reportParameters">reportMulParameter</param>
+           <param name="dataSource">sicdList</param>
+           <param name="format">HTML</param>
+           <param name="imageServletUrl">/servlets/image?image=</param>-->
+            </result>
+       </action>
+       
+      
+        <action name="DPO-FB-FetchChildReport" class="com.cdac.dpo.Actions.DpoAction" method="populateCallforDPOChildsInAHome" >
+          <!--param name="test_case">sicdas</param-->
+            <result name="success">/WEB-INF/DPO/childList_Home_Report.jsp</result> 
+            <result name="error">/WEB-INF/DPO/childList_Home_Report.jsp</result>
+       </action>
+        
+
+          <!--Ended by vinumol-->
+       
+       
+       
+      <!--
+      ====***********************************************************====
+      ====^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^====
+      ====Actions For userDetails Modification and Resetting Password====
+      ====___________________________________________________________====
+      ====********************Added By Anupam************************====
+      ====**********************START********************************====
+      -->
+        
+        <action name="DPO-ModifyMyDetails" class="com.cdac.usermanagement.Actions.UserManagementAction" method="modifyMyDetails">
+            <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+            <result name="success" type="chain">DPO-ModifyUserMainAction</result>
+            <result name="error" type="tiles">DPO-Error</result>
+      </action>
+
+      <action name="DPO-ModifyUserMainAction" class="com.cdac.usermanagement.Actions.UserManagementAction" method="modifyUserMain">
+          <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+            <result name="success" type="tiles">DPO-ModifyUser-Main</result>
+            <result name="error" type="tiles">DPO-Error</result>
+      </action>
+
+
+      <action name="DPO-ModifyUserSubAction" class="com.cdac.usermanagement.Actions.UserManagementAction" method="modifyUserSub">
+          <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+            <result name="success" type="tiles">DPO-Success</result>
+            <result name="error" type="tiles">DPO-Error</result>
+      </action>
+      
+       <action name="DPO-ChangePassword">
+           <interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+	    <result name="success" type="tiles">DPO-ChangePassword</result>
+       </action>
+
+               <action name="DPO-ChangePassword-Action" class="com.cdac.usermanagement.Actions.UserManagementAction" method="changePassword">
+			<interceptor-ref name="loggingStack"/>   
+        <result name="logout" type="tiles">UM-Logout</result>
+                        <result name="success" type="tiles">DPO-Success</result>
+                        <result name="error" type="tiles">DPO-Error</result>
+	       </action>
+      
+      <!--
+      ====***********************************************************====
+      ====^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^====
+      ====Actions For userDetails Modification and Resetting Password====
+      ====___________________________________________________________====
+      ====********************Added By Anupam************************====
+      ====**********************END**********************************====
+      -->
+       
+      
+    </package>
+</struts>
+

@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ProduceBrCWC" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" whenResourceMissingType="Empty">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<import value="java.lang.Object"/>
+	<import value="com.keepautomation.barcode.jasper.BarcodeRenderer"/>
+	<import value="java.lang.String"/>
+	<parameter name="TSLOGO_LOC" class="java.lang.String" isForPrompting="false"/>
+	<queryString language="xPath">
+		<![CDATA[]]>
+	</queryString>
+	<field name="education" class="java.lang.String"/>
+	<field name="profileId" class="java.lang.String"/>
+	<field name="dateProd" class="java.lang.String"/>
+	<field name="timeProd" class="java.lang.String"/>
+	<field name="placeProd" class="java.lang.String"/>
+	<field name="persName" class="java.lang.String"/>
+	<field name="persAge" class="java.lang.String"/>
+	<field name="persSex" class="java.lang.String"/>
+	<field name="persAddr" class="java.lang.String"/>
+	<field name="persCont" class="java.lang.String"/>
+	<field name="persOcu" class="java.lang.String"/>
+	<field name="persOrg" class="java.lang.String"/>
+	<field name="childName" class="java.lang.String"/>
+	<field name="childAge" class="java.lang.String"/>
+	<field name="childSex" class="java.lang.String"/>
+	<field name="childIdMarks" class="java.lang.String"/>
+	<field name="childLang" class="java.lang.String"/>
+	<field name="parName" class="java.lang.String"/>
+	<field name="parAge" class="java.lang.String"/>
+	<field name="parAddr" class="java.lang.String"/>
+	<field name="parCont" class="java.lang.String"/>
+	<field name="parOcu" class="java.lang.String"/>
+	<field name="circChild" class="java.lang.String"/>
+	<field name="allegChild" class="java.lang.String"/>
+	<field name="physCond" class="java.lang.String"/>
+	<field name="belgChild" class="java.lang.String"/>
+	<field name="dateTimeCCI" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="125" splitType="Stretch">
+			<staticText>
+				<reportElement x="27" y="78" width="464" height="47"/>
+				<textElement markup="none">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[                                                                [Rules 18(2), 19(25)]
+                                   REPORT TO BE SUBMITTED AT TIME OF PRODUCTION
+                                                  OF CHILD BEFORE THE COMMITTEE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="254" y="61" width="50" height="16"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Form 17]]></text>
+			</staticText>
+			<image>
+				<reportElement x="241" y="0" width="63" height="61"/>
+				<imageExpression class="java.lang.String"><![CDATA[$P{TSLOGO_LOC}]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="430" y="0" width="100" height="50"/>
+				<imageExpression class="net.sf.jasperreports.engine.JRRenderable"><![CDATA[new com.keepautomation.barcode.jasper.BarcodeRenderer(com.keepautomation.barcode.jasper.BarcodeFactory.
+createLinear(3, "123456789"))]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="72" splitType="Stretch">
+			<staticText>
+				<reportElement x="17" y="2" width="517" height="70"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Case No……………………….
+Produced before the Child Welfare Committee……………………………………….
+Date of production……………………… Time of production……………………..
+Place of production…………………………………]]></text>
+			</staticText>
+			<textField evaluationTime="Page" pattern="">
+				<reportElement isPrintRepeatedValues="false" x="284" y="17" width="100" height="15" forecolor="#3333FF"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{education}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="141" y="2" width="100" height="20" forecolor="#3333FF"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{profileId}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="120" y="31" width="100" height="20" forecolor="#3333FF"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{dateProd}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="330" y="32" width="100" height="20" forecolor="#3333FF"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{timeProd}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="153" y="47" width="277" height="15" forecolor="#3333FF"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{placeProd}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="547" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="113"/>
+				<textElement>
+					<font size="11" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[1. Details of person who is producing the child:
+(i) Name of the person ………………………….
+(ii) Age………………………..
+(iii) Sex…………………………
+(iv) Address …………………
+(v) Contact number…………………
+(vi) Occupation/ designation………………..
+(vii) Name of the organization/CCI/SAA ………………….]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="124" width="555" height="420"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[2. The child who is being produced:
+(i) Name (if any)………………………..
+(ii) Age (stated age/ age based on appearance) ……………
+(iii) Sex …………
+(iv) Identity marks………………………………………
+(v) Language used by the child………………………..
+
+3. Details of parents / guardians (if available):
+(i) Name …………………………………
+(ii) Age…………………………………..
+(iii) Address……………………………….
+(iv) Contact number……………………….
+(v) Occupation…………………………………
+4. Place where the child was found…………………………….
+
+5. The details of the person (if any) with whom the child was found:
+i. Name ………………………
+ii. Age…………………………….
+iii. Address……………………………….
+iv. Contact number…………………………
+v. Occupation……………………….
+
+6. Circumstances under which the child was found……………………….
+7. Allegation by the child of any offence/ abuse committed on the child in any manner………………………
+8. Physical condition of the child…………………………………………..
+9. Belongings of the child at the time of production……………………………..
+10. Date and Time at which the child came to the CCI/SAA………………………….
+11. Immediate efforts made to trace family of the child ……………………………..
+12. Medical treatment, if provided to the child ……………………………..
+13. Whether police has been informed …………………………………………….]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToBandHeight" x="153" y="11" width="225" height="17" forecolor="#3333FF"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{persName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="64" y="28" width="100" height="20" forecolor="#3333FF"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{persAge}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="64" y="42" width="100" height="17" forecolor="#3333FF"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{persSex}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="78" y="56" width="100" height="14" forecolor="#3333FF"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{persAddr}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="120" y="68" width="100" height="20" forecolor="#3333FF"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{persCont}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="154" y="80" width="100" height="20" forecolor="#3333FF"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{persOcu}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="220" y="98" width="100" height="20" forecolor="#3333FF"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{persOrg}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="104" y="138" width="100" height="20" forecolor="#3333FF"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{childName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="254" y="148" width="100" height="27" forecolor="#3333FF"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{childAge}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="53" y="162" width="100" height="17" forecolor="#3333FF"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{childSex}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="141" y="178" width="100" height="16" forecolor="#3333FF"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{childIdMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="178" y="191" width="100" height="13" forecolor="#3333FF"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{childLang}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="78" y="235" width="400" height="16" forecolor="#3333FF"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{parName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="64" y="246" width="100" height="13" forecolor="#3333FF"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{parAge}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="91" y="259" width="324" height="13" forecolor="#3333FF"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{parAddr}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="120" y="272" width="158" height="13" forecolor="#3333FF"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{parCont}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="114" y="290" width="116" height="13" forecolor="#3333FF"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{parOcu}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="284" y="429" width="100" height="19" forecolor="#3333FF"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{circChild}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="315" y="483" width="100" height="14" forecolor="#3333FF"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{dateTimeCCI}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="284" y="468" width="100" height="15" forecolor="#3333FF"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{belgChild}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="215" y="452" width="100" height="16" forecolor="#3333FF"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{physCond}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="455" y="432" width="100" height="16" forecolor="#3333FF"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{allegChild}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="104" y="400" width="100" height="16" forecolor="#3333FF"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{parOcu}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="141" y="385" width="100" height="15" forecolor="#3333FF"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{parCont}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="91" y="375" width="100" height="15" forecolor="#3333FF"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{parAddr}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="64" y="358" width="100" height="13" forecolor="#3333FF"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{parAge}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="78" y="347" width="400" height="15" forecolor="#3333FF"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{parName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="220" y="302" width="248" height="20" forecolor="#3333FF"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{placeProd}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="85" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="84"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[                                                                                            Signature/ Thumb impression of the child
+                                                  Signature/ Thumb impression of the person who produced the child
+Police-Local Police/Special Juvenile Police Unit/ designated child welfare police officer / Railway
+Police/Probation Officers/ any public servant/Social Welfare Organization/Social Worker/ Person in-charge CCI/ SAA/ any citizen/Child himself/herself (fill as applicable)]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

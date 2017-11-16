@@ -1,0 +1,431 @@
+body {
+    background: none repeat scroll 0 0 #CBE08F;
+    color: #555555;
+    font-family: tahoma,arial,sans-serif;
+    font-size: 8pt;
+}
+
+#header {
+	margin: 0 auto;
+	background: transparent url(images/header.png) no-repeat;
+	width: 760px;
+	height: 150px;
+	margin-bottom: 10px;
+}
+
+#header h1 {
+	color: #cbe08f;
+	font-size: 35pt;
+	margin-left: 40px;
+	padding-top: 27px;
+	margin-bottom: 0;
+}
+
+#header h2 {
+	color: #cbe08f;
+	font-size: 16pt;
+	margin-left: 40px;
+	margin-top: 0;
+}
+
+#container-top {
+    background: none repeat scroll 0 0 #0074AA;
+    border-radius: 10px 10px 0 0;
+    height: 10px;
+    margin: 0 auto;
+    width: 760px;
+}
+
+#container {
+	margin: 0 auto;
+	width: 750px;
+	background-color: #0074aa;
+	padding-left: 10px;
+}
+
+#container-bottom {
+    background: none no-repeat scroll 0 0 #0074AA;
+    border-radius: 0 0 10px 10px;
+    height: 10px;
+    margin: 0 auto;
+    width: 760px;
+}
+
+#container h1 {
+	margin: 0;
+	padding-left: 10px;
+	font-size: 12pt;
+}
+
+#container h2 {
+	margin: 0;
+	padding-left: 10px;
+	font-size: 12pt;
+}
+
+p {
+	margin: 0;
+	padding: 10px;
+	line-height: 2em;
+}
+
+
+/* tried to separte the side menu code
+
+.accordion table{
+   border: 0;
+    width: 100%;
+   padding:0px;}
+
+
+.accordion td{
+    height: 15px;
+    width: 100%;
+    line-height:16px;
+}
+.accordion td a{
+
+  text-decoration: none;
+  color: red;
+}
+*/
+
+
+table{padding : 10px;}
+
+a {
+	color: #5b88aa;
+}
+
+a:hover {
+	color: #7da6c4;
+	text-decoration: none;
+}
+
+#left {
+	width: 200px;
+	float: left;
+	margin: 0;
+}
+
+#left-top {
+	width: 200px;
+	height: 10px;
+	/*background: #eee url(images/left-top.gif) no-repeat;*/
+	margin: 18px 0 0 0;
+}
+
+#left-centre {
+	width: 200px;
+	background-color: #eee;
+}
+
+#left-bottom {
+	width: 200px;
+	height: 10px;
+	/*background: transparent url(images/left-bottom.gif) no-
+repeat;*/
+	margin: 0;
+}
+
+#right {
+	width: 530px;
+	float: left;
+	margin-left: 10px;
+}
+
+#right-top {
+    background: none no-repeat scroll 0 0 #EEEEEE;
+    border-radius: 10px 10px 0 0;
+    height: 10px;
+    width: 530px;
+    border-top: 2px solid #0074AA;
+}
+
+#right-centre {
+	width: 530px;
+	background-color: #eee;
+}
+
+#right-bottom {
+    background: none no-repeat scroll 0 0 #EEEEEE;
+    border-radius: 0 0 10px 10px;
+    height: 10px;
+    width: 530px;
+}
+
+#tabs {
+	width: 530px;
+	height: 18px;
+	margin: 0;
+}
+
+#tabs ul {
+	margin: 0;
+	list-style: none;
+	height: 18px;
+	padding-left: 20px;
+	background-color: #0074aa;
+}
+
+#tabs li {
+	display: inline;
+	margin: 0;
+	padding: 0;
+	height: 18px;
+        border-radius:5px 5px 0 0;
+}
+
+.tab a {
+	background: none no-repeat scroll left top #EEEEEE;
+         float: left;
+         margin: 0;
+         padding: 0 0 0 4px;
+         text-decoration: none;
+}
+
+.tab a span {
+    background: none no-repeat scroll right top transparent;
+    color: #555555;
+    display: block;
+    float: left;
+    font-weight: bold;
+    height: 18px;
+    margin-bottom: -2px;
+    padding: 2px 20px 0 12px;
+    border-left: 1px solid #0074AA;
+    border-bottom: 1px soild #0074AA;
+}
+
+.tab a:hover span, .tab-active a:hover span {
+	color: #0074aa;
+}
+
+.tab-active a {
+    background: none no-repeat scroll left top #EEEEEE;
+    float: left;
+    margin: 0;
+    padding: 0 0 0 4px;
+    text-decoration: none;
+}
+
+.tab-active a span {
+    background: none no-repeat scroll right top transparent;
+    color: #555555;
+    display: block;
+    float: left;
+    font-weight: bold;
+    height: 18px;
+    margin-bottom: -2px;
+    padding: 2px 20px 0 12px;
+}
+
+#footer-top {
+    background: none no-repeat scroll 0 0 #D3E59F;
+    border-radius: 9px 9px 0 0;
+    height: 9px;
+    margin: 10px auto 0;
+    width: 760px;
+}
+
+#footer-centre {
+	margin: 0 auto;
+	width: 760px;
+	background-color: #d3e59f;
+}
+
+#footer-bottom {
+	margin: 0 auto;
+	width: 760px;
+	height: 9px;
+	background: none no-repeat scroll 0 0 #D3E59F;
+        border-radius: 0 0 9px 9px;
+	margin-bottom: 10px;
+}
+
+#footer-centre p {
+	text-align: center;
+	padding: 0;
+}
+
+.clear {
+	clear: both;
+	margin: 0;
+	padding: 0;
+	height: 0;
+	overflow: hidden;
+}
+
+.left {
+	padding: 10px;
+	float: left;
+}
+
+.right {
+	padding: 10px;
+	float: right;
+}
+
+input {
+	border: 1px solid #f69d47;
+	font-family: tahoma, arial, sans-serif;
+	color: #555;
+}
+
+blockquote {
+	margin: 0 20px 0 20px;
+	background-color: #dfdfdf;
+}
+
+.menu {
+	list-style: none;
+	padding: 0 0 0 10px;
+	margin: 10px 0px 10px 0px;
+}
+
+.menu a {
+	width: 180px;
+	height: 25px;
+	display: block;
+	color: #5b88aa;
+	background: transparent url(images/menu.gif) no-repeat;
+	padding-top: 5px;
+	font-weight: bold;
+	padding-left: 10px;
+	margin-bottom: -5px;
+	text-decoration: none;
+}
+
+
+
+.menu a:hover {
+	background: transparent url(images/menu-hover.gif) no-
+repeat;
+}
+
+/*Anupam added this css*/
+.progressCircle{
+padding: 25px;
+margin: 25px;
+
+position: fixed;
+ top: 50%;
+ left: 50%;
+ width: 50%;
+ height: 50%;
+background-image: url(images/1.gif);
+background-size: 10em;
+background-repeat: no-repeat;
+
+}
+
+.progressCircle2{
+padding: 25px;
+margin: 25px;
+
+position: fixed;
+ top: 50%;
+ left: 50%;
+ width: 50%;
+ height: 50%;
+background-image: url(images/2.gif);
+background-size: 10em;
+background-repeat: no-repeat;
+
+}
+
+#ClassWiseStuRepo_details{
+            background-color: #FFFFFF;
+            border-radius: 10px 10px 10px 10px;
+            display: none;
+            height:750px;
+            width:600px;
+            left:250px;
+            margin: 0;
+            position:fixed;
+            text-align: center;
+            top: 100px;
+            width: 30%;
+            z-index: 3;
+            overflow:scroll;
+     }
+.close{
+      position: absolute;
+      right:5px;
+      top:5px;
+      cursor: pointer;
+      font-weight: bold;
+      font-family: sans-serif;
+      background-color: yellow;
+     }
+#ClassWiseVocRepo_details{
+            background-color: #FFFFFF;
+            border-radius: 10px 10px 10px 10px;
+            display: none;
+            height:750px;
+            width:600px;
+            left:250px;
+            margin: 0;
+            position:fixed;
+            text-align: center;
+            top: 100px;
+            width: 30%;
+            z-index: 3;
+            overflow:scroll;
+     }
+     
+     #childPhoto{
+            border: 1px solid blue;
+            width : 165px;
+            height: 112px;
+                 }
+                 
+                 
+                 
+                 .ui-widget.success-dialog {
+    font-family: Verdana,Arial,sans-serif;
+    /*font-size: .8em;*/
+}
+
+.ui-widget-content.success-dialog {
+    background: #F9F9F9;
+    border: 1px solid #90d93f;
+    color: #222222;
+}
+
+.ui-dialog.success-dialog {
+    left: 0;
+    outline: 0 none;
+    padding: 0 !important;
+    position: absolute;
+    top: 0;
+}
+
+.ui-dialog.success-dialog .ui-dialog-content {
+    background: none repeat scroll 0 0 transparent;
+    border: 0 none;
+    overflow: auto;
+    position: relative;
+    padding: 0 !important;
+    margin: 0;
+}
+
+.ui-dialog.success-dialog .ui-widget-header {
+    background: #b0de78;
+    border: 0;
+    color: #fff;
+    font-weight: normal;
+}
+
+.ui-dialog.success-dialog .ui-dialog-titlebar {
+    padding: 0.1em .5em;
+    position: relative;
+    /*font-size: 1em;*/
+}
+
+#print_div{
+    height: auto;
+    margin-left: 0;
+    width: auto;
+    
+}

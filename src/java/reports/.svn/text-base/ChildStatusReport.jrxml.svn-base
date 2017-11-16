@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ChildStatusReport.jasper" pageWidth="825" pageHeight="842" columnWidth="785" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<field name="numOfOpenAdm" class="java.lang.Integer"/>
+	<field name="numOfNewAdm" class="java.lang.Integer"/>
+	<field name="numOfReturnSL" class="java.lang.Integer"/>
+	<field name="numOfRunBrtBk" class="java.lang.Integer"/>
+	<field name="numOfSentSL" class="java.lang.Integer"/>
+	<field name="numOfRunAway" class="java.lang.Integer"/>
+	<field name="NumOfRelease" class="java.lang.Integer"/>
+	<field name="numOfClosing" class="java.lang.Number"/>
+	<field name="fromDate" class="java.lang.String"/>
+	<field name="toDate" class="java.lang.String"/>
+	<field name="homename" class="java.lang.String"/>
+	<field name="numOfReturnResdent" class="java.lang.Integer"/>
+	<field name="numOfMissFnd" class="java.lang.Integer"/>
+	<field name="numofResidential" class="java.lang.Integer"/>
+	<field name="numofMissing" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="36" splitType="Stretch">
+			<staticText>
+				<reportElement x="3" y="0" width="777" height="25"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[HALF YEARLY REPORTS OF THE SUPERINTENDENTS ON THE ACTIVITIES OF THE HOME]]></text>
+			</staticText>
+			<line>
+				<reportElement mode="Opaque" x="0" y="33" width="780" height="1" forecolor="#666666" backcolor="#FFFFFF"/>
+			</line>
+			<rectangle>
+				<reportElement x="3" y="26" width="777" height="4" backcolor="#CCCCCC"/>
+			</rectangle>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="46" splitType="Stretch">
+			<staticText>
+				<reportElement x="7" y="5" width="101" height="20"/>
+				<textElement>
+					<font fontName="SansSerif" isBold="true" pdfFontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[Name Of The Home :  ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="7" y="25" width="60" height="20"/>
+				<textElement>
+					<font fontName="SansSerif" isBold="true" pdfFontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[From Date :   ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="564" y="25" width="43" height="20"/>
+				<textElement>
+					<font fontName="SansSerif" isBold="true" pdfFontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[To Date :  ]]></text>
+			</staticText>
+			<textField pattern="dd MMMMM yyyy">
+				<reportElement x="67" y="25" width="100" height="20" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true"/>
+				<textElement>
+					<font fontName="SansSerif" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{fromDate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="606" y="25" width="100" height="20" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true"/>
+				<textElement>
+					<font fontName="SansSerif" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{toDate}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement x="108" y="5" width="352" height="20" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true"/>
+				<textElement>
+					<font fontName="SansSerif"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{homename}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="59" splitType="Stretch">
+			<staticText>
+				<reportElement x="7" y="27" width="34" height="31"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="8" pdfFontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[S.No ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="42" y="27" width="55" height="31"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="8" pdfFontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[Opening Children  ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="158" y="27" width="55" height="12"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="8" pdfFontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[ Short Leave ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="343" y="27" width="63" height="12"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="8" pdfFontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[Run Away  ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="27" width="55" height="12"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="8" pdfFontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[ New ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="586" y="39" width="60" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="8" pdfFontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[Run Away  ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="525" y="38" width="64" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="8" pdfFontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[Short Leave  ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="647" y="39" width="57" height="19"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="8" pdfFontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[ Discharges  ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="707" y="39" width="60" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="8" pdfFontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[Closing  ]]></text>
+			</staticText>
+			<line>
+				<reportElement x="4" y="25" width="767" height="1"/>
+			</line>
+			<rectangle>
+				<reportElement x="5" y="1" width="766" height="26"/>
+			</rectangle>
+			<line>
+				<reportElement x="408" y="1" width="1" height="56"/>
+			</line>
+			<line>
+				<reportElement x="5" y="58" width="767" height="1"/>
+			</line>
+			<line>
+				<reportElement x="5" y="27" width="1" height="32"/>
+			</line>
+			<line>
+				<reportElement x="40" y="27" width="1" height="31"/>
+			</line>
+			<line>
+				<reportElement x="98" y="27" width="1" height="31"/>
+			</line>
+			<line>
+				<reportElement x="156" y="27" width="1" height="31"/>
+			</line>
+			<line>
+				<reportElement x="342" y="27" width="1" height="31"/>
+			</line>
+			<line>
+				<reportElement x="524" y="27" width="1" height="31"/>
+			</line>
+			<line>
+				<reportElement x="585" y="27" width="1" height="32"/>
+			</line>
+			<line>
+				<reportElement x="646" y="27" width="1" height="32"/>
+			</line>
+			<line>
+				<reportElement x="704" y="27" width="1" height="31"/>
+			</line>
+			<line>
+				<reportElement x="771" y="27" width="1" height="31"/>
+			</line>
+			<staticText>
+				<reportElement x="7" y="4" width="402" height="22"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="10" isBold="true" pdfFontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[Admissions ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="409" y="4" width="294" height="22" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" isBold="true" pdfFontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[Discharges   ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="215" y="27" width="64" height="12"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="8" pdfFontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[Residential  ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="281" y="27" width="60" height="12"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="8" pdfFontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[Missing ]]></text>
+			</staticText>
+			<line>
+				<reportElement x="470" y="27" width="1" height="31"/>
+			</line>
+			<staticText>
+				<reportElement x="409" y="38" width="61" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<text><![CDATA[Residential  ]]></text>
+			</staticText>
+			<line>
+				<reportElement x="213" y="27" width="1" height="31"/>
+			</line>
+			<line>
+				<reportElement x="279" y="27" width="1" height="31"/>
+			</line>
+			<line>
+				<reportElement x="408" y="39" width="1" height="18"/>
+			</line>
+			<staticText>
+				<reportElement x="471" y="39" width="54" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="8" pdfFontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[Missing  ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="158" y="39" width="55" height="18"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="8" pdfFontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[Return ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="39" width="55" height="18"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="8" pdfFontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[Admissions  ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="213" y="38" width="65" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="8" pdfFontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[Return ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="281" y="39" width="60" height="18"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="8" pdfFontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[Found ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="343" y="37" width="63" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="8" pdfFontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[   Back  ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="411" y="27" width="59" height="12"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="8" pdfFontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[No Of  ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="471" y="27" width="54" height="12"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="8" pdfFontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[No Of  ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="526" y="27" width="59" height="12"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="8" pdfFontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[No Of  ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="585" y="27" width="61" height="12"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="8" pdfFontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[No Of ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="647" y="27" width="56" height="12"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="8" pdfFontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[No Of ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="707" y="27" width="60" height="12"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="8" pdfFontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[No Of  ]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="23" splitType="Stretch">
+			<rectangle>
+				<reportElement x="5" y="0" width="766" height="20"/>
+			</rectangle>
+			<textField isBlankWhenNull="true">
+				<reportElement x="42" y="0" width="55" height="20" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{numOfOpenAdm}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="158" y="0" width="55" height="20" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{numOfReturnSL}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="7" y="0" width="33" height="20" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$V{COLUMN_COUNT}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="585" y="1" width="60" height="20" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{numOfRunAway}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="526" y="1" width="60" height="20" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{numOfSentSL}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="40" y="1" width="1" height="19"/>
+			</line>
+			<line>
+				<reportElement x="342" y="0" width="1" height="20"/>
+			</line>
+			<line>
+				<reportElement x="470" y="0" width="1" height="20"/>
+			</line>
+			<line>
+				<reportElement x="585" y="0" width="1" height="20"/>
+			</line>
+			<line>
+				<reportElement x="646" y="0" width="1" height="20"/>
+			</line>
+			<line>
+				<reportElement x="704" y="0" width="1" height="20"/>
+			</line>
+			<textField isBlankWhenNull="true">
+				<reportElement x="100" y="1" width="55" height="20" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{numOfNewAdm}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="345" y="1" width="64" height="19" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{numOfRunBrtBk}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="645" y="1" width="60" height="20" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{NumOfRelease}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="98" y="0" width="1" height="20"/>
+			</line>
+			<line>
+				<reportElement x="156" y="0" width="1" height="20"/>
+			</line>
+			<textField>
+				<reportElement x="214" y="0" width="64" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{numOfReturnResdent}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="281" y="0" width="60" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{numOfMissFnd}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="524" y="-1" width="1" height="21"/>
+			</line>
+			<textField>
+				<reportElement x="411" y="0" width="60" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{numofResidential}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="471" y="1" width="54" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{numofMissing}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="213" y="0" width="1" height="20"/>
+			</line>
+			<line>
+				<reportElement x="279" y="-1" width="1" height="21"/>
+			</line>
+			<line>
+				<reportElement x="408" y="0" width="1" height="20"/>
+			</line>
+			<textField isBlankWhenNull="true">
+				<reportElement x="707" y="1" width="60" height="20" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Number"><![CDATA[$F{numOfClosing}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

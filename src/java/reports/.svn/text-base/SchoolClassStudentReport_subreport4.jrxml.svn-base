@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="SchoolClassStudentReport_subreport4" pageWidth="555" pageHeight="802" columnWidth="535" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<field name="schoolName" class="java.lang.String"/>
+	<field name="studentsInStd1" class="java.lang.Long"/>
+	<field name="studentsInStd2" class="java.lang.Long"/>
+	<field name="studentsInStd3" class="java.lang.Long"/>
+	<field name="studentsInStd4" class="java.lang.Long"/>
+	<field name="studentsInStd5" class="java.lang.Long"/>
+	<field name="studentsInStd6" class="java.lang.Long"/>
+	<field name="studentsInStd7" class="java.lang.Long"/>
+	<field name="studentsInStd8" class="java.lang.Long"/>
+	<field name="studentsInStd9" class="java.lang.Long"/>
+	<field name="studentsInStd10" class="java.lang.Long"/>
+	<field name="schoolId" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="28" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="2" width="555" height="24" forecolor="#D0B48E" backcolor="#FFFFFF"/>
+			</frame>
+			<rectangle>
+				<reportElement x="0" y="6" width="545" height="20"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="160" y="6" width="208" height="20" forecolor="#000000"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[School and class wise number  of children:]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="84" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="555" height="7"/>
+			</frame>
+			<textField>
+				<reportElement x="207" y="7" width="323" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{schoolName}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="107" y="7" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Name of the School:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="279" y="38" width="16" height="20"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="7" rightPadding="0">
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[V ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="346" y="38" width="29" height="20"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="7" rightPadding="0">
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[VIII ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="295" y="38" width="26" height="20"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="7" rightPadding="0">
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[VI ]]></text>
+			</staticText>
+			<textField hyperlinkType="Reference">
+				<reportElement x="279" y="58" width="16" height="20"/>
+				<box>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Long"><![CDATA[$F{studentsInStd5}]]></textFieldExpression>
+				<hyperlinkReferenceExpression><![CDATA["HM-SchoolwiseSchoolStudets-Show?eduStatus=5th&schoolId="+$F{schoolId}]]></hyperlinkReferenceExpression>
+			</textField>
+			<staticText>
+				<reportElement x="223" y="38" width="16" height="20"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="7" rightPadding="0">
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[II ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="107" y="58" width="100" height="20"/>
+				<box>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Number of Students]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="239" y="38" width="21" height="20"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="7" rightPadding="0">
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[III ]]></text>
+			</staticText>
+			<textField hyperlinkType="Reference">
+				<reportElement x="260" y="58" width="19" height="20"/>
+				<box>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Long"><![CDATA[$F{studentsInStd4}]]></textFieldExpression>
+				<hyperlinkReferenceExpression><![CDATA["HM-SchoolwiseSchoolStudets-Show?eduStatus=4th&schoolId="+$F{schoolId}]]></hyperlinkReferenceExpression>
+			</textField>
+			<staticText>
+				<reportElement x="396" y="38" width="16" height="20"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="7" rightPadding="0">
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[X ]]></text>
+			</staticText>
+			<textField hyperlinkType="Reference">
+				<reportElement x="375" y="58" width="21" height="20"/>
+				<box>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Long"><![CDATA[$F{studentsInStd9}]]></textFieldExpression>
+				<hyperlinkReferenceExpression><![CDATA["HM-SchoolwiseSchoolStudets-Show?eduStatus=9th&schoolId="+$F{schoolId}]]></hyperlinkReferenceExpression>
+			</textField>
+			<textField hyperlinkType="Reference">
+				<reportElement x="396" y="58" width="16" height="20"/>
+				<box>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Long"><![CDATA[$F{studentsInStd10}]]></textFieldExpression>
+				<hyperlinkReferenceExpression><![CDATA["HM-SchoolwiseSchoolStudets-Show?eduStatus=10th&schoolId="+$F{schoolId}]]></hyperlinkReferenceExpression>
+			</textField>
+			<textField hyperlinkType="Reference">
+				<reportElement x="347" y="58" width="28" height="20"/>
+				<box>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Long"><![CDATA[$F{studentsInStd8}]]></textFieldExpression>
+				<hyperlinkReferenceExpression><![CDATA["HM-SchoolwiseSchoolStudets-Show?eduStatus=8th&schoolId="+$F{schoolId}]]></hyperlinkReferenceExpression>
+			</textField>
+			<textField hyperlinkType="Reference">
+				<reportElement x="295" y="58" width="26" height="20"/>
+				<box>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Long"><![CDATA[$F{studentsInStd6}]]></textFieldExpression>
+				<hyperlinkReferenceExpression><![CDATA["HM-SchoolwiseSchoolStudets-Show?eduStatus=6th&schoolId="+$F{schoolId}]]></hyperlinkReferenceExpression>
+			</textField>
+			<textField hyperlinkType="Reference">
+				<reportElement x="207" y="58" width="16" height="20"/>
+				<box>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Long"><![CDATA[$F{studentsInStd1}]]></textFieldExpression>
+				<hyperlinkReferenceExpression><![CDATA["HM-SchoolwiseSchoolStudets-Show?eduStatus=1st&schoolId="+$F{schoolId}]]></hyperlinkReferenceExpression>
+			</textField>
+			<staticText>
+				<reportElement x="107" y="38" width="100" height="20"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="7" rightPadding="0">
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Class]]></text>
+			</staticText>
+			<textField hyperlinkType="Reference">
+				<reportElement x="321" y="58" width="25" height="20"/>
+				<box>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Long"><![CDATA[$F{studentsInStd7}]]></textFieldExpression>
+				<hyperlinkReferenceExpression><![CDATA["HM-SchoolwiseSchoolStudets-Show?eduStatus=7th&schoolId="+$F{schoolId}]]></hyperlinkReferenceExpression>
+			</textField>
+			<staticText>
+				<reportElement x="375" y="38" width="21" height="20"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="7" rightPadding="0">
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[XI ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="260" y="38" width="19" height="20"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="7" rightPadding="0">
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[IV ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="207" y="38" width="16" height="20"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="7" rightPadding="0">
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[I ]]></text>
+			</staticText>
+			<textField hyperlinkType="Reference">
+				<reportElement x="239" y="58" width="21" height="20"/>
+				<box>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Long"><![CDATA[$F{studentsInStd3}]]></textFieldExpression>
+				<hyperlinkReferenceExpression><![CDATA["HM-SchoolwiseSchoolStudets-Show?eduStatus=3rd&schoolId="+$F{schoolId}]]></hyperlinkReferenceExpression>
+			</textField>
+			<staticText>
+				<reportElement x="321" y="38" width="26" height="20"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="7" rightPadding="0">
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[VII ]]></text>
+			</staticText>
+			<textField hyperlinkType="Reference">
+				<reportElement x="223" y="58" width="16" height="20"/>
+				<box>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Long"><![CDATA[$F{studentsInStd2}]]></textFieldExpression>
+				<hyperlinkReferenceExpression><![CDATA["HM-SchoolwiseSchoolStudets-Show?eduStatus=2nd&schoolId="+$F{schoolId}]]></hyperlinkReferenceExpression>
+			</textField>
+			<staticText>
+				<reportElement x="423" y="58" width="122" height="20" forecolor="#FF3366"/>
+				<textElement verticalAlignment="Middle">
+					<font size="6"/>
+				</textElement>
+				<text><![CDATA[<-Click on numbers to get list.]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

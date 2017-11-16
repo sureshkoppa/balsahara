@@ -1,0 +1,1368 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="MarkSheet" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="116"/>
+	<property name="ireport.y" value="266"/>
+	<subDataset name="Table Dataset 1"/>
+	<field name="nameValue" class="java.lang.String"/>
+	<field name="classValue" class="java.lang.String"/>
+	<field name="rollValue" class="java.lang.String"/>
+	<field name="teleguUrduFTassignMarks" class="java.lang.Integer"/>
+	<field name="teleguUrduFTunittestMarks" class="java.lang.Integer"/>
+	<field name="teleguUrduFTtotalMarks" class="java.lang.Integer"/>
+	<field name="teleguUrduSTassignMarks" class="java.lang.Integer"/>
+	<field name="teleguUrduSTunittestMarks" class="java.lang.Integer"/>
+	<field name="teleguUrduSTtotalMarks" class="java.lang.Integer"/>
+	<field name="teleguUrduTTassignMarks" class="java.lang.Integer"/>
+	<field name="teleguUrduTTunittestMarks" class="java.lang.Integer"/>
+	<field name="teleguUrduTTtotalMarks" class="java.lang.Integer"/>
+	<field name="teleguUrduFOTassignMarks" class="java.lang.Integer"/>
+	<field name="teleguUrduFOTunittestMarks" class="java.lang.Integer"/>
+	<field name="teleguUrduFOTtotalMarks" class="java.lang.Integer"/>
+	<field name="teleguUrduAssignUnitTestTotalMarks" class="java.lang.Integer"/>
+	<field name="teleguUrduQuarterMarks" class="java.lang.Integer"/>
+	<field name="teleguUrduHalfYearMarks" class="java.lang.Integer"/>
+	<field name="teleguUrduQuarterHalfYearTotalMarks" class="java.lang.Integer"/>
+	<field name="teleguUrduAnnualMarks" class="java.lang.Integer"/>
+	<field name="teleguUrduAssignUnitTestTotalPercentMarks" class="java.lang.Integer"/>
+	<field name="teleguUrduQuarterHalfYearTotalPercentMarks" class="java.lang.Integer"/>
+	<field name="teleguUrduAnnualPercentMarks" class="java.lang.Integer"/>
+	<field name="hindiFTassignMarks" class="java.lang.Integer"/>
+	<field name="hindiFTunittestMarks" class="java.lang.Integer"/>
+	<field name="hindiFTtotalMarks    " class="java.lang.Integer"/>
+	<field name="hindiSTassignMarks" class="java.lang.Integer"/>
+	<field name="hindiSTunittestMarks" class="java.lang.Integer"/>
+	<field name="hindiSTtotalMarks" class="java.lang.Integer"/>
+	<field name="hindiTTassignMarks" class="java.lang.Integer"/>
+	<field name="hindiTTunittestMarks" class="java.lang.Integer"/>
+	<field name="hindiTTtotalMarks" class="java.lang.Integer"/>
+	<field name="hindiFOTassignMarks" class="java.lang.Integer"/>
+	<field name="hindiFOTunittestMarks" class="java.lang.Integer"/>
+	<field name="hindiFOTtotalMarks" class="java.lang.Integer"/>
+	<field name="hindiAssignUnitTestTotalMarks" class="java.lang.Integer"/>
+	<field name="hindiQuarterMarks" class="java.lang.Integer"/>
+	<field name="hindiHalfYearMarks" class="java.lang.Integer"/>
+	<field name="hindiQuarterHalfYearTotalMarks" class="java.lang.Integer"/>
+	<field name="hindiAnnualMarks" class="java.lang.Integer"/>
+	<field name="hindiAssignUnitTestTotalPercentMarks" class="java.lang.Integer"/>
+	<field name="hindiQuarterHalfYearTotalPercentMarks" class="java.lang.Integer"/>
+	<field name="hindiAnnualPercentMarks" class="java.lang.Integer"/>
+	<field name="englishFTassignMarks" class="java.lang.Integer"/>
+	<field name="englishFTunittestMarks" class="java.lang.Integer"/>
+	<field name="englishFTtotalMarks" class="java.lang.Integer"/>
+	<field name="englishSTassignMarks" class="java.lang.Integer"/>
+	<field name="englishSTunittestMarks" class="java.lang.Integer"/>
+	<field name="englishSTtotalMarks" class="java.lang.Integer"/>
+	<field name="englishTTassignMarks" class="java.lang.Integer"/>
+	<field name="englishTTunittestMarks" class="java.lang.Integer"/>
+	<field name="englishTTtotalMarks" class="java.lang.Integer"/>
+	<field name="englishFOTassignMarks" class="java.lang.Integer"/>
+	<field name="englishFOTunittestMarks" class="java.lang.Integer"/>
+	<field name="englishFOTtotalMarks" class="java.lang.Integer"/>
+	<field name="englishAssignUnitTestTotalMarks" class="java.lang.Integer"/>
+	<field name="englishQuarterMarks" class="java.lang.Integer"/>
+	<field name="englishHalfYearMarks" class="java.lang.Integer"/>
+	<field name="englishQuarterHalfYearTotalMarks" class="java.lang.Integer"/>
+	<field name="englishAnnualMarks" class="java.lang.Integer"/>
+	<field name="englishAssignUnitTestTotalPercentMarks" class="java.lang.Integer"/>
+	<field name="englishQuarterHalfYearTotalPercentMarks" class="java.lang.Integer"/>
+	<field name="englishAnnualPercentMarks" class="java.lang.Integer"/>
+	<field name="mathsFTassignMarks" class="java.lang.Integer"/>
+	<field name="mathsFTunittestMarks" class="java.lang.Integer"/>
+	<field name="mathsFTtotalMarks" class="java.lang.Integer"/>
+	<field name="mathsSTassignMarks" class="java.lang.Integer"/>
+	<field name="mathsSTunittestMarks" class="java.lang.Integer"/>
+	<field name="mathsSTtotalMarks" class="java.lang.Integer"/>
+	<field name="mathsTTassignMarks" class="java.lang.Integer"/>
+	<field name="mathsTTunittestMarks" class="java.lang.Integer"/>
+	<field name="mathsTTtotalMarks" class="java.lang.Integer"/>
+	<field name="mathsFOTassignMarks" class="java.lang.Integer"/>
+	<field name="mathsFOTunittestMarks" class="java.lang.Integer"/>
+	<field name="mathsFOTtotalMarks" class="java.lang.Integer"/>
+	<field name="mathsAssignUnitTestTotalMarks" class="java.lang.Integer"/>
+	<field name="mathsQuarterMarks" class="java.lang.Integer"/>
+	<field name="mathsHalfYearMarks" class="java.lang.Integer"/>
+	<field name="mathsQuarterHalfYearTotalMarks" class="java.lang.Integer"/>
+	<field name="mathsAnnualMarks" class="java.lang.Integer"/>
+	<field name="mathsAssignUnitTestTotalPercentMarks" class="java.lang.Integer"/>
+	<field name="mathsQuarterHalfYearTotalPercentMarks" class="java.lang.Integer"/>
+	<field name="mathsAnnualPercentMarks" class="java.lang.Integer"/>
+	<field name="generalScienceFTassignMarks" class="java.lang.Integer"/>
+	<field name="generalScienceFTunittestMarks" class="java.lang.Integer"/>
+	<field name="generalScienceFTtotalMarks" class="java.lang.Integer"/>
+	<field name="generalScienceSTassignMarks" class="java.lang.Integer"/>
+	<field name="generalScienceSTunittestMarks" class="java.lang.Integer"/>
+	<field name="generalScienceSTtotalMarks" class="java.lang.Integer"/>
+	<field name="generalScienceTTassignMarks" class="java.lang.Integer"/>
+	<field name="generalScienceTTunittestMarks" class="java.lang.Integer"/>
+	<field name="generalScienceTTtotalMarks" class="java.lang.Integer"/>
+	<field name="generalScienceFOTassignMarks" class="java.lang.Integer"/>
+	<field name="generalScienceFOTunittestMarks" class="java.lang.Integer"/>
+	<field name="generalScienceFOTtotalMarks" class="java.lang.Integer"/>
+	<field name="generalScienceAssignUnitTestTotalMarks" class="java.lang.Integer"/>
+	<field name="generalScienceQuarterMarks" class="java.lang.Integer"/>
+	<field name="generalScienceHalfYearMarks" class="java.lang.Integer"/>
+	<field name="generalScienceQuarterHalfYearTotalMarks" class="java.lang.Integer"/>
+	<field name="generalScienceAnnualMarks" class="java.lang.Integer"/>
+	<field name="generalScienceAssignUnitTestTotalPercentMarks" class="java.lang.Integer"/>
+	<field name="generalScienceQuarterHalfYearTotalPercentMarks" class="java.lang.Integer"/>
+	<field name="generalScienceAnnualPercentMarks" class="java.lang.Integer"/>
+	<field name="socialScienceFTassignMarks" class="java.lang.Integer"/>
+	<field name="socialScienceFTunittestMarks" class="java.lang.Integer"/>
+	<field name="socialScienceFTtotalMarks" class="java.lang.Integer"/>
+	<field name="socialScienceSTassignMarks" class="java.lang.Integer"/>
+	<field name="socialScienceSTunittestMarks" class="java.lang.Integer"/>
+	<field name="socialScienceSTtotalMarks" class="java.lang.Integer"/>
+	<field name="socialScienceTTassignMarks" class="java.lang.Integer"/>
+	<field name="socialScienceTTunittestMarks" class="java.lang.Integer"/>
+	<field name="socialScienceTTtotalMarks" class="java.lang.Integer"/>
+	<field name="socialScienceFOTassignMarks" class="java.lang.Integer"/>
+	<field name="socialScienceFOTunittestMarks" class="java.lang.Integer"/>
+	<field name="socialScienceFOTtotalMarks" class="java.lang.Integer"/>
+	<field name="socialScienceAssignUnitTestTotalMarks" class="java.lang.Integer"/>
+	<field name="socialScienceQuarterMarks" class="java.lang.Integer"/>
+	<field name="socialScienceHalfYearMarks" class="java.lang.Integer"/>
+	<field name="socialScienceQuarterHalfYearTotalMarks" class="java.lang.Integer"/>
+	<field name="socialScienceAnnualMarks" class="java.lang.Integer"/>
+	<field name="socialScienceAssignUnitTestTotalPercentMarks" class="java.lang.Integer"/>
+	<field name="socialScienceQuarterHalfYearTotalPercentMarks" class="java.lang.Integer"/>
+	<field name="socialScienceAnnualPercentMarks" class="java.lang.Integer"/>
+	<field name="teleguUrduFinalResult" class="java.lang.Integer"/>
+	<field name="hindiFinalResult" class="java.lang.Integer"/>
+	<field name="englishFinalreslt" class="java.lang.Integer"/>
+	<field name="mathsFinalResult" class="java.lang.Integer"/>
+	<field name="generalScienceFinalResult" class="java.lang.Integer"/>
+	<field name="socialScienceFinalResult" class="java.lang.Integer"/>
+	<field name="firstTestTotal" class="java.lang.Integer"/>
+	<field name="secondTestTotal" class="java.lang.Integer"/>
+	<field name="thirdTestTotal" class="java.lang.Integer"/>
+	<field name="fourthTestTotal" class="java.lang.Integer"/>
+	<field name="querterlyTotal" class="java.lang.Integer"/>
+	<field name="finalResultTotal" class="java.lang.Integer"/>
+	<field name="noOfUTConductedValue" class="java.lang.Integer"/>
+	<field name="noOfUTAttendedValue" class="java.lang.Integer"/>
+	<field name="userNameLabel" class="java.lang.String"/>
+	<field name="creationDate" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<detail>
+		<band height="340" splitType="Stretch">
+			<staticText>
+				<reportElement x="42" y="18" width="56" height="20"/>
+				<textElement/>
+				<text><![CDATA[Name]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="99" y="18" width="135" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{nameValue}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="364" y="18" width="39" height="20"/>
+				<textElement/>
+				<text><![CDATA[Class]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="403" y="18" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{classValue}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="641" y="18" width="33" height="20"/>
+				<textElement/>
+				<text><![CDATA[Roll]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="674" y="18" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{rollValue}]]></textFieldExpression>
+			</textField>
+			<rectangle radius="10">
+				<reportElement x="29" y="38" width="745" height="295"/>
+			</rectangle>
+			<line>
+				<reportElement x="27" y="135" width="476" height="1"/>
+			</line>
+			<line>
+				<reportElement x="99" y="38" width="3" height="295"/>
+			</line>
+			<line>
+				<reportElement x="503" y="38" width="1" height="295"/>
+			</line>
+			<line>
+				<reportElement x="560" y="38" width="1" height="295"/>
+			</line>
+			<line>
+				<reportElement x="561" y="135" width="213" height="1"/>
+			</line>
+			<line>
+				<reportElement x="27" y="68" width="476" height="1"/>
+			</line>
+			<line>
+				<reportElement x="189" y="69" width="1" height="264"/>
+			</line>
+			<line>
+				<reportElement x="293" y="69" width="1" height="264"/>
+			</line>
+			<line>
+				<reportElement x="403" y="69" width="1" height="264"/>
+			</line>
+			<line>
+				<reportElement x="99" y="83" width="404" height="1"/>
+			</line>
+			<line>
+				<reportElement x="132" y="83" width="1" height="250"/>
+			</line>
+			<line>
+				<reportElement x="166" y="83" width="1" height="250"/>
+			</line>
+			<line>
+				<reportElement x="221" y="84" width="1" height="249"/>
+			</line>
+			<line>
+				<reportElement x="259" y="84" width="1" height="249"/>
+			</line>
+			<line>
+				<reportElement x="319" y="84" width="1" height="249"/>
+			</line>
+			<line>
+				<reportElement x="360" y="84" width="1" height="249"/>
+			</line>
+			<line>
+				<reportElement x="440" y="84" width="1" height="249"/>
+			</line>
+			<line>
+				<reportElement x="479" y="84" width="1" height="249"/>
+			</line>
+			<line>
+				<reportElement x="561" y="69" width="213" height="1"/>
+			</line>
+			<line>
+				<reportElement x="664" y="38" width="1" height="295"/>
+			</line>
+			<line>
+				<reportElement x="504" y="135" width="56" height="1"/>
+			</line>
+			<line>
+				<reportElement x="54" y="68" width="1" height="67"/>
+			</line>
+			<line>
+				<reportElement x="29" y="153" width="745" height="1"/>
+			</line>
+			<line>
+				<reportElement x="584" y="70" width="1" height="263"/>
+			</line>
+			<line>
+				<reportElement x="609" y="70" width="1" height="263"/>
+			</line>
+			<line>
+				<reportElement x="639" y="70" width="1" height="263"/>
+			</line>
+			<line>
+				<reportElement x="697" y="70" width="1" height="263"/>
+			</line>
+			<line>
+				<reportElement x="727" y="70" width="1" height="263"/>
+			</line>
+			<line>
+				<reportElement x="751" y="70" width="1" height="263"/>
+			</line>
+			<line>
+				<reportElement x="54" y="154" width="1" height="179"/>
+			</line>
+			<line>
+				<reportElement x="29" y="179" width="745" height="1"/>
+			</line>
+			<line>
+				<reportElement x="29" y="201" width="745" height="1"/>
+			</line>
+			<line>
+				<reportElement x="29" y="225" width="745" height="1"/>
+			</line>
+			<line>
+				<reportElement x="29" y="250" width="745" height="1"/>
+			</line>
+			<line>
+				<reportElement x="29" y="271" width="745" height="1"/>
+			</line>
+			<line>
+				<reportElement x="29" y="289" width="745" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="29" y="82" width="15" height="51"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="Left"/>
+				<text><![CDATA[S/N  ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="54" y="49" width="46" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None"/>
+				<text><![CDATA[Months]]></text>
+			</staticText>
+			<line>
+				<reportElement x="55" y="70" width="44" height="65"/>
+			</line>
+			<staticText>
+				<reportElement x="56" y="69" width="46" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None"/>
+				<text><![CDATA[Exam]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="55" y="115" width="46" height="20"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None"/>
+				<text><![CDATA[Subject]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="120" y="68" width="46" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None"/>
+				<text><![CDATA[First Test ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="190" y="70" width="92" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None"/>
+				<text><![CDATA[Second Test ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="311" y="68" width="92" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None"/>
+				<text><![CDATA[Third Test ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="404" y="68" width="92" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None"/>
+				<text><![CDATA[Fourth Test ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="102" y="83" width="30" height="53"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="Left"/>
+				<text><![CDATA[Assignment]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="132" y="82" width="30" height="53"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="Left"/>
+				<text><![CDATA[Unit Test]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="166" y="83" width="23" height="52"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="Left"/>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="189" y="82" width="30" height="53"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="Left"/>
+				<text><![CDATA[Assignment]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="222" y="82" width="30" height="53"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="Left"/>
+				<text><![CDATA[Unit Test]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="260" y="83" width="23" height="52"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="Left"/>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="294" y="84" width="26" height="53"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="Left"/>
+				<text><![CDATA[Assignment]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="320" y="82" width="30" height="53"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="Left"/>
+				<text><![CDATA[Unit Test]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="361" y="84" width="23" height="52"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="Left"/>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="403" y="82" width="26" height="53"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="Left"/>
+				<text><![CDATA[Assignment]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="441" y="82" width="30" height="53"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="Left"/>
+				<text><![CDATA[Unit Test]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="479" y="82" width="23" height="52"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="Left"/>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="516" y="38" width="30" height="96"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="Left"/>
+				<text><![CDATA[Total Of Assignment And Unit Test]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="561" y="38" width="102" height="30"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None"/>
+				<text><![CDATA[Exam]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="560" y="82" width="23" height="52"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="Left"/>
+				<text><![CDATA[Quarterly]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="586" y="70" width="23" height="64"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="Left"/>
+				<text><![CDATA[Half Yearly]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="610" y="70" width="31" height="64"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="Left"/>
+				<text><![CDATA[Quarterly-Half Yearly]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="641" y="73" width="23" height="64"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="Left"/>
+				<text><![CDATA[Annual]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="666" y="69" width="31" height="64"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="Left"/>
+				<text><![CDATA[Unit Test Total]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="696" y="70" width="31" height="64"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="Left"/>
+				<text><![CDATA[Quarterly-Half Yearly]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="727" y="70" width="23" height="64"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="Left"/>
+				<text><![CDATA[Annual]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="750" y="68" width="23" height="69"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="Left"/>
+				<text><![CDATA[(Final Results)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="67" y="313" width="34" height="13"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None"/>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="29" y="154" width="25" height="25"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None"/>
+				<text><![CDATA[1]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="29" y="179" width="25" height="25"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None"/>
+				<text><![CDATA[2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="31" y="200" width="25" height="25"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None"/>
+				<text><![CDATA[3]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="31" y="225" width="25" height="25"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None"/>
+				<text><![CDATA[4]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="31" y="246" width="25" height="25"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None"/>
+				<text><![CDATA[5]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="31" y="271" width="25" height="18"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None"/>
+				<text><![CDATA[6]]></text>
+			</staticText>
+			<line>
+				<reportElement x="27" y="309" width="747" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="55" y="155" width="44" height="25"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None"/>
+				<text><![CDATA[Telegu/Urdu]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="55" y="180" width="44" height="25"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None"/>
+				<text><![CDATA[Hindi]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="56" y="200" width="44" height="25"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None"/>
+				<text><![CDATA[English]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="58" y="225" width="44" height="25"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None"/>
+				<text><![CDATA[Maths]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="54" y="247" width="47" height="25"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None"/>
+				<text><![CDATA[General Science]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="55" y="271" width="48" height="18"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None"/>
+				<text><![CDATA[Social Science]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="30" y="289" width="25" height="18"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None"/>
+				<text><![CDATA[7]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="54" y="134" width="44" height="19"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None"/>
+				<text><![CDATA[Marks]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="101" y="137" width="31" height="16"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None"/>
+				<text><![CDATA[25]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="135" y="138" width="31" height="16"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None"/>
+				<text><![CDATA[25]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="167" y="136" width="22" height="17"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None"/>
+				<text><![CDATA[50]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="190" y="138" width="31" height="16"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None"/>
+				<text><![CDATA[25]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="222" y="138" width="37" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None"/>
+				<text><![CDATA[25]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="261" y="137" width="22" height="17"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None"/>
+				<text><![CDATA[50]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="362" y="135" width="22" height="17"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None"/>
+				<text><![CDATA[50]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="293" y="136" width="26" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None"/>
+				<text><![CDATA[25]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="324" y="138" width="26" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None"/>
+				<text><![CDATA[25]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="404" y="137" width="36" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None"/>
+				<text><![CDATA[25]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="443" y="138" width="36" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None"/>
+				<text><![CDATA[25]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="480" y="136" width="22" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None"/>
+				<text><![CDATA[50]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="516" y="138" width="22" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None"/>
+				<text><![CDATA[200]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="561" y="136" width="22" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None"/>
+				<text><![CDATA[100]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="586" y="137" width="22" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None"/>
+				<text><![CDATA[100]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="617" y="138" width="22" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None"/>
+				<text><![CDATA[200]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="641" y="138" width="22" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None"/>
+				<text><![CDATA[100]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="666" y="138" width="30" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None"/>
+				<text><![CDATA[25%]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="698" y="137" width="30" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None"/>
+				<text><![CDATA[25%]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="727" y="137" width="23" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None"/>
+				<text><![CDATA[50%]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="752" y="137" width="23" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None"/>
+				<text><![CDATA[100]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="103" y="155" width="29" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{teleguUrduFTassignMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="137" y="155" width="25" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{teleguUrduFTunittestMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="167" y="155" width="22" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{teleguUrduFTtotalMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="190" y="155" width="29" height="24"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{teleguUrduSTassignMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="222" y="155" width="37" height="24"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{teleguUrduSTunittestMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="261" y="155" width="32" height="25"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{teleguUrduSTtotalMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="294" y="155" width="25" height="24"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{teleguUrduTTassignMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="328" y="155" width="22" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{teleguUrduTTunittestMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="364" y="155" width="20" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{teleguUrduTTtotalMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="407" y="155" width="22" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{teleguUrduFOTassignMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="448" y="155" width="23" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{teleguUrduFOTunittestMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="480" y="155" width="22" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{teleguUrduFOTtotalMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="509" y="154" width="37" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{teleguUrduAssignUnitTestTotalMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="560" y="155" width="27" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{teleguUrduQuarterMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="587" y="155" width="22" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{teleguUrduHalfYearMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="612" y="155" width="27" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{teleguUrduQuarterHalfYearTotalMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="640" y="155" width="23" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{teleguUrduAnnualMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="666" y="155" width="30" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{teleguUrduAssignUnitTestTotalPercentMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="698" y="154" width="29" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{teleguUrduQuarterHalfYearTotalPercentMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="728" y="155" width="22" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{teleguUrduAnnualPercentMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="102" y="181" width="30" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{hindiFTassignMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="135" y="179" width="32" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{hindiFTunittestMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="167" y="179" width="22" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{hindiFTtotalMarks    }]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="189" y="182" width="33" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{hindiSTassignMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="224" y="179" width="35" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{hindiSTunittestMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="260" y="180" width="33" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{hindiSTtotalMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="294" y="182" width="25" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{hindiTTassignMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="319" y="182" width="41" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{hindiTTunittestMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="362" y="179" width="41" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{hindiTTtotalMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="403" y="179" width="37" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{hindiFOTassignMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="441" y="180" width="38" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{hindiFOTunittestMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="480" y="179" width="22" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{hindiFOTtotalMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="504" y="182" width="56" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{hindiAssignUnitTestTotalMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="561" y="180" width="23" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{hindiQuarterMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="583" y="182" width="25" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{hindiHalfYearMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="641" y="181" width="22" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{hindiAnnualMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="665" y="180" width="31" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{hindiAssignUnitTestTotalPercentMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="696" y="181" width="31" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{hindiQuarterHalfYearTotalPercentMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="608" y="181" width="31" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{hindiQuarterHalfYearTotalMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="728" y="181" width="22" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{hindiAnnualPercentMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="103" y="204" width="30" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{englishFTassignMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="133" y="205" width="29" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{englishFTunittestMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="167" y="202" width="22" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{englishFTtotalMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="189" y="202" width="30" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{englishSTassignMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="224" y="202" width="35" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{englishSTunittestMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="259" y="202" width="34" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{englishSTtotalMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="293" y="202" width="26" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{englishTTassignMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="320" y="202" width="40" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{englishTTunittestMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="360" y="202" width="43" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{englishTTtotalMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="404" y="204" width="36" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{hindiFOTassignMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="440" y="202" width="39" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{hindiFOTunittestMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="480" y="202" width="24" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{hindiFOTtotalMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="502" y="202" width="56" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{englishAssignUnitTestTotalMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="560" y="202" width="23" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{englishQuarterMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="586" y="202" width="22" height="23"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{englishHalfYearMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="610" y="204" width="29" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{englishQuarterHalfYearTotalMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="639" y="205" width="24" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{englishAnnualMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="663" y="202" width="33" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{englishAssignUnitTestTotalPercentMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="697" y="204" width="30" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{englishQuarterHalfYearTotalPercentMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="728" y="204" width="24" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{englishAnnualPercentMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="102" y="227" width="30" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{mathsFTassignMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="133" y="227" width="34" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{mathsFTunittestMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="167" y="226" width="22" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{mathsFTtotalMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="190" y="225" width="29" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{mathsSTassignMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="222" y="227" width="38" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{mathsSTunittestMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="261" y="227" width="29" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{mathsSTtotalMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="293" y="226" width="26" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{mathsTTassignMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="319" y="227" width="41" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{mathsTTunittestMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="361" y="226" width="42" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{mathsTTtotalMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="404" y="225" width="36" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{mathsFOTassignMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="440" y="227" width="39" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{mathsFOTunittestMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="479" y="226" width="23" height="21"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{mathsFOTtotalMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="610" y="227" width="29" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{mathsQuarterHalfYearTotalMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="641" y="227" width="22" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{mathsAnnualMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="665" y="227" width="33" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{mathsAssignUnitTestTotalPercentMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="698" y="225" width="27" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{mathsQuarterHalfYearTotalPercentMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="728" y="226" width="22" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{mathsAnnualPercentMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="102" y="251" width="30" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{generalScienceFTassignMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="133" y="252" width="33" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{generalScienceFTunittestMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="167" y="252" width="23" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{generalScienceFTtotalMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="189" y="252" width="30" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{generalScienceSTassignMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="222" y="250" width="39" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{generalScienceSTunittestMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="262" y="250" width="28" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{generalScienceSTtotalMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="293" y="252" width="27" height="18"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{mathsTTassignMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="320" y="251" width="40" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{mathsTTunittestMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="360" y="252" width="43" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{mathsTTtotalMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="403" y="251" width="37" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{mathsFOTassignMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="441" y="252" width="38" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{mathsFOTunittestMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="479" y="247" width="23" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{mathsFOTtotalMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="503" y="251" width="57" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{generalScienceAssignUnitTestTotalMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="560" y="252" width="23" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{generalScienceQuarterMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="583" y="252" width="25" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{generalScienceHalfYearMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="612" y="252" width="28" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{generalScienceQuarterHalfYearTotalMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="639" y="250" width="24" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{generalScienceAnnualMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="666" y="250" width="30" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{generalScienceAssignUnitTestTotalPercentMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="696" y="250" width="29" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{generalScienceQuarterHalfYearTotalPercentMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="728" y="251" width="22" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{generalScienceAnnualPercentMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="102" y="271" width="26" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{socialScienceFTassignMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="133" y="271" width="34" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{socialScienceFTunittestMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="167" y="272" width="22" height="18"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{socialScienceFTtotalMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="189" y="272" width="30" height="17"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{socialScienceSTassignMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="220" y="272" width="39" height="17"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{socialScienceSTunittestMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="261" y="272" width="29" height="17"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{socialScienceSTtotalMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="294" y="272" width="25" height="17"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{socialScienceTTassignMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="319" y="272" width="41" height="17"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{socialScienceTTunittestMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="360" y="272" width="43" height="17"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{socialScienceTTtotalMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="402" y="272" width="38" height="17"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{socialScienceFOTassignMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="441" y="272" width="38" height="17"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{socialScienceFOTunittestMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="480" y="272" width="22" height="17"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{socialScienceFOTtotalMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="504" y="270" width="57" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{socialScienceAssignUnitTestTotalMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="561" y="271" width="22" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{socialScienceQuarterMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="583" y="272" width="25" height="17"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{socialScienceHalfYearMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="608" y="272" width="31" height="17"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{socialScienceQuarterHalfYearTotalMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="641" y="272" width="22" height="19"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{socialScienceAnnualMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="665" y="272" width="31" height="17"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{socialScienceAssignUnitTestTotalPercentMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="696" y="271" width="29" height="18"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{socialScienceQuarterHalfYearTotalPercentMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="728" y="272" width="22" height="17"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{socialScienceAnnualPercentMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="750" y="155" width="23" height="24"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{teleguUrduFinalResult}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="752" y="179" width="21" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{hindiFinalResult}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="752" y="204" width="21" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{englishFinalreslt}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="752" y="224" width="21" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{mathsFinalResult}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="752" y="251" width="21" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{generalScienceFinalResult}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="751" y="269" width="22" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{socialScienceFinalResult}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="167" y="310" width="22" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{firstTestTotal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="261" y="313" width="29" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{secondTestTotal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="360" y="310" width="42" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{thirdTestTotal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="480" y="309" width="24" height="21"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{fourthTestTotal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="560" y="310" width="24" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{querterlyTotal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="750" y="309" width="23" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{finalResultTotal}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="666" y="38" width="100" height="30"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Combined Result]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="502" y="227" width="50" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{mathsAssignUnitTestTotalMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="561" y="225" width="22" height="25"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{mathsQuarterMarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="586" y="227" width="23" height="23"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{mathsHalfYearMarks}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="215">
+			<staticText>
+				<reportElement x="598" y="15" width="130" height="20"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<text><![CDATA[No. Of Unit Test Conducted]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="598" y="35" width="130" height="15"/>
+				<textElement textAlignment="Left" verticalAlignment="Top"/>
+				<text><![CDATA[No. Of Unit Test Attended ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="598" y="50" width="129" height="17"/>
+				<textElement textAlignment="Left" verticalAlignment="Top"/>
+				<text><![CDATA[No Of Exam Conducted]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="598" y="67" width="130" height="18"/>
+				<textElement textAlignment="Left" verticalAlignment="Top"/>
+				<text><![CDATA[No. Of Exam Attended ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="598" y="86" width="130" height="18"/>
+				<textElement/>
+				<text><![CDATA[Grade On Total (A,B,C,D,E) ]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="598" y="121" width="158" height="15"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="598" y="124" width="156" height="13"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[PASS / FAIL / PROMOTED ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="598" y="104" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Division / Rank]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="728" y="15" width="17" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{noOfUTConductedValue}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="729" y="35" width="16" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{noOfUTAttendedValue}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="124" y="175" width="128" height="20"/>
+				<textElement/>
+				<text><![CDATA[This report is generated by]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="361" y="175" width="23" height="20"/>
+				<textElement/>
+				<text><![CDATA[on]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="259" y="175" width="94" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{userNameLabel}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="396" y="175" width="165" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{creationDate}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

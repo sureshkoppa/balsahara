@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/ChildHomes/!svn/ver/88/WDCW_MLC/src/java/com/cdac/caseworker/DTO
+END
+CWCMinutesOverViewDTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/ChildHomes/!svn/ver/88/WDCW_MLC/src/java/com/cdac/caseworker/DTO/CWCMinutesOverViewDTO.java
+END
+CHChildHouseholdDTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/ChildHomes/!svn/ver/88/WDCW_MLC/src/java/com/cdac/caseworker/DTO/CHChildHouseholdDTO.java
+END
+CHAfterAdmEducationDTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/ChildHomes/!svn/ver/88/WDCW_MLC/src/java/com/cdac/caseworker/DTO/CHAfterAdmEducationDTO.java
+END
+CHEmploymentDetailsDTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/ChildHomes/!svn/ver/88/WDCW_MLC/src/java/com/cdac/caseworker/DTO/CHEmploymentDetailsDTO.java
+END
+CWCMeetingMinutesDTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/ChildHomes/!svn/ver/88/WDCW_MLC/src/java/com/cdac/caseworker/DTO/CWCMeetingMinutesDTO.java
+END
+StayingPeriodOfChildDTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/ChildHomes/!svn/ver/88/WDCW_MLC/src/java/com/cdac/caseworker/DTO/StayingPeriodOfChildDTO.java
+END
+caseHistoryDTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/ChildHomes/!svn/ver/88/WDCW_MLC/src/java/com/cdac/caseworker/DTO/caseHistoryDTO.java
+END
+ReportData.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/ChildHomes/!svn/ver/88/WDCW_MLC/src/java/com/cdac/caseworker/DTO/ReportData.java
+END
+TransferDischargeDTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/ChildHomes/!svn/ver/88/WDCW_MLC/src/java/com/cdac/caseworker/DTO/TransferDischargeDTO.java
+END
+caseWorkDTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/ChildHomes/!svn/ver/88/WDCW_MLC/src/java/com/cdac/caseworker/DTO/caseWorkDTO.java
+END
+AdmissiontoCHSHDTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/ChildHomes/!svn/ver/88/WDCW_MLC/src/java/com/cdac/caseworker/DTO/AdmissiontoCHSHDTO.java
+END
+icpChildDTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/ChildHomes/!svn/ver/88/WDCW_MLC/src/java/com/cdac/caseworker/DTO/icpChildDTO.java
+END
+CHFamilyCrimeDetailsDTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/ChildHomes/!svn/ver/88/WDCW_MLC/src/java/com/cdac/caseworker/DTO/CHFamilyCrimeDetailsDTO.java
+END
+ChildDTO.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/ChildHomes/!svn/ver/88/WDCW_MLC/src/java/com/cdac/caseworker/DTO/ChildDTO.java
+END

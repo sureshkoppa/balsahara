@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/flex
+END
+messaging-config.xml
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/flex/messaging-config.xml
+END
+proxy-config.xml
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/flex/proxy-config.xml
+END
+services-config.xml
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/flex/services-config.xml
+END
+remoting-config.xml
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/flex/remoting-config.xml
+END

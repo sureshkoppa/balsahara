@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/CWC
+END
+CWCHome.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/CWC/CWCHome.jsp
+END
+CWC_Meetings.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/CWC/CWC_Meetings.jsp
+END
+View_CWCMeetingsMinutes.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/CWC/View_CWCMeetingsMinutes.jsp
+END
+CWC_MeetingsMinutes.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/CWC/CWC_MeetingsMinutes.jsp
+END
+CWC_MeetingMinutesDetails.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/CWC/CWC_MeetingMinutesDetails.jsp
+END
+SelectCWCMeetingDate.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/ChildHomes/!svn/ver/89/WDCW_MLC/web/WEB-INF/CWC/SelectCWCMeetingDate.jsp
+END
